@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=UKU208.PrjPCB
+[Project2]
+ProjectPath=..\..\UKU209\HARD_PROBE\UKU209_DB.PrjPCB
+[Project3]
+ProjectPath=..\..\UKU20710\HARD\UKU207xx_POW\UKU20710_POW.PrjPCB
