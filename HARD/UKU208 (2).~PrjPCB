@@ -40,6 +40,13 @@ AnnotateStartValue=1
 AnnotateSuffix=
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
+[Document5]
+DocumentPath=UKU208_cpu.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotateSuffix=
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
 [OutputGroup1]
 Name=Netlist Outputs
 Description=
@@ -248,8 +255,8 @@ Type27=1
 Type28=1
 Type29=1
 Type30=1
-Type31=1
-Type32=1
+Type31=0
+Type32=0
 Type33=1
 Type34=1
 Type35=1
