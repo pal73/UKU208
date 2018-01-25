@@ -1,0 +1,840 @@
+		  
+#include <lpc17xx.h>
+#include "modbus.h"
+//#include "LPC17xx.H"
+#include "main.h"
+//#include "sdio.h"
+#include "eeprom_map.h"
+
+unsigned char modbus_buf[20];
+short modbus_crc16;
+char modbus_timeout_cnt;
+char bMODBUS_TIMEOUT;
+unsigned char modbus_rx_buffer[30];	//Буфер, куда складывает принимаемые даннные обработчик прерывания по приему УАРТа 
+unsigned char modbus_an_buffer[30];    	//Буфер, куда они потом копируются для анализа
+unsigned char modbus_rx_buffer_ptr;	//Указатель на текущую позицию принимающего буфера
+unsigned char modbus_rx_counter;		//Количество принятых байт, используется при анализе целостности посылки и при расшифровке
+
+short modbus_plazma;				//Отладка
+short modbus_plazma1;				//Отладка
+short modbus_plazma2;				//Отладка
+short modbus_plazma3;				//Отладка
+
+unsigned short modbus_rx_arg0;		//встроенный в посылку первый аргумент
+unsigned short modbus_rx_arg1;		//встроенный в посылку второй аргумент
+unsigned short modbus_rx_arg2;		//встроенный в посылку третий аргумент
+unsigned short modbus_rx_arg3;		//встроенный в посылку четвертый аргумент
+
+//-----------------------------------------------
+unsigned short CRC16_2(char* buf, short len)
+{
+unsigned short crc = 0xFFFF;
+short pos;
+short i;
+
+for (pos = 0; pos < len; pos++)
+  	{
+    	crc ^= (unsigned short)buf[pos];          // XOR byte into least sig. byte of crc
+
+    	for ( i = 8; i != 0; i--) 
+		{    // Loop over each bit
+      	if ((crc & 0x0001) != 0) 
+			{      // If the LSB is set
+        		crc >>= 1;                    // Shift right and XOR 0xA001
+        		crc ^= 0xA001;
+      		}
+      	else  crc >>= 1;                    // Just shift right
+    		}
+  	}
+  // Note, this number has low and high bytes swapped, so use it accordingly (or swap bytes)
+return crc;
+}
+
+//-----------------------------------------------
+void modbus_in(void)
+{
+short crc16_calculated;		//вычисляемая из принятых данных CRC
+short crc16_incapsulated;	//встроеннная в посылку CRC
+unsigned short modbus_rx_arg0;		//встроенный в посылку первый аргумент
+unsigned short modbus_rx_arg1;		//встроенный в посылку второй аргумент
+unsigned short modbus_rx_arg2;		//встроенный в посылку третий аргумент
+unsigned short modbus_rx_arg3;		//встроенный в посылку четвертый аргумент
+unsigned char modbus_func;			//встроенный в посылку код функции
+
+//modbus_plazma++;
+
+mem_copy(modbus_an_buffer,modbus_rx_buffer,modbus_rx_buffer_ptr);
+modbus_rx_counter=modbus_rx_buffer_ptr;
+modbus_rx_buffer_ptr=0;
+bMODBUS_TIMEOUT=0;
+	
+crc16_calculated  = CRC16_2(modbus_an_buffer, modbus_rx_counter-2);
+crc16_incapsulated = *((short*)&modbus_an_buffer[modbus_rx_counter-2]);
+
+modbus_plazma1=modbus_rx_counter;
+modbus_plazma2=crc16_calculated;
+modbus_plazma3=crc16_incapsulated;
+
+modbus_func=modbus_an_buffer[1];
+modbus_rx_arg0=(((unsigned short)modbus_an_buffer[2])*((unsigned short)256))+((unsigned short)modbus_an_buffer[3]);
+modbus_rx_arg1=(((unsigned short)modbus_an_buffer[4])*((unsigned short)256))+((unsigned short)modbus_an_buffer[5]);
+modbus_rx_arg2=(((unsigned short)modbus_an_buffer[6])*((unsigned short)256))+((unsigned short)modbus_an_buffer[7]);
+modbus_rx_arg3=(((unsigned short)modbus_an_buffer[8])*((unsigned short)256))+((unsigned short)modbus_an_buffer[9]);
+
+
+if(crc16_calculated==crc16_incapsulated)
+	{
+	if(modbus_an_buffer[0]==MODBUS_ADRESS)
+		{
+		if(modbus_func==3)		//чтение произвольного кол-ва регистров хранения
+			{
+			modbus_hold_registers_transmit(MODBUS_ADRESS,modbus_func,modbus_rx_arg0,modbus_rx_arg1);
+			}
+
+		if(modbus_func==4)		//чтение произвольного кол-ва регистров	входов
+			{
+			modbus_input_registers_transmit(MODBUS_ADRESS,modbus_func,modbus_rx_arg0,modbus_rx_arg1);
+			}
+
+		else if(modbus_func==6) 	//запись регистров хранения
+			{
+			if(modbus_rx_arg0==11)		//Установка времени 
+				{
+				LPC_RTC->YEAR=(uint16_t)modbus_rx_arg1;
+				}
+			if(modbus_rx_arg0==12)		//Установка времени 
+				{
+				LPC_RTC->MONTH=(uint16_t)modbus_rx_arg1;
+				}
+			if(modbus_rx_arg0==13)		//Установка времени 
+				{
+				LPC_RTC->DOM=(uint16_t)modbus_rx_arg1;
+				}
+			if(modbus_rx_arg0==14)		//Установка времени 
+				{
+				LPC_RTC->HOUR=(uint16_t)modbus_rx_arg1;
+				}
+			if(modbus_rx_arg0==15)		//Установка времени 
+				{
+				LPC_RTC->MIN=(uint16_t)modbus_rx_arg1;
+				}
+			if(modbus_rx_arg0==16)		//Установка времени 
+				{
+				LPC_RTC->SEC=(uint16_t)modbus_rx_arg1;
+				}
+			if(modbus_rx_arg0==20)		//ток стабилизации для режима стабилизации тока
+				{
+				if((modbus_rx_arg1>0)&&(modbus_rx_arg1<5))
+				lc640_write_int(EE_NUMIST,modbus_rx_arg1);  
+				}
+			if(modbus_rx_arg0==21)		//ток стабилизации для режима стабилизации тока
+				{
+				if((modbus_rx_arg1==0)||(modbus_rx_arg1==1))
+				lc640_write_int(EE_PAR,modbus_rx_arg1);  
+				}
+			if(modbus_rx_arg0==22)		//ток стабилизации для режима стабилизации тока
+				{
+				if((modbus_rx_arg1==0)||(modbus_rx_arg1==1))
+				lc640_write_int(EE_ZV_ON,modbus_rx_arg1);  
+				}
+			if(modbus_rx_arg0==23)		//ток стабилизации для режима стабилизации тока
+				{
+				if((modbus_rx_arg1==0)||(modbus_rx_arg1==1))
+				lc640_write_int(EE_TERMOKOMP,modbus_rx_arg1);  
+				}
+			if(modbus_rx_arg0==24)		//ток стабилизации для режима стабилизации тока
+				{
+				if((modbus_rx_arg1>=0)||(modbus_rx_arg1<=20))
+				lc640_write_int(EE_UBM_AV,modbus_rx_arg1);  
+				}
+
+
+			if(modbus_rx_arg0==30)		//напряжение стабилизации для режима стабилизации напряжения
+				{
+				if(modbus_rx_arg1<0)TBAT=0;
+				else if((modbus_rx_arg1>0)&&(modbus_rx_arg1<=5))modbus_rx_arg1=0;
+				else if(modbus_rx_arg1>=60)TBAT=60;
+				else TBAT=modbus_rx_arg1;
+				lc640_write_int(EE_TBAT,TBAT);
+	     		}
+			if(modbus_rx_arg0==31)		//
+				{
+				lc640_write_int(EE_UMAX,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==32)		//
+				{
+				lc640_write_int(EE_DU,UB20-modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==33)		//
+				{
+				lc640_write_int(EE_UB0,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==34)		//
+				{
+				lc640_write_int(EE_UB20,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==35)		//
+				{
+				lc640_write_int(EE_USIGN,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==36)		//
+				{
+				lc640_write_int(EE_UMN,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==37)		//
+				{
+				lc640_write_int(EE_U0B,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==38)		//
+				{
+				lc640_write_int(EE_IKB,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==39)		//
+				{
+				lc640_write_int(EE_IZMAX,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==40)		//
+				{
+				lc640_write_int(EE_IMAX,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==41)		//
+				{
+				lc640_write_int(EE_IMIN,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==42)		//
+				{
+				lc640_write_int(EE_UVZ,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==43)		//
+				{
+				lc640_write_int(EE_TZAS,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==44)		//
+				{
+				lc640_write_int(EE_TMAX,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==45)		//
+				{
+				lc640_write_int(EE_TSIGN,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==46)		//
+				{
+				lc640_write_int(EE_TBATMAX,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==47)		//
+				{
+				lc640_write_int(EE_TBATSIGN,modbus_rx_arg1);
+	     		}
+			if(modbus_rx_arg0==19)		//вкл/выкл источника напр.
+				{
+	/*			if(modbus_rx_arg1==1)
+					{
+					if(work_stat!=wsPS)
+						{
+						work_stat=wsPS;
+						time_proc=0;
+						time_proc_remain=T_PROC_PS;
+						restart_on_PS();
+						lc640_write_int(EE_MAIN_MENU_MODE,mmmIN);
+						}
+					}
+				if(modbus_rx_arg1==0)
+					{
+					if(work_stat==wsPS)
+						{
+						work_stat=wsOFF;
+						restart_off();
+						}
+					} */
+				}
+			if(modbus_rx_arg0==20)		//вкл/выкл источника тока
+				{
+/*				if(modbus_rx_arg1==1)
+					{
+					if(work_stat!=wsGS)
+						{
+						work_stat=wsGS;
+						time_proc=0;
+						time_proc_remain=T_PROC_GS;
+						lc640_write_int(EE_MAIN_MENU_MODE,mmmIT);
+						}
+					}
+				if(modbus_rx_arg1==0)
+					{
+					if(work_stat==wsGS)
+						{
+						work_stat=wsOFF;
+						restart_off();
+						}
+					}*/
+				}
+			modbus_register_transmit(MODBUS_ADRESS,modbus_func,modbus_rx_arg0);
+			}
+		} 
+	//modbus_plazma++;
+	}
+// modbus_plazma++;
+
+}
+
+//-----------------------------------------------
+void modbus_register_transmit(unsigned char adr,unsigned char func,unsigned short reg_adr)
+{
+char modbus_registers[50];
+char modbus_tx_buff[50];
+unsigned short crc_temp;
+char i;
+
+
+modbus_registers[0]=(char)(load_U/256);					//Рег1
+modbus_registers[1]=(char)(load_U%256);
+modbus_registers[2]=(char)(load_I/256);					//Рег2
+modbus_registers[3]=(char)(load_I%256);
+modbus_registers[4]=(char)(Ib_ips_termokompensat/256);		//Рег3
+modbus_registers[5]=(char)(Ib_ips_termokompensat%256);
+modbus_registers[6]=(char)(t_ext[0]/256);				//Рег4
+modbus_registers[7]=(char)(t_ext[0]%256);
+modbus_registers[8]=(char)(net_Ua/256);					//Рег5
+modbus_registers[9]=(char)(net_Ua%256);		 	
+modbus_registers[10]=(char)(net_Ub/256);				//Рег6
+modbus_registers[11]=(char)(net_Ub%256);
+modbus_registers[12]=(char)(net_Uc/256);				//Рег7
+modbus_registers[13]=(char)(net_Uc%256);
+modbus_registers[14]=(char)(net_F3/256);				//Рег8
+modbus_registers[15]=(char)(net_F3%256);
+modbus_registers[16]=(char)(load_I/256);				//Рег9
+modbus_registers[17]=(char)(load_I%256);
+modbus_registers[18]=(char)(load_I/256);				//Рег10
+modbus_registers[19]=(char)(load_I%256);
+modbus_registers[20]=(char)((LPC_RTC->YEAR)/256);			//Рег11
+modbus_registers[21]=(char)((LPC_RTC->YEAR)%256);
+modbus_registers[22]=(char)((LPC_RTC->MONTH)/256);		//Рег12
+modbus_registers[23]=(char)((LPC_RTC->MONTH)%256);
+modbus_registers[24]=(char)((LPC_RTC->DOM)/256);			//Рег13
+modbus_registers[25]=(char)((LPC_RTC->DOM)%256);
+modbus_registers[26]=(char)((LPC_RTC->HOUR)/256);			//Рег14
+modbus_registers[27]=(char)((LPC_RTC->HOUR)%256);
+modbus_registers[28]=(char)((LPC_RTC->MIN)/256);			//Рег15
+modbus_registers[29]=(char)((LPC_RTC->MIN)%256);
+modbus_registers[30]=(char)((LPC_RTC->SEC)/256);			//Рег16
+modbus_registers[31]=(char)((LPC_RTC->SEC)%256);
+modbus_registers[32]=(char)(load_I/256);				//Рег17
+modbus_registers[33]=(char)(load_I%256);
+modbus_registers[34]=(char)(load_I/256);				//Рег18
+modbus_registers[35]=(char)(load_I%256);
+modbus_registers[36]=(char)(load_I/256);		//Рег19
+modbus_registers[37]=(char)(load_I%256);
+modbus_registers[38]=(char)(NUMIST/256);		//Рег20
+modbus_registers[39]=(char)(NUMIST%256);
+modbus_registers[40]=(char)(PAR/256);		//Рег21
+modbus_registers[41]=(char)(PAR%256);
+modbus_registers[42]=(char)(ZV_ON/256);		//Рег22
+modbus_registers[43]=(char)(ZV_ON%256);
+modbus_registers[44]=(char)(TERMOKOMPENS/256);		//Рег23
+modbus_registers[45]=(char)(TERMOKOMPENS%256);
+modbus_registers[46]=(char)(UBM_AV/256);		//Рег24
+modbus_registers[47]=(char)(UBM_AV%256);
+modbus_registers[48]=(char)(load_I/256);		//Рег25
+modbus_registers[49]=(char)(load_I%256);
+modbus_registers[50]=(char)(load_I/256);		//Рег26
+modbus_registers[51]=(char)(load_I%256);
+modbus_registers[52]=(char)(load_I/256);		//Рег27
+modbus_registers[53]=(char)(load_I%256);
+modbus_registers[54]=(char)(load_I/256);		//Рег28
+modbus_registers[55]=(char)(load_I%256);
+modbus_registers[56]=(char)(load_I/256);		//Рег29
+modbus_registers[57]=(char)(load_I%256);
+modbus_registers[58]=(char)(TBAT/256);			//Рег30
+modbus_registers[59]=(char)(TBAT%256);
+modbus_registers[60]=(char)(UMAX/256);			//Рег31
+modbus_registers[61]=(char)(UMAX%256);
+modbus_registers[62]=(char)((UB20-DU)/256);		//Рег32
+modbus_registers[63]=(char)((UB20-DU)%256);
+modbus_registers[64]=(char)(UB0/256);			//Рег33
+modbus_registers[65]=(char)(UB0%256);
+modbus_registers[66]=(char)(UB20/256);			//Рег34
+modbus_registers[67]=(char)(UB20%256);
+modbus_registers[68]=(char)(USIGN/256);		//Рег35
+modbus_registers[69]=(char)(USIGN%256);
+modbus_registers[70]=(char)(UMN/256);		//Рег36
+modbus_registers[71]=(char)(UMN%256);
+modbus_registers[72]=(char)(U0B/256);		//Рег37
+modbus_registers[73]=(char)(U0B%256);
+modbus_registers[74]=(char)(IKB/256);		//Рег38
+modbus_registers[75]=(char)(IKB%256);
+modbus_registers[76]=(char)(IZMAX/256);		//Рег39
+modbus_registers[77]=(char)(IZMAX%256);
+modbus_registers[78]=(char)(IMAX/256);		//Рег40
+modbus_registers[79]=(char)(IMAX%256);
+modbus_registers[80]=(char)(IMIN/256);		//Рег41
+modbus_registers[81]=(char)(IMIN%256);
+modbus_registers[82]=(char)(UVZ/256);		//Рег42
+modbus_registers[83]=(char)(UVZ%256);
+modbus_registers[84]=(char)(TZAS/256);		//Рег43
+modbus_registers[85]=(char)(TZAS%256);
+modbus_registers[86]=(char)(TMAX/256);		//Рег44
+modbus_registers[87]=(char)(TMAX%256);
+modbus_registers[88]=(char)(TSIGN/256);		//Рег45
+modbus_registers[89]=(char)(TSIGN%256);
+modbus_registers[90]=(char)(TBATMAX/256);		//Рег46
+modbus_registers[91]=(char)(TBATMAX%256);
+modbus_registers[92]=(char)(TBATSIGN/256);		//Рег47
+modbus_registers[93]=(char)(TBATSIGN%256);
+modbus_registers[94]=(char)(load_I/256);		//Рег48
+modbus_registers[95]=(char)(load_I%256);
+modbus_registers[96]=(char)(load_I/256);		//Рег49
+modbus_registers[97]=(char)(load_I%256);
+modbus_registers[98]=(char)(load_I/256);		//Рег50
+modbus_registers[99]=(char)(load_I%256);
+
+modbus_tx_buff[0]=adr;
+modbus_tx_buff[1]=func;
+modbus_tx_buff[2]=(char)(reg_adr/256);
+modbus_tx_buff[3]=(char)(reg_adr%256);
+//modbus_tx_buff[4]=(char)(reg_quantity/256);
+//modbus_tx_buff[5]=(char)(reg_quantity%256);
+/*
+modbus_registers[0]=0x10;
+modbus_registers[1]=0x11;
+modbus_registers[2]=0x12;
+modbus_registers[3]=0x13;
+modbus_registers[4]=0x14;
+modbus_registers[5]=0x15;
+*/
+
+mem_copy((char*)&modbus_tx_buff[4],(char*)&modbus_registers[(reg_adr-1)*2],2);
+
+crc_temp=CRC16_2(modbus_tx_buff,6);
+
+modbus_tx_buff[6]=crc_temp%256;
+modbus_tx_buff[7]=crc_temp/256;
+
+for (i=0;i<8;i++)
+	{
+	putchar0(modbus_tx_buff[i]);
+	}
+}
+
+//-----------------------------------------------
+void modbus_registers_transmit(unsigned char adr,unsigned char func,unsigned short reg_adr,unsigned short reg_quantity)
+{
+char modbus_registers[100];
+char modbus_tx_buff[100];
+unsigned short crc_temp;
+char i;
+
+
+modbus_registers[0]=(char)(load_U/256);					//Рег1
+modbus_registers[1]=(char)(load_U%256);
+modbus_registers[2]=(char)(load_I/256);					//Рег2
+modbus_registers[3]=(char)(load_I%256);
+modbus_registers[4]=(char)(Ib_ips_termokompensat/256);		//Рег3
+modbus_registers[5]=(char)(Ib_ips_termokompensat%256);
+modbus_registers[6]=(char)(t_ext[0]/256);				//Рег4
+modbus_registers[7]=(char)(t_ext[0]%256);
+modbus_registers[8]=(char)(net_Ua/256);					//Рег5
+modbus_registers[9]=(char)(net_Ua%256);		 	
+modbus_registers[10]=(char)(net_Ub/256);				//Рег6
+modbus_registers[11]=(char)(net_Ub%256);
+modbus_registers[12]=(char)(net_Uc/256);				//Рег7
+modbus_registers[13]=(char)(net_Uc%256);
+modbus_registers[14]=(char)(net_F3/256);				//Рег8
+modbus_registers[15]=(char)(net_F3%256);
+modbus_registers[16]=(char)(load_I/256);				//Рег9
+modbus_registers[17]=(char)(load_I%256);
+modbus_registers[18]=(char)(load_I/256);				//Рег10
+modbus_registers[19]=(char)(load_I%256);
+modbus_registers[20]=(char)((LPC_RTC->YEAR)/256);			//Рег11
+modbus_registers[21]=(char)((LPC_RTC->YEAR)%256);
+modbus_registers[22]=(char)((LPC_RTC->MONTH)/256);		//Рег12
+modbus_registers[23]=(char)((LPC_RTC->MONTH)%256);
+modbus_registers[24]=(char)((LPC_RTC->DOM)/256);			//Рег13
+modbus_registers[25]=(char)((LPC_RTC->DOM)%256);
+modbus_registers[26]=(char)((LPC_RTC->HOUR)/256);			//Рег14
+modbus_registers[27]=(char)((LPC_RTC->HOUR)%256);
+modbus_registers[28]=(char)((LPC_RTC->MIN)/256);			//Рег15
+modbus_registers[29]=(char)((LPC_RTC->MIN)%256);
+modbus_registers[30]=(char)((LPC_RTC->SEC)/256);			//Рег16
+modbus_registers[31]=(char)((LPC_RTC->SEC)%256);
+modbus_registers[32]=(char)(load_I/256);				//Рег17
+modbus_registers[33]=(char)(load_I%256);
+modbus_registers[34]=(char)(load_I/256);				//Рег18
+modbus_registers[35]=(char)(load_I%256);
+modbus_registers[36]=(char)(load_I/256);		//Рег19
+modbus_registers[37]=(char)(load_I%256);
+modbus_registers[38]=(char)(NUMIST/256);		//Рег20
+modbus_registers[39]=(char)(NUMIST%256);
+modbus_registers[40]=(char)(PAR/256);		//Рег21
+modbus_registers[41]=(char)(PAR%256);
+modbus_registers[42]=(char)(ZV_ON/256);		//Рег22
+modbus_registers[43]=(char)(ZV_ON%256);
+modbus_registers[44]=(char)(TERMOKOMPENS/256);		//Рег23
+modbus_registers[45]=(char)(TERMOKOMPENS%256);
+modbus_registers[46]=(char)(UBM_AV/256);		//Рег24
+modbus_registers[47]=(char)(UBM_AV%256);
+modbus_registers[48]=(char)(load_I/256);		//Рег25
+modbus_registers[49]=(char)(load_I%256);
+modbus_registers[50]=(char)(load_I/256);		//Рег26
+modbus_registers[51]=(char)(load_I%256);
+modbus_registers[52]=(char)(load_I/256);		//Рег27
+modbus_registers[53]=(char)(load_I%256);
+modbus_registers[54]=(char)(load_I/256);		//Рег28
+modbus_registers[55]=(char)(load_I%256);
+modbus_registers[56]=(char)(load_I/256);		//Рег29
+modbus_registers[57]=(char)(load_I%256);
+modbus_registers[58]=(char)(TBAT/256);			//Рег30
+modbus_registers[59]=(char)(TBAT%256);
+modbus_registers[60]=(char)(UMAX/256);			//Рег31
+modbus_registers[61]=(char)(UMAX%256);
+modbus_registers[62]=(char)((UB20-DU)/256);		//Рег32
+modbus_registers[63]=(char)((UB20-DU)%256);
+modbus_registers[64]=(char)(UB0/256);			//Рег33
+modbus_registers[65]=(char)(UB0%256);
+modbus_registers[66]=(char)(UB20/256);			//Рег34
+modbus_registers[67]=(char)(UB20%256);
+modbus_registers[68]=(char)(USIGN/256);		//Рег35
+modbus_registers[69]=(char)(USIGN%256);
+modbus_registers[70]=(char)(UMN/256);		//Рег36
+modbus_registers[71]=(char)(UMN%256);
+modbus_registers[72]=(char)(U0B/256);		//Рег37
+modbus_registers[73]=(char)(U0B%256);
+modbus_registers[74]=(char)(IKB/256);		//Рег38
+modbus_registers[75]=(char)(IKB%256);
+modbus_registers[76]=(char)(IZMAX/256);		//Рег39
+modbus_registers[77]=(char)(IZMAX%256);
+modbus_registers[78]=(char)(IMAX/256);		//Рег40
+modbus_registers[79]=(char)(IMAX%256);
+modbus_registers[80]=(char)(IMIN/256);		//Рег41
+modbus_registers[81]=(char)(IMIN%256);
+modbus_registers[82]=(char)(UVZ/256);		//Рег42
+modbus_registers[83]=(char)(UVZ%256);
+modbus_registers[84]=(char)(TZAS/256);		//Рег43
+modbus_registers[85]=(char)(TZAS%256);
+modbus_registers[86]=(char)(TMAX/256);		//Рег44
+modbus_registers[87]=(char)(TMAX%256);
+modbus_registers[88]=(char)(TSIGN/256);		//Рег45
+modbus_registers[89]=(char)(TSIGN%256);
+modbus_registers[90]=(char)(TBATMAX/256);		//Рег46
+modbus_registers[91]=(char)(TBATMAX%256);
+modbus_registers[92]=(char)(TBATSIGN/256);		//Рег47
+modbus_registers[93]=(char)(TBATSIGN%256);
+modbus_registers[94]=(char)(load_I/256);		//Рег48
+modbus_registers[95]=(char)(load_I%256);
+modbus_registers[96]=(char)(load_I/256);		//Рег49
+modbus_registers[97]=(char)(load_I%256);
+modbus_registers[98]=(char)(load_I/256);		//Рег50
+modbus_registers[99]=(char)(load_I%256);
+
+
+
+
+modbus_tx_buff[0]=adr;
+modbus_tx_buff[1]=func;
+//modbus_tx_buff[2]=(char)(reg_adr/256);
+//modbus_tx_buff[3]=(char)(reg_adr%256);
+modbus_tx_buff[2]=(char)(reg_quantity*2);
+//modbus_tx_buff[5]=(char)(reg_quantity%256);
+/*
+modbus_registers[0]=0x10;
+modbus_registers[1]=0x11;
+modbus_registers[2]=0x12;
+modbus_registers[3]=0x13;
+modbus_registers[4]=0x14;
+modbus_registers[5]=0x15;
+*/
+
+mem_copy((char*)&modbus_tx_buff[3],(char*)&modbus_registers[(reg_adr-1)*2],reg_quantity*2);
+
+crc_temp=CRC16_2(modbus_tx_buff,(reg_quantity*2)+3);
+
+modbus_tx_buff[3+(reg_quantity*2)]=crc_temp%256;
+modbus_tx_buff[4+(reg_quantity*2)]=crc_temp/256;
+
+//int2lcdyx(reg_quantity,0,10,0);
+
+for (i=0;i<15/*(5+(reg_quantity*2))*/;i++)
+	{
+	putchar2(modbus_tx_buff[i]);
+	} 
+}
+
+//-----------------------------------------------
+void modbus_hold_registers_transmit(unsigned char adr,unsigned char func,unsigned short reg_adr,unsigned short reg_quantity)
+{
+char modbus_registers[100];
+char modbus_tx_buff[100];
+unsigned short crc_temp;
+char i;
+
+modbus_registers[0]=(char)(load_U/256);					//Рег1
+modbus_registers[1]=(char)(load_U%256);
+modbus_registers[2]=(char)(load_I/256);					//Рег2
+modbus_registers[3]=(char)(load_I%256);
+modbus_registers[4]=(char)(Ib_ips_termokompensat/256);		//Рег3
+modbus_registers[5]=(char)(Ib_ips_termokompensat%256);
+modbus_registers[6]=(char)(t_ext[0]/256);				//Рег4
+modbus_registers[7]=(char)(t_ext[0]%256);
+modbus_registers[8]=(char)(net_Ua/256);					//Рег5
+modbus_registers[9]=(char)(net_Ua%256);		 	
+modbus_registers[10]=(char)(net_Ub/256);				//Рег6
+modbus_registers[11]=(char)(net_Ub%256);
+modbus_registers[12]=(char)(net_Uc/256);				//Рег7
+modbus_registers[13]=(char)(net_Uc%256);
+modbus_registers[14]=(char)(net_F3/256);				//Рег8
+modbus_registers[15]=(char)(net_F3%256);
+modbus_registers[16]=(char)(load_I/256);				//Рег9
+modbus_registers[17]=(char)(load_I%256);
+modbus_registers[18]=(char)(load_I/256);				//Рег10
+modbus_registers[19]=(char)(load_I%256);
+modbus_registers[20]=(char)((LPC_RTC->YEAR)/256);			//Рег11
+modbus_registers[21]=(char)((LPC_RTC->YEAR)%256);
+modbus_registers[22]=(char)((LPC_RTC->MONTH)/256);		//Рег12
+modbus_registers[23]=(char)((LPC_RTC->MONTH)%256);
+modbus_registers[24]=(char)((LPC_RTC->DOM)/256);			//Рег13
+modbus_registers[25]=(char)((LPC_RTC->DOM)%256);
+modbus_registers[26]=(char)((LPC_RTC->HOUR)/256);			//Рег14
+modbus_registers[27]=(char)((LPC_RTC->HOUR)%256);
+modbus_registers[28]=(char)((LPC_RTC->MIN)/256);			//Рег15
+modbus_registers[29]=(char)((LPC_RTC->MIN)%256);
+modbus_registers[30]=(char)((LPC_RTC->SEC)/256);			//Рег16
+modbus_registers[31]=(char)((LPC_RTC->SEC)%256);
+modbus_registers[32]=(char)(load_I/256);				//Рег17
+modbus_registers[33]=(char)(load_I%256);
+modbus_registers[34]=(char)(load_I/256);				//Рег18
+modbus_registers[35]=(char)(load_I%256);
+modbus_registers[36]=(char)(load_I/256);		//Рег19
+modbus_registers[37]=(char)(load_I%256);
+modbus_registers[38]=(char)(NUMIST/256);		//Рег20
+modbus_registers[39]=(char)(NUMIST%256);
+modbus_registers[40]=(char)(PAR/256);		//Рег21
+modbus_registers[41]=(char)(PAR%256);
+modbus_registers[42]=(char)(ZV_ON/256);		//Рег22
+modbus_registers[43]=(char)(ZV_ON%256);
+modbus_registers[44]=(char)(TERMOKOMPENS/256);		//Рег23
+modbus_registers[45]=(char)(TERMOKOMPENS%256);
+modbus_registers[46]=(char)(UBM_AV/256);		//Рег24
+modbus_registers[47]=(char)(UBM_AV%256);
+modbus_registers[48]=(char)(load_I/256);		//Рег25
+modbus_registers[49]=(char)(load_I%256);
+modbus_registers[50]=(char)(load_I/256);		//Рег26
+modbus_registers[51]=(char)(load_I%256);
+modbus_registers[52]=(char)(load_I/256);		//Рег27
+modbus_registers[53]=(char)(load_I%256);
+modbus_registers[54]=(char)(load_I/256);		//Рег28
+modbus_registers[55]=(char)(load_I%256);
+modbus_registers[56]=(char)(load_I/256);		//Рег29
+modbus_registers[57]=(char)(load_I%256);
+modbus_registers[58]=(char)(TBAT/256);			//Рег30
+modbus_registers[59]=(char)(TBAT%256);
+modbus_registers[60]=(char)(UMAX/256);			//Рег31
+modbus_registers[61]=(char)(UMAX%256);
+modbus_registers[62]=(char)((UB20-DU)/256);		//Рег32
+modbus_registers[63]=(char)((UB20-DU)%256);
+modbus_registers[64]=(char)(UB0/256);			//Рег33
+modbus_registers[65]=(char)(UB0%256);
+modbus_registers[66]=(char)(UB20/256);			//Рег34
+modbus_registers[67]=(char)(UB20%256);
+modbus_registers[68]=(char)(USIGN/256);		//Рег35
+modbus_registers[69]=(char)(USIGN%256);
+modbus_registers[70]=(char)(UMN/256);		//Рег36
+modbus_registers[71]=(char)(UMN%256);
+modbus_registers[72]=(char)(U0B/256);		//Рег37
+modbus_registers[73]=(char)(U0B%256);
+modbus_registers[74]=(char)(IKB/256);		//Рег38
+modbus_registers[75]=(char)(IKB%256);
+modbus_registers[76]=(char)(IZMAX/256);		//Рег39
+modbus_registers[77]=(char)(IZMAX%256);
+modbus_registers[78]=(char)(IMAX/256);		//Рег40
+modbus_registers[79]=(char)(IMAX%256);
+modbus_registers[80]=(char)(IMIN/256);		//Рег41
+modbus_registers[81]=(char)(IMIN%256);
+modbus_registers[82]=(char)(UVZ/256);		//Рег42
+modbus_registers[83]=(char)(UVZ%256);
+modbus_registers[84]=(char)(TZAS/256);		//Рег43
+modbus_registers[85]=(char)(TZAS%256);
+modbus_registers[86]=(char)(TMAX/256);		//Рег44
+modbus_registers[87]=(char)(TMAX%256);
+modbus_registers[88]=(char)(TSIGN/256);		//Рег45
+modbus_registers[89]=(char)(TSIGN%256);
+modbus_registers[90]=(char)(TBATMAX/256);		//Рег46
+modbus_registers[91]=(char)(TBATMAX%256);
+modbus_registers[92]=(char)(TBATSIGN/256);		//Рег47
+modbus_registers[93]=(char)(TBATSIGN%256);
+modbus_registers[94]=(char)(load_I/256);		//Рег48
+modbus_registers[95]=(char)(load_I%256);
+modbus_registers[96]=(char)(load_I/256);		//Рег49
+modbus_registers[97]=(char)(load_I%256);
+modbus_registers[98]=(char)(load_I/256);		//Рег50
+modbus_registers[99]=(char)(load_I%256);
+
+modbus_tx_buff[0]=adr;
+modbus_tx_buff[1]=func;
+//modbus_tx_buff[2]=(char)(reg_adr/256);
+//modbus_tx_buff[3]=(char)(reg_adr%256);
+//modbus_tx_buff[4]=(char)(reg_quantity/256);
+//modbus_tx_buff[5]=(char)(reg_quantity%256);
+modbus_tx_buff[2]=(char)(reg_quantity*2);
+/*
+modbus_registers[0]=0x10;
+modbus_registers[1]=0x11;
+modbus_registers[2]=0x12;
+modbus_registers[3]=0x13;
+modbus_registers[4]=0x14;
+modbus_registers[5]=0x15;
+*/
+
+//if((reg_adr<17)&&(reg_quantity<10))
+	{
+	mem_copy((char*)&modbus_tx_buff[3],(char*)&modbus_registers[(reg_adr-1)*2],reg_quantity*2);
+	}
+crc_temp=CRC16_2(modbus_tx_buff,(reg_quantity*2)+3);
+
+modbus_tx_buff[3+(reg_quantity*2)]=crc_temp%256;
+modbus_tx_buff[4+(reg_quantity*2)]=crc_temp/256;
+
+for (i=0;i<(5+(reg_quantity*2));i++)
+	{
+	putchar2(modbus_tx_buff[i]);
+	}
+}
+
+//-----------------------------------------------
+void modbus_input_registers_transmit(unsigned char adr,unsigned char func,unsigned short reg_adr,unsigned short reg_quantity)
+{
+char modbus_registers[100];
+char modbus_tx_buff[100];
+unsigned short crc_temp;
+char i;
+
+modbus_registers[0]=(char)(load_U/256);					//Рег1   	напряжение нагрузки, 0.1В
+modbus_registers[1]=(char)(load_U%256);
+modbus_registers[2]=(char)(load_I/256);					//Рег2   	ток нагрузки, 0.1А
+modbus_registers[3]=(char)(load_I%256);
+modbus_registers[4]=(char)(net_U/256);					//Рег3   	напряжение сети питания, 1В
+modbus_registers[5]=(char)(net_U%256);
+modbus_registers[6]=(char)(net_F/256);					//Рег4   	частота сети питания, 0.1Гц
+modbus_registers[7]=(char)(net_F%256);
+modbus_registers[8]=(char)(net_Ua/256);					//Рег5	напряжение сети питания фаза A, 1В	
+modbus_registers[9]=(char)(net_Ua%256);		 	
+modbus_registers[10]=(char)(net_Ub/256);				//Рег6	напряжение сети питания фаза B, 1В
+modbus_registers[11]=(char)(net_Ub%256);
+modbus_registers[12]=(char)(net_Uc/256);				//Рег7	напряжение сети питания фаза C, 1В
+modbus_registers[13]=(char)(net_Uc%256);
+modbus_registers[14]=(char)(bat[0]._Ub/256);				//Рег8	напряжение первой батареи, 0.1В
+modbus_registers[15]=(char)(bat[0]._Ub%256);
+modbus_registers[16]=(char)(load_I/256);				//Рег9
+modbus_registers[17]=(char)(load_I%256);
+modbus_registers[18]=(char)(load_I/256);				//Рег10
+modbus_registers[19]=(char)(load_I%256);
+modbus_registers[20]=(char)((LPC_RTC->YEAR)/256);			//Рег11
+modbus_registers[21]=(char)((LPC_RTC->YEAR)%256);
+modbus_registers[22]=(char)((LPC_RTC->MONTH)/256);		//Рег12
+modbus_registers[23]=(char)((LPC_RTC->MONTH)%256);
+modbus_registers[24]=(char)((LPC_RTC->DOM)/256);			//Рег13
+modbus_registers[25]=(char)((LPC_RTC->DOM)%256);
+modbus_registers[26]=(char)((LPC_RTC->HOUR)/256);			//Рег14
+modbus_registers[27]=(char)((LPC_RTC->HOUR)%256);
+modbus_registers[28]=(char)((LPC_RTC->MIN)/256);			//Рег15
+modbus_registers[29]=(char)((LPC_RTC->MIN)%256);
+modbus_registers[30]=(char)((LPC_RTC->SEC)/256);			//Рег16
+modbus_registers[31]=(char)((LPC_RTC->SEC)%256);
+modbus_registers[32]=(char)(load_I/256);				//Рег17
+modbus_registers[33]=(char)(load_I%256);
+modbus_registers[34]=(char)(load_I/256);				//Рег18
+modbus_registers[35]=(char)(load_I%256);
+modbus_registers[36]=(char)(load_I/256);		//Рег19
+modbus_registers[37]=(char)(load_I%256);
+modbus_registers[38]=(char)(NUMIST/256);		//Рег20
+modbus_registers[39]=(char)(NUMIST%256);
+modbus_registers[40]=(char)(PAR/256);		//Рег21
+modbus_registers[41]=(char)(PAR%256);
+modbus_registers[42]=(char)(ZV_ON/256);		//Рег22
+modbus_registers[43]=(char)(ZV_ON%256);
+modbus_registers[44]=(char)(TERMOKOMPENS/256);		//Рег23
+modbus_registers[45]=(char)(TERMOKOMPENS%256);
+modbus_registers[46]=(char)(UBM_AV/256);		//Рег24
+modbus_registers[47]=(char)(UBM_AV%256);
+modbus_registers[48]=(char)(load_I/256);		//Рег25
+modbus_registers[49]=(char)(load_I%256);
+modbus_registers[50]=(char)(load_I/256);		//Рег26
+modbus_registers[51]=(char)(load_I%256);
+modbus_registers[52]=(char)(load_I/256);		//Рег27
+modbus_registers[53]=(char)(load_I%256);
+modbus_registers[54]=(char)(load_I/256);		//Рег28
+modbus_registers[55]=(char)(load_I%256);
+modbus_registers[56]=(char)(load_I/256);		//Рег29
+modbus_registers[57]=(char)(load_I%256);
+modbus_registers[58]=(char)(TBAT/256);			//Рег30
+modbus_registers[59]=(char)(TBAT%256);
+modbus_registers[60]=(char)(UMAX/256);			//Рег31
+modbus_registers[61]=(char)(UMAX%256);
+modbus_registers[62]=(char)((UB20-DU)/256);		//Рег32
+modbus_registers[63]=(char)((UB20-DU)%256);
+modbus_registers[64]=(char)(UB0/256);			//Рег33
+modbus_registers[65]=(char)(UB0%256);
+modbus_registers[66]=(char)(UB20/256);			//Рег34
+modbus_registers[67]=(char)(UB20%256);
+modbus_registers[68]=(char)(USIGN/256);		//Рег35
+modbus_registers[69]=(char)(USIGN%256);
+modbus_registers[70]=(char)(UMN/256);		//Рег36
+modbus_registers[71]=(char)(UMN%256);
+modbus_registers[72]=(char)(U0B/256);		//Рег37
+modbus_registers[73]=(char)(U0B%256);
+modbus_registers[74]=(char)(IKB/256);		//Рег38
+modbus_registers[75]=(char)(IKB%256);
+modbus_registers[76]=(char)(IZMAX/256);		//Рег39
+modbus_registers[77]=(char)(IZMAX%256);
+modbus_registers[78]=(char)(IMAX/256);		//Рег40
+modbus_registers[79]=(char)(IMAX%256);
+modbus_registers[80]=(char)(IMIN/256);		//Рег41
+modbus_registers[81]=(char)(IMIN%256);
+modbus_registers[82]=(char)(UVZ/256);		//Рег42
+modbus_registers[83]=(char)(UVZ%256);
+modbus_registers[84]=(char)(TZAS/256);		//Рег43
+modbus_registers[85]=(char)(TZAS%256);
+modbus_registers[86]=(char)(TMAX/256);		//Рег44
+modbus_registers[87]=(char)(TMAX%256);
+modbus_registers[88]=(char)(TSIGN/256);		//Рег45
+modbus_registers[89]=(char)(TSIGN%256);
+modbus_registers[90]=(char)(TBATMAX/256);		//Рег46
+modbus_registers[91]=(char)(TBATMAX%256);
+modbus_registers[92]=(char)(TBATSIGN/256);		//Рег47
+modbus_registers[93]=(char)(TBATSIGN%256);
+modbus_registers[94]=(char)(load_I/256);		//Рег48
+modbus_registers[95]=(char)(load_I%256);
+modbus_registers[96]=(char)(load_I/256);		//Рег49
+modbus_registers[97]=(char)(load_I%256);
+modbus_registers[98]=(char)(load_I/256);		//Рег50
+modbus_registers[99]=(char)(load_I%256);
+
+modbus_tx_buff[0]=adr;
+modbus_tx_buff[1]=func;
+//modbus_tx_buff[2]=(char)(reg_adr/256);
+//modbus_tx_buff[3]=(char)(reg_adr%256);
+//modbus_tx_buff[4]=(char)(reg_quantity/256);
+//modbus_tx_buff[5]=(char)(reg_quantity%256);
+modbus_tx_buff[2]=(char)(reg_quantity*2);
+/*
+modbus_registers[0]=0x10;
+modbus_registers[1]=0x11;
+modbus_registers[2]=0x12;
+modbus_registers[3]=0x13;
+modbus_registers[4]=0x14;
+modbus_registers[5]=0x15;
+*/
+
+//if((reg_adr<17)&&(reg_quantity<10))
+	{
+	mem_copy((char*)&modbus_tx_buff[3],(char*)&modbus_registers[(reg_adr-1)*2],reg_quantity*2);
+	}
+crc_temp=CRC16_2(modbus_tx_buff,(reg_quantity*2)+3);
+
+modbus_tx_buff[3+(reg_quantity*2)]=crc_temp%256;
+modbus_tx_buff[4+(reg_quantity*2)]=crc_temp/256;
+
+for (i=0;i<(5+(reg_quantity*2));i++)
+	{
+	putchar2(modbus_tx_buff[i]);
+	}
+}
+

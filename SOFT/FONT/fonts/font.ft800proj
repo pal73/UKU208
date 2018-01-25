@@ -1,0 +1,65 @@
+{
+    "content": [
+        {
+            "converter": "Font",
+            "dataCompressed": true,
+            "dataEmbedded": true,
+            "destName": "fonts/9564",
+            "fontCharSet": " БбГгДдЖжЗзИиЛлмПптУФфЦцЧчШшЩщЭэ !\"#$%&'()*+,-./0123456789:;<=>?@АBCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_яabcdefghijklmnopqrstuvwxyzЮ|ю~Я",
+            "fontOffset": 0,
+            "fontSize": 17,
+            "imageFormat": 2,
+            "memoryAddress": 0,
+            "memoryLoaded": true,
+            "sourcePath": "E:/Users/Pal/DEVICES/UKU207_RIVERDI/SOFT/FONT/fonts/9564.otf"
+        },
+        {
+            "converter": "Font",
+            "dataCompressed": true,
+            "dataEmbedded": true,
+            "destName": "fonts/times",
+            "fontCharSet": " БбГгДдЖжЗзИиЛлмПптУФфЦцЧчШшЩщЭэ !\"#$%&'()*+,-./0123456789:;<=>?@АBCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_яabcdefghijklmnopqrstuvwxyzЮ|",
+            "fontOffset": 0,
+            "fontSize": 20,
+            "imageFormat": 2,
+            "memoryAddress": 32404,
+            "memoryLoaded": true,
+            "sourcePath": "D:/WINDOWS/Fonts/times.ttf"
+        }
+    ],
+    "coprocessor": [
+        "BITMAP_HANDLE(1)",
+        "BITMAP_SOURCE(148)",
+        "BITMAP_LAYOUT(L4, 12, 21)",
+        "BITMAP_LAYOUT_H(0, 0)",
+        "BITMAP_SIZE(NEAREST, BORDER, BORDER, 24, 21)",
+        "BITMAP_SIZE_H(0, 0)",
+        "CMD_SETFONT(1, 0)",
+        "",
+        "BITMAP_HANDLE(2)",
+        "BITMAP_SOURCE(32552)",
+        "BITMAP_LAYOUT(L4, 12, 23)",
+        "BITMAP_LAYOUT_H(0, 0)",
+        "BITMAP_SIZE(NEAREST, BORDER, BORDER, 24, 23)",
+        "BITMAP_SIZE_H(0, 0)",
+        "CMD_SETFONT(1, 0)",
+        "CLEAR(1, 1, 1)",
+        "CMD_TEXT(8, 194, 1, 0, \"ABC \\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\x09\\x0a\\x0b\\x0c\\x0d\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f\")",
+        "CMD_TEXT(8, 224, 1, 0, \"ABCD \\x7f\\x60\\x7b\\x7d\")",
+        "CMD_TEXT(8, 300, 2, 0, \"ABC \\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\x09\\x0a\\x0b\\x0c\\x0d\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f\")",
+        ""
+    ],
+    "displayList": [
+        ""
+    ],
+    "project": {
+        "device": 2067
+    },
+    "registers": {
+        "hSize": 800,
+        "macro": [
+            ""
+        ],
+        "vSize": 480
+    }
+}

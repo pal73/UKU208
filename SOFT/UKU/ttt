@@ -1,0 +1,88 @@
+     ptrs[0]=		" Стандартные        ";
+	ptrs[1]=		" Время и дата       ";
+     ptrs[2]=		" Структура          ";
+	ptrs[3]=		" Климатконтроль     ";
+	ptrs[4]=		" Выход              ";
+     ptrs[5]=		" Мнемоника         y";
+	ptrs[6]=		" Зв.сигн.   (       ";
+	ptrs[7]=		" Отключение сигнала ";
+	ptrs[8]=		"  аварии    )       ";
+	ptrs[9]=		" АПВ источников     ";
+	ptrs[10]=		" Паралл.работа z    ";
+	ptrs[11]=		" T проверки   цепи  ";
+     ptrs[12]=		" батареи     qмин.  ";
+     ptrs[13]=		" Umax=       !В     ";
+     ptrs[14]=		" dU=         ZВ     ";
+     ptrs[15]=		" Uб0°=       @В     ";
+     ptrs[16]=		" Uб20°=      #В     ";
+     ptrs[17]=		" Uсигн=      ^В     ";
+     ptrs[18]=		" Umin.сети=  &В     ";
+	ptrs[19]=		" U0б=        >В     ";
+	ptrs[20]=		" Iбк.=       jА     ";
+     ptrs[21]=		" Iз.мах.=    JА     ";
+     ptrs[22]=		" Imax=       ]A     ";
+     ptrs[23]=		" Kimax=      {      ";
+     ptrs[24]=		" Kвыр.зар.=    [    ";
+     ptrs[25]=		" Tз.вкл.а.с. !с     ";
+	ptrs[26]=		" tи.max=     $°C    ";
+	ptrs[27]=		" tи.сигн=    z°C    ";
+	ptrs[28]=		" tбат.max=   b°C    ";
+	ptrs[29]=		" tбат.сигн=  X°C    ";
+     ptrs[30]=		" Внешние датчики    ";
+     ptrs[31]=      " Адрес счетчика    +";
+     ptrs[32]=      " Контроль ср.точки  ";
+     ptrs[33]=      " батареи         Q% ";
+//	ptrs[32]=		" tшк.max=    l°C    ";
+
+	ptrs[34]=      " Серийный N        w";
+     ptrs[35]=		" Выход              ";
+     ptrs[36]=		" Калибровки         "; 
+     ptrs[37]=		" Тест               ";        
+
+
+
+	ptrs[0]=				" tшк.max=       !°C ";
+	ptrs[1]=				" tвент.max=     @°C ";
+	ptrs[2]=				" tшк.рег.=      #°C ";
+	ptrs[3]=				" tоткл.нагр.    $°C ";
+	ptrs[4]=				" tвкл.нагр.     %°C ";
+	ptrs[5]=				" tоткл.бат.     ^°C ";
+	ptrs[6]=				" tвкл.бат.      &°C ";
+	ptrs[7]=				" Выход              ";
+
+
+	//-----------------------------------------------
+void def_set(int umax__,int ub0__,int ub20__,int usign__,int imax__,int uob__,int numi)
+{
+;
+lc640_write_int(EE_NUMIST,numi);
+lc640_write_int(EE_NUMINV,0);
+lc640_write_int(EE_NUMDT,0);
+lc640_write_int(EE_NUMSK,0);
+lc640_write_int(EE_MAIN_IST,0);
+lc640_write_int(EE_PAR,0);
+lc640_write_int(EE_TBAT,60);
+lc640_write_int(EE_UMAX,umax__);
+lc640_write_int(EE_UB0,ub0__);
+lc640_write_int(EE_UB20,ub20__);
+lc640_write_int(EE_TSIGN,70);
+lc640_write_int(EE_TMAX,80);
+//lc640_write_int(EE_C_BAT,180);
+lc640_write_int(EE_USIGN,usign__);
+lc640_write_int(EE_UMN,187);
+lc640_write_int(EE_ZV_ON,0xff);
+lc640_write_int(EE_IKB,5);
+lc640_write_int(EE_KVZ,1030);
+lc640_write_int(EE_IMAX,imax__);
+lc640_write_int(EE_KIMAX,8);
+lc640_write_int(EE_APV_ON,0xff);
+lc640_write_int(EE_IZMAX,20);
+lc640_write_int(EE_U0B,uob__);
+lc640_write_int(EE_TZAS,3);
+lc640_write_int(EE_TBATMAX,50);  
+lc640_write_int(EE_TBATSIGN,40);
+lc640_write_int(EE_MNEMO_ON,mnON);
+lc640_write_int(EE_MNEMO_TIME,30);	
+lc640_write_int(EE_AV_OFF_AVT,1);
+lc640_write_int(EE_APV_ON1,apvOFF);
+}

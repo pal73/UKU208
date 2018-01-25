@@ -1,0 +1,69 @@
+Protel Design System Design Rule Check
+PCB File : \Users\Pal\DEVICES\UKU208_dev\HARD\UKU208.PcbDoc
+Date     : 25.12.2017
+Time     : 6:57:44
+
+WARNING: Unplated multi-layer pad(s) detected
+   Pad L2-7(154.7mm,50.3mm)  Multi-Layer on Net GND
+Total: 1
+
+Processing Rule : Hole Size Constraint (Min=0.0254mm) (Max=4mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=5mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.19mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Broken-Net Constraint ( (All) )
+   Violation         Net GND_USB   is broken into 12 sub-nets. Routed To 21.43%
+     Subnet : U4-8     U3-7     U4-2     U3-21         Subnet : U3-26         Subnet : U3-25         Subnet : C12-1         Subnet : C14-1         Subnet : C13-1         Subnet : U3-18         Subnet : J1-6          Subnet : J1-5          Subnet : J1-6          Subnet : J1-6          Subnet : J1-6        Violation         Net NetR20_2   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U2-7          Subnet : R20-2       Violation         Net NetR19_1   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U2-3          Subnet : R19-1       Violation         Net NetQ9_1   is broken into 3 sub-nets. Routed To 0.00%
+     Subnet : R18-2         Subnet : Q9-1          Subnet : R23-2       Violation         Net NetA1_2   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : A1-2          Subnet : Q9-3        Violation         Net VREF   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-12         Subnet : U1-10       Violation         Net P0_28   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-24         Subnet : R21-1       Violation         Net +3V3   is broken into 41 sub-nets. Routed To 0.00%
+     Subnet : U1-28         Subnet : U1-42         Subnet : JP4-1         Subnet : U1-13         Subnet : R17-2         Subnet : U1-54         Subnet : U1-71         Subnet : U1-96         Subnet : U1-84         Subnet : U13-32        Subnet : R56-2         Subnet : R57-2         Subnet : R58-2         Subnet : C51-2         Subnet : C47-2         Subnet : R61-2         Subnet : U13-22        Subnet : R62-1         Subnet : J2-5          Subnet : J2-12         Subnet : C42-1         Subnet : C41-1         Subnet : U10-4         Subnet : C52-1         Subnet : U10-2         Subnet : C53-1         Subnet : C54-1         Subnet : R52-2         Subnet : R21-2         Subnet : C5-2          Subnet : U13-48        Subnet : C50-2         Subnet : J2-4          Subnet : R60-1         Subnet : J2-9          Subnet : R53-2         Subnet : R54-2         Subnet : R55-2         Subnet : R59-2         Subnet : C1-1          Subnet : C48-2       Violation         Net P1_31   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-20         Subnet : R23-1       Violation         Net GND   is broken into 79 sub-nets. Routed To 1.27%     Warning - net contains unplated pads
+     Subnet : U6-8          Subnet : C17-1         Subnet : U6-2          Subnet : C18-1         Subnet : U7-8          Subnet : C15-1         Subnet : JP4-20        Subnet : C16-1         Subnet : JP4-19        Subnet : C8-1          Subnet : R9-1          Subnet : U7-2          Subnet : Q1-2          Subnet : R10-1         Subnet : Q2-2          Subnet : U1-55         Subnet : U1-31         Subnet : U1-41         Subnet : BT1-2         Subnet : U1-83         Subnet : U1-72         Subnet : JP4-2         Subnet : C7-1          Subnet : U1-15         Subnet : C9-1          Subnet : U1-11         Subnet : C10-1         Subnet : U5-3          Subnet : U4-9          Subnet : U4-15         Subnet : C47-1         Subnet : U1-97         Subnet : U13-35        Subnet : U13-36        Subnet : U13-47        Subnet : U14-2         Subnet : U13-19        Subnet : C51-1         Subnet : J2-8          Subnet : U13-15        Subnet : C50-1         Subnet : C48-1         Subnet : Q3-2          Subnet : Q4-2          Subnet : C41-2         Subnet : R18-1         Subnet : C42-2         Subnet : Q5-2          Subnet : R11-1         Subnet : Q6-2          Subnet : Q7-2          Subnet : Q9-2          Subnet : C55-2         Subnet : C52-2         Subnet : R63-1         Subnet : C53-2         Subnet : C54-2         Subnet : C2-1          Subnet : C4-1          Subnet : C5-1          Subnet : C49-2         Subnet : C6-1          Subnet : C56-2         Subnet : U10-1         Subnet : D17-2         Subnet : D17-3         Subnet : D17-7    D17-6         Subnet : U2-4          Subnet : R12-1         Subnet : R13-1         Subnet : R14-1         Subnet : R15-1         Subnet : C29-2         Subnet : C27-2         Subnet : R41-2         Subnet : C20-1         Subnet : C28-2         Subnet : L2-7          Subnet : C1-2        Violation         Net +5V   is broken into 13 sub-nets. Routed To 62.50%
+     Subnet : K1-5     D1-2     A1-1     K2-5     K3-5     K4-5     K5-5     K7-5     K6-5     C29-1                  D2-2     D3-2     D4-2     D5-2     D7-2     D6-2     L1-2     U6-1     U7-1     R28-1    R51-1         Subnet : JP4-18        Subnet : JP4-17        Subnet : U2-8          Subnet : U4-10         Subnet : U4-16         Subnet : U10-3         Subnet : R20-1         Subnet : R66-2         Subnet : R19-2         Subnet : C2-2          Subnet : C4-2          Subnet : C6-2        Violation         Net GND_GND   is broken into 5 sub-nets. Routed To 0.00%
+     Subnet : JP12-3        Subnet : C32-2         Subnet : C30-1         Subnet : C31-1         Subnet : C33-2       Violation         Net +VBAT   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-19         Subnet : BT1-1       Violation         Net NetC19_1   is broken into 11 sub-nets. Routed To 47.37%
+     Subnet : U9-3     C39-1    R43-1    C19-1    C38-2    U8-6          Subnet : R42-1    C37-2         Subnet : C21-2         Subnet : C22-2         Subnet : C20-2         Subnet : L2-3          Subnet : R49-2         Subnet : R48-2         Subnet : R47-2         Subnet : T1-2     C34-1    C33-1    C35-2         Subnet : R46-2       Violation         Net NetC19_2   is broken into 2 sub-nets. Routed To 50.00%
+     Subnet : R37-1    C19-2         Subnet : D14-2       Violation         Net NetC25_1   is broken into 3 sub-nets. Routed To 0.00%
+     Subnet : R36-2         Subnet : D12-2         Subnet : C25-1       Violation         Net NetC27_1   is broken into 2 sub-nets. Routed To 80.00%
+     Subnet : R44-1    C27-1    C28-1    U9-1     D16-2         Subnet : L1-1        Violation         Net NetC36_2   is broken into 3 sub-nets. Routed To 50.00%
+     Subnet : R33-1    C39-2    U9-4          Subnet : U8-2          Subnet : C36-2       Violation         Net NetC37_1   is broken into 2 sub-nets. Routed To 66.67%
+     Subnet : R42-2    C37-1    U8-3          Subnet : R34-1       Violation         Net NetD13_1   is broken into 2 sub-nets. Routed To 66.67%
+     Subnet : D14-1    R39-1    D13-1         Subnet : L2-4        Violation         Net NetQ10_1   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : R40-1         Subnet : Q10-1       Violation         Net NetU11_4   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U11-4         Subnet : U11-5       Violation         Net NetU12_4   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U12-4         Subnet : U12-5       Violation         Net LG   is broken into 3 sub-nets. Routed To 0.00%
+     Subnet : U13-28        Subnet : R64-2         Subnet : R55-1       Violation         Net LH   is broken into 3 sub-nets. Routed To 0.00%
+     Subnet : U13-26        Subnet : R65-2         Subnet : R53-1       Violation         Net NetC49_1   is broken into 5 sub-nets. Routed To 0.00%
+     Subnet : U13-23        Subnet : U13-18        Subnet : C49-1         Subnet : U13-37        Subnet : C56-1       Violation         Net NetC55_1   is broken into 3 sub-nets. Routed To 0.00%
+     Subnet : U14-4         Subnet : C55-1         Subnet : R66-1       Violation         Net NetJ2_10   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : J2-10         Subnet : R64-1       Violation         Net NetJ2_11   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : J2-11         Subnet : R65-1       Violation         Net NetR52_1   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U13-7         Subnet : R52-1       Violation         Net NetR54_1   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U13-27        Subnet : R54-1       Violation         Net NetR63_2   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U13-24        Subnet : R63-2       Violation         Net P1_15   is broken into 3 sub-nets. Routed To 0.00%
+     Subnet : U1-88         Subnet : U13-34        Subnet : U14-3       Violation         Net P1_16   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-87         Subnet : U13-31      Violation         Net P1_17   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-86         Subnet : U13-30      Violation         Net P0_5   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-80         Subnet : U2-1        Violation         Net P0_7   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-78         Subnet : U2-6        Violation         Net P0_8   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-77         Subnet : U2-2        Violation         Net P0_9   is broken into 2 sub-nets. Routed To 0.00%
+     Subnet : U1-76         Subnet : U2-5     Rule Violations :39
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+
+Violations Detected : 39
+Time Elapsed        : 00:00:00

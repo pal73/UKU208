@@ -1,0 +1,211 @@
+;#<FEEDBACK># ARM Linker, 4.1 [Build 644]: Last Updated: Wed Nov 29 00:25:47 2017
+;VERSION 0.2
+;FILE at_arp.o
+arp_cache_ip <= USED 0
+arp_get_adr <= USED 0
+init_arp <= USED 0
+;FILE at_ethernet.o
+eth_get_adr <= USED 0
+init_eth_link <= USED 0
+;FILE at_icmp.o
+;FILE at_ip.o
+;FILE at_lib.o
+asc_to_b64 <= USED 0
+b64_to_asc <= USED 0
+bin_to_b64 <= USED 0
+get_crc <= USED 0
+get_u16 <= USED 0
+mem_rcopy <= USED 0
+str_copy <= USED 0
+str_crc <= USED 0
+str_pos <= USED 0
+str_scomp <= USED 0
+str_ucomp <= USED 0
+str_up_case <= USED 0
+;FILE at_mem.o
+init_mem <= USED 0
+;FILE at_system.o
+init_TcpNet <= USED 0
+;FILE at_tcp.o
+init_tcp <= USED 0
+tcp_abort <= USED 0
+tcp_check_send <= USED 0
+tcp_close <= USED 0
+tcp_connect <= USED 0
+tcp_get_adr <= USED 0
+tcp_get_buf <= USED 0
+tcp_get_free_port <= USED 0
+tcp_get_socket <= USED 0
+tcp_get_state <= USED 0
+tcp_listen <= USED 0
+tcp_max_dsize <= USED 0
+tcp_release_socket <= USED 0
+tcp_reset_tout <= USED 0
+tcp_reset_window <= USED 0
+tcp_send <= USED 0
+tcp_set_dack <= USED 0
+;FILE at_udp.o
+init_udp <= USED 0
+udp_close <= USED 0
+udp_get_buf <= USED 0
+udp_get_socket <= USED 0
+udp_mcast_ttl <= USED 0
+udp_open <= USED 0
+udp_release_socket <= USED 0
+udp_send <= USED 0
+;FILE beep.o
+__asm___6_beep_c_beep_drv____REV16 <= USED 0
+__asm___6_beep_c_beep_drv____REVSH <= USED 0
+;FILE common_func.o
+__asm___13_common_func_c_abs____REV16 <= USED 0
+__asm___13_common_func_c_abs____REVSH <= USED 0
+abs <= USED 0
+char2lcdbyx <= USED 0
+char2lcdh <= USED 0
+char2lcdhyx <= USED 0
+community2lcd <= USED 0
+event2ind <= USED 0
+event_data2ind <= USED 0
+int2lcd_m <= USED 0
+int2lcd_mm <= USED 0
+int2lcd_mmm <= USED 0
+int2lcdhyx <= USED 0
+ip2lcd <= USED 0
+long2lcd_mmm <= USED 0
+long2lcdyx_mmm <= USED 0
+pointer_set <= USED 0
+ptr_carry <= USED 0
+show_mess <= USED 0
+;FILE emac_lpc17xx.o
+__asm___14_EMAC_LPC17xx_c_f63b8310____REV16 <= USED 0
+__asm___14_EMAC_LPC17xx_c_f63b8310____REVSH <= USED 0
+init_ethernet <= USED 0
+;FILE ft_copro_cmds.o
+Ft_Gpu_CoCmd_Append <= USED 0
+Ft_Gpu_CoCmd_BitmapTransform <= USED 0
+Ft_Gpu_CoCmd_CSketch <= USED 0
+Ft_Gpu_CoCmd_Clock <= USED 0
+Ft_Gpu_CoCmd_ColdStart <= USED 0
+Ft_Gpu_CoCmd_EndFunc <= USED 0
+Ft_Gpu_CoCmd_Gauge <= USED 0
+Ft_Gpu_CoCmd_GetMatrix <= USED 0
+Ft_Gpu_CoCmd_GetProps <= USED 0
+Ft_Gpu_CoCmd_GetPtr <= USED 0
+Ft_Gpu_CoCmd_GradColor <= USED 0
+Ft_Gpu_CoCmd_Gradient <= USED 0
+Ft_Gpu_CoCmd_Inflate <= USED 0
+Ft_Gpu_CoCmd_Interrupt <= USED 0
+Ft_Gpu_CoCmd_Keys <= USED 0
+Ft_Gpu_CoCmd_LoadIdentity <= USED 0
+Ft_Gpu_CoCmd_LoadImage <= USED 0
+Ft_Gpu_CoCmd_Logo <= USED 0
+Ft_Gpu_CoCmd_MemCrc <= USED 0
+Ft_Gpu_CoCmd_MemSet <= USED 0
+Ft_Gpu_CoCmd_MemWrite <= USED 0
+Ft_Gpu_CoCmd_MemZero <= USED 0
+Ft_Gpu_CoCmd_Memcpy <= USED 0
+Ft_Gpu_CoCmd_Progress <= USED 0
+Ft_Gpu_CoCmd_RegRead <= USED 0
+Ft_Gpu_CoCmd_Rotate <= USED 0
+Ft_Gpu_CoCmd_Scale <= USED 0
+Ft_Gpu_CoCmd_ScreenSaver <= USED 0
+Ft_Gpu_CoCmd_Scrollbar <= USED 0
+Ft_Gpu_CoCmd_SetMatrix <= USED 0
+Ft_Gpu_CoCmd_Sketch <= USED 0
+Ft_Gpu_CoCmd_Snapshot <= USED 0
+Ft_Gpu_CoCmd_Spinner <= USED 0
+Ft_Gpu_CoCmd_StartFunc <= USED 0
+Ft_Gpu_CoCmd_Stop <= USED 0
+Ft_Gpu_CoCmd_TouchTransform <= USED 0
+Ft_Gpu_CoCmd_Translate <= USED 0
+Ft_Gpu_Copro_SendCmd <= USED 0
+;FILE ft_gpu_hal.o
+Ft_Gpu_81X_SelectSysCLK <= USED 0
+Ft_Gpu_Hal_Close <= USED 0
+Ft_Gpu_Hal_DeInit <= USED 0
+Ft_Gpu_Hal_Dec2Ascii <= USED 0
+Ft_Gpu_Hal_Init <= USED 0
+Ft_Gpu_Hal_Rd32 <= USED 0
+Ft_Gpu_Hal_Rd8 <= USED 0
+Ft_Gpu_Hal_RdMem <= USED 0
+Ft_Gpu_Hal_ResetCmdFifo <= USED 0
+Ft_Gpu_Hal_ResetDLBuffer <= USED 0
+Ft_Gpu_Hal_Sleep <= USED 0
+Ft_Gpu_Hal_Transfer8 <= USED 0
+Ft_Gpu_Hal_TransferString <= USED 0
+Ft_Gpu_Hal_WaitLogo_Finish <= USED 0
+Ft_Gpu_Hal_Wr8 <= USED 0
+Ft_Gpu_Hal_WrMem <= USED 0
+Ft_Gpu_HostCommand_Ext3 <= USED 0
+__asm___12_FT_Gpu_Hal_c_b07723e1____REV16 <= USED 0
+__asm___12_FT_Gpu_Hal_c_b07723e1____REVSH <= USED 0
+;FILE gran.o
+gran <= USED 0
+gran_long <= USED 0
+gran_ring <= USED 0
+;FILE graphic.o
+__asm___9_graphic_c_draw____REV16 <= USED 0
+__asm___9_graphic_c_draw____REVSH <= USED 0
+draw <= USED 0
+draw_ptr <= USED 0
+draw_rectangle <= USED 0
+graphic_print <= USED 0
+graphic_print_text <= USED 0
+graphic_print_text_text <= USED 0
+plot <= USED 0
+;FILE lcd_agm1232_uku207_3.o
+__asm___22_lcd_AGM1232_uku207_3_c_lcd1_chk____REV16 <= USED 0
+__asm___22_lcd_AGM1232_uku207_3_c_lcd1_chk____REVSH <= USED 0
+delay <= USED 0
+lcd_init_ <= USED 0
+lcd_off <= USED 0
+ltstrobe <= USED 0
+status <= USED 0
+;FILE main.o
+SAMAPP_Russian <= USED 0
+__asm___6_main_c_caracter____REV16 <= USED 0
+__asm___6_main_c_caracter____REVSH <= USED 0
+abs_pal <= USED 0
+can_reset_hndl <= USED 0
+def_ips_set <= USED 0
+def_set <= USED 0
+init_ETH <= USED 0
+inv_search <= USED 0
+parol_init <= USED 0
+rtc_init <= USED 0
+timer0_interrupt <= USED 0
+watchdog_enable <= USED 0
+watchdog_reset <= USED 0
+;FILE mess.o
+mess_find <= USED 0
+mess_find_unvol <= USED 0
+mess_send <= USED 0
+;FILE net_config_http.o
+init_system <= USED 0
+;FILE ret.o
+ret <= USED 0
+ret_ind <= USED 0
+ret_ind_hndl <= USED 0
+ret_ind_sec <= USED 0
+ret_ind_sec_hndl <= USED 0
+;FILE riverdi.o
+__asm___9_riverdi_c_delayus____REV16 <= USED 0
+__asm___9_riverdi_c_delayus____REVSH <= USED 0
+delayus <= USED 0
+rd16 <= USED 0
+spi1_unconfig <= USED 0
+;FILE simbols.o
+__asm___9_simbols_c_sAVNET____REV16 <= USED 0
+__asm___9_simbols_c_sAVNET____REVSH <= USED 0
+;FILE startup_lpc17xx.o
+;FILE system_lpc17xx.o
+__asm___16_system_LPC17xx_c_6b61f0cc____REV16 <= USED 0
+__asm___16_system_LPC17xx_c_6b61f0cc____REVSH <= USED 0
+;FILE timer.o
+__asm___7_Timer_c_30a5fda8____REV16 <= USED 0
+__asm___7_Timer_c_30a5fda8____REVSH <= USED 0
+delayMs <= USED 0
+disable_timer <= USED 0
+enable_timer <= USED 0
+init_timer <= USED 0
+reset_timer <= USED 0

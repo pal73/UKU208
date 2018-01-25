@@ -1,0 +1,662 @@
+Build target 'UKU-IP55-2017'
+custom translating web.inp...
+Custom: C:\Keil\ARM\bin\fcarm @Web\Web.inp
+FCARM FILE CONVERTER V2.29
+*** ERROR: COMMAND-FILE 'Web\Web.inp' NOT FOUND
+Target not created
+Build target 'UKU-IP55-2017'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(911): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(2469): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2470): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2476): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2477): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2483): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2484): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2490): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2491): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2691): warning:  #177-D: variable "tempUI" was declared but never referenced
+main.c(4670): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4819): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4820): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4863): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4864): warning:  #177-D: variable "i" was declared but never referenced
+main.c(6788): warning:  #9-D: nested comment is not allowed
+main.c(942): warning:  #550-D: variable "i" was set but never used
+main.c(943): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(944): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(11843): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11800)
+main.c(11955): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11899)
+main.c(11999): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11955)
+main.c(12213): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11999)
+main.c(12313): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 12213)
+main.c(12367): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 12313)
+main.c(18651): warning:  #9-D: nested comment is not allowed
+main.c(18852): warning:  #177-D: variable "i" was declared but never referenced
+main.c(18563): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(658): warning:  #177-D: function "timer_poll" was declared but never referenced
+main.c(8848): warning: C3017W: ptr may be used before being set
+main.c(8848): warning: C3017W: deep may be used before being set
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=92404 RO-data=2012 RW-data=944 ZI-data=36520  
+FromELF: creating hex file...
+".\EXE\UKU_ip55.axf" - 0 Error(s), 43 Warning(s).
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(911): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(2469): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2470): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2476): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2477): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2483): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2484): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2490): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2491): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2691): warning:  #177-D: variable "tempUI" was declared but never referenced
+main.c(4670): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4819): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4820): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4863): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4864): warning:  #177-D: variable "i" was declared but never referenced
+main.c(6788): warning:  #9-D: nested comment is not allowed
+main.c(942): warning:  #550-D: variable "i" was set but never used
+main.c(943): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(944): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(11843): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11800)
+main.c(11955): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11899)
+main.c(11999): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11955)
+main.c(12213): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11999)
+main.c(12313): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 12213)
+main.c(12367): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 12313)
+main.c(18602): error:  #20: identifier "SHIFT_REL_AV_NET" is undefined
+main.c(18651): warning:  #9-D: nested comment is not allowed
+main.c(18852): warning:  #177-D: variable "i" was declared but never referenced
+main.c(18563): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(658): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+Target not created
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(911): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(2469): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2470): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2476): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2477): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2483): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2484): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2490): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2491): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2691): warning:  #177-D: variable "tempUI" was declared but never referenced
+main.c(4670): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4819): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4820): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4863): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4864): warning:  #177-D: variable "i" was declared but never referenced
+main.c(6788): warning:  #9-D: nested comment is not allowed
+main.c(942): warning:  #550-D: variable "i" was set but never used
+main.c(943): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(944): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(11843): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11800)
+main.c(11955): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11899)
+main.c(11999): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11955)
+main.c(12213): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 11999)
+main.c(12313): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 12213)
+main.c(12367): warning:  #47-D: incompatible redefinition of macro "SIMAXIDEF" (declared at line 12313)
+main.c(18644): warning:  #9-D: nested comment is not allowed
+main.c(18845): warning:  #177-D: variable "i" was declared but never referenced
+main.c(18563): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(658): warning:  #177-D: function "timer_poll" was declared but never referenced
+main.c(8848): warning: C3017W: ptr may be used before being set
+main.c(8848): warning: C3017W: deep may be used before being set
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=92396 RO-data=2012 RW-data=944 ZI-data=36520  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 43 Warning(s).
+Build target 'RIVERDI'
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(911): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(2469): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2470): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2476): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2477): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2483): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2484): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2490): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2491): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2691): warning:  #177-D: variable "tempUI" was declared but never referenced
+main.c(4670): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4819): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4820): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4863): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4864): warning:  #177-D: variable "i" was declared but never referenced
+main.c(6788): warning:  #9-D: nested comment is not allowed
+main.c(942): warning:  #550-D: variable "i" was set but never used
+main.c(943): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(944): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(9272): error:  #36: the #if for this directive is missing
+main.c(8847): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "i" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(8849): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(9500): warning:  #9-D: nested comment is not allowed
+main.c(9701): warning:  #177-D: variable "i" was declared but never referenced
+main.c(9419): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(658): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+Target not created
+Build target 'RIVERDI'
+compiling main.c...
+main.c(911): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(2469): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2470): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2476): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2477): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2483): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2484): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2490): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2491): warning:  #68-D: integer conversion resulted in a change of sign
+main.c(2691): warning:  #177-D: variable "tempUI" was declared but never referenced
+main.c(4670): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4819): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4820): warning:  #177-D: variable "i" was declared but never referenced
+main.c(4863): warning:  #177-D: variable "sss" was declared but never referenced
+main.c(4864): warning:  #177-D: variable "i" was declared but never referenced
+main.c(6788): warning:  #9-D: nested comment is not allowed
+main.c(942): warning:  #550-D: variable "i" was set but never used
+main.c(943): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(944): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(8847): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "i" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(8848): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(8849): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(9497): warning:  #9-D: nested comment is not allowed
+main.c(9698): warning:  #177-D: variable "i" was declared but never referenced
+main.c(9416): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(658): warning:  #177-D: function "timer_poll" was declared but never referenced
+linking...
+Program Size: Code=68686 RO-data=2010 RW-data=936 ZI-data=36520  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 33 Warning(s).
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(911): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(911): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(942): warning:  #550-D: variable "i" was set but never used
+main.c(943): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(944): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1276): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1926): warning:  #9-D: nested comment is not allowed
+main.c(2127): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1845): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(658): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=15134 RO-data=1910 RW-data=516 ZI-data=34260  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 26 Warning(s).
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(912): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(943): warning:  #550-D: variable "i" was set but never used
+main.c(944): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(945): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1279): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1927): warning:  #9-D: nested comment is not allowed
+main.c(2128): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1846): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(659): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling riverdi.c...
+riverdi.c(12): warning:  #1-D: last line of file ends without a newline
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=12136 RO-data=1896 RW-data=508 ZI-data=34256  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 27 Warning(s).
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(912): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(943): warning:  #550-D: variable "i" was set but never used
+main.c(944): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(945): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1279): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1927): warning:  #9-D: nested comment is not allowed
+main.c(2128): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1846): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(659): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling riverdi.c...
+riverdi.c(12): warning:  #1-D: last line of file ends without a newline
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=12086 RO-data=1894 RW-data=508 ZI-data=34256  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 27 Warning(s).
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(912): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(943): warning:  #550-D: variable "i" was set but never used
+main.c(944): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(945): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1279): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1927): warning:  #9-D: nested comment is not allowed
+main.c(2128): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1846): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(659): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling riverdi.c...
+riverdi.c(12): warning:  #1-D: last line of file ends without a newline
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=12086 RO-data=1894 RW-data=508 ZI-data=34256  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 27 Warning(s).
+"" 
+--- Error: failed to execute '"" '
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(912): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(943): warning:  #550-D: variable "i" was set but never used
+main.c(944): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(945): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1279): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1927): warning:  #9-D: nested comment is not allowed
+main.c(2128): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1846): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(659): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling riverdi.c...
+riverdi.c(12): warning:  #1-D: last line of file ends without a newline
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=12086 RO-data=1894 RW-data=508 ZI-data=34256  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 27 Warning(s).
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(912): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(943): warning:  #550-D: variable "i" was set but never used
+main.c(944): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(945): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1279): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1927): warning:  #9-D: nested comment is not allowed
+main.c(2128): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1846): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(659): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling riverdi.c...
+riverdi.c(12): warning:  #1-D: last line of file ends without a newline
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=12086 RO-data=1894 RW-data=508 ZI-data=34256  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 27 Warning(s).
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(912): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(943): warning:  #550-D: variable "i" was set but never used
+main.c(944): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(945): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1279): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1927): warning:  #9-D: nested comment is not allowed
+main.c(2128): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1846): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(659): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling riverdi.c...
+riverdi.c(12): warning:  #1-D: last line of file ends without a newline
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=12136 RO-data=1896 RW-data=508 ZI-data=34256  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 27 Warning(s).
+"" 
+--- Error: failed to execute '"" '
+Build target 'RIVERDI'
+assembling startup_LPC17xx.s...
+compiling Net_Config_HTTP.c...
+compiling common_func.c...
+common_func.c(1255): warning:  #177-D: variable "dt" was declared but never referenced
+common_func.c(363): warning: C3017W: tempii may be used before being set
+compiling mess.c...
+compiling ret.c...
+compiling gran.c...
+compiling main.c...
+main.c(912): warning:  #177-D: variable "ptr_cnt" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt1" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt2" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt3" was declared but never referenced
+main.c(912): warning:  #177-D: variable "ptr_cnt4" was declared but never referenced
+main.c(943): warning:  #550-D: variable "i" was set but never used
+main.c(944): warning:  #177-D: variable "ii_" was declared but never referenced
+main.c(945): warning:  #177-D: variable "ii_cnt" was declared but never referenced
+main.c(1277): warning:  #177-D: variable "temp_SS" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "deep" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "cap" was declared but never referenced
+main.c(1278): warning:  #177-D: variable "ptr" was declared but never referenced
+main.c(1279): warning:  #177-D: variable "av_head" was declared but never referenced
+main.c(1927): warning:  #9-D: nested comment is not allowed
+main.c(2128): warning:  #177-D: variable "i" was declared but never referenced
+main.c(1846): warning:  #177-D: variable "mac_adr" was declared but never referenced
+main.c(659): warning:  #177-D: function "timer_poll" was declared but never referenced
+compiling simbols.c...
+compiling graphic.c...
+graphic.c(182): warning:  #177-D: variable "num_bite" was declared but never referenced
+graphic.c(183): warning:  #177-D: variable "y_bit_begin" was declared but never referenced
+graphic.c(348): warning:  #550-D: variable "s" was set but never used
+graphic.c(349): warning:  #550-D: variable "minus" was set but never used
+graphic.c(350): warning:  #550-D: variable "zero_on" was set but never used
+graphic.c(351): warning:  #550-D: variable "simb_num" was set but never used
+compiling riverdi.c...
+riverdi.c(12): warning:  #1-D: last line of file ends without a newline
+compiling system_LPC17xx.c...
+compiling Timer.c...
+compiling beep.c...
+compiling lcd_AGM1232_uku207_3.c...
+compiling EMAC_LPC17xx.c...
+linking...
+Program Size: Code=12136 RO-data=1896 RW-data=508 ZI-data=34256  
+FromELF: creating hex file...
+".\EXE\UKU_RIV.axf" - 0 Error(s), 27 Warning(s).

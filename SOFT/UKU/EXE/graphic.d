@@ -1,0 +1,11 @@
+.\EXE\graphic.o: graphic.c
+.\EXE\graphic.o: graphic.h
+.\EXE\graphic.o: C:\Keil\ARM\INC\NXP\LPC17xx\LPC17XX.H
+.\EXE\graphic.o: C:\Keil\ARM\CMSIS\Include\core_cm3.h
+.\EXE\graphic.o: C:\Keil\ARM\RV31\INC\stdint.h
+.\EXE\graphic.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\EXE\graphic.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\EXE\graphic.o: C:\Keil\ARM\INC\NXP\LPC17xx\system_LPC17xx.h
+.\EXE\graphic.o: main.h
+.\EXE\graphic.o: C:\Keil\ARM\RV31\INC\rtl.h
+.\EXE\graphic.o: simbols.h

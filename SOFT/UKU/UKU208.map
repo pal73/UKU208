@@ -1,0 +1,2041 @@
+ARM Linker, 4.1 [Build 644] [Standard]
+
+==============================================================================
+
+Section Cross References
+
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(.text) for Reset_Handler
+    startup_lpc17xx.o(RESET) refers to main.o(.text) for SysTick_Handler
+    startup_lpc17xx.o(RESET) refers to timer.o(.text) for TIMER0_IRQHandler
+    startup_lpc17xx.o(RESET) refers to uart0.o(.text) for UART0_IRQHandler
+    startup_lpc17xx.o(RESET) refers to emac_lpc17xx.o(.text) for ENET_IRQHandler
+    startup_lpc17xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    net_config_http.o(.text) refers to at_ethernet.o(i.init_eth_link) for init_eth_link
+    net_config_http.o(.text) refers to at_udp.o(i.init_udp) for init_udp
+    net_config_http.o(.text) refers to at_tcp.o(i.init_tcp) for init_tcp
+    net_config_http.o(.text) refers to at_ethernet.o(i.run_eth_link) for run_eth_link
+    net_config_http.o(.text) refers to at_tcp.o(i.tcp_poll_sockets) for tcp_poll_sockets
+    net_config_http.o(.text) refers to at_udp.o(i.process_udp) for process_udp
+    net_config_http.o(.text) refers to at_tcp.o(i.process_tcp) for process_tcp
+    net_config_http.o(.text) refers to at_ethernet.o(i.eth_send_frame) for eth_send_frame
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.data) for dig
+    common_func.o(.text) refers to main.o(.data) for zero_on
+    common_func.o(.text) refers to main.o(.data) for dig
+    common_func.o(.text) refers to common_func.o(.text) for bin2bcd_int
+    common_func.o(.text) refers to common_func.o(.text) for bcd2lcd_zero
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for dig
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for bin2bcd_int
+    common_func.o(.text) refers to common_func.o(.text) for bcd2lcd_zero
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for dig
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for bin2bcd_int
+    common_func.o(.text) refers to common_func.o(.text) for bcd2lcd_zero
+    common_func.o(.text) refers to main.o(.data) for dig
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for bin2bcd_int
+    common_func.o(.text) refers to common_func.o(.text) for bcd2lcd_zero
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for dig
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for ptr_carry
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to common_func.o(.text) for int2lcd
+    common_func.o(.text) refers to common_func.o(.text) for sub_bgnd
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.constdata) for sm_mont
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.data) for bFL2
+    common_func.o(.text) refers to main.o(.constdata) for ABCDEF
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to main.o(.constdata) for ABCDEF
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.constdata) for ABCDEF
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.constdata) for ABCDEF
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.constdata) for ABCDEF
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.data) for a_ind
+    common_func.o(.text) refers to main.o(.data) for ind_pointer
+    common_func.o(.text) refers to main.o(.bss) for b_ind
+    common_func.o(.text) refers to main.o(.data) for ind_pointer
+    common_func.o(.text) refers to main.o(.bss) for b_ind
+    common_func.o(.text) refers to common_func.o(.text) for clr_scrn
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to common_func.o(.text) for bgnd_par
+    common_func.o(.text) refers to common_func.o(.text) for tree_up
+    common_func.o(.text) refers to ret.o(.text) for ret
+    common_func.o(.text) refers to main.o(.data) for a_ind
+    common_func.o(.text) refers to common_func.o(.text) for find
+    common_func.o(.text) refers to common_func.o(.text) for int2lcd
+    common_func.o(.text) refers to common_func.o(.text) for sub_bgnd
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.constdata) for sm_mont
+    mess.o(.text) refers to mess.o(.bss) for .bss
+    mess.o(.text) refers to mess.o(.bss) for .bss
+    mess.o(.text) refers to mess.o(.bss) for .bss
+    mess.o(.text) refers to mess.o(.data) for .data
+    mess.o(.text) refers to mess.o(.bss) for .bss
+    mess.o(.text) refers to mess.o(.data) for .data
+    ret.o(.text) refers to ret.o(.data) for .data
+    ret.o(.text) refers to ret.o(.data) for .data
+    ret.o(.text) refers to main.o(.data) for a_ind
+    ret.o(.text) refers to ret.o(.data) for .data
+    ret.o(.text) refers to ret.o(.data) for .data
+    ret.o(.text) refers to main.o(.data) for a_ind
+    ret.o(.text) refers to ret.o(.data) for .data
+    ret.o(.text) refers to common_func.o(.text) for tree_down
+    ret.o(.text) refers to ret.o(.data) for .data
+    main.o(.text) refers to beep.o(.text) for beep_drv
+    main.o(.text) refers to system_lpc17xx.o(.text) for SystemInit
+    main.o(.text) refers to 25lc640ssp1.o(.text) for lc640_read
+    main.o(.text) refers to printf1.o(i.__0printf$1) for __2printf
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to system_lpc17xx.o(.data) for SystemFrequency
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Wr16
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Cmdfifo_Freespace
+    main.o(.text) refers to main.o(.text) for Ft_Gpu_Hal_CheckCmdBuffer_
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Wr32
+    main.o(.text) refers to main.o(.text) for Ft_Gpu_Hal_Updatecmdfifo_
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dlstart
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmdBuf
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_SetFont
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Swap
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrMemFromFlash
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dlstart
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_SetFont
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Text
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Swap
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrMemFromFlash
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dlstart
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_SetFont
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Text
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Swap
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to main.o(.bss) for .bss
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to main.o(.bss) for .bss
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to main.o(.constdata) for .constdata
+    main.o(.text) refers to riverdi.o(.text) for rd32
+    main.o(.text) refers to common_func.o(.text) for bgnd_par
+    main.o(.text) refers to common_func.o(.text) for int2lcd
+    main.o(.text) refers to common_func.o(.text) for sub_bgnd
+    main.o(.text) refers to common_func.o(.text) for find
+    main.o(.text) refers to common_func.o(.text) for int2lcdyx
+    main.o(.text) refers to common_func.o(.text) for long2lcdhyx
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dlstart
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_FgColor
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_BgColor
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Slider
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Track
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Toggle
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Button
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Text
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to main.o(.constdata) for .constdata
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Number
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dial
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Swap
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to common_func.o(.text) for tree_down
+    main.o(.text) refers to beep.o(.text) for beep_init
+    main.o(.text) refers to gran.o(.text) for gran_ring_char
+    main.o(.text) refers to gran.o(.text) for gran_char
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Text
+    main.o(.text) refers to riverdi.o(.text) for wr32
+    main.o(.text) refers to riverdi.o(.text) for wr8
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dlstart
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_FgColor
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_BgColor
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Number
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Calibrate
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Swap
+    main.o(.text) refers to common_func.o(.text) for tree_up
+    main.o(.text) refers to main.o(.data) for .data
+    graphic.o(.text) refers to main.o(.bss) for lcd_bitmap
+    graphic.o(.text) refers to graphic.o(.text) for draw
+    graphic.o(.text) refers to graphic.o(.text) for draw
+    graphic.o(.text) refers to main.o(.bss) for lcd_bitmap
+    graphic.o(.text) refers to graphic.o(.text) for plot
+    graphic.o(.text) refers to graphic.o(.text) for plot
+    graphic.o(.text) refers to main.o(.constdata) for caracter
+    graphic.o(.text) refers to graphic.o(.text) for plot
+    graphic.o(.text) refers to main.o(.constdata) for caracter
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    riverdi.o(.text) refers to riverdi.o(.text) for spi1
+    system_lpc17xx.o(.text) refers to system_lpc17xx.o(.data) for .data
+    timer.o(.text) refers to timer.o(.data) for .data
+    timer.o(.text) refers to timer.o(.text) for NVIC_EnableIRQ
+    timer.o(.text) refers to timer.o(.data) for .data
+    beep.o(.text) refers to beep.o(.data) for .data
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    uart0.o(.text) refers to uart0.o(.data) for .data
+    uart0.o(.text) refers to uart0.o(.bss) for .bss
+    uart0.o(.text) refers to uart0.o(.text) for putchar0
+    uart0.o(.text) refers to uart0.o(.text) for putchar0
+    uart0.o(.text) refers to uart0.o(.text) for putchar0
+    uart0.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    uart0.o(.text) refers to uart0.o(.text) for putchar0
+    uart0.o(.text) refers to uart0.o(.text) for uart_out_adr0
+    uart0.o(.text) refers to uart0.o(.text) for uart_out_adr0
+    uart0.o(.text) refers to uart0.o(.text) for uart_out_adr0
+    uart0.o(.text) refers to uart0.o(.text) for NVIC_EnableIRQ
+    uart0.o(.text) refers to system_lpc17xx.o(.data) for SystemFrequency
+    uart0.o(.text) refers to uart0.o(.data) for .data
+    uart0.o(.text) refers to uart0.o(.bss) for .bss
+    uart0.o(.text) refers to uart0.o(.data) for .data
+    uart0.o(.text) refers to uart0.o(.bss) for .bss
+    uart0.o(.text) refers to main.o(.data) for plazma_bat_drv1
+    uart0.o(.text) refers to main.o(.data) for plazma_bat_drv0
+    uart0.o(.text) refers to main.o(.data) for bat_drv_rx_cnt
+    uart0.o(.text) refers to main.o(.bss) for bat_drv_rx_buff
+    uart0.o(.text) refers to uart0.o(.text) for index_offset0
+    uart0.o(.text) refers to uart0.o(.bss) for .bss
+    uart0.o(.text) refers to uart0.o(.text) for index_offset0
+    uart0.o(.text) refers to uart0.o(.text) for control_check0
+    uart0.o(.text) refers to uart0.o(.data) for .data
+    uart0.o(.text) refers to uart0.o(.bss) for .bss
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.text) for output_MDIO
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.text) for turnaround_MDIO
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.data) for .data
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.text) for output_MDIO
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.text) for turnaround_MDIO
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.data) for .data
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.text) for write_PHY
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.text) for read_PHY
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.data) for .data
+    emac_lpc17xx.o(.text) refers to net_config_http.o(.data) for own_hw_adr
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.bss) for .bss
+    emac_lpc17xx.o(.text) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    emac_lpc17xx.o(.text) refers to at_ethernet.o(i.put_in_queue) for put_in_queue
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.bss) for .bss
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.bss) for .bss
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to strlen.o(.text) for strlen
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmdBuf
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_CheckCmdBuffer
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartCmdTransfer
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Updatecmdfifo
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_SendStr
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_SendStr
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to main.o(.data) for ft_plazma
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_SendStr
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WaitCmdfifo_empty
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to strlen.o(.text) for strlen
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_SendStr
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_StartFunc
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_Copro_SendCmd
+    ft_copro_cmds.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_EndFunc
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to strlen.o(.text) for strlen
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Transfer16
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Transfer16
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Transfer32
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Transfer16
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Transfer32
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Wr16
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Rd16
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Rd16
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Cmdfifo_Freespace
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Cmdfifo_Freespace
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_CheckCmdBuffer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartCmdTransfer
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Updatecmdfifo
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WaitCmdfifo_empty
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Rd16
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_CheckCmdBuffer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Wr32
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Updatecmdfifo
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to riverdi.o(.text) for spi1
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_StartTransfer
+    ft_gpu_hal.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_EndTransfer
+    ft_gpu_hal.o(.text) refers to strlen.o(.text) for strlen
+    at_tcp.o(i.init_tcp) refers to at_lib.o(i.mem_set) for mem_set
+    at_tcp.o(i.init_tcp) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.init_tcp) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_map_socket) for tcp_map_socket
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.get_u32) for get_u32
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.process_tcp) refers to at_mem.o(i.resize_mem) for resize_mem
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_send_reset) for tcp_send_reset
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_process_opt) for tcp_process_opt
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_init_seq) for tcp_init_seq
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.process_tcp) refers to net_config_http.o(.text) for sys_error
+    at_tcp.o(i.process_tcp) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_abort) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_abort) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_abort) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_abort) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_check_send) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_check_send) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_close) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_close) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_close) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_close) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_get_free_port) for tcp_get_free_port
+    at_tcp.o(i.tcp_connect) refers to at_lib.o(i.mem_test) for mem_test
+    at_tcp.o(i.tcp_connect) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_init_seq) for tcp_init_seq
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_connect) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_connect) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_adr) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_buf) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_tcp.o(i.tcp_get_free_port) refers to at_tcp.o(.data) for .data
+    at_tcp.o(i.tcp_get_free_port) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_get_free_port) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_socket) refers to net_config_http.o(.text) for sys_error
+    at_tcp.o(i.tcp_get_socket) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_socket) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_get_state) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_get_state) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_init_seq) refers to at_system.o(.data) for timer_cnt
+    at_tcp.o(i.tcp_listen) refers to at_lib.o(i.mem_set) for mem_set
+    at_tcp.o(i.tcp_listen) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_listen) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_map_socket) refers to at_lib.o(i.SwapB) for SwapB
+    at_tcp.o(i.tcp_map_socket) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_tcp.o(i.tcp_map_socket) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_map_socket) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_map_socket) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_max_dsize) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_send_frame) for tcp_send_frame
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_poll_sockets) refers to at_system.o(.data) for sys_tick
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.constdata) for tcp_RetryTout
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(.data) for .data
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.constdata) for tcp_SynRetryTout
+    at_tcp.o(i.tcp_process_opt) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_release_socket) refers to at_lib.o(i.mem_set) for mem_set
+    at_tcp.o(i.tcp_release_socket) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_release_socket) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_reset_tout) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_reset_tout) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_reset_window) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_reset_window) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_reset_window) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_send) refers to at_mem.o(i.resize_mem) for resize_mem
+    at_tcp.o(i.tcp_send) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.tcp_send) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_tcp.o(i.tcp_send) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_send) refers to at_tcp.o(i.tcp_send_frame) for tcp_send_frame
+    at_tcp.o(i.tcp_send) refers to at_mem.o(i.free_mem) for free_mem
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.constdata) for tcp_RetryTout
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.constdata) for tcp_MaxRetry
+    at_tcp.o(i.tcp_send_ctrl) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_tcp.o(i.tcp_send_ctrl) refers to at_tcp.o(i.tcp_send_frame) for tcp_send_frame
+    at_tcp.o(i.tcp_send_ctrl) refers to at_mem.o(i.free_mem) for free_mem
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.SwapB) for SwapB
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.set_u32) for set_u32
+    at_tcp.o(i.tcp_send_frame) refers to at_ip.o(i.ip_get_locadr) for ip_get_locadr
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_tcp.o(i.tcp_send_frame) refers to at_ip.o(i.ip_send_frame) for ip_send_frame
+    at_tcp.o(i.tcp_send_frame) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_send_frame) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_send_reset) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_send_reset) refers to at_lib.o(i.SwapB) for SwapB
+    at_tcp.o(i.tcp_send_reset) refers to at_lib.o(i.get_u32) for get_u32
+    at_tcp.o(i.tcp_send_reset) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_send_reset) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_send_reset) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_set_dack) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_set_dack) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_set_retransmit) refers to at_mem.o(i.free_mem) for free_mem
+    at_tcp.o(i.tcp_transit) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_RetryTout
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_2MSSTout
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_InitRetryTout
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_ConRetry
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_MaxRetry
+    at_udp.o(i.init_udp) refers to at_lib.o(i.mem_set) for mem_set
+    at_udp.o(i.init_udp) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.init_udp) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.process_udp) refers to at_lib.o(i.SwapB) for SwapB
+    at_udp.o(i.process_udp) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_udp.o(i.process_udp) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_udp.o(i.process_udp) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.process_udp) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_close) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_close) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_get_buf) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_udp.o(i.udp_get_socket) refers to net_config_http.o(.text) for sys_error
+    at_udp.o(i.udp_get_socket) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_get_socket) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_mcast_ttl) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_mcast_ttl) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_open) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_open) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_open) refers to at_udp.o(.data) for .data
+    at_udp.o(i.udp_release_socket) refers to at_lib.o(i.mem_set) for mem_set
+    at_udp.o(i.udp_release_socket) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_release_socket) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_send) refers to at_lib.o(i.mem_test) for mem_test
+    at_udp.o(i.udp_send) refers to at_lib.o(i.SwapB) for SwapB
+    at_udp.o(i.udp_send) refers to at_ip.o(i.ip_get_locadr) for ip_get_locadr
+    at_udp.o(i.udp_send) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_udp.o(i.udp_send) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_udp.o(i.udp_send) refers to at_mem.o(i.free_mem) for free_mem
+    at_udp.o(i.udp_send) refers to at_ip.o(i.ip_send_frame) for ip_send_frame
+    at_udp.o(i.udp_send) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_send) refers to net_config_http.o(.bss) for udp_socket
+    at_ethernet.o(i.eth_chk_adr) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_ethernet.o(i.eth_chk_adr) refers to net_config_http.o(.data) for own_hw_adr
+    at_ethernet.o(i.eth_get_adr) refers to at_arp.o(i.arp_get_adr) for arp_get_adr
+    at_ethernet.o(i.eth_send_frame) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_ethernet.o(i.eth_send_frame) refers to at_lib.o(i.mem_test) for mem_test
+    at_ethernet.o(i.eth_send_frame) refers to at_arp.o(i.is_subnet_bcast) for is_subnet_bcast
+    at_ethernet.o(i.eth_send_frame) refers to at_arp.o(i.arp_cache_find) for arp_cache_find
+    at_ethernet.o(i.eth_send_frame) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_ethernet.o(i.eth_send_frame) refers to emac_lpc17xx.o(.text) for send_frame
+    at_ethernet.o(i.eth_send_frame) refers to at_ethernet.o(.constdata) for .constdata
+    at_ethernet.o(i.eth_send_frame) refers to at_ip.o(.constdata) for IP_Broadcast
+    at_ethernet.o(i.eth_send_frame) refers to net_config_http.o(.data) for own_hw_adr
+    at_ethernet.o(i.init_eth_link) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_ethernet.o(i.init_eth_link) refers to emac_lpc17xx.o(.text) for init_ethernet
+    at_ethernet.o(i.init_eth_link) refers to at_arp.o(i.init_arp) for init_arp
+    at_ethernet.o(i.init_eth_link) refers to at_ethernet.o(.data) for .data
+    at_ethernet.o(i.put_in_queue) refers to at_mem.o(i.free_mem) for free_mem
+    at_ethernet.o(i.put_in_queue) refers to at_ethernet.o(.data) for .data
+    at_ethernet.o(i.put_in_queue) refers to at_ethernet.o(.bss) for .bss
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(i.poll_ethernet) for poll_ethernet
+    at_ethernet.o(i.run_eth_link) refers to at_arp.o(i.arp_cache_update) for arp_cache_update
+    at_ethernet.o(i.run_eth_link) refers to at_arp.o(i.process_arp) for process_arp
+    at_ethernet.o(i.run_eth_link) refers to at_ip.o(i.ip_chk_frame) for ip_chk_frame
+    at_ethernet.o(i.run_eth_link) refers to at_lib.o(i.mem_test) for mem_test
+    at_ethernet.o(i.run_eth_link) refers to at_arp.o(i.arp_cache_add) for arp_cache_add
+    at_ethernet.o(i.run_eth_link) refers to at_icmp.o(i.process_icmp) for process_icmp
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(i.process_hl_igmp) for process_hl_igmp
+    at_ethernet.o(i.run_eth_link) refers to net_config_http.o(.text) for process_hl_udp
+    at_ethernet.o(i.run_eth_link) refers to net_config_http.o(.text) for process_hl_tcp
+    at_ethernet.o(i.run_eth_link) refers to at_mem.o(i.free_mem) for free_mem
+    at_ethernet.o(i.run_eth_link) refers to at_system.o(.data) for sec_tick
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(.data) for .data
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(.bss) for .bss
+    at_mem.o(i.alloc_mem) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_mem.o(i.alloc_mem) refers to net_config_http.o(.text) for sys_error
+    at_mem.o(i.alloc_mem) refers to at_mem.o(.data) for .data
+    at_mem.o(i.alloc_mem) refers to net_config_http.o(.constdata) for MPool_Size
+    at_mem.o(i.alloc_mem) refers to net_config_http.o(.bss) for Mem_Pool
+    at_mem.o(i.free_mem) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_mem.o(i.free_mem) refers to net_config_http.o(.text) for sys_error
+    at_mem.o(i.free_mem) refers to net_config_http.o(.bss) for Mem_Pool
+    at_mem.o(i.free_mem) refers to at_mem.o(.data) for .data
+    at_mem.o(i.init_mem) refers to net_config_http.o(.bss) for Mem_Pool
+    at_mem.o(i.init_mem) refers to net_config_http.o(.constdata) for MPool_Size
+    at_mem.o(i.init_mem) refers to at_mem.o(.data) for .data
+    at_mem.o(i.resize_mem) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_mem.o(i.resize_mem) refers to at_mem.o(.data) for .data
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.mem_test) for mem_test
+    at_arp.o(i.arp_cache_add) refers to at_arp.o(i.arp_cache_alloc) for arp_cache_alloc
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_add) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.constdata) for arp_MaxRetry
+    at_arp.o(i.arp_cache_alloc) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_alloc) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_alloc) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.mem_test) for mem_test
+    at_arp.o(i.arp_cache_find) refers to at_arp.o(i.arp_cache_alloc) for arp_cache_alloc
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_cache_find) refers to at_arp.o(i.arp_send_req) for arp_send_req
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_find) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_cache_find) refers to at_ethernet.o(.constdata) for MAC_Broadcast
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.constdata) for arp_MaxRetry
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.constdata) for arp_Resend
+    at_arp.o(i.arp_cache_ip) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_ip) refers to at_arp.o(i.is_subnet_bcast) for is_subnet_bcast
+    at_arp.o(i.arp_cache_ip) refers to at_arp.o(i.arp_cache_find) for arp_cache_find
+    at_arp.o(i.arp_cache_ip) refers to at_ip.o(.constdata) for IP_Broadcast
+    at_arp.o(i.arp_cache_update) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_update) refers to at_arp.o(i.arp_send_req) for arp_send_req
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.constdata) for arp_Resend
+    at_arp.o(i.arp_cache_update) refers to at_arp.o(.data) for .data
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_update) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_cache_update) refers to at_ip.o(.constdata) for IP_Broadcast
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_get_adr) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_get_adr) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_get_adr) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_get_response) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_get_response) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.constdata) for arp_MaxRetry
+    at_arp.o(i.arp_send_reply) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_arp.o(i.arp_send_reply) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_send_reply) refers to at_arp.o(i.arp_cache_add) for arp_cache_add
+    at_arp.o(i.arp_send_reply) refers to emac_lpc17xx.o(.text) for send_frame
+    at_arp.o(i.arp_send_reply) refers to at_mem.o(i.free_mem) for free_mem
+    at_arp.o(i.arp_send_reply) refers to net_config_http.o(.data) for own_hw_adr
+    at_arp.o(i.arp_send_reply) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_send_req) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_arp.o(i.arp_send_req) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_send_req) refers to at_lib.o(i.mem_set) for mem_set
+    at_arp.o(i.arp_send_req) refers to emac_lpc17xx.o(.text) for send_frame
+    at_arp.o(i.arp_send_req) refers to at_mem.o(i.free_mem) for free_mem
+    at_arp.o(i.arp_send_req) refers to at_ethernet.o(.constdata) for MAC_Broadcast
+    at_arp.o(i.arp_send_req) refers to net_config_http.o(.data) for own_hw_adr
+    at_arp.o(i.arp_send_req) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_send_req) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.init_arp) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.init_arp) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.is_subnet_bcast) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.is_subnet_bcast) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_arp.o(i.is_subnet_bcast) refers to at_system.o(.bss) for localm
+    at_arp.o(i.process_arp) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.process_arp) refers to at_arp.o(i.arp_get_response) for arp_get_response
+    at_arp.o(i.process_arp) refers to at_arp.o(i.arp_send_reply) for arp_send_reply
+    at_arp.o(i.process_arp) refers to at_system.o(.bss) for localm
+    at_arp.o(i.process_arp) refers to net_config_http.o(.data) for own_hw_adr
+    at_ip.o(i.ip_chk_frame) refers to at_lib.o(i.SwapB) for SwapB
+    at_ip.o(i.ip_chk_frame) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_ip.o(i.ip_chk_frame) refers to net_config_http.o(.text) for igmp_is_member
+    at_ip.o(i.ip_chk_frame) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_ip.o(i.ip_chk_frame) refers to at_ethernet.o(i.eth_chk_adr) for eth_chk_adr
+    at_ip.o(i.ip_chk_frame) refers to at_ip.o(i.ip_get_chksum) for ip_get_chksum
+    at_ip.o(i.ip_chk_frame) refers to at_system.o(.bss) for localm
+    at_ip.o(i.ip_chk_frame) refers to at_ip.o(.constdata) for .constdata
+    at_ip.o(i.ip_get_chksum) refers to at_lib.o(i.CalcChksum) for CalcChksum
+    at_ip.o(i.ip_get_locadr) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_ip.o(i.ip_get_locadr) refers to at_lib.o(i.mem_test) for mem_test
+    at_ip.o(i.ip_get_locadr) refers to net_config_http.o(.constdata) for netif_cfg
+    at_ip.o(i.ip_get_locadr) refers to at_ip.o(.data) for .data
+    at_ip.o(i.ip_get_locadr) refers to at_system.o(.bss) for localm
+    at_ip.o(i.ip_send_frame) refers to at_lib.o(i.SwapB) for SwapB
+    at_ip.o(i.ip_send_frame) refers to at_ip.o(i.ip_get_locadr) for ip_get_locadr
+    at_ip.o(i.ip_send_frame) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_ip.o(i.ip_send_frame) refers to at_ip.o(i.ip_get_chksum) for ip_get_chksum
+    at_ip.o(i.ip_send_frame) refers to net_config_http.o(.text) for dispatch_frame
+    at_ip.o(i.ip_send_frame) refers to at_ip.o(.data) for .data
+    at_icmp.o(i.process_icmp) refers to at_lib.o(i.CalcChksum) for CalcChksum
+    at_icmp.o(i.process_icmp) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_icmp.o(i.process_icmp) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_icmp.o(i.process_icmp) refers to at_ip.o(i.ip_send_frame) for ip_send_frame
+    at_icmp.o(i.process_icmp) refers to at_mem.o(i.free_mem) for free_mem
+    at_lib.o(i.CalcChksum) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_lib.o(i.asc_to_b64) refers to at_lib.o(i.encode_b64) for encode_b64
+    at_lib.o(i.bin_to_b64) refers to at_lib.o(i.encode_b64) for encode_b64
+    at_lib.o(i.is_subnet) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_lib.o(i.str_crc) refers to at_lib.o(i.get_crc) for get_crc
+    at_system.o(i.init_TcpNet) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_system.o(i.init_TcpNet) refers to at_mem.o(i.init_mem) for init_mem
+    at_system.o(i.init_TcpNet) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_system.o(i.init_TcpNet) refers to net_config_http.o(.text) for init_system
+    at_system.o(i.init_TcpNet) refers to at_system.o(.data) for .data
+    at_system.o(i.init_TcpNet) refers to net_config_http.o(.constdata) for tick_rate
+    at_system.o(i.init_TcpNet) refers to net_config_http.o(.constdata) for nlocalm
+    at_system.o(i.init_TcpNet) refers to at_system.o(.bss) for .bss
+    at_system.o(i.main_TcpNet) refers to net_config_http.o(.text) for run_system
+    at_system.o(i.main_TcpNet) refers to at_system.o(.data) for .data
+    at_system.o(i.main_TcpNet) refers to net_config_http.o(.constdata) for tick_rate
+    at_system.o(i.timer_tick) refers to at_system.o(.data) for .data
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7.o(.ARM.Collect$$$$00000007) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    printfb.o(i.__0fprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0fprintf$bare) refers to main.o(.text) for fputc
+    printfb.o(i.__0printf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0printf$bare) refers to main.o(.text) for fputc
+    printfb.o(i.__0printf$bare) refers to main.o(.data) for __stdout
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printfb.o(i.__0vfprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vfprintf$bare) refers to main.o(.text) for fputc
+    printfb.o(i.__0vprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vprintf$bare) refers to main.o(.text) for fputc
+    printfb.o(i.__0vprintf$bare) refers to main.o(.data) for __stdout
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printf0.o(i.__0fprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0fprintf$0) refers to main.o(.text) for fputc
+    printf0.o(i.__0printf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0printf$0) refers to main.o(.text) for fputc
+    printf0.o(i.__0printf$0) refers to main.o(.data) for __stdout
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf0.o(i.__0vfprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vfprintf$0) refers to main.o(.text) for fputc
+    printf0.o(i.__0vprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vprintf$0) refers to main.o(.text) for fputc
+    printf0.o(i.__0vprintf$0) refers to main.o(.data) for __stdout
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf1.o(i.__0fprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0fprintf$1) refers to main.o(.text) for fputc
+    printf1.o(i.__0printf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0printf$1) refers to main.o(.text) for fputc
+    printf1.o(i.__0printf$1) refers to main.o(.data) for __stdout
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i.__0vfprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vfprintf$1) refers to main.o(.text) for fputc
+    printf1.o(i.__0vprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vprintf$1) refers to main.o(.text) for fputc
+    printf1.o(i.__0vprintf$1) refers to main.o(.data) for __stdout
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf2.o(i.__0fprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0fprintf$2) refers to main.o(.text) for fputc
+    printf2.o(i.__0printf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0printf$2) refers to main.o(.text) for fputc
+    printf2.o(i.__0printf$2) refers to main.o(.data) for __stdout
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf2.o(i.__0vfprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vfprintf$2) refers to main.o(.text) for fputc
+    printf2.o(i.__0vprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vprintf$2) refers to main.o(.text) for fputc
+    printf2.o(i.__0vprintf$2) refers to main.o(.data) for __stdout
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf3.o(i.__0fprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0fprintf$3) refers to main.o(.text) for fputc
+    printf3.o(i.__0printf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0printf$3) refers to main.o(.text) for fputc
+    printf3.o(i.__0printf$3) refers to main.o(.data) for __stdout
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i.__0vfprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vfprintf$3) refers to main.o(.text) for fputc
+    printf3.o(i.__0vprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vprintf$3) refers to main.o(.text) for fputc
+    printf3.o(i.__0vprintf$3) refers to main.o(.data) for __stdout
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf4.o(i.__0fprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0fprintf$4) refers to main.o(.text) for fputc
+    printf4.o(i.__0printf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0printf$4) refers to main.o(.text) for fputc
+    printf4.o(i.__0printf$4) refers to main.o(.data) for __stdout
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i.__0vfprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vfprintf$4) refers to main.o(.text) for fputc
+    printf4.o(i.__0vprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vprintf$4) refers to main.o(.text) for fputc
+    printf4.o(i.__0vprintf$4) refers to main.o(.data) for __stdout
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf5.o(i.__0fprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0fprintf$5) refers to main.o(.text) for fputc
+    printf5.o(i.__0printf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0printf$5) refers to main.o(.text) for fputc
+    printf5.o(i.__0printf$5) refers to main.o(.data) for __stdout
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i.__0vfprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vfprintf$5) refers to main.o(.text) for fputc
+    printf5.o(i.__0vprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vprintf$5) refers to main.o(.text) for fputc
+    printf5.o(i.__0vprintf$5) refers to main.o(.data) for __stdout
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf6.o(i.__0fprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0fprintf$6) refers to main.o(.text) for fputc
+    printf6.o(i.__0printf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0printf$6) refers to main.o(.text) for fputc
+    printf6.o(i.__0printf$6) refers to main.o(.data) for __stdout
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i.__0vfprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vfprintf$6) refers to main.o(.text) for fputc
+    printf6.o(i.__0vprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vprintf$6) refers to main.o(.text) for fputc
+    printf6.o(i.__0vprintf$6) refers to main.o(.data) for __stdout
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_pre_padding) for _printf_pre_padding
+    printf6.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_post_padding) for _printf_post_padding
+    printf7.o(i.__0fprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0fprintf$7) refers to main.o(.text) for fputc
+    printf7.o(i.__0printf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0printf$7) refers to main.o(.text) for fputc
+    printf7.o(i.__0printf$7) refers to main.o(.data) for __stdout
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i.__0vfprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vfprintf$7) refers to main.o(.text) for fputc
+    printf7.o(i.__0vprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vprintf$7) refers to main.o(.text) for fputc
+    printf7.o(i.__0vprintf$7) refers to main.o(.data) for __stdout
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_pre_padding) for _printf_pre_padding
+    printf7.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_post_padding) for _printf_post_padding
+    printf8.o(i.__0fprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0fprintf$8) refers to main.o(.text) for fputc
+    printf8.o(i.__0printf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0printf$8) refers to main.o(.text) for fputc
+    printf8.o(i.__0printf$8) refers to main.o(.data) for __stdout
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i.__0vfprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vfprintf$8) refers to main.o(.text) for fputc
+    printf8.o(i.__0vprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vprintf$8) refers to main.o(.text) for fputc
+    printf8.o(i.__0vprintf$8) refers to main.o(.data) for __stdout
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_pre_padding) for _printf_pre_padding
+    printf8.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0fprintf) refers to main.o(.text) for fputc
+    printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0printf) refers to main.o(.text) for fputc
+    printfa.o(i.__0printf) refers to main.o(.data) for __stdout
+    printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0snprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0sprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0sprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vfprintf) refers to main.o(.text) for fputc
+    printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vprintf) refers to main.o(.text) for fputc
+    printfa.o(i.__0vprintf) refers to main.o(.data) for __stdout
+    printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0vsprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i._fp_digits) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._fp_digits) refers to dmul.o(.text) for __aeabi_dmul
+    printfa.o(i._fp_digits) refers to ddiv.o(.text) for __aeabi_ddiv
+    printfa.o(i._fp_digits) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    printfa.o(i._fp_digits) refers to dadd.o(.text) for __aeabi_dadd
+    printfa.o(i._fp_digits) refers to dfixul.o(.text) for __aeabi_d2ulz
+    printfa.o(i._fp_digits) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_pre_padding) for _printf_pre_padding
+    printfa.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i._printf_core) refers to printfa.o(i._fp_digits) for _fp_digits
+    printfa.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfa.o(i._printf_post_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry7.o(.ARM.Collect$$$$00000007) refers to main.o(.text) for main
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_lpc17xx.o(HEAP), (2048 bytes).
+    Removing net_config_http.o(.text), (20 bytes).
+    Removing net_config_http.o(.text), (14 bytes).
+    Removing net_config_http.o(.text), (4 bytes).
+    Removing net_config_http.o(.text), (4 bytes).
+    Removing net_config_http.o(.text), (10 bytes).
+    Removing net_config_http.o(.text), (4 bytes).
+    Removing net_config_http.o(.bss), (140 bytes).
+    Removing net_config_http.o(.bss), (60 bytes).
+    Removing net_config_http.o(.bss), (352 bytes).
+    Removing net_config_http.o(.constdata), (60 bytes).
+    Removing net_config_http.o(.constdata), (1 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (1 bytes).
+    Removing net_config_http.o(.constdata), (1 bytes).
+    Removing net_config_http.o(.constdata), (1 bytes).
+    Removing net_config_http.o(.constdata), (1 bytes).
+    Removing net_config_http.o(.constdata), (1 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.constdata), (1 bytes).
+    Removing net_config_http.o(.data), (16 bytes).
+    Removing net_config_http.o(.data), (6 bytes).
+    Removing common_func.o(.emb_text), (8 bytes).
+    Removing common_func.o(.text), (10 bytes).
+    Removing common_func.o(.text), (24 bytes).
+    Removing common_func.o(.text), (28 bytes).
+    Removing common_func.o(.text), (36 bytes).
+    Removing common_func.o(.text), (72 bytes).
+    Removing common_func.o(.text), (104 bytes).
+    Removing common_func.o(.text), (120 bytes).
+    Removing common_func.o(.text), (164 bytes).
+    Removing common_func.o(.text), (160 bytes).
+    Removing common_func.o(.text), (172 bytes).
+    Removing common_func.o(.text), (88 bytes).
+    Removing common_func.o(.text), (44 bytes).
+    Removing common_func.o(.text), (96 bytes).
+    Removing common_func.o(.text), (18 bytes).
+    Removing common_func.o(.text), (1884 bytes).
+    Removing common_func.o(.text), (68 bytes).
+    Removing common_func.o(.text), (316 bytes).
+    Removing common_func.o(.text), (136 bytes).
+    Removing common_func.o(.text), (44 bytes).
+    Removing common_func.o(.text), (48 bytes).
+    Removing common_func.o(.text), (72 bytes).
+    Removing common_func.o(.text), (128 bytes).
+    Removing common_func.o(.text), (132 bytes).
+    Removing common_func.o(.text), (52 bytes).
+    Removing common_func.o(.text), (52 bytes).
+    Removing common_func.o(.text), (100 bytes).
+    Removing common_func.o(.text), (44 bytes).
+    Removing common_func.o(.text), (232 bytes).
+    Removing mess.o(.text), (60 bytes).
+    Removing mess.o(.text), (48 bytes).
+    Removing mess.o(.text), (72 bytes).
+    Removing mess.o(.text), (64 bytes).
+    Removing mess.o(.bss), (112 bytes).
+    Removing mess.o(.data), (8 bytes).
+    Removing ret.o(.text), (16 bytes).
+    Removing ret.o(.text), (48 bytes).
+    Removing ret.o(.text), (12 bytes).
+    Removing ret.o(.text), (44 bytes).
+    Removing ret.o(.text), (12 bytes).
+    Removing ret.o(.text), (32 bytes).
+    Removing ret.o(.data), (20 bytes).
+    Removing gran.o(.text), (22 bytes).
+    Removing gran.o(.text), (22 bytes).
+    Removing gran.o(.text), (22 bytes).
+    Removing gran.o(.text), (22 bytes).
+    Removing gran.o(.text), (18 bytes).
+    Removing main.o(.emb_text), (8 bytes).
+    Removing main.o(.text), (28 bytes).
+    Removing main.o(.text), (20 bytes).
+    Removing main.o(.text), (38 bytes).
+    Removing main.o(.text), (144 bytes).
+    Removing main.o(.text), (208 bytes).
+    Removing main.o(.text), (228 bytes).
+    Removing main.o(.text), (12 bytes).
+    Removing main.o(.text), (12 bytes).
+    Removing main.o(.text), (10 bytes).
+    Removing main.o(.text), (2 bytes).
+    Removing main.o(.text), (2 bytes).
+    Removing main.o(.text), (2 bytes).
+    Removing main.o(.text), (2 bytes).
+    Removing main.o(.text), (20 bytes).
+    Removing main.o(.text), (136 bytes).
+    Removing main.o(.text), (4752 bytes).
+    Removing main.o(.text), (268 bytes).
+    Removing main.o(.text), (832 bytes).
+    Removing main.o(.text), (28 bytes).
+    Removing main.o(.text), (12 bytes).
+    Removing main.o(.text), (2 bytes).
+    Removing main.o(.bss), (15568 bytes).
+    Removing main.o(.bss), (152 bytes).
+    Removing main.o(.bss), (76 bytes).
+    Removing main.o(.bss), (168 bytes).
+    Removing main.o(.bss), (198 bytes).
+    Removing main.o(.bss), (42 bytes).
+    Removing main.o(.bss), (24 bytes).
+    Removing main.o(.bss), (192 bytes).
+    Removing main.o(.bss), (1920 bytes).
+    Removing main.o(.bss), (14 bytes).
+    Removing main.o(.bss), (20 bytes).
+    Removing main.o(.bss), (50 bytes).
+    Removing main.o(.bss), (20 bytes).
+    Removing main.o(.bss), (12 bytes).
+    Removing main.o(.bss), (15 bytes).
+    Removing main.o(.bss), (63 bytes).
+    Removing main.o(.bss), (30 bytes).
+    Removing main.o(.bss), (12 bytes).
+    Removing main.o(.bss), (12 bytes).
+    Removing main.o(.bss), (12 bytes).
+    Removing main.o(.constdata), (1588 bytes).
+    Removing main.o(.constdata), (17 bytes).
+    Removing main.o(.constdata), (21 bytes).
+    Removing main.o(.constdata), (21 bytes).
+    Removing main.o(.constdata), (21 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (5109 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (7 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (5 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (6 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (8 bytes).
+    Removing main.o(.data), (8 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (3 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (8 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (3 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing simbols.o(.emb_text), (8 bytes).
+    Removing simbols.o(.constdata), (150 bytes).
+    Removing simbols.o(.constdata), (150 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing graphic.o(.emb_text), (8 bytes).
+    Removing graphic.o(.text), (1084 bytes).
+    Removing graphic.o(.text), (122 bytes).
+    Removing graphic.o(.text), (120 bytes).
+    Removing graphic.o(.text), (140 bytes).
+    Removing graphic.o(.text), (90 bytes).
+    Removing graphic.o(.text), (328 bytes).
+    Removing graphic.o(.text), (200 bytes).
+    Removing riverdi.o(.emb_text), (8 bytes).
+    Removing riverdi.o(.text), (20 bytes).
+    Removing riverdi.o(.text), (56 bytes).
+    Removing riverdi.o(.text), (52 bytes).
+    Removing riverdi.o(.text), (20 bytes).
+    Removing riverdi.o(.text), (80 bytes).
+    Removing riverdi.o(.text), (96 bytes).
+    Removing riverdi.o(.text), (116 bytes).
+    Removing riverdi.o(.text), (80 bytes).
+    Removing riverdi.o(.text), (88 bytes).
+    Removing riverdi.o(.text), (104 bytes).
+    Removing riverdi.o(.text), (60 bytes).
+    Removing riverdi.o(.text), (60 bytes).
+    Removing system_lpc17xx.o(.emb_text), (8 bytes).
+    Removing timer.o(.emb_text), (8 bytes).
+    Removing timer.o(.text), (76 bytes).
+    Removing timer.o(.text), (20 bytes).
+    Removing timer.o(.text), (20 bytes).
+    Removing timer.o(.text), (24 bytes).
+    Removing timer.o(.text), (60 bytes).
+    Removing timer.o(.text), (24 bytes).
+    Removing beep.o(.emb_text), (8 bytes).
+    Removing beep.o(.text), (52 bytes).
+    Removing beep.o(.text), (2 bytes).
+    Removing beep.o(.data), (12 bytes).
+    Removing beep.o(.data), (1 bytes).
+    Removing beep.o(.data), (1 bytes).
+    Removing 25lc640ssp1.o(.emb_text), (8 bytes).
+    Removing 25lc640ssp1.o(.text), (120 bytes).
+    Removing 25lc640ssp1.o(.text), (144 bytes).
+    Removing 25lc640ssp1.o(.text), (132 bytes).
+    Removing 25lc640ssp1.o(.text), (128 bytes).
+    Removing 25lc640ssp1.o(.text), (124 bytes).
+    Removing 25lc640ssp1.o(.text), (140 bytes).
+    Removing 25lc640ssp1.o(.text), (132 bytes).
+    Removing uart0.o(.emb_text), (8 bytes).
+    Removing uart0.o(.text), (68 bytes).
+    Removing uart0.o(.text), (86 bytes).
+    Removing uart0.o(.text), (46 bytes).
+    Removing uart0.o(.text), (68 bytes).
+    Removing uart0.o(.text), (114 bytes).
+    Removing uart0.o(.text), (16 bytes).
+    Removing uart0.o(.text), (16 bytes).
+    Removing uart0.o(.text), (16 bytes).
+    Removing uart0.o(.text), (224 bytes).
+    Removing uart0.o(.text), (44 bytes).
+    Removing uart0.o(.text), (2 bytes).
+    Removing uart0.o(.text), (28 bytes).
+    Removing uart0.o(.text), (80 bytes).
+    Removing uart0.o(.text), (144 bytes).
+    Removing uart0.o(.text), (24 bytes).
+    Removing uart0.o(.bss), (50 bytes).
+    Removing uart0.o(.bss), (50 bytes).
+    Removing uart0.o(.bss), (50 bytes).
+    Removing uart0.o(.bss), (60 bytes).
+    Removing uart0.o(.data), (4 bytes).
+    Removing uart0.o(.data), (1 bytes).
+    Removing emac_lpc17xx.o(.emb_text), (8 bytes).
+    Removing emac_lpc17xx.o(.text), (60 bytes).
+    Removing emac_lpc17xx.o(.text), (156 bytes).
+    Removing emac_lpc17xx.o(.text), (120 bytes).
+    Removing emac_lpc17xx.o(.text), (536 bytes).
+    Removing emac_lpc17xx.o(.text), (68 bytes).
+    Removing emac_lpc17xx.o(.text), (36 bytes).
+    Removing emac_lpc17xx.o(.data), (8 bytes).
+    Removing ft_copro_cmds.o(.text), (4 bytes).
+    Removing ft_copro_cmds.o(.text), (28 bytes).
+    Removing ft_copro_cmds.o(.text), (24 bytes).
+    Removing ft_copro_cmds.o(.text), (22 bytes).
+    Removing ft_copro_cmds.o(.text), (60 bytes).
+    Removing ft_copro_cmds.o(.text), (60 bytes).
+    Removing ft_copro_cmds.o(.text), (32 bytes).
+    Removing ft_copro_cmds.o(.text), (72 bytes).
+    Removing ft_copro_cmds.o(.text), (92 bytes).
+    Removing ft_copro_cmds.o(.text), (50 bytes).
+    Removing ft_copro_cmds.o(.text), (64 bytes).
+    Removing ft_copro_cmds.o(.text), (64 bytes).
+    Removing ft_copro_cmds.o(.text), (48 bytes).
+    Removing ft_copro_cmds.o(.text), (26 bytes).
+    Removing ft_copro_cmds.o(.text), (8 bytes).
+    Removing ft_copro_cmds.o(.text), (26 bytes).
+    Removing ft_copro_cmds.o(.text), (52 bytes).
+    Removing ft_copro_cmds.o(.text), (32 bytes).
+    Removing ft_copro_cmds.o(.text), (72 bytes).
+    Removing ft_copro_cmds.o(.text), (150 bytes).
+    Removing ft_copro_cmds.o(.text), (42 bytes).
+    Removing ft_copro_cmds.o(.text), (40 bytes).
+    Removing ft_copro_cmds.o(.text), (42 bytes).
+    Removing ft_copro_cmds.o(.text), (74 bytes).
+    Removing ft_copro_cmds.o(.text), (52 bytes).
+    Removing ft_copro_cmds.o(.text), (92 bytes).
+    Removing ft_copro_cmds.o(.text), (94 bytes).
+    Removing ft_copro_cmds.o(.text), (84 bytes).
+    Removing ft_copro_cmds.o(.text), (86 bytes).
+    Removing ft_copro_cmds.o(.text), (64 bytes).
+    Removing ft_copro_cmds.o(.text), (42 bytes).
+    Removing ft_copro_cmds.o(.text), (150 bytes).
+    Removing ft_copro_cmds.o(.text), (32 bytes).
+    Removing ft_copro_cmds.o(.text), (36 bytes).
+    Removing ft_copro_cmds.o(.text), (32 bytes).
+    Removing ft_copro_cmds.o(.text), (52 bytes).
+    Removing ft_copro_cmds.o(.text), (52 bytes).
+    Removing ft_copro_cmds.o(.text), (52 bytes).
+    Removing ft_copro_cmds.o(.text), (92 bytes).
+    Removing ft_copro_cmds.o(.text), (86 bytes).
+    Removing ft_copro_cmds.o(.text), (32 bytes).
+    Removing ft_copro_cmds.o(.text), (60 bytes).
+    Removing ft_copro_cmds.o(.text), (42 bytes).
+    Removing ft_copro_cmds.o(.text), (88 bytes).
+    Removing ft_copro_cmds.o(.text), (32 bytes).
+    Removing ft_copro_cmds.o(.text), (114 bytes).
+    Removing ft_copro_cmds.o(.text), (60 bytes).
+    Removing ft_copro_cmds.o(.text), (52 bytes).
+    Removing ft_copro_cmds.o(.text), (8 bytes).
+    Removing ft_copro_cmds.o(.text), (42 bytes).
+    Removing ft_copro_cmds.o(.text), (32 bytes).
+    Removing ft_copro_cmds.o(.text), (64 bytes).
+    Removing ft_gpu_hal.o(.emb_text), (8 bytes).
+    Removing ft_gpu_hal.o(.text), (2 bytes).
+    Removing ft_gpu_hal.o(.text), (2 bytes).
+    Removing ft_gpu_hal.o(.text), (2 bytes).
+    Removing ft_gpu_hal.o(.text), (6 bytes).
+    Removing ft_gpu_hal.o(.text), (2 bytes).
+    Removing ft_gpu_hal.o(.text), (92 bytes).
+    Removing ft_gpu_hal.o(.text), (10 bytes).
+    Removing ft_gpu_hal.o(.text), (6 bytes).
+    Removing ft_gpu_hal.o(.text), (40 bytes).
+    Removing ft_gpu_hal.o(.text), (48 bytes).
+    Removing ft_gpu_hal.o(.text), (58 bytes).
+    Removing ft_gpu_hal.o(.text), (28 bytes).
+    Removing ft_gpu_hal.o(.text), (30 bytes).
+    Removing ft_gpu_hal.o(.text), (56 bytes).
+    Removing ft_gpu_hal.o(.text), (32 bytes).
+    Removing ft_gpu_hal.o(.text), (30 bytes).
+    Removing ft_gpu_hal.o(.text), (32 bytes).
+    Removing ft_gpu_hal.o(.text), (32 bytes).
+    Removing ft_gpu_hal.o(.text), (28 bytes).
+    Removing ft_gpu_hal.o(.text), (32 bytes).
+    Removing ft_gpu_hal.o(.text), (52 bytes).
+    Removing ft_gpu_hal.o(.text), (18 bytes).
+    Removing ft_gpu_hal.o(.text), (100 bytes).
+    Removing ft_gpu_hal.o(.text), (52 bytes).
+    Removing ft_gpu_hal.o(.text), (6 bytes).
+    Removing ft_gpu_hal.o(.text), (38 bytes).
+    Removing ft_gpu_hal.o(.text), (6 bytes).
+    Removing ft_gpu_hal.o(.text), (40 bytes).
+    Removing ft_gpu_hal.o(.text), (22 bytes).
+    Removing ft_gpu_hal.o(.text), (22 bytes).
+    Removing ft_gpu_hal.o(.text), (112 bytes).
+    Removing ft_gpu_hal.o(.text), (2 bytes).
+    Removing at_tcp.o(i.init_tcp), (24 bytes).
+    Removing at_tcp.o(i.process_tcp), (1132 bytes).
+    Removing at_tcp.o(i.tcp_abort), (88 bytes).
+    Removing at_tcp.o(i.tcp_check_send), (56 bytes).
+    Removing at_tcp.o(i.tcp_close), (132 bytes).
+    Removing at_tcp.o(i.tcp_connect), (172 bytes).
+    Removing at_tcp.o(i.tcp_get_adr), (24 bytes).
+    Removing at_tcp.o(i.tcp_get_buf), (16 bytes).
+    Removing at_tcp.o(i.tcp_get_free_port), (88 bytes).
+    Removing at_tcp.o(i.tcp_get_socket), (72 bytes).
+    Removing at_tcp.o(i.tcp_get_state), (44 bytes).
+    Removing at_tcp.o(i.tcp_init_seq), (20 bytes).
+    Removing at_tcp.o(i.tcp_listen), (124 bytes).
+    Removing at_tcp.o(i.tcp_map_socket), (160 bytes).
+    Removing at_tcp.o(i.tcp_max_dsize), (36 bytes).
+    Removing at_tcp.o(i.tcp_poll_sockets), (500 bytes).
+    Removing at_tcp.o(i.tcp_process_opt), (112 bytes).
+    Removing at_tcp.o(i.tcp_release_socket), (60 bytes).
+    Removing at_tcp.o(i.tcp_reset_tout), (48 bytes).
+    Removing at_tcp.o(i.tcp_reset_window), (80 bytes).
+    Removing at_tcp.o(i.tcp_send), (260 bytes).
+    Removing at_tcp.o(i.tcp_send_ctrl), (34 bytes).
+    Removing at_tcp.o(i.tcp_send_frame), (244 bytes).
+    Removing at_tcp.o(i.tcp_send_reset), (128 bytes).
+    Removing at_tcp.o(i.tcp_set_dack), (64 bytes).
+    Removing at_tcp.o(i.tcp_set_retransmit), (18 bytes).
+    Removing at_tcp.o(i.tcp_transit), (116 bytes).
+    Removing at_tcp.o(.data), (4 bytes).
+    Removing at_udp.o(i.init_udp), (28 bytes).
+    Removing at_udp.o(i.process_udp), (196 bytes).
+    Removing at_udp.o(i.udp_close), (44 bytes).
+    Removing at_udp.o(i.udp_get_buf), (16 bytes).
+    Removing at_udp.o(i.udp_get_socket), (72 bytes).
+    Removing at_udp.o(i.udp_mcast_ttl), (44 bytes).
+    Removing at_udp.o(i.udp_open), (124 bytes).
+    Removing at_udp.o(i.udp_release_socket), (48 bytes).
+    Removing at_udp.o(i.udp_send), (268 bytes).
+    Removing at_udp.o(.data), (2 bytes).
+    Removing at_ethernet.o(i.eth_chk_adr), (16 bytes).
+    Removing at_ethernet.o(i.eth_get_adr), (4 bytes).
+    Removing at_ethernet.o(i.eth_send_frame), (152 bytes).
+    Removing at_ethernet.o(i.init_eth_link), (36 bytes).
+    Removing at_ethernet.o(i.poll_ethernet), (2 bytes).
+    Removing at_ethernet.o(i.process_hl_igmp), (2 bytes).
+    Removing at_ethernet.o(i.run_eth_link), (176 bytes).
+    Removing at_ethernet.o(.constdata), (6 bytes).
+    Removing at_mem.o(i.init_mem), (36 bytes).
+    Removing at_mem.o(i.resize_mem), (52 bytes).
+    Removing at_arp.o(i.arp_cache_add), (196 bytes).
+    Removing at_arp.o(i.arp_cache_alloc), (108 bytes).
+    Removing at_arp.o(i.arp_cache_find), (280 bytes).
+    Removing at_arp.o(i.arp_cache_ip), (72 bytes).
+    Removing at_arp.o(i.arp_cache_update), (248 bytes).
+    Removing at_arp.o(i.arp_get_adr), (68 bytes).
+    Removing at_arp.o(i.arp_get_response), (104 bytes).
+    Removing at_arp.o(i.arp_send_reply), (156 bytes).
+    Removing at_arp.o(i.arp_send_req), (172 bytes).
+    Removing at_arp.o(i.init_arp), (40 bytes).
+    Removing at_arp.o(i.is_subnet_bcast), (44 bytes).
+    Removing at_arp.o(i.process_arp), (152 bytes).
+    Removing at_arp.o(.data), (2 bytes).
+    Removing at_ip.o(i.ip_chk_frame), (196 bytes).
+    Removing at_ip.o(i.ip_get_chksum), (10 bytes).
+    Removing at_ip.o(i.ip_get_locadr), (152 bytes).
+    Removing at_ip.o(i.ip_send_frame), (144 bytes).
+    Removing at_ip.o(.constdata), (4 bytes).
+    Removing at_ip.o(.data), (4 bytes).
+    Removing at_icmp.o(i.process_icmp), (116 bytes).
+    Removing at_lib.o(i.CalcChksum), (22 bytes).
+    Removing at_lib.o(i.CalcChksumBuf), (40 bytes).
+    Removing at_lib.o(i.CalcChksumVal), (10 bytes).
+    Removing at_lib.o(i.SwapB), (10 bytes).
+    Removing at_lib.o(i.asc_to_b64), (64 bytes).
+    Removing at_lib.o(i.b64_to_asc), (120 bytes).
+    Removing at_lib.o(i.bin_to_b64), (68 bytes).
+    Removing at_lib.o(i.encode_b64), (70 bytes).
+    Removing at_lib.o(i.get_crc), (40 bytes).
+    Removing at_lib.o(i.get_u16), (10 bytes).
+    Removing at_lib.o(i.get_u32), (22 bytes).
+    Removing at_lib.o(i.is_subnet), (34 bytes).
+    Removing at_lib.o(i.mem_comp), (30 bytes).
+    Removing at_lib.o(i.mem_copy), (28 bytes).
+    Removing at_lib.o(i.mem_rcopy), (54 bytes).
+    Removing at_lib.o(i.mem_set), (16 bytes).
+    Removing at_lib.o(i.mem_test), (22 bytes).
+    Removing at_lib.o(i.set_u32), (16 bytes).
+    Removing at_lib.o(i.str_copy), (22 bytes).
+    Removing at_lib.o(i.str_crc), (26 bytes).
+    Removing at_lib.o(i.str_pos), (26 bytes).
+    Removing at_lib.o(i.str_scomp), (26 bytes).
+    Removing at_lib.o(i.str_ucomp), (40 bytes).
+    Removing at_lib.o(i.str_up_case), (26 bytes).
+    Removing at_system.o(.emb_text), (0 bytes).
+    Removing at_system.o(i.init_TcpNet), (56 bytes).
+    Removing at_system.o(i.main_TcpNet), (60 bytes).
+    Removing at_system.o(i.timer_tick), (12 bytes).
+    Removing at_system.o(.bss), (60 bytes).
+    Removing at_system.o(.data), (8 bytes).
+    Removing dadd.o(.text), (336 bytes).
+    Removing dmul.o(.text), (226 bytes).
+    Removing ddiv.o(.text), (226 bytes).
+    Removing dfixul.o(.text), (48 bytes).
+    Removing cdrcmple.o(.text), (40 bytes).
+    Removing depilogue.o(.text), (198 bytes).
+
+533 unused section(s) (total 60629 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
+    ../../../cmprslib/lz77c.c                0x00000000   Number         0  __dclz77c.o ABSOLUTE
+    ../../microlib/division.c                0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../../microlib/division.c                0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../../microlib/fpadd.c                   0x00000000   Number         0  dadd.o ABSOLUTE
+    ../../microlib/fpdiv.c                   0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../../microlib/fpepilogue.c              0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../../microlib/fpfix.c                   0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../../microlib/fpmul.c                   0x00000000   Number         0  dmul.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry5.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry7.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llushr.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llshl.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printfa.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf8.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf6.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf5.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printfb.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf1.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf2.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf3.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf7.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf4.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf0.o ABSOLUTE
+    ../../microlib/printf/stubs.s            0x00000000   Number         0  stubs.o ABSOLUTE
+    ../../microlib/string/memset.c           0x00000000   Number         0  memseta.o ABSOLUTE
+    ../../microlib/string/strlen.c           0x00000000   Number         0  strlen.o ABSOLUTE
+    ../../microlib/stubs.s                   0x00000000   Number         0  iusefp.o ABSOLUTE
+    25lc640SSP1.c                            0x00000000   Number         0  25lc640ssp1.o ABSOLUTE
+    25lc640SSP1.c                            0x00000000   Number         0  25lc640ssp1.o ABSOLUTE
+    C:\Keil\ARM\Boards\Keil\MCB1700\RL\TCPnet\Library\EMAC_LPC17xx.c 0x00000000   Number         0  emac_lpc17xx.o ABSOLUTE
+    C:\\Keil\\ARM\\Boards\\Keil\\MCB1700\\RL\\TCPnet\\Library\\EMAC_LPC17xx.c 0x00000000   Number         0  emac_lpc17xx.o ABSOLUTE
+    FT_CoPro_Cmds.c                          0x00000000   Number         0  ft_copro_cmds.o ABSOLUTE
+    FT_Gpu_Hal.c                             0x00000000   Number         0  ft_gpu_hal.o ABSOLUTE
+    FT_Gpu_Hal.c                             0x00000000   Number         0  ft_gpu_hal.o ABSOLUTE
+    Net_Config_HTTP.c                        0x00000000   Number         0  net_config_http.o ABSOLUTE
+    SRC\\at_System.c                         0x00000000   Number         0  at_system.o ABSOLUTE
+    SRC\at_ARP.c                             0x00000000   Number         0  at_arp.o ABSOLUTE
+    SRC\at_Ethernet.c                        0x00000000   Number         0  at_ethernet.o ABSOLUTE
+    SRC\at_ICMP.c                            0x00000000   Number         0  at_icmp.o ABSOLUTE
+    SRC\at_IP.c                              0x00000000   Number         0  at_ip.o ABSOLUTE
+    SRC\at_Lib.c                             0x00000000   Number         0  at_lib.o ABSOLUTE
+    SRC\at_Mem.c                             0x00000000   Number         0  at_mem.o ABSOLUTE
+    SRC\at_System.c                          0x00000000   Number         0  at_system.o ABSOLUTE
+    SRC\at_TCP.c                             0x00000000   Number         0  at_tcp.o ABSOLUTE
+    SRC\at_UDP.c                             0x00000000   Number         0  at_udp.o ABSOLUTE
+    Timer.c                                  0x00000000   Number         0  timer.o ABSOLUTE
+    Timer.c                                  0x00000000   Number         0  timer.o ABSOLUTE
+    beep.c                                   0x00000000   Number         0  beep.o ABSOLUTE
+    beep.c                                   0x00000000   Number         0  beep.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    common_func.c                            0x00000000   Number         0  common_func.o ABSOLUTE
+    common_func.c                            0x00000000   Number         0  common_func.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    gran.c                                   0x00000000   Number         0  gran.o ABSOLUTE
+    graphic.c                                0x00000000   Number         0  graphic.o ABSOLUTE
+    graphic.c                                0x00000000   Number         0  graphic.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    mess.c                                   0x00000000   Number         0  mess.o ABSOLUTE
+    ret.c                                    0x00000000   Number         0  ret.o ABSOLUTE
+    riverdi.c                                0x00000000   Number         0  riverdi.o ABSOLUTE
+    riverdi.c                                0x00000000   Number         0  riverdi.o ABSOLUTE
+    simbols.c                                0x00000000   Number         0  simbols.o ABSOLUTE
+    simbols.c                                0x00000000   Number         0  simbols.o ABSOLUTE
+    startup_LPC17xx.s                        0x00000000   Number         0  startup_lpc17xx.o ABSOLUTE
+    system_LPC17xx.c                         0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    system_LPC17xx.c                         0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    uart0.c                                  0x00000000   Number         0  uart0.o ABSOLUTE
+    uart0.c                                  0x00000000   Number         0  uart0.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000cc   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000cc   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000d0   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000007                 0x000000d4   Section        8  entry7.o(.ARM.Collect$$$$00000007)
+    .ARM.Collect$$$$00002712                 0x000000dc   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000dc   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000e0   Section       28  startup_lpc17xx.o(.text)
+    .text                                    0x000000fc   Section        0  net_config_http.o(.text)
+    .text                                    0x00000100   Section        0  system_lpc17xx.o(.text)
+    .text                                    0x00000254   Section        0  timer.o(.text)
+    .text                                    0x00000298   Section        0  beep.o(.text)
+    .text                                    0x0000029a   Section        0  uidiv.o(.text)
+    .text                                    0x000002c8   Section       36  init.o(.text)
+    i.__scatterload_copy                     0x000002ec   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000002fa   Section        2  handlers.o(i.__scatterload_null)
+    .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
+    .text                                    0x00000300   Section        0  main.o(.text)
+    .text                                    0x00000594   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x000007b0   Section        0  uart0.o(.text)
+    .text                                    0x000008d4   Section        0  emac_lpc17xx.o(.text)
+    .text                                    0x00000974   Section        0  __dclz77c.o(.text)
+    i.__0printf$1                            0x000009d4   Section        0  printf1.o(i.__0printf$1)
+    i.__scatterload_zeroinit                 0x000009f4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x00000a04   Section        0  printf1.o(i._printf_core)
+    _printf_core                             0x00000a05   Thumb Code   338  printf1.o(i._printf_core)
+    i.alloc_mem                              0x00000b5c   Section        0  at_mem.o(i.alloc_mem)
+    i.free_mem                               0x00000c00   Section        0  at_mem.o(i.free_mem)
+    i.put_in_queue                           0x00000c68   Section        0  at_ethernet.o(i.put_in_queue)
+    .constdata                               0x00000c94   Section        4  net_config_http.o(.constdata)
+    .data                                    0x10000000   Section        2  main.o(.data)
+    .data                                    0x10000002   Section        2  main.o(.data)
+    .data                                    0x10000004   Section        2  main.o(.data)
+    .data                                    0x10000008   Section        4  main.o(.data)
+    .data                                    0x1000000c   Section        4  system_lpc17xx.o(.data)
+    .data                                    0x10000010   Section        8  timer.o(.data)
+    .data                                    0x10000018   Section       20  uart0.o(.data)
+    .data                                    0x1000002c   Section        8  at_ethernet.o(.data)
+    q_head                                   0x1000002c   Data           4  at_ethernet.o(.data)
+    q_tail                                   0x10000030   Data           4  at_ethernet.o(.data)
+    .data                                    0x10000034   Section        4  at_mem.o(.data)
+    Mem_Load                                 0x10000034   Data           4  at_mem.o(.data)
+    .bss                                     0x10000038   Section    16384  net_config_http.o(.bss)
+    .bss                                     0x10004038   Section      128  at_ethernet.o(.bss)
+    rx_queue                                 0x10004038   Data         128  at_ethernet.o(.bss)
+    STACK                                    0x100040b8   Section     2048  startup_lpc17xx.o(STACK)
+    .data                                    0x2007c000   Section     5197  main.o(.data)
+    sub_cnt                                  0x2007c003   Data           1  main.o(.data)
+    sub_cnt1                                 0x2007c004   Data           1  main.o(.data)
+    touch                                    0x2007c02c   Data           2  main.o(.data)
+    plazma                                   0x2007c054   Data           4  main.o(.data)
+    .bss                                     0x2007d450   Section      512  main.o(.bss)
+    .bss                                     0x2007d650   Section     2148  uart0.o(.bss)
+    .bss                                     0x2007deb8   Section    10852  emac_lpc17xx.o(.bss)
+    Rx_Desc                                  0x2007deb8   Data          32  emac_lpc17xx.o(.bss)
+    Rx_Stat                                  0x2007ded8   Data          32  emac_lpc17xx.o(.bss)
+    Tx_Desc                                  0x2007def8   Data          24  emac_lpc17xx.o(.bss)
+    Tx_Stat                                  0x2007df10   Data          12  emac_lpc17xx.o(.bss)
+    rx_buf                                   0x2007df1c   Data        6144  emac_lpc17xx.o(.bss)
+    tx_buf                                   0x2007f71c   Data        4608  emac_lpc17xx.o(.bss)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_lpc17xx.o(RESET)
+    _printf_a                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_c                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_charcount                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_d                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_e                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_f                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_flags                            0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_dec                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_hex                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_g                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_i                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_int_dec                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_l                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ll                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lld                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lli                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llo                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llu                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llx                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_dec                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_hex                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_oct                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ls                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_mbtowc                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_n                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_o                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_p                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_percent                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_pre_padding                      0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_return_value                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_s                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_sizespec                         0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_str                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_signed                  0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_unsigned                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_u                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wctomb                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_widthprec                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_x                                0x00000000   Number         0  stubs.o ABSOLUTE
+    arp_notify                                - Undefined Weak Reference
+    __main                                   0x000000cd   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000cd   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000d1   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000d5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_init                               0x000000d5   Thumb Code     0  entry7.o(.ARM.Collect$$$$00000007)
+    Reset_Handler                            0x000000e1   Thumb Code     4  startup_lpc17xx.o(.text)
+    NMI_Handler                              0x000000e5   Thumb Code     2  startup_lpc17xx.o(.text)
+    HardFault_Handler                        0x000000e7   Thumb Code     2  startup_lpc17xx.o(.text)
+    MemManage_Handler                        0x000000e9   Thumb Code     2  startup_lpc17xx.o(.text)
+    BusFault_Handler                         0x000000eb   Thumb Code     2  startup_lpc17xx.o(.text)
+    UsageFault_Handler                       0x000000ed   Thumb Code     2  startup_lpc17xx.o(.text)
+    SVC_Handler                              0x000000ef   Thumb Code     2  startup_lpc17xx.o(.text)
+    DebugMon_Handler                         0x000000f1   Thumb Code     2  startup_lpc17xx.o(.text)
+    PendSV_Handler                           0x000000f3   Thumb Code     2  startup_lpc17xx.o(.text)
+    BOD_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    CANActivity_IRQHandler                   0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    CAN_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    DMA_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT0_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT1_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT2_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT3_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C0_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C2_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2S_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    MCPWM_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL0_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    PWM1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    QEI_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    RIT_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    RTC_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    SPI_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP0_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER2_IRQHandler                        0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER3_IRQHandler                        0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART1_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART2_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART3_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    USBActivity_IRQHandler                   0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    USB_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    WDT_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    sys_error                                0x000000fd   Thumb Code     2  net_config_http.o(.text)
+    SystemInit                               0x00000101   Thumb Code   314  system_lpc17xx.o(.text)
+    TIMER0_IRQHandler                        0x00000255   Thumb Code    38  timer.o(.text)
+    TIMER1_IRQHandler                        0x0000027b   Thumb Code    16  timer.o(.text)
+    beep_drv                                 0x00000299   Thumb Code     2  beep.o(.text)
+    __aeabi_uidiv                            0x0000029b   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x0000029b   Thumb Code    44  uidiv.o(.text)
+    __scatterload                            0x000002c9   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000002c9   Thumb Code     0  init.o(.text)
+    __scatterload_copy                       0x000002ed   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000002fb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    uartWrite                                0x00000301   Thumb Code    28  main.o(.text)
+    fputc                                    0x0000031d   Thumb Code    14  main.o(.text)
+    ADC_IRQHandler                           0x0000032b   Thumb Code    12  main.o(.text)
+    InitUART0                                0x00000337   Thumb Code    48  main.o(.text)
+    SysTick_Handler                          0x00000367   Thumb Code   288  main.o(.text)
+    __TCP_ARM_VER                            0x00000413   Number         0  at_system.o ABSOLUTE
+    main                                     0x00000487   Thumb Code   198  main.o(.text)
+    ssp1                                     0x00000595   Thumb Code    16  25lc640ssp1.o(.text)
+    ssp1_config                              0x000005a5   Thumb Code   120  25lc640ssp1.o(.text)
+    ssp1_unconfig                            0x0000061d   Thumb Code    46  25lc640ssp1.o(.text)
+    lc640_wren                               0x0000064b   Thumb Code    52  25lc640ssp1.o(.text)
+    lc640_rdsr                               0x0000067f   Thumb Code    62  25lc640ssp1.o(.text)
+    lc640_read                               0x000006bd   Thumb Code   120  25lc640ssp1.o(.text)
+    lc640_write                              0x00000735   Thumb Code   108  25lc640ssp1.o(.text)
+    UART0_IRQHandler                         0x000007b1   Thumb Code   262  uart0.o(.text)
+    int_enable_eth                           0x000008d5   Thumb Code    10  emac_lpc17xx.o(.text)
+    int_disable_eth                          0x000008df   Thumb Code    10  emac_lpc17xx.o(.text)
+    ENET_IRQHandler                          0x000008e9   Thumb Code   124  emac_lpc17xx.o(.text)
+    __decompress                             0x00000975   Thumb Code     0  __dclz77c.o(.text)
+    __decompress2                            0x00000975   Thumb Code    96  __dclz77c.o(.text)
+    __0printf$1                              0x000009d5   Thumb Code    22  printf1.o(i.__0printf$1)
+    __1printf$1                              0x000009d5   Thumb Code     0  printf1.o(i.__0printf$1)
+    __2printf                                0x000009d5   Thumb Code     0  printf1.o(i.__0printf$1)
+    __scatterload_zeroinit                   0x000009f5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    alloc_mem                                0x00000b5d   Thumb Code   152  at_mem.o(i.alloc_mem)
+    free_mem                                 0x00000c01   Thumb Code    94  at_mem.o(i.free_mem)
+    put_in_queue                             0x00000c69   Thumb Code    36  at_ethernet.o(i.put_in_queue)
+    MPool_Size                               0x00000c94   Data           4  net_config_http.o(.constdata)
+    Region$$Table$$Base                      0x00000c98   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000cd8   Number         0  anon$$obj.o(Region$$Table)
+    bat_drv_rx_cnt                           0x10000000   Data           2  main.o(.data)
+    plazma_bat_drv0                          0x10000002   Data           2  main.o(.data)
+    plazma_bat_drv1                          0x10000004   Data           2  main.o(.data)
+    __stdout                                 0x10000008   Data           4  main.o(.data)
+    SystemFrequency                          0x1000000c   Data           4  system_lpc17xx.o(.data)
+    timer0_counter                           0x10000010   Data           4  timer.o(.data)
+    timer1_counter                           0x10000014   Data           4  timer.o(.data)
+    UART0TxEmpty                             0x10000018   Data           1  uart0.o(.data)
+    bRXIN0                                   0x10000019   Data           1  uart0.o(.data)
+    rx_buffer_overflow0                      0x1000001a   Data           1  uart0.o(.data)
+    plazma_uart0                             0x1000001b   Data           1  uart0.o(.data)
+    rx_wr_index0                             0x1000001c   Data           2  uart0.o(.data)
+    rx_rd_index0                             0x1000001e   Data           2  uart0.o(.data)
+    rx_counter0                              0x10000020   Data           2  uart0.o(.data)
+    tx_wr_index0                             0x10000022   Data           2  uart0.o(.data)
+    tx_rd_index0                             0x10000024   Data           2  uart0.o(.data)
+    tx_counter0                              0x10000026   Data           2  uart0.o(.data)
+    UART0Status                              0x10000028   Data           4  uart0.o(.data)
+    Mem_Pool                                 0x10000038   Data       16384  net_config_http.o(.bss)
+    __initial_sp                             0x100048b8   Data           0  startup_lpc17xx.o(STACK)
+    ind_reset_cnt                            0x2007c000   Data           1  main.o(.data)
+    first_inv_slot                           0x2007c001   Data           1  main.o(.data)
+    ips_bat_av_stat                          0x2007c002   Data           1  main.o(.data)
+    b10000Hz                                 0x2007c005   Data           1  main.o(.data)
+    b1000Hz                                  0x2007c006   Data           1  main.o(.data)
+    b2000Hz                                  0x2007c007   Data           1  main.o(.data)
+    b100Hz                                   0x2007c008   Data           1  main.o(.data)
+    b50Hz                                    0x2007c009   Data           1  main.o(.data)
+    b10Hz                                    0x2007c00a   Data           1  main.o(.data)
+    b5Hz                                     0x2007c00b   Data           1  main.o(.data)
+    b2Hz                                     0x2007c00c   Data           1  main.o(.data)
+    b1Hz                                     0x2007c00d   Data           1  main.o(.data)
+    b1min                                    0x2007c00e   Data           1  main.o(.data)
+    bFL5                                     0x2007c00f   Data           1  main.o(.data)
+    bFL2                                     0x2007c010   Data           1  main.o(.data)
+    bFL                                      0x2007c011   Data           1  main.o(.data)
+    bTPS                                     0x2007c012   Data           1  main.o(.data)
+    bFF                                      0x2007c013   Data           1  main.o(.data)
+    bFF_                                     0x2007c014   Data           1  main.o(.data)
+    but                                      0x2007c015   Data           1  main.o(.data)
+    but0_cnt                                 0x2007c016   Data           1  main.o(.data)
+    but1_cnt                                 0x2007c017   Data           1  main.o(.data)
+    but_onL_temp                             0x2007c018   Data           1  main.o(.data)
+    speed                                    0x2007c019   Data           1  main.o(.data)
+    l_but                                    0x2007c01a   Data           1  main.o(.data)
+    n_but                                    0x2007c01b   Data           1  main.o(.data)
+    bCAN_OFF                                 0x2007c01c   Data           1  main.o(.data)
+    main_10Hz_cnt                            0x2007c01e   Data           2  main.o(.data)
+    main_1Hz_cnt                             0x2007c020   Data           2  main.o(.data)
+    slider_pos                               0x2007c022   Data           2  main.o(.data)
+    toggle_pos                               0x2007c024   Data           2  main.o(.data)
+    toggle_del                               0x2007c026   Data           2  main.o(.data)
+    dial_pos                                 0x2007c028   Data           2  main.o(.data)
+    ind_pointer                              0x2007c02a   Data           2  main.o(.data)
+    t0cnt                                    0x2007c02e   Data           2  main.o(.data)
+    t0cnt0                                   0x2007c030   Data           2  main.o(.data)
+    t0cnt1                                   0x2007c032   Data           2  main.o(.data)
+    t0cnt2                                   0x2007c034   Data           2  main.o(.data)
+    t0cnt3                                   0x2007c036   Data           2  main.o(.data)
+    t0cnt4                                   0x2007c038   Data           2  main.o(.data)
+    t0cnt5                                   0x2007c03a   Data           2  main.o(.data)
+    t0cntMin                                 0x2007c03c   Data           2  main.o(.data)
+    load_U                                   0x2007c03e   Data           2  main.o(.data)
+    load_I                                   0x2007c040   Data           2  main.o(.data)
+    net_F                                    0x2007c042   Data           2  main.o(.data)
+    hz_out                                   0x2007c044   Data           2  main.o(.data)
+    hz_out_cnt                               0x2007c046   Data           2  main.o(.data)
+    av_beep                                  0x2007c048   Data           2  main.o(.data)
+    av_rele                                  0x2007c04a   Data           2  main.o(.data)
+    ft_plazma                                0x2007c04c   Data           2  main.o(.data)
+    parol                                    0x2007c04e   Data           3  main.o(.data)
+    bSILENT                                  0x2007c058   Data           4  main.o(.data)
+    but_n                                    0x2007c05c   Data           4  main.o(.data)
+    but_s                                    0x2007c060   Data           4  main.o(.data)
+    phost                                    0x2007c064   Data           4  main.o(.data)
+    a_ind                                    0x2007c068   Data           5  main.o(.data)
+    c_ind                                    0x2007c06d   Data           5  main.o(.data)
+    lcd_buffer                               0x2007c072   Data         300  main.o(.data)
+    SAMApp_Metric_L1                         0x2007c19e   Data         148  main.o(.data)
+    Font1_Metric                             0x2007c232   Data         148  main.o(.data)
+    fonts_9564                               0x2007c2c6   Data        4487  main.o(.data)
+    bat_drv_rx_buff                          0x2007d450   Data         512  main.o(.bss)
+    UIB0                                     0x2007d650   Data         100  uart0.o(.bss)
+    rx_buffer0                               0x2007d6b4   Data        1024  uart0.o(.bss)
+    tx_buffer0                               0x2007dab4   Data        1024  uart0.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000cd
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00002160, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00001f8c])
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00000cd8, Max: 0x00080000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000cc   Data   RO            3    RESET               startup_lpc17xx.o
+    0x000000cc   0x00000000   Code   RO         2069  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000cc   0x00000004   Code   RO         2337    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000d0   0x00000004   Code   RO         2340    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000d4   0x00000008   Code   RO         2341    .ARM.Collect$$$$00000007  mc_w.l(entry7.o)
+    0x000000dc   0x00000004   Code   RO         2338    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000e0   0x0000001c   Code   RO            5    .text               startup_lpc17xx.o
+    0x000000fc   0x00000002   Code   RO           13    .text               net_config_http.o
+    0x000000fe   0x00000002   PAD
+    0x00000100   0x00000154   Code   RO          957    .text               system_lpc17xx.o
+    0x00000254   0x00000044   Code   RO          987    .text               timer.o
+    0x00000298   0x00000002   Code   RO         1064    .text               beep.o
+    0x0000029a   0x0000002c   Code   RO         2342    .text               mc_w.l(uidiv.o)
+    0x000002c6   0x00000002   PAD
+    0x000002c8   0x00000024   Code   RO         2357    .text               mc_w.l(init.o)
+    0x000002ec   0x0000000e   Code   RO         2369    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x000002fa   0x00000002   Code   RO         2370    i.__scatterload_null  mc_w.l(handlers.o)
+    0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
+    0x00000300   0x00000294   Code   RO          430    .text               main.o
+    0x00000594   0x0000021c   Code   RO         1099    .text               25lc640ssp1.o
+    0x000007b0   0x00000124   Code   RO         1168    .text               uart0.o
+    0x000008d4   0x000000a0   Code   RO         1289    .text               emac_lpc17xx.o
+    0x00000974   0x00000060   Code   RO         2375    .text               mc_w.l(__dclz77c.o)
+    0x000009d4   0x00000020   Code   RO         2121    i.__0printf$1       mc_w.l(printf1.o)
+    0x000009f4   0x0000000e   Code   RO         2371    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000a02   0x00000002   PAD
+    0x00000a04   0x00000158   Code   RO         2128    i._printf_core      mc_w.l(printf1.o)
+    0x00000b5c   0x000000a4   Code   RO         1965    i.alloc_mem         TCP_CM3.lib(at_mem.o)
+    0x00000c00   0x00000068   Code   RO         1966    i.free_mem          TCP_CM3.lib(at_mem.o)
+    0x00000c68   0x0000002c   Code   RO         1952    i.put_in_queue      TCP_CM3.lib(at_ethernet.o)
+    0x00000c94   0x00000004   Data   RO           26    .constdata          net_config_http.o
+    0x00000c98   0x00000040   Data   RO         2367    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x000048b8, Max: 0x00008000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x00000002   Data   RW          594    .data               main.o
+    0x10000002   0x00000002   Data   RW          596    .data               main.o
+    0x10000004   0x00000002   Data   RW          597    .data               main.o
+    0x10000006   0x00000002   PAD
+    0x10000008   0x00000004   Data   RW          623    .data               main.o
+    0x1000000c   0x00000004   Data   RW          958    .data               system_lpc17xx.o
+    0x10000010   0x00000008   Data   RW          993    .data               timer.o
+    0x10000018   0x00000014   Data   RW         1179    .data               uart0.o
+    0x1000002c   0x00000008   Data   RW         1956    .data               TCP_CM3.lib(at_ethernet.o)
+    0x10000034   0x00000004   Data   RW         1969    .data               TCP_CM3.lib(at_mem.o)
+    0x10000038   0x00004000   Zero   RW           20    .bss                net_config_http.o
+    0x10004038   0x00000080   Zero   RW         1954    .bss                TCP_CM3.lib(at_ethernet.o)
+    0x100040b8   0x00000800   Zero   RW            1    STACK               startup_lpc17xx.o
+
+
+    Execution Region RW_IRAM2 (Base: 0x2007c000, Size: 0x0000491c, Max: 0x00008000, ABSOLUTE, COMPRESSED[0x0000127c])
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2007c000   0x0000144d   Data   RW          478    .data               main.o
+    0x2007d44d   0x00000003   PAD
+    0x2007d450   0x00000200   Zero   RW          471    .bss                main.o
+    0x2007d650   0x00000864   Zero   RW         1174    .bss                uart0.o
+    0x2007deb4   0x00000004   PAD
+    0x2007deb8   0x00002a64   Zero   RW         1292    .bss                emac_lpc17xx.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       540         16          0          0          0       1892   25lc640ssp1.o
+         2          0          0          0          0        323   beep.o
+         0          0          0          0          0       7620   common_func.o
+       160         16          0          0      10852      23957   emac_lpc17xx.o
+       660         72          0       5207        512      38931   main.o
+         2          0          4          0      16384      11554   net_config_http.o
+        32          8        204          0       2048        884   startup_lpc17xx.o
+       340         26          0          4          0      17723   system_lpc17xx.o
+        68         14          0          8          0        982   timer.o
+       292         30          0         20       2148       2256   uart0.o
+
+    ----------------------------------------------------------------------
+      2098        182        272       5244      31948     106122   Object Totals
+         0          0         64          0          0          0   (incl. Generated)
+         2          0          0          5          4          2   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        44          8          0          8        128         88   at_ethernet.o
+       268         22          0          4          0        188   at_mem.o
+        96          0          0          0          0          0   __dclz77c.o
+         0          0          0          0          0          0   entry.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         8          4          0          0          0          0   entry7.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+       376         16          0          0          0        180   printf1.o
+        44          0          0          0          0         80   uidiv.o
+
+    ----------------------------------------------------------------------
+       918         62          0         12        128        604   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       312         30          0         12        128        276   TCP_CM3.lib
+       602         32          0          0          0        328   mc_w.l
+
+    ----------------------------------------------------------------------
+       918         62          0         12        128        604   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      3016        244        272       5256      32076     105948   Grand Totals
+      3016        244        272       4788      32076     105948   ELF Image Totals (compressed)
+      3016        244        272       4788          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 3288 (   3.21kB)
+    Total RW  Size (RW Data + ZI Data)             37332 (  36.46kB)
+    Total ROM Size (Code + RO Data + RW Data)       8076 (   7.89kB)
+
+==============================================================================
+

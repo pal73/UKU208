@@ -1,0 +1,38 @@
+*** Creating Trace Output File '.\EXE\UKU208.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\exe\startup_lpc17xx.o"'
+### List of Objects: adding '".\exe\net_config_http.o"'
+### List of Objects: adding '".\exe\common_func.o"'
+### List of Objects: adding '".\exe\mess.o"'
+### List of Objects: adding '".\exe\ret.o"'
+### List of Objects: adding '".\exe\gran.o"'
+### List of Objects: adding '".\exe\main.o"'
+### List of Objects: adding '".\exe\simbols.o"'
+### List of Objects: adding '".\exe\graphic.o"'
+### List of Objects: adding '".\exe\riverdi.o"'
+### List of Objects: adding '".\exe\system_lpc17xx.o"'
+### List of Objects: adding '".\exe\timer.o"'
+### List of Objects: adding '".\exe\beep.o"'
+### List of Objects: adding '".\exe\25lc640ssp1.o"'
+### List of Objects: adding '".\exe\uart0.o"'
+### List of Objects: adding '".\exe\emac_lpc17xx.o"'
+### List of Objects: adding '"C:\Keil\ARM\RV31\LIB\TCP_CM3.lib"'
+### List of Objects: adding '".\exe\ft_copro_cmds.o"'
+### List of Objects: adding '".\exe\ft_gpu_hal.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\exe\startup_lpc17xx.o" ".\exe\net_config_http.o" ".\exe\common_func.o" ".\exe\mess.o" ".\exe\ret.o" ".\exe\gran.o" ".\exe\main.o" ".\exe\simbols.o" ".\exe\graphic.o" ".\exe\riverdi.o" ".\exe\system_lpc17xx.o" ".\exe\timer.o" ".\exe\beep.o" ".\exe\25lc640ssp1.o" ".\exe\uart0.o" ".\exe\emac_lpc17xx.o" "C:\Keil\ARM\RV31\LIB\TCP_CM3.lib" ".\exe\ft_copro_cmds.o" ".\exe\ft_gpu_hal.o" --library_type=microlib --feedback ".\EXE\UKU208.fed" 
+--strict --scatter ".\EXE\UKU208.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\UKU208.map" -o ".\EXE\UKU208.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\EXE\UKU208.axf'
+### ADS-LD Command File: '.\EXE\UKU208.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\EXE\UKU208.lnp', Handle=0x00000528
+### Writing '.lnp' file
+### ADS-LD Command file '.\EXE\UKU208.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

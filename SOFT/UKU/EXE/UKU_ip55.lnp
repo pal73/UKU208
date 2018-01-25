@@ -1,0 +1,5 @@
+--cpu Cortex-M3 ".\exe\startup_lpc17xx.o" ".\exe\net_config_http.o" ".\exe\common_func.o" ".\exe\mess.o" ".\exe\ret.o" ".\exe\gran.o" ".\exe\main.o" ".\exe\simbols.o" ".\exe\graphic.o" ".\exe\system_lpc17xx.o" ".\exe\timer.o" ".\exe\beep.o" ".\exe\lcd_agm1232_uku207_3.o" ".\exe\emac_lpc17xx.o" "C:\Keil\ARM\RV31\LIB\TCP_CM3.lib" --library_type=microlib --feedback ".\EXE\UKU_ip55.fed" 
+--strict --scatter ".\EXE\UKU_ip55.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\UKU_ip55.map" -o ".\EXE\UKU_ip55.axf"

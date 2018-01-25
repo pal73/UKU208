@@ -1,0 +1,1569 @@
+ARM Linker, 4.1 [Build 644] [Standard]
+
+==============================================================================
+
+Section Cross References
+
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(.text) for Reset_Handler
+    startup_lpc17xx.o(RESET) refers to main.o(.text) for SysTick_Handler
+    startup_lpc17xx.o(RESET) refers to timer.o(.text) for TIMER0_IRQHandler
+    startup_lpc17xx.o(RESET) refers to emac_lpc17xx.o(.text) for ENET_IRQHandler
+    startup_lpc17xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    net_config_http.o(.text) refers to at_ethernet.o(i.init_eth_link) for init_eth_link
+    net_config_http.o(.text) refers to at_udp.o(i.init_udp) for init_udp
+    net_config_http.o(.text) refers to at_tcp.o(i.init_tcp) for init_tcp
+    net_config_http.o(.text) refers to at_ethernet.o(i.run_eth_link) for run_eth_link
+    net_config_http.o(.text) refers to at_tcp.o(i.tcp_poll_sockets) for tcp_poll_sockets
+    net_config_http.o(.text) refers to at_udp.o(i.process_udp) for process_udp
+    net_config_http.o(.text) refers to at_tcp.o(i.process_tcp) for process_tcp
+    net_config_http.o(.text) refers to at_ethernet.o(i.eth_send_frame) for eth_send_frame
+    common_func.o(.text) refers to main.o(.data) for lcd_buffer
+    common_func.o(.text) refers to main.o(.data) for dig
+    common_func.o(.text) refers to main.o(.data) for zero_on
+    common_func.o(.text) refers to main.o(.constdata) for sm_mont
+    common_func.o(.text) refers to main.o(.constdata) for ABCDEF
+    common_func.o(.text) refers to ret.o(.text) for ret
+    common_func.o(.text) refers to main.o(.bss) for b_ind
+    mess.o(.text) refers to mess.o(.bss) for .bss
+    mess.o(.text) refers to mess.o(.data) for .data
+    ret.o(.text) refers to common_func.o(.text) for tree_down
+    ret.o(.text) refers to ret.o(.data) for .data
+    ret.o(.text) refers to main.o(.data) for a_ind
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to main.o(.bss) for .bss
+    main.o(.text) refers to main.o(.constdata) for .constdata
+    main.o(.text) refers to common_func.o(.text) for bgnd_par
+    main.o(.text) refers to gran.o(.text) for gran_char
+    main.o(.text) refers to mess.o(.text) for mess_send
+    main.o(.text) refers to mess.o(.data) for mess_data
+    main.o(.text) refers to beep.o(.text) for beep_init
+    main.o(.text) refers to ret.o(.text) for ret
+    main.o(.text) refers to system_lpc17xx.o(.text) for SystemInit
+    main.o(.text) refers to lcd_agm1232_uku207_3.o(.text) for lcd_init
+    main.o(.text) refers to at_system.o(i.main_TcpNet) for main_TcpNet
+    main.o(.text) refers to at_system.o(i.timer_tick) for timer_tick
+    main.o(.text) refers to system_lpc17xx.o(.data) for SystemFrequency
+    graphic.o(.text) refers to main.o(.bss) for lcd_bitmap
+    graphic.o(.text) refers to main.o(.constdata) for caracter
+    system_lpc17xx.o(.text) refers to system_lpc17xx.o(.data) for .data
+    timer.o(.text) refers to timer.o(.data) for .data
+    beep.o(.text) refers to mess.o(.text) for mess_send
+    beep.o(.text) refers to beep.o(.data) for .data
+    beep.o(.text) refers to main.o(.data) for ZV_ON
+    beep.o(.text) refers to main.o(.bss) for bat
+    emac_lpc17xx.o(.text) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    emac_lpc17xx.o(.text) refers to at_ethernet.o(i.put_in_queue) for put_in_queue
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.data) for .data
+    emac_lpc17xx.o(.text) refers to net_config_http.o(.data) for own_hw_adr
+    emac_lpc17xx.o(.text) refers to emac_lpc17xx.o(.bss) for .bss
+    at_tcp.o(i.init_tcp) refers to at_lib.o(i.mem_set) for mem_set
+    at_tcp.o(i.init_tcp) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.init_tcp) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_map_socket) for tcp_map_socket
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.get_u32) for get_u32
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.process_tcp) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.process_tcp) refers to at_mem.o(i.resize_mem) for resize_mem
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_send_reset) for tcp_send_reset
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_process_opt) for tcp_process_opt
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_init_seq) for tcp_init_seq
+    at_tcp.o(i.process_tcp) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.process_tcp) refers to net_config_http.o(.text) for sys_error
+    at_tcp.o(i.process_tcp) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_abort) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_abort) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_abort) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_abort) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_check_send) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_check_send) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_close) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_close) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_close) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_close) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_get_free_port) for tcp_get_free_port
+    at_tcp.o(i.tcp_connect) refers to at_lib.o(i.mem_test) for mem_test
+    at_tcp.o(i.tcp_connect) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_init_seq) for tcp_init_seq
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_connect) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_connect) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_connect) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_adr) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_buf) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_tcp.o(i.tcp_get_free_port) refers to at_tcp.o(.data) for .data
+    at_tcp.o(i.tcp_get_free_port) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_get_free_port) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_socket) refers to net_config_http.o(.text) for sys_error
+    at_tcp.o(i.tcp_get_socket) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_get_socket) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_get_state) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_get_state) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_init_seq) refers to at_system.o(.data) for timer_cnt
+    at_tcp.o(i.tcp_listen) refers to at_lib.o(i.mem_set) for mem_set
+    at_tcp.o(i.tcp_listen) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_listen) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_map_socket) refers to at_lib.o(i.SwapB) for SwapB
+    at_tcp.o(i.tcp_map_socket) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_tcp.o(i.tcp_map_socket) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_map_socket) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_map_socket) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_max_dsize) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_send_frame) for tcp_send_frame
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(i.tcp_transit) for tcp_transit
+    at_tcp.o(i.tcp_poll_sockets) refers to at_system.o(.data) for sys_tick
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.constdata) for tcp_RetryTout
+    at_tcp.o(i.tcp_poll_sockets) refers to at_tcp.o(.data) for .data
+    at_tcp.o(i.tcp_poll_sockets) refers to net_config_http.o(.constdata) for tcp_SynRetryTout
+    at_tcp.o(i.tcp_process_opt) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_release_socket) refers to at_lib.o(i.mem_set) for mem_set
+    at_tcp.o(i.tcp_release_socket) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_release_socket) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_reset_tout) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_reset_tout) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_reset_window) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_reset_window) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_reset_window) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_send) refers to at_mem.o(i.resize_mem) for resize_mem
+    at_tcp.o(i.tcp_send) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.tcp_send) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_tcp.o(i.tcp_send) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_send) refers to at_tcp.o(i.tcp_send_frame) for tcp_send_frame
+    at_tcp.o(i.tcp_send) refers to at_mem.o(i.free_mem) for free_mem
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.constdata) for tcp_RetryTout
+    at_tcp.o(i.tcp_send) refers to net_config_http.o(.constdata) for tcp_MaxRetry
+    at_tcp.o(i.tcp_send_ctrl) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_tcp.o(i.tcp_send_ctrl) refers to at_tcp.o(i.tcp_send_frame) for tcp_send_frame
+    at_tcp.o(i.tcp_send_ctrl) refers to at_mem.o(i.free_mem) for free_mem
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.SwapB) for SwapB
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.set_u32) for set_u32
+    at_tcp.o(i.tcp_send_frame) refers to at_ip.o(i.ip_get_locadr) for ip_get_locadr
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_tcp.o(i.tcp_send_frame) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_tcp.o(i.tcp_send_frame) refers to at_ip.o(i.ip_send_frame) for ip_send_frame
+    at_tcp.o(i.tcp_send_frame) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_send_frame) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_send_reset) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_tcp.o(i.tcp_send_reset) refers to at_lib.o(i.SwapB) for SwapB
+    at_tcp.o(i.tcp_send_reset) refers to at_lib.o(i.get_u32) for get_u32
+    at_tcp.o(i.tcp_send_reset) refers to at_tcp.o(i.tcp_send_ctrl) for tcp_send_ctrl
+    at_tcp.o(i.tcp_send_reset) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_send_reset) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_set_dack) refers to net_config_http.o(.constdata) for tcp_NumSocks
+    at_tcp.o(i.tcp_set_dack) refers to net_config_http.o(.bss) for tcp_socket
+    at_tcp.o(i.tcp_set_retransmit) refers to at_mem.o(i.free_mem) for free_mem
+    at_tcp.o(i.tcp_transit) refers to at_tcp.o(i.tcp_set_retransmit) for tcp_set_retransmit
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_RetryTout
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_2MSSTout
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_InitRetryTout
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_ConRetry
+    at_tcp.o(i.tcp_transit) refers to net_config_http.o(.constdata) for tcp_MaxRetry
+    at_udp.o(i.init_udp) refers to at_lib.o(i.mem_set) for mem_set
+    at_udp.o(i.init_udp) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.init_udp) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.process_udp) refers to at_lib.o(i.SwapB) for SwapB
+    at_udp.o(i.process_udp) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_udp.o(i.process_udp) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_udp.o(i.process_udp) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.process_udp) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_close) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_close) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_get_buf) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_udp.o(i.udp_get_socket) refers to net_config_http.o(.text) for sys_error
+    at_udp.o(i.udp_get_socket) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_get_socket) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_mcast_ttl) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_mcast_ttl) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_open) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_open) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_open) refers to at_udp.o(.data) for .data
+    at_udp.o(i.udp_release_socket) refers to at_lib.o(i.mem_set) for mem_set
+    at_udp.o(i.udp_release_socket) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_release_socket) refers to net_config_http.o(.bss) for udp_socket
+    at_udp.o(i.udp_send) refers to at_lib.o(i.mem_test) for mem_test
+    at_udp.o(i.udp_send) refers to at_lib.o(i.SwapB) for SwapB
+    at_udp.o(i.udp_send) refers to at_ip.o(i.ip_get_locadr) for ip_get_locadr
+    at_udp.o(i.udp_send) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_udp.o(i.udp_send) refers to at_lib.o(i.CalcChksumVal) for CalcChksumVal
+    at_udp.o(i.udp_send) refers to at_mem.o(i.free_mem) for free_mem
+    at_udp.o(i.udp_send) refers to at_ip.o(i.ip_send_frame) for ip_send_frame
+    at_udp.o(i.udp_send) refers to net_config_http.o(.constdata) for udp_NumSocks
+    at_udp.o(i.udp_send) refers to net_config_http.o(.bss) for udp_socket
+    at_ethernet.o(i.eth_chk_adr) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_ethernet.o(i.eth_chk_adr) refers to net_config_http.o(.data) for own_hw_adr
+    at_ethernet.o(i.eth_get_adr) refers to at_arp.o(i.arp_get_adr) for arp_get_adr
+    at_ethernet.o(i.eth_send_frame) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_ethernet.o(i.eth_send_frame) refers to at_lib.o(i.mem_test) for mem_test
+    at_ethernet.o(i.eth_send_frame) refers to at_arp.o(i.is_subnet_bcast) for is_subnet_bcast
+    at_ethernet.o(i.eth_send_frame) refers to at_arp.o(i.arp_cache_find) for arp_cache_find
+    at_ethernet.o(i.eth_send_frame) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_ethernet.o(i.eth_send_frame) refers to emac_lpc17xx.o(.text) for send_frame
+    at_ethernet.o(i.eth_send_frame) refers to at_ethernet.o(.constdata) for .constdata
+    at_ethernet.o(i.eth_send_frame) refers to at_ip.o(.constdata) for IP_Broadcast
+    at_ethernet.o(i.eth_send_frame) refers to net_config_http.o(.data) for own_hw_adr
+    at_ethernet.o(i.init_eth_link) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_ethernet.o(i.init_eth_link) refers to at_arp.o(i.init_arp) for init_arp
+    at_ethernet.o(i.init_eth_link) refers to at_ethernet.o(.data) for .data
+    at_ethernet.o(i.put_in_queue) refers to at_mem.o(i.free_mem) for free_mem
+    at_ethernet.o(i.put_in_queue) refers to at_ethernet.o(.data) for .data
+    at_ethernet.o(i.put_in_queue) refers to at_ethernet.o(.bss) for .bss
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(i.poll_ethernet) for poll_ethernet
+    at_ethernet.o(i.run_eth_link) refers to at_arp.o(i.arp_cache_update) for arp_cache_update
+    at_ethernet.o(i.run_eth_link) refers to at_arp.o(i.process_arp) for process_arp
+    at_ethernet.o(i.run_eth_link) refers to at_ip.o(i.ip_chk_frame) for ip_chk_frame
+    at_ethernet.o(i.run_eth_link) refers to at_lib.o(i.mem_test) for mem_test
+    at_ethernet.o(i.run_eth_link) refers to at_arp.o(i.arp_cache_add) for arp_cache_add
+    at_ethernet.o(i.run_eth_link) refers to at_icmp.o(i.process_icmp) for process_icmp
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(i.process_hl_igmp) for process_hl_igmp
+    at_ethernet.o(i.run_eth_link) refers to net_config_http.o(.text) for process_hl_udp
+    at_ethernet.o(i.run_eth_link) refers to at_mem.o(i.free_mem) for free_mem
+    at_ethernet.o(i.run_eth_link) refers to at_system.o(.data) for sec_tick
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(.data) for .data
+    at_ethernet.o(i.run_eth_link) refers to at_ethernet.o(.bss) for .bss
+    at_mem.o(i.alloc_mem) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_mem.o(i.alloc_mem) refers to net_config_http.o(.text) for sys_error
+    at_mem.o(i.alloc_mem) refers to at_mem.o(.data) for .data
+    at_mem.o(i.alloc_mem) refers to net_config_http.o(.constdata) for MPool_Size
+    at_mem.o(i.alloc_mem) refers to net_config_http.o(.bss) for Mem_Pool
+    at_mem.o(i.free_mem) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_mem.o(i.free_mem) refers to net_config_http.o(.text) for sys_error
+    at_mem.o(i.free_mem) refers to net_config_http.o(.bss) for Mem_Pool
+    at_mem.o(i.free_mem) refers to at_mem.o(.data) for .data
+    at_mem.o(i.init_mem) refers to net_config_http.o(.bss) for Mem_Pool
+    at_mem.o(i.init_mem) refers to net_config_http.o(.constdata) for MPool_Size
+    at_mem.o(i.init_mem) refers to at_mem.o(.data) for .data
+    at_mem.o(i.resize_mem) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_mem.o(i.resize_mem) refers to at_mem.o(.data) for .data
+    at_system.o(i.init_TcpNet) refers to emac_lpc17xx.o(.text) for int_disable_eth
+    at_system.o(i.init_TcpNet) refers to at_mem.o(i.init_mem) for init_mem
+    at_system.o(i.init_TcpNet) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_system.o(i.init_TcpNet) refers to net_config_http.o(.text) for init_system
+    at_system.o(i.init_TcpNet) refers to at_system.o(.data) for .data
+    at_system.o(i.init_TcpNet) refers to net_config_http.o(.constdata) for tick_rate
+    at_system.o(i.init_TcpNet) refers to net_config_http.o(.constdata) for nlocalm
+    at_system.o(i.init_TcpNet) refers to at_system.o(.bss) for .bss
+    at_system.o(i.main_TcpNet) refers to net_config_http.o(.text) for run_system
+    at_system.o(i.main_TcpNet) refers to at_system.o(.data) for .data
+    at_system.o(i.main_TcpNet) refers to net_config_http.o(.constdata) for tick_rate
+    at_system.o(i.timer_tick) refers to at_system.o(.data) for .data
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.mem_test) for mem_test
+    at_arp.o(i.arp_cache_add) refers to at_arp.o(i.arp_cache_alloc) for arp_cache_alloc
+    at_arp.o(i.arp_cache_add) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_add) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_cache_add) refers to net_config_http.o(.constdata) for arp_MaxRetry
+    at_arp.o(i.arp_cache_alloc) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_alloc) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_alloc) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.mem_test) for mem_test
+    at_arp.o(i.arp_cache_find) refers to at_arp.o(i.arp_cache_alloc) for arp_cache_alloc
+    at_arp.o(i.arp_cache_find) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_cache_find) refers to at_arp.o(i.arp_send_req) for arp_send_req
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_find) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_cache_find) refers to at_ethernet.o(.constdata) for MAC_Broadcast
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.constdata) for arp_MaxRetry
+    at_arp.o(i.arp_cache_find) refers to net_config_http.o(.constdata) for arp_Resend
+    at_arp.o(i.arp_cache_ip) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_ip) refers to at_arp.o(i.is_subnet_bcast) for is_subnet_bcast
+    at_arp.o(i.arp_cache_ip) refers to at_arp.o(i.arp_cache_find) for arp_cache_find
+    at_arp.o(i.arp_cache_ip) refers to at_ip.o(.constdata) for IP_Broadcast
+    at_arp.o(i.arp_cache_update) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_cache_update) refers to at_arp.o(i.arp_send_req) for arp_send_req
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.constdata) for arp_Resend
+    at_arp.o(i.arp_cache_update) refers to at_arp.o(.data) for .data
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_cache_update) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_cache_update) refers to at_ip.o(.constdata) for IP_Broadcast
+    at_arp.o(i.arp_cache_update) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_get_adr) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_get_adr) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_get_adr) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_get_response) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.arp_get_response) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.constdata) for arp_TimeOut
+    at_arp.o(i.arp_get_response) refers to net_config_http.o(.constdata) for arp_MaxRetry
+    at_arp.o(i.arp_send_reply) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_arp.o(i.arp_send_reply) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_send_reply) refers to at_arp.o(i.arp_cache_add) for arp_cache_add
+    at_arp.o(i.arp_send_reply) refers to emac_lpc17xx.o(.text) for send_frame
+    at_arp.o(i.arp_send_reply) refers to at_mem.o(i.free_mem) for free_mem
+    at_arp.o(i.arp_send_reply) refers to net_config_http.o(.data) for own_hw_adr
+    at_arp.o(i.arp_send_reply) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_send_req) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_arp.o(i.arp_send_req) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.arp_send_req) refers to at_lib.o(i.mem_set) for mem_set
+    at_arp.o(i.arp_send_req) refers to emac_lpc17xx.o(.text) for send_frame
+    at_arp.o(i.arp_send_req) refers to at_mem.o(i.free_mem) for free_mem
+    at_arp.o(i.arp_send_req) refers to at_ethernet.o(.constdata) for MAC_Broadcast
+    at_arp.o(i.arp_send_req) refers to net_config_http.o(.data) for own_hw_adr
+    at_arp.o(i.arp_send_req) refers to at_system.o(.bss) for localm
+    at_arp.o(i.arp_send_req) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.init_arp) refers to net_config_http.o(.bss) for arp_table
+    at_arp.o(i.init_arp) refers to net_config_http.o(.constdata) for arp_TabSize
+    at_arp.o(i.is_subnet_bcast) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_arp.o(i.is_subnet_bcast) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_arp.o(i.is_subnet_bcast) refers to at_system.o(.bss) for localm
+    at_arp.o(i.process_arp) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_arp.o(i.process_arp) refers to at_arp.o(i.arp_get_response) for arp_get_response
+    at_arp.o(i.process_arp) refers to at_arp.o(i.arp_send_reply) for arp_send_reply
+    at_arp.o(i.process_arp) refers to at_system.o(.bss) for localm
+    at_arp.o(i.process_arp) refers to net_config_http.o(.data) for own_hw_adr
+    at_ip.o(i.ip_chk_frame) refers to at_lib.o(i.SwapB) for SwapB
+    at_ip.o(i.ip_chk_frame) refers to at_lib.o(i.mem_comp) for mem_comp
+    at_ip.o(i.ip_chk_frame) refers to net_config_http.o(.text) for igmp_is_member
+    at_ip.o(i.ip_chk_frame) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_ip.o(i.ip_chk_frame) refers to at_ethernet.o(i.eth_chk_adr) for eth_chk_adr
+    at_ip.o(i.ip_chk_frame) refers to at_ip.o(i.ip_get_chksum) for ip_get_chksum
+    at_ip.o(i.ip_chk_frame) refers to at_system.o(.bss) for localm
+    at_ip.o(i.ip_chk_frame) refers to at_ip.o(.constdata) for .constdata
+    at_ip.o(i.ip_get_chksum) refers to at_lib.o(i.CalcChksum) for CalcChksum
+    at_ip.o(i.ip_get_locadr) refers to at_lib.o(i.is_subnet) for is_subnet
+    at_ip.o(i.ip_get_locadr) refers to at_lib.o(i.mem_test) for mem_test
+    at_ip.o(i.ip_get_locadr) refers to net_config_http.o(.constdata) for netif_cfg
+    at_ip.o(i.ip_get_locadr) refers to at_ip.o(.data) for .data
+    at_ip.o(i.ip_get_locadr) refers to at_system.o(.bss) for localm
+    at_ip.o(i.ip_send_frame) refers to at_lib.o(i.SwapB) for SwapB
+    at_ip.o(i.ip_send_frame) refers to at_ip.o(i.ip_get_locadr) for ip_get_locadr
+    at_ip.o(i.ip_send_frame) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_ip.o(i.ip_send_frame) refers to at_ip.o(i.ip_get_chksum) for ip_get_chksum
+    at_ip.o(i.ip_send_frame) refers to net_config_http.o(.text) for dispatch_frame
+    at_ip.o(i.ip_send_frame) refers to at_ip.o(.data) for .data
+    at_icmp.o(i.process_icmp) refers to at_lib.o(i.CalcChksum) for CalcChksum
+    at_icmp.o(i.process_icmp) refers to at_mem.o(i.alloc_mem) for alloc_mem
+    at_icmp.o(i.process_icmp) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_icmp.o(i.process_icmp) refers to at_ip.o(i.ip_send_frame) for ip_send_frame
+    at_icmp.o(i.process_icmp) refers to at_mem.o(i.free_mem) for free_mem
+    at_lib.o(i.CalcChksum) refers to at_lib.o(i.CalcChksumBuf) for CalcChksumBuf
+    at_lib.o(i.asc_to_b64) refers to at_lib.o(i.encode_b64) for encode_b64
+    at_lib.o(i.bin_to_b64) refers to at_lib.o(i.encode_b64) for encode_b64
+    at_lib.o(i.is_subnet) refers to at_lib.o(i.mem_copy) for mem_copy
+    at_lib.o(i.str_crc) refers to at_lib.o(i.get_crc) for get_crc
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7.o(.ARM.Collect$$$$00000007) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry7.o(.ARM.Collect$$$$00000007) refers to main.o(.text) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_lpc17xx.o(HEAP), (2048 bytes).
+    Removing net_config_http.o(.constdata), (60 bytes).
+    Removing net_config_http.o(.constdata), (2 bytes).
+    Removing net_config_http.o(.data), (16 bytes).
+    Removing common_func.o(.emb_text), (8 bytes).
+    Removing main.o(.emb_text), (8 bytes).
+    Removing main.o(.bss), (76 bytes).
+    Removing main.o(.bss), (42 bytes).
+    Removing main.o(.bss), (192 bytes).
+    Removing main.o(.bss), (20 bytes).
+    Removing main.o(.bss), (20 bytes).
+    Removing main.o(.bss), (12 bytes).
+    Removing main.o(.bss), (512 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (6 bytes).
+    Removing main.o(.data), (6 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (7 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (8 bytes).
+    Removing main.o(.data), (8 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (3 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (8 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (3 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (1 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing main.o(.data), (2 bytes).
+    Removing simbols.o(.emb_text), (8 bytes).
+    Removing simbols.o(.constdata), (150 bytes).
+    Removing simbols.o(.constdata), (150 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing simbols.o(.constdata), (30 bytes).
+    Removing graphic.o(.emb_text), (8 bytes).
+    Removing graphic.o(.text), (2072 bytes).
+    Removing system_lpc17xx.o(.emb_text), (8 bytes).
+    Removing timer.o(.emb_text), (8 bytes).
+    Removing beep.o(.emb_text), (8 bytes).
+    Removing lcd_agm1232_uku207_3.o(.emb_text), (8 bytes).
+    Removing emac_lpc17xx.o(.emb_text), (8 bytes).
+    Removing at_tcp.o(i.tcp_abort), (88 bytes).
+    Removing at_tcp.o(i.tcp_check_send), (56 bytes).
+    Removing at_tcp.o(i.tcp_close), (132 bytes).
+    Removing at_tcp.o(i.tcp_connect), (172 bytes).
+    Removing at_tcp.o(i.tcp_get_adr), (24 bytes).
+    Removing at_tcp.o(i.tcp_get_buf), (16 bytes).
+    Removing at_tcp.o(i.tcp_get_free_port), (88 bytes).
+    Removing at_tcp.o(i.tcp_get_socket), (72 bytes).
+    Removing at_tcp.o(i.tcp_get_state), (44 bytes).
+    Removing at_tcp.o(i.tcp_listen), (124 bytes).
+    Removing at_tcp.o(i.tcp_max_dsize), (36 bytes).
+    Removing at_tcp.o(i.tcp_release_socket), (60 bytes).
+    Removing at_tcp.o(i.tcp_reset_tout), (48 bytes).
+    Removing at_tcp.o(i.tcp_reset_window), (80 bytes).
+    Removing at_tcp.o(i.tcp_send), (260 bytes).
+    Removing at_tcp.o(i.tcp_set_dack), (64 bytes).
+    Removing at_udp.o(i.udp_close), (44 bytes).
+    Removing at_udp.o(i.udp_get_buf), (16 bytes).
+    Removing at_udp.o(i.udp_get_socket), (72 bytes).
+    Removing at_udp.o(i.udp_mcast_ttl), (44 bytes).
+    Removing at_udp.o(i.udp_open), (124 bytes).
+    Removing at_udp.o(i.udp_release_socket), (48 bytes).
+    Removing at_udp.o(i.udp_send), (268 bytes).
+    Removing at_udp.o(.data), (2 bytes).
+    Removing at_ethernet.o(i.eth_get_adr), (4 bytes).
+    Removing at_mem.o(i.init_mem), (36 bytes).
+    Removing at_system.o(.emb_text), (0 bytes).
+    Removing at_system.o(i.init_TcpNet), (56 bytes).
+    Removing at_arp.o(i.arp_cache_ip), (72 bytes).
+    Removing at_arp.o(i.arp_get_adr), (68 bytes).
+    Removing at_lib.o(i.asc_to_b64), (64 bytes).
+    Removing at_lib.o(i.b64_to_asc), (120 bytes).
+    Removing at_lib.o(i.bin_to_b64), (68 bytes).
+    Removing at_lib.o(i.encode_b64), (70 bytes).
+    Removing at_lib.o(i.get_crc), (40 bytes).
+    Removing at_lib.o(i.get_u16), (10 bytes).
+    Removing at_lib.o(i.mem_rcopy), (54 bytes).
+    Removing at_lib.o(i.str_copy), (22 bytes).
+    Removing at_lib.o(i.str_crc), (26 bytes).
+    Removing at_lib.o(i.str_pos), (26 bytes).
+    Removing at_lib.o(i.str_scomp), (26 bytes).
+    Removing at_lib.o(i.str_ucomp), (40 bytes).
+    Removing at_lib.o(i.str_up_case), (26 bytes).
+
+215 unused section(s) (total 8710 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
+    ../../../cmprslib/zerorunl.c             0x00000000   Number         0  __dczerorl.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry7.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry5.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry.o ABSOLUTE
+    C:\Keil\ARM\Boards\Keil\MCB1700\RL\TCPnet\Library\EMAC_LPC17xx.c 0x00000000   Number         0  emac_lpc17xx.o ABSOLUTE
+    C:\\Keil\\ARM\\Boards\\Keil\\MCB1700\\RL\\TCPnet\\Library\\EMAC_LPC17xx.c 0x00000000   Number         0  emac_lpc17xx.o ABSOLUTE
+    Net_Config_HTTP.c                        0x00000000   Number         0  net_config_http.o ABSOLUTE
+    SRC\\at_System.c                         0x00000000   Number         0  at_system.o ABSOLUTE
+    SRC\at_ARP.c                             0x00000000   Number         0  at_arp.o ABSOLUTE
+    SRC\at_Ethernet.c                        0x00000000   Number         0  at_ethernet.o ABSOLUTE
+    SRC\at_ICMP.c                            0x00000000   Number         0  at_icmp.o ABSOLUTE
+    SRC\at_IP.c                              0x00000000   Number         0  at_ip.o ABSOLUTE
+    SRC\at_Lib.c                             0x00000000   Number         0  at_lib.o ABSOLUTE
+    SRC\at_Mem.c                             0x00000000   Number         0  at_mem.o ABSOLUTE
+    SRC\at_System.c                          0x00000000   Number         0  at_system.o ABSOLUTE
+    SRC\at_TCP.c                             0x00000000   Number         0  at_tcp.o ABSOLUTE
+    SRC\at_UDP.c                             0x00000000   Number         0  at_udp.o ABSOLUTE
+    Timer.c                                  0x00000000   Number         0  timer.o ABSOLUTE
+    Timer.c                                  0x00000000   Number         0  timer.o ABSOLUTE
+    beep.c                                   0x00000000   Number         0  beep.o ABSOLUTE
+    beep.c                                   0x00000000   Number         0  beep.o ABSOLUTE
+    common_func.c                            0x00000000   Number         0  common_func.o ABSOLUTE
+    common_func.c                            0x00000000   Number         0  common_func.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    gran.c                                   0x00000000   Number         0  gran.o ABSOLUTE
+    graphic.c                                0x00000000   Number         0  graphic.o ABSOLUTE
+    graphic.c                                0x00000000   Number         0  graphic.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    lcd_AGM1232_uku207_3.c                   0x00000000   Number         0  lcd_agm1232_uku207_3.o ABSOLUTE
+    lcd_AGM1232_uku207_3.c                   0x00000000   Number         0  lcd_agm1232_uku207_3.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    mess.c                                   0x00000000   Number         0  mess.o ABSOLUTE
+    ret.c                                    0x00000000   Number         0  ret.o ABSOLUTE
+    simbols.c                                0x00000000   Number         0  simbols.o ABSOLUTE
+    simbols.c                                0x00000000   Number         0  simbols.o ABSOLUTE
+    startup_LPC17xx.s                        0x00000000   Number         0  startup_lpc17xx.o ABSOLUTE
+    system_LPC17xx.c                         0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    system_LPC17xx.c                         0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000cc   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000cc   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000d0   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000007                 0x000000d4   Section        8  entry7.o(.ARM.Collect$$$$00000007)
+    .ARM.Collect$$$$00002712                 0x000000dc   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000dc   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000e0   Section       28  startup_lpc17xx.o(.text)
+    .text                                    0x000000fc   Section        0  net_config_http.o(.text)
+    .text                                    0x00000138   Section        0  mess.o(.text)
+    .text                                    0x00000220   Section        0  ret.o(.text)
+    .text                                    0x000002a4   Section       36  init.o(.text)
+    i.CalcChksum                             0x000002c8   Section        0  at_lib.o(i.CalcChksum)
+    i.CalcChksumVal                          0x000002de   Section        0  at_lib.o(i.CalcChksumVal)
+    i.SwapB                                  0x000002e8   Section        0  at_lib.o(i.SwapB)
+    i.__scatterload_null                     0x000002f2   Section        2  handlers.o(i.__scatterload_null)
+    i.poll_ethernet                          0x000002f4   Section        0  at_ethernet.o(i.poll_ethernet)
+    i.process_hl_igmp                        0x000002f6   Section        0  at_ethernet.o(i.process_hl_igmp)
+    .constdata                               0x000002f8   Section        1  net_config_http.o(.constdata)
+    .constdata                               0x000002fa   Section        2  net_config_http.o(.constdata)
+    .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
+    .text                                    0x00000300   Section        0  common_func.o(.text)
+    .text                                    0x000012f0   Section        0  gran.o(.text)
+    .text                                    0x0000135c   Section        0  main.o(.text)
+    .text                                    0x0001449c   Section        0  system_lpc17xx.o(.text)
+    .text                                    0x000145f0   Section        0  timer.o(.text)
+    NVIC_EnableIRQ                           0x000146d3   Thumb Code    24  timer.o(.text)
+    .text                                    0x000146f8   Section        0  beep.o(.text)
+    .text                                    0x00014854   Section        0  lcd_agm1232_uku207_3.o(.text)
+    .text                                    0x00014e2c   Section        0  emac_lpc17xx.o(.text)
+    output_MDIO                              0x00014e2d   Thumb Code    54  emac_lpc17xx.o(.text)
+    read_PHY                                 0x00014e63   Thumb Code   146  emac_lpc17xx.o(.text)
+    write_PHY                                0x00014ef5   Thumb Code   112  emac_lpc17xx.o(.text)
+    turnaround_MDIO                          0x0001525d   Thumb Code    32  emac_lpc17xx.o(.text)
+    .text                                    0x00015280   Section        0  __dczerorl.o(.text)
+    i.CalcChksumBuf                          0x000152bc   Section        0  at_lib.o(i.CalcChksumBuf)
+    i.__scatterload_copy                     0x000152e4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_zeroinit                 0x000152f2   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.alloc_mem                              0x00015300   Section        0  at_mem.o(i.alloc_mem)
+    i.arp_cache_add                          0x000153a4   Section        0  at_arp.o(i.arp_cache_add)
+    i.arp_cache_alloc                        0x00015468   Section        0  at_arp.o(i.arp_cache_alloc)
+    arp_cache_alloc                          0x00015469   Thumb Code    96  at_arp.o(i.arp_cache_alloc)
+    i.arp_cache_find                         0x000154d4   Section        0  at_arp.o(i.arp_cache_find)
+    i.arp_cache_update                       0x000155ec   Section        0  at_arp.o(i.arp_cache_update)
+    i.arp_get_response                       0x000156e4   Section        0  at_arp.o(i.arp_get_response)
+    arp_get_response                         0x000156e5   Thumb Code    86  at_arp.o(i.arp_get_response)
+    i.arp_send_reply                         0x0001574c   Section        0  at_arp.o(i.arp_send_reply)
+    arp_send_reply                           0x0001574d   Thumb Code   148  at_arp.o(i.arp_send_reply)
+    i.arp_send_req                           0x000157e8   Section        0  at_arp.o(i.arp_send_req)
+    i.eth_chk_adr                            0x00015894   Section        0  at_ethernet.o(i.eth_chk_adr)
+    i.eth_send_frame                         0x000158a4   Section        0  at_ethernet.o(i.eth_send_frame)
+    i.free_mem                               0x0001593c   Section        0  at_mem.o(i.free_mem)
+    i.get_u32                                0x000159a4   Section        0  at_lib.o(i.get_u32)
+    i.init_arp                               0x000159bc   Section        0  at_arp.o(i.init_arp)
+    i.init_eth_link                          0x000159e4   Section        0  at_ethernet.o(i.init_eth_link)
+    i.init_tcp                               0x00015a08   Section        0  at_tcp.o(i.init_tcp)
+    i.init_udp                               0x00015a20   Section        0  at_udp.o(i.init_udp)
+    i.ip_chk_frame                           0x00015a3c   Section        0  at_ip.o(i.ip_chk_frame)
+    i.ip_get_chksum                          0x00015b00   Section        0  at_ip.o(i.ip_get_chksum)
+    ip_get_chksum                            0x00015b01   Thumb Code    10  at_ip.o(i.ip_get_chksum)
+    i.ip_get_locadr                          0x00015b0c   Section        0  at_ip.o(i.ip_get_locadr)
+    i.ip_send_frame                          0x00015ba4   Section        0  at_ip.o(i.ip_send_frame)
+    i.is_subnet                              0x00015c34   Section        0  at_lib.o(i.is_subnet)
+    i.is_subnet_bcast                        0x00015c58   Section        0  at_arp.o(i.is_subnet_bcast)
+    i.main_TcpNet                            0x00015c84   Section        0  at_system.o(i.main_TcpNet)
+    i.mem_comp                               0x00015cc0   Section        0  at_lib.o(i.mem_comp)
+    i.mem_copy                               0x00015ce0   Section        0  at_lib.o(i.mem_copy)
+    i.mem_set                                0x00015cfc   Section        0  at_lib.o(i.mem_set)
+    i.mem_test                               0x00015d0c   Section        0  at_lib.o(i.mem_test)
+    i.process_arp                            0x00015d24   Section        0  at_arp.o(i.process_arp)
+    i.process_icmp                           0x00015dbc   Section        0  at_icmp.o(i.process_icmp)
+    i.process_tcp                            0x00015e30   Section        0  at_tcp.o(i.process_tcp)
+    i.process_udp                            0x0001629c   Section        0  at_udp.o(i.process_udp)
+    i.put_in_queue                           0x00016360   Section        0  at_ethernet.o(i.put_in_queue)
+    i.resize_mem                             0x0001638c   Section        0  at_mem.o(i.resize_mem)
+    i.run_eth_link                           0x000163c0   Section        0  at_ethernet.o(i.run_eth_link)
+    i.set_u32                                0x00016470   Section        0  at_lib.o(i.set_u32)
+    i.tcp_init_seq                           0x00016480   Section        0  at_tcp.o(i.tcp_init_seq)
+    tcp_init_seq                             0x00016481   Thumb Code    14  at_tcp.o(i.tcp_init_seq)
+    i.tcp_map_socket                         0x00016494   Section        0  at_tcp.o(i.tcp_map_socket)
+    tcp_map_socket                           0x00016495   Thumb Code   150  at_tcp.o(i.tcp_map_socket)
+    i.tcp_poll_sockets                       0x00016534   Section        0  at_tcp.o(i.tcp_poll_sockets)
+    i.tcp_process_opt                        0x00016728   Section        0  at_tcp.o(i.tcp_process_opt)
+    tcp_process_opt                          0x00016729   Thumb Code   106  at_tcp.o(i.tcp_process_opt)
+    i.tcp_send_ctrl                          0x00016798   Section        0  at_tcp.o(i.tcp_send_ctrl)
+    tcp_send_ctrl                            0x00016799   Thumb Code    34  at_tcp.o(i.tcp_send_ctrl)
+    i.tcp_send_frame                         0x000167bc   Section        0  at_tcp.o(i.tcp_send_frame)
+    tcp_send_frame                           0x000167bd   Thumb Code   236  at_tcp.o(i.tcp_send_frame)
+    i.tcp_send_reset                         0x000168b0   Section        0  at_tcp.o(i.tcp_send_reset)
+    tcp_send_reset                           0x000168b1   Thumb Code   120  at_tcp.o(i.tcp_send_reset)
+    i.tcp_set_retransmit                     0x00016930   Section        0  at_tcp.o(i.tcp_set_retransmit)
+    tcp_set_retransmit                       0x00016931   Thumb Code    18  at_tcp.o(i.tcp_set_retransmit)
+    i.tcp_transit                            0x00016944   Section        0  at_tcp.o(i.tcp_transit)
+    tcp_transit                              0x00016945   Thumb Code    96  at_tcp.o(i.tcp_transit)
+    i.timer_tick                             0x000169b8   Section        0  at_system.o(i.timer_tick)
+    .constdata                               0x000169c4   Section        4  net_config_http.o(.constdata)
+    .constdata                               0x000169c8   Section        2  net_config_http.o(.constdata)
+    .constdata                               0x000169ca   Section        2  net_config_http.o(.constdata)
+    .constdata                               0x000169cc   Section        1  net_config_http.o(.constdata)
+    .constdata                               0x000169cd   Section        1  net_config_http.o(.constdata)
+    .constdata                               0x000169ce   Section        1  net_config_http.o(.constdata)
+    .constdata                               0x000169cf   Section        1  net_config_http.o(.constdata)
+    .constdata                               0x000169d0   Section        1  net_config_http.o(.constdata)
+    .constdata                               0x000169d2   Section        2  net_config_http.o(.constdata)
+    .constdata                               0x000169d4   Section        2  net_config_http.o(.constdata)
+    .constdata                               0x000169d6   Section        2  net_config_http.o(.constdata)
+    .constdata                               0x000169d8   Section        2  net_config_http.o(.constdata)
+    .constdata                               0x000169da   Section        1  net_config_http.o(.constdata)
+    .constdata                               0x000169dc   Section     1686  main.o(.constdata)
+    .constdata                               0x00017072   Section       17  main.o(.constdata)
+    .constdata                               0x00017083   Section        6  at_ethernet.o(.constdata)
+    .constdata                               0x00017089   Section        4  at_ip.o(.constdata)
+    .data                                    0x10000000   Section        6  net_config_http.o(.data)
+    .data                                    0x10000008   Section       20  ret.o(.data)
+    .data                                    0x1000001c   Section        5  main.o(.data)
+    .data                                    0x10000021   Section        1  main.o(.data)
+    .data                                    0x10000024   Section        8  timer.o(.data)
+    .data                                    0x1000002c   Section        8  at_ethernet.o(.data)
+    q_head                                   0x1000002c   Data           4  at_ethernet.o(.data)
+    q_tail                                   0x10000030   Data           4  at_ethernet.o(.data)
+    .data                                    0x10000034   Section        4  at_mem.o(.data)
+    Mem_Load                                 0x10000034   Data           4  at_mem.o(.data)
+    .data                                    0x10000038   Section        2  at_arp.o(.data)
+    next_entry                               0x10000038   Data           2  at_arp.o(.data)
+    .bss                                     0x1000003c   Section    16384  net_config_http.o(.bss)
+    .bss                                     0x1000403c   Section       60  net_config_http.o(.bss)
+    .bss                                     0x10004078   Section       50  main.o(.bss)
+    .bss                                     0x100040ac   Section      128  at_ethernet.o(.bss)
+    rx_queue                                 0x100040ac   Data         128  at_ethernet.o(.bss)
+    STACK                                    0x10004130   Section     2048  startup_lpc17xx.o(STACK)
+    .data                                    0x2007c000   Section        8  mess.o(.data)
+    .data                                    0x2007c008   Section      836  main.o(.data)
+    sub_cnt                                  0x2007c00b   Data           1  main.o(.data)
+    sub_cnt1                                 0x2007c00c   Data           1  main.o(.data)
+    cnt_ind_bat                              0x2007c00d   Data           1  main.o(.data)
+    iByps_ind_cnt                            0x2007c00e   Data           1  main.o(.data)
+    phase_cnt                                0x2007c00f   Data           1  main.o(.data)
+    .data                                    0x2007c34c   Section        4  system_lpc17xx.o(.data)
+    .data                                    0x2007c350   Section       12  beep.o(.data)
+    bcnt                                     0x2007c350   Data           1  beep.o(.data)
+    .data                                    0x2007c35c   Section        8  emac_lpc17xx.o(.data)
+    dev_175x                                 0x2007c35c   Data           1  emac_lpc17xx.o(.data)
+    .data                                    0x2007c364   Section        4  at_tcp.o(.data)
+    socket                                   0x2007c364   Data           1  at_tcp.o(.data)
+    port                                     0x2007c366   Data           2  at_tcp.o(.data)
+    .data                                    0x2007c368   Section        8  at_system.o(.data)
+    tick_fl                                  0x2007c36a   Data           1  at_system.o(.data)
+    sec_cnt                                  0x2007c36e   Data           2  at_system.o(.data)
+    .data                                    0x2007c370   Section        4  at_ip.o(.data)
+    netif                                    0x2007c370   Data           1  at_ip.o(.data)
+    ip_id                                    0x2007c372   Data           2  at_ip.o(.data)
+    .bss                                     0x2007c374   Section      140  net_config_http.o(.bss)
+    .bss                                     0x2007c400   Section      352  net_config_http.o(.bss)
+    .bss                                     0x2007c560   Section      112  mess.o(.bss)
+    .bss                                     0x2007c5d0   Section     6324  main.o(.bss)
+    .bss                                     0x2007de88   Section    10852  emac_lpc17xx.o(.bss)
+    Rx_Desc                                  0x2007de88   Data          32  emac_lpc17xx.o(.bss)
+    Rx_Stat                                  0x2007dea8   Data          32  emac_lpc17xx.o(.bss)
+    Tx_Desc                                  0x2007dec8   Data          24  emac_lpc17xx.o(.bss)
+    Tx_Stat                                  0x2007dee0   Data          12  emac_lpc17xx.o(.bss)
+    rx_buf                                   0x2007deec   Data        6144  emac_lpc17xx.o(.bss)
+    tx_buf                                   0x2007f6ec   Data        4608  emac_lpc17xx.o(.bss)
+    .bss                                     0x200808ec   Section       60  at_system.o(.bss)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_lpc17xx.o(RESET)
+    arp_notify                                - Undefined Weak Reference
+    __main                                   0x000000cd   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000cd   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000d1   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000d5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_init                               0x000000d5   Thumb Code     0  entry7.o(.ARM.Collect$$$$00000007)
+    Reset_Handler                            0x000000e1   Thumb Code     4  startup_lpc17xx.o(.text)
+    NMI_Handler                              0x000000e5   Thumb Code     2  startup_lpc17xx.o(.text)
+    HardFault_Handler                        0x000000e7   Thumb Code     2  startup_lpc17xx.o(.text)
+    MemManage_Handler                        0x000000e9   Thumb Code     2  startup_lpc17xx.o(.text)
+    BusFault_Handler                         0x000000eb   Thumb Code     2  startup_lpc17xx.o(.text)
+    UsageFault_Handler                       0x000000ed   Thumb Code     2  startup_lpc17xx.o(.text)
+    SVC_Handler                              0x000000ef   Thumb Code     2  startup_lpc17xx.o(.text)
+    DebugMon_Handler                         0x000000f1   Thumb Code     2  startup_lpc17xx.o(.text)
+    PendSV_Handler                           0x000000f3   Thumb Code     2  startup_lpc17xx.o(.text)
+    BOD_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    CANActivity_IRQHandler                   0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    CAN_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    DMA_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT0_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT1_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT2_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT3_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C0_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C2_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2S_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    MCPWM_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL0_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    PWM1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    QEI_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    RIT_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    RTC_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    SPI_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP0_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP1_IRQHandler                          0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER2_IRQHandler                        0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER3_IRQHandler                        0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART0_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART1_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART2_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART3_IRQHandler                         0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    USBActivity_IRQHandler                   0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    USB_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    WDT_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
+    sys_error                                0x000000fd   Thumb Code     2  net_config_http.o(.text)
+    init_system                              0x000000ff   Thumb Code    20  net_config_http.o(.text)
+    run_system                               0x00000113   Thumb Code    14  net_config_http.o(.text)
+    process_hl_udp                           0x00000121   Thumb Code     4  net_config_http.o(.text)
+    process_hl_tcp                           0x00000125   Thumb Code     4  net_config_http.o(.text)
+    dispatch_frame                           0x00000129   Thumb Code    10  net_config_http.o(.text)
+    igmp_is_member                           0x00000133   Thumb Code     4  net_config_http.o(.text)
+    mess_hndl                                0x00000139   Thumb Code    56  mess.o(.text)
+    mess_send                                0x00000171   Thumb Code    46  mess.o(.text)
+    mess_find                                0x0000019f   Thumb Code    64  mess.o(.text)
+    mess_find_unvol                          0x000001df   Thumb Code    56  mess.o(.text)
+    ret_ind                                  0x00000221   Thumb Code    10  ret.o(.text)
+    ret_ind_hndl                             0x0000022b   Thumb Code    38  ret.o(.text)
+    ret_ind_sec                              0x00000251   Thumb Code     8  ret.o(.text)
+    ret_ind_sec_hndl                         0x00000259   Thumb Code    34  ret.o(.text)
+    ret                                      0x0000027b   Thumb Code     6  ret.o(.text)
+    ret_hndl                                 0x00000281   Thumb Code    28  ret.o(.text)
+    __scatterload                            0x000002a5   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000002a5   Thumb Code     0  init.o(.text)
+    CalcChksum                               0x000002c9   Thumb Code    22  at_lib.o(i.CalcChksum)
+    CalcChksumVal                            0x000002df   Thumb Code    10  at_lib.o(i.CalcChksumVal)
+    SwapB                                    0x000002e9   Thumb Code    10  at_lib.o(i.SwapB)
+    __scatterload_null                       0x000002f3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    poll_ethernet                            0x000002f5   Thumb Code     2  at_ethernet.o(i.poll_ethernet)
+    process_hl_igmp                          0x000002f7   Thumb Code     2  at_ethernet.o(i.process_hl_igmp)
+    netif_cfg                                0x000002f8   Data           1  net_config_http.o(.constdata)
+    tick_rate                                0x000002fa   Data           2  net_config_http.o(.constdata)
+    abs                                      0x00000301   Thumb Code    10  common_func.o(.text)
+    clr_scrn                                 0x0000030b   Thumb Code    18  common_func.o(.text)
+    find                                     0x0000031d   Thumb Code    22  common_func.o(.text)
+    bin2bcd_int                              0x00000333   Thumb Code    32  common_func.o(.text)
+    bcd2lcd_zero                             0x00000353   Thumb Code    62  common_func.o(.text)
+    int2lcd_m                                0x00000391   Thumb Code    96  common_func.o(.text)
+    int2lcd_mm                               0x000003f1   Thumb Code   112  common_func.o(.text)
+    __TCP_ARM_VER                            0x00000413   Number         0  at_system.o ABSOLUTE
+    int2lcd_mmm                              0x00000461   Thumb Code   158  common_func.o(.text)
+    long2lcd_mmm                             0x000004ff   Thumb Code   156  common_func.o(.text)
+    long2lcdyx_mmm                           0x0000059b   Thumb Code   166  common_func.o(.text)
+    int2lcdyx                                0x00000641   Thumb Code    78  common_func.o(.text)
+    sub_bgnd                                 0x0000068f   Thumb Code    38  common_func.o(.text)
+    int2lcd                                  0x000006b5   Thumb Code   102  common_func.o(.text)
+    ptr_carry                                0x0000071b   Thumb Code    18  common_func.o(.text)
+    event2ind                                0x0000072d   Thumb Code  1674  common_func.o(.text)
+    community2lcd                            0x00000db7   Thumb Code    58  common_func.o(.text)
+    ip2lcd                                   0x00000df1   Thumb Code   306  common_func.o(.text)
+    long2lcdhyx                              0x00000f23   Thumb Code   126  common_func.o(.text)
+    char2lcdh                                0x00000fa1   Thumb Code    36  common_func.o(.text)
+    char2lcdhyx                              0x00000fc5   Thumb Code    38  common_func.o(.text)
+    int2lcdhyx                               0x00000feb   Thumb Code    64  common_func.o(.text)
+    char2lcdbyx                              0x0000102b   Thumb Code   134  common_func.o(.text)
+    pointer_set                              0x000010b1   Thumb Code   122  common_func.o(.text)
+    tree_down                                0x0000112b   Thumb Code    38  common_func.o(.text)
+    tree_up                                  0x00001151   Thumb Code    40  common_func.o(.text)
+    bgnd_par                                 0x00001179   Thumb Code    94  common_func.o(.text)
+    show_mess                                0x000011d7   Thumb Code    38  common_func.o(.text)
+    event_data2ind                           0x000011fd   Thumb Code   224  common_func.o(.text)
+    gran_ring_char                           0x000012f1   Thumb Code    22  gran.o(.text)
+    gran_char                                0x00001307   Thumb Code    22  gran.o(.text)
+    gran                                     0x0000131d   Thumb Code    22  gran.o(.text)
+    gran_ring                                0x00001333   Thumb Code    22  gran.o(.text)
+    gran_long                                0x00001349   Thumb Code    18  gran.o(.text)
+    rtc_init                                 0x0000135d   Thumb Code     8  main.o(.text)
+    inv_search                               0x00001365   Thumb Code    42  main.o(.text)
+    abs_pal                                  0x0000138f   Thumb Code    10  main.o(.text)
+    init_ETH                                 0x00001399   Thumb Code     2  main.o(.text)
+    ADC_IRQHandler                           0x0000139b   Thumb Code    12  main.o(.text)
+    def_set                                  0x000013a7   Thumb Code     2  main.o(.text)
+    def_ips_set                              0x000013a9   Thumb Code     2  main.o(.text)
+    can_reset_hndl                           0x000013ab   Thumb Code     2  main.o(.text)
+    parol_init                               0x000013ad   Thumb Code    16  main.o(.text)
+    bitmap_hndl                              0x000013bd   Thumb Code   124  main.o(.text)
+    ind_hndl                                 0x00001439   Thumb Code 54508  main.o(.text)
+    but_drv                                  0x0000e925   Thumb Code   294  main.o(.text)
+    but_an                                   0x0000ea4b   Thumb Code 22416  main.o(.text)
+    watchdog_enable                          0x000141db   Thumb Code    24  main.o(.text)
+    watchdog_reset                           0x000141f3   Thumb Code    12  main.o(.text)
+    SysTick_Handler                          0x000141ff   Thumb Code   286  main.o(.text)
+    timer0_interrupt                         0x0001431d   Thumb Code     2  main.o(.text)
+    main                                     0x0001431f   Thumb Code   298  main.o(.text)
+    SystemInit                               0x0001449d   Thumb Code   314  system_lpc17xx.o(.text)
+    delayMs                                  0x000145f1   Thumb Code    70  timer.o(.text)
+    TIMER0_IRQHandler                        0x00014637   Thumb Code    38  timer.o(.text)
+    TIMER1_IRQHandler                        0x0001465d   Thumb Code    16  timer.o(.text)
+    enable_timer                             0x0001466d   Thumb Code    16  timer.o(.text)
+    disable_timer                            0x0001467d   Thumb Code    16  timer.o(.text)
+    reset_timer                              0x0001468d   Thumb Code    20  timer.o(.text)
+    init_timer                               0x000146a1   Thumb Code    50  timer.o(.text)
+    beep_drv                                 0x000146f9   Thumb Code    72  beep.o(.text)
+    beep_init                                0x00014741   Thumb Code    48  beep.o(.text)
+    beep_hndl                                0x00014771   Thumb Code   196  beep.o(.text)
+    lcd1_chk                                 0x00014855   Thumb Code    82  lcd_agm1232_uku207_3.o(.text)
+    lcd2_chk                                 0x000148a7   Thumb Code    82  lcd_agm1232_uku207_3.o(.text)
+    lcd1_wr                                  0x000148f9   Thumb Code   174  lcd_agm1232_uku207_3.o(.text)
+    lcd2_wr                                  0x000149a7   Thumb Code   182  lcd_agm1232_uku207_3.o(.text)
+    data1_wr                                 0x00014a5d   Thumb Code   184  lcd_agm1232_uku207_3.o(.text)
+    data2_wr                                 0x00014b15   Thumb Code   182  lcd_agm1232_uku207_3.o(.text)
+    lcd_set_page                             0x00014bcb   Thumb Code    20  lcd_agm1232_uku207_3.o(.text)
+    lcd_set_col                              0x00014bdf   Thumb Code    16  lcd_agm1232_uku207_3.o(.text)
+    lcd_set_raw                              0x00014bef   Thumb Code    20  lcd_agm1232_uku207_3.o(.text)
+    lcd_init                                 0x00014c03   Thumb Code    96  lcd_agm1232_uku207_3.o(.text)
+    status                                   0x00014c63   Thumb Code    38  lcd_agm1232_uku207_3.o(.text)
+    delay                                    0x00014c89   Thumb Code    16  lcd_agm1232_uku207_3.o(.text)
+    ltstrobe                                 0x00014c99   Thumb Code    56  lcd_agm1232_uku207_3.o(.text)
+    lcd_init_                                0x00014cd1   Thumb Code   180  lcd_agm1232_uku207_3.o(.text)
+    lcd_clear                                0x00014d85   Thumb Code    48  lcd_agm1232_uku207_3.o(.text)
+    lcd_on                                   0x00014db5   Thumb Code    16  lcd_agm1232_uku207_3.o(.text)
+    lcd_off                                  0x00014dc5   Thumb Code    16  lcd_agm1232_uku207_3.o(.text)
+    lcd_out                                  0x00014dd5   Thumb Code    76  lcd_agm1232_uku207_3.o(.text)
+    init_ethernet                            0x00014f65   Thumb Code   496  emac_lpc17xx.o(.text)
+    int_enable_eth                           0x00015155   Thumb Code    10  emac_lpc17xx.o(.text)
+    int_disable_eth                          0x0001515f   Thumb Code    10  emac_lpc17xx.o(.text)
+    send_frame                               0x00015169   Thumb Code    64  emac_lpc17xx.o(.text)
+    ENET_IRQHandler                          0x000151a9   Thumb Code   180  emac_lpc17xx.o(.text)
+    __decompress                             0x00015281   Thumb Code     0  __dczerorl.o(.text)
+    __decompress0                            0x00015281   Thumb Code    58  __dczerorl.o(.text)
+    CalcChksumBuf                            0x000152bd   Thumb Code    40  at_lib.o(i.CalcChksumBuf)
+    __scatterload_copy                       0x000152e5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_zeroinit                   0x000152f3   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    alloc_mem                                0x00015301   Thumb Code   152  at_mem.o(i.alloc_mem)
+    arp_cache_add                            0x000153a5   Thumb Code   176  at_arp.o(i.arp_cache_add)
+    arp_cache_find                           0x000154d5   Thumb Code   254  at_arp.o(i.arp_cache_find)
+    arp_cache_update                         0x000155ed   Thumb Code   218  at_arp.o(i.arp_cache_update)
+    arp_send_req                             0x000157e9   Thumb Code   154  at_arp.o(i.arp_send_req)
+    eth_chk_adr                              0x00015895   Thumb Code    10  at_ethernet.o(i.eth_chk_adr)
+    eth_send_frame                           0x000158a5   Thumb Code   138  at_ethernet.o(i.eth_send_frame)
+    free_mem                                 0x0001593d   Thumb Code    94  at_mem.o(i.free_mem)
+    get_u32                                  0x000159a5   Thumb Code    22  at_lib.o(i.get_u32)
+    init_arp                                 0x000159bd   Thumb Code    30  at_arp.o(i.init_arp)
+    init_eth_link                            0x000159e5   Thumb Code    30  at_ethernet.o(i.init_eth_link)
+    init_tcp                                 0x00015a09   Thumb Code    16  at_tcp.o(i.init_tcp)
+    init_udp                                 0x00015a21   Thumb Code    18  at_udp.o(i.init_udp)
+    ip_chk_frame                             0x00015a3d   Thumb Code   186  at_ip.o(i.ip_chk_frame)
+    ip_get_locadr                            0x00015b0d   Thumb Code   140  at_ip.o(i.ip_get_locadr)
+    ip_send_frame                            0x00015ba5   Thumb Code   140  at_ip.o(i.ip_send_frame)
+    is_subnet                                0x00015c35   Thumb Code    34  at_lib.o(i.is_subnet)
+    is_subnet_bcast                          0x00015c59   Thumb Code    40  at_arp.o(i.is_subnet_bcast)
+    main_TcpNet                              0x00015c85   Thumb Code    52  at_system.o(i.main_TcpNet)
+    mem_comp                                 0x00015cc1   Thumb Code    30  at_lib.o(i.mem_comp)
+    mem_copy                                 0x00015ce1   Thumb Code    28  at_lib.o(i.mem_copy)
+    mem_set                                  0x00015cfd   Thumb Code    16  at_lib.o(i.mem_set)
+    mem_test                                 0x00015d0d   Thumb Code    22  at_lib.o(i.mem_test)
+    process_arp                              0x00015d25   Thumb Code   142  at_arp.o(i.process_arp)
+    process_icmp                             0x00015dbd   Thumb Code   116  at_icmp.o(i.process_icmp)
+    process_tcp                              0x00015e31   Thumb Code  1132  at_tcp.o(i.process_tcp)
+    process_udp                              0x0001629d   Thumb Code   186  at_udp.o(i.process_udp)
+    put_in_queue                             0x00016361   Thumb Code    36  at_ethernet.o(i.put_in_queue)
+    resize_mem                               0x0001638d   Thumb Code    48  at_mem.o(i.resize_mem)
+    run_eth_link                             0x000163c1   Thumb Code   162  at_ethernet.o(i.run_eth_link)
+    set_u32                                  0x00016471   Thumb Code    16  at_lib.o(i.set_u32)
+    tcp_poll_sockets                         0x00016535   Thumb Code   472  at_tcp.o(i.tcp_poll_sockets)
+    timer_tick                               0x000169b9   Thumb Code     8  at_system.o(i.timer_tick)
+    MPool_Size                               0x000169c4   Data           4  net_config_http.o(.constdata)
+    arp_TabSize                              0x000169c8   Data           2  net_config_http.o(.constdata)
+    arp_TimeOut                              0x000169ca   Data           2  net_config_http.o(.constdata)
+    arp_MaxRetry                             0x000169cc   Data           1  net_config_http.o(.constdata)
+    arp_Resend                               0x000169cd   Data           1  net_config_http.o(.constdata)
+    udp_NumSocks                             0x000169ce   Data           1  net_config_http.o(.constdata)
+    tcp_NumSocks                             0x000169cf   Data           1  net_config_http.o(.constdata)
+    tcp_MaxRetry                             0x000169d0   Data           1  net_config_http.o(.constdata)
+    tcp_RetryTout                            0x000169d2   Data           2  net_config_http.o(.constdata)
+    tcp_2MSSTout                             0x000169d4   Data           2  net_config_http.o(.constdata)
+    tcp_SynRetryTout                         0x000169d6   Data           2  net_config_http.o(.constdata)
+    tcp_InitRetryTout                        0x000169d8   Data           2  net_config_http.o(.constdata)
+    tcp_ConRetry                             0x000169da   Data           1  net_config_http.o(.constdata)
+    caracter                                 0x000169dc   Data        1536  main.o(.constdata)
+    sm_mont                                  0x00016fdc   Data          52  main.o(.constdata)
+    sm_                                      0x00017010   Data          21  main.o(.constdata)
+    sm_exit                                  0x00017025   Data          21  main.o(.constdata)
+    sm_time                                  0x0001703a   Data          21  main.o(.constdata)
+    ABCDEF                                   0x00017072   Data          17  main.o(.constdata)
+    MAC_Broadcast                            0x00017083   Data           6  at_ethernet.o(.constdata)
+    IP_Broadcast                             0x00017089   Data           4  at_ip.o(.constdata)
+    Region$$Table$$Base                      0x00017090   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000170d0   Number         0  anon$$obj.o(Region$$Table)
+    own_hw_adr                               0x10000000   Data           6  net_config_http.o(.data)
+    retind                                   0x10000008   Data           1  ret.o(.data)
+    retsub                                   0x10000009   Data           1  ret.o(.data)
+    retindsec                                0x1000000a   Data           1  ret.o(.data)
+    f0                                       0x1000000b   Data           1  ret.o(.data)
+    fc0                                      0x1000000c   Data           1  ret.o(.data)
+    f1                                       0x1000000d   Data           1  ret.o(.data)
+    fc1                                      0x1000000e   Data           1  ret.o(.data)
+    ret_duty                                 0x10000010   Data           2  ret.o(.data)
+    retcnt                                   0x10000014   Data           4  ret.o(.data)
+    retcntsec                                0x10000018   Data           4  ret.o(.data)
+    dig                                      0x1000001c   Data           5  main.o(.data)
+    zero_on                                  0x10000021   Data           1  main.o(.data)
+    timer0_counter                           0x10000024   Data           4  timer.o(.data)
+    timer1_counter                           0x10000028   Data           4  timer.o(.data)
+    Mem_Pool                                 0x1000003c   Data       16384  net_config_http.o(.bss)
+    udp_socket                               0x1000403c   Data          60  net_config_http.o(.bss)
+    b_ind                                    0x10004078   Data          50  main.o(.bss)
+    __initial_sp                             0x10004930   Data           0  startup_lpc17xx.o(STACK)
+    mess_data                                0x2007c000   Data           8  mess.o(.data)
+    first_inv_slot                           0x2007c008   Data           1  main.o(.data)
+    mnemo_cnt                                0x2007c009   Data           1  main.o(.data)
+    ips_bat_av_stat                          0x2007c00a   Data           1  main.o(.data)
+    b10000Hz                                 0x2007c010   Data           1  main.o(.data)
+    b1000Hz                                  0x2007c011   Data           1  main.o(.data)
+    b2000Hz                                  0x2007c012   Data           1  main.o(.data)
+    b100Hz                                   0x2007c013   Data           1  main.o(.data)
+    b50Hz                                    0x2007c014   Data           1  main.o(.data)
+    b10Hz                                    0x2007c015   Data           1  main.o(.data)
+    b5Hz                                     0x2007c016   Data           1  main.o(.data)
+    b2Hz                                     0x2007c017   Data           1  main.o(.data)
+    b1Hz                                     0x2007c018   Data           1  main.o(.data)
+    b1min                                    0x2007c019   Data           1  main.o(.data)
+    bFL5                                     0x2007c01a   Data           1  main.o(.data)
+    bFL2                                     0x2007c01b   Data           1  main.o(.data)
+    bFL                                      0x2007c01c   Data           1  main.o(.data)
+    bFL_                                     0x2007c01d   Data           1  main.o(.data)
+    bTPS                                     0x2007c01e   Data           1  main.o(.data)
+    RELEVENTSIGN                             0x2007c01f   Data           1  main.o(.data)
+    APV_ON1                                  0x2007c020   Data           1  main.o(.data)
+    APV_ON2                                  0x2007c021   Data           1  main.o(.data)
+    AVZ                                      0x2007c022   Data           1  main.o(.data)
+    MNEMO_ON                                 0x2007c023   Data           1  main.o(.data)
+    lakb_error_cnt                           0x2007c024   Data           1  main.o(.data)
+    phase                                    0x2007c025   Data           1  main.o(.data)
+    simax                                    0x2007c026   Data           1  main.o(.data)
+    bFF                                      0x2007c027   Data           1  main.o(.data)
+    bFF_                                     0x2007c028   Data           1  main.o(.data)
+    but                                      0x2007c029   Data           1  main.o(.data)
+    but0_cnt                                 0x2007c02a   Data           1  main.o(.data)
+    but1_cnt                                 0x2007c02b   Data           1  main.o(.data)
+    but_onL_temp                             0x2007c02c   Data           1  main.o(.data)
+    speed                                    0x2007c02d   Data           1  main.o(.data)
+    l_but                                    0x2007c02e   Data           1  main.o(.data)
+    n_but                                    0x2007c02f   Data           1  main.o(.data)
+    default_temp                             0x2007c030   Data           1  main.o(.data)
+    bCAN_OFF                                 0x2007c031   Data           1  main.o(.data)
+    uout_av                                  0x2007c032   Data           1  main.o(.data)
+    main_10Hz_cnt                            0x2007c034   Data           2  main.o(.data)
+    main_1Hz_cnt                             0x2007c036   Data           2  main.o(.data)
+    ind_pointer                              0x2007c038   Data           2  main.o(.data)
+    t0cnt                                    0x2007c03a   Data           2  main.o(.data)
+    t0cnt0                                   0x2007c03c   Data           2  main.o(.data)
+    t0cnt1                                   0x2007c03e   Data           2  main.o(.data)
+    t0cnt2                                   0x2007c040   Data           2  main.o(.data)
+    t0cnt3                                   0x2007c042   Data           2  main.o(.data)
+    t0cnt4                                   0x2007c044   Data           2  main.o(.data)
+    t0cnt5                                   0x2007c046   Data           2  main.o(.data)
+    t0cntMin                                 0x2007c048   Data           2  main.o(.data)
+    UMAX                                     0x2007c04a   Data           2  main.o(.data)
+    UB0                                      0x2007c04c   Data           2  main.o(.data)
+    UB20                                     0x2007c04e   Data           2  main.o(.data)
+    TMAX                                     0x2007c050   Data           2  main.o(.data)
+    TSIGN                                    0x2007c052   Data           2  main.o(.data)
+    AV_OFF_AVT                               0x2007c054   Data           2  main.o(.data)
+    USIGN                                    0x2007c056   Data           2  main.o(.data)
+    UMN                                      0x2007c058   Data           2  main.o(.data)
+    ZV_ON                                    0x2007c05a   Data           2  main.o(.data)
+    IKB                                      0x2007c05c   Data           2  main.o(.data)
+    UVZ                                      0x2007c05e   Data           2  main.o(.data)
+    IMAX                                     0x2007c060   Data           2  main.o(.data)
+    IMIN                                     0x2007c062   Data           2  main.o(.data)
+    IZMAX                                    0x2007c064   Data           2  main.o(.data)
+    U0B                                      0x2007c066   Data           2  main.o(.data)
+    TZAS                                     0x2007c068   Data           2  main.o(.data)
+    TBAT                                     0x2007c06a   Data           2  main.o(.data)
+    U_AVT                                    0x2007c06c   Data           2  main.o(.data)
+    DU                                       0x2007c06e   Data           2  main.o(.data)
+    PAR                                      0x2007c070   Data           2  main.o(.data)
+    TBATMAX                                  0x2007c072   Data           2  main.o(.data)
+    TBATSIGN                                 0x2007c074   Data           2  main.o(.data)
+    UBM_AV                                   0x2007c076   Data           2  main.o(.data)
+    RELE_LOG                                 0x2007c078   Data           2  main.o(.data)
+    TBOXMAX                                  0x2007c07a   Data           2  main.o(.data)
+    TBOXREG                                  0x2007c07c   Data           2  main.o(.data)
+    TBOXVENTMAX                              0x2007c07e   Data           2  main.o(.data)
+    TLOADDISABLE                             0x2007c080   Data           2  main.o(.data)
+    TLOADENABLE                              0x2007c082   Data           2  main.o(.data)
+    TBATDISABLE                              0x2007c084   Data           2  main.o(.data)
+    TBATENABLE                               0x2007c086   Data           2  main.o(.data)
+    TVENTON                                  0x2007c088   Data           2  main.o(.data)
+    TVENTOFF                                 0x2007c08a   Data           2  main.o(.data)
+    TERMOKOMPENS                             0x2007c08c   Data           2  main.o(.data)
+    TBOXWARMON                               0x2007c08e   Data           2  main.o(.data)
+    TBOXWARMOFF                              0x2007c090   Data           2  main.o(.data)
+    BAT_TYPE                                 0x2007c092   Data           2  main.o(.data)
+    DU_LI_BAT                                0x2007c094   Data           2  main.o(.data)
+    FORVARDBPSCHHOUR                         0x2007c096   Data           2  main.o(.data)
+    NUMBAT                                   0x2007c098   Data           2  main.o(.data)
+    NUMBAT_IP55                              0x2007c09a   Data           2  main.o(.data)
+    NUMIST                                   0x2007c09c   Data           2  main.o(.data)
+    NUMINV                                   0x2007c09e   Data           2  main.o(.data)
+    NUMDT                                    0x2007c0a0   Data           2  main.o(.data)
+    NUMSK                                    0x2007c0a2   Data           2  main.o(.data)
+    NUMAVT                                   0x2007c0a4   Data           2  main.o(.data)
+    NUMMAKB                                  0x2007c0a6   Data           2  main.o(.data)
+    NUMBYPASS                                0x2007c0a8   Data           2  main.o(.data)
+    U_OUT_KONTR_MAX                          0x2007c0aa   Data           2  main.o(.data)
+    U_OUT_KONTR_MIN                          0x2007c0ac   Data           2  main.o(.data)
+    U_OUT_KONTR_DELAY                        0x2007c0ae   Data           2  main.o(.data)
+    DOP_RELE_FUNC                            0x2007c0b0   Data           2  main.o(.data)
+    APV_ON2_TIME                             0x2007c0b2   Data           2  main.o(.data)
+    BAT_IS_ON                                0x2007c0b4   Data           2  main.o(.data)
+    AUSW_MAIN                                0x2007c0b6   Data           2  main.o(.data)
+    HOUR_AVZ                                 0x2007c0b8   Data           2  main.o(.data)
+    MIN_AVZ                                  0x2007c0ba   Data           2  main.o(.data)
+    SEC_AVZ                                  0x2007c0bc   Data           2  main.o(.data)
+    DATE_AVZ                                 0x2007c0be   Data           2  main.o(.data)
+    MONTH_AVZ                                0x2007c0c0   Data           2  main.o(.data)
+    YEAR_AVZ                                 0x2007c0c2   Data           2  main.o(.data)
+    AVZ_TIME                                 0x2007c0c4   Data           2  main.o(.data)
+    MNEMO_TIME                               0x2007c0c6   Data           2  main.o(.data)
+    POWER_CNT_ADRESS                         0x2007c0c8   Data           2  main.o(.data)
+    ETH_IS_ON                                0x2007c0ca   Data           2  main.o(.data)
+    ETH_DHCP_ON                              0x2007c0cc   Data           2  main.o(.data)
+    ETH_IP_1                                 0x2007c0ce   Data           2  main.o(.data)
+    ETH_IP_2                                 0x2007c0d0   Data           2  main.o(.data)
+    ETH_IP_3                                 0x2007c0d2   Data           2  main.o(.data)
+    ETH_IP_4                                 0x2007c0d4   Data           2  main.o(.data)
+    ETH_MASK_1                               0x2007c0d6   Data           2  main.o(.data)
+    ETH_MASK_2                               0x2007c0d8   Data           2  main.o(.data)
+    ETH_MASK_3                               0x2007c0da   Data           2  main.o(.data)
+    ETH_MASK_4                               0x2007c0dc   Data           2  main.o(.data)
+    ETH_TRAP1_IP_1                           0x2007c0de   Data           2  main.o(.data)
+    ETH_TRAP1_IP_2                           0x2007c0e0   Data           2  main.o(.data)
+    ETH_TRAP1_IP_3                           0x2007c0e2   Data           2  main.o(.data)
+    ETH_TRAP1_IP_4                           0x2007c0e4   Data           2  main.o(.data)
+    ETH_TRAP2_IP_1                           0x2007c0e6   Data           2  main.o(.data)
+    ETH_TRAP2_IP_2                           0x2007c0e8   Data           2  main.o(.data)
+    ETH_TRAP2_IP_3                           0x2007c0ea   Data           2  main.o(.data)
+    ETH_TRAP2_IP_4                           0x2007c0ec   Data           2  main.o(.data)
+    ETH_TRAP3_IP_1                           0x2007c0ee   Data           2  main.o(.data)
+    ETH_TRAP3_IP_2                           0x2007c0f0   Data           2  main.o(.data)
+    ETH_TRAP3_IP_3                           0x2007c0f2   Data           2  main.o(.data)
+    ETH_TRAP3_IP_4                           0x2007c0f4   Data           2  main.o(.data)
+    ETH_TRAP4_IP_1                           0x2007c0f6   Data           2  main.o(.data)
+    ETH_TRAP4_IP_2                           0x2007c0f8   Data           2  main.o(.data)
+    ETH_TRAP4_IP_3                           0x2007c0fa   Data           2  main.o(.data)
+    ETH_TRAP4_IP_4                           0x2007c0fc   Data           2  main.o(.data)
+    ETH_TRAP5_IP_1                           0x2007c0fe   Data           2  main.o(.data)
+    ETH_TRAP5_IP_2                           0x2007c100   Data           2  main.o(.data)
+    ETH_TRAP5_IP_3                           0x2007c102   Data           2  main.o(.data)
+    ETH_TRAP5_IP_4                           0x2007c104   Data           2  main.o(.data)
+    ETH_SNMP_PORT_READ                       0x2007c106   Data           2  main.o(.data)
+    ETH_SNMP_PORT_WRITE                      0x2007c108   Data           2  main.o(.data)
+    ETH_GW_1                                 0x2007c10a   Data           2  main.o(.data)
+    ETH_GW_2                                 0x2007c10c   Data           2  main.o(.data)
+    ETH_GW_3                                 0x2007c10e   Data           2  main.o(.data)
+    ETH_GW_4                                 0x2007c110   Data           2  main.o(.data)
+    RELE_VENT_LOGIC                          0x2007c112   Data           2  main.o(.data)
+    MODBUS_ADRESS                            0x2007c114   Data           2  main.o(.data)
+    MODBUS_BAUDRATE                          0x2007c116   Data           2  main.o(.data)
+    BAT_LINK                                 0x2007c118   Data           2  main.o(.data)
+    LI_UNECC                                 0x2007c11a   Data           2  main.o(.data)
+    LI_Q                                     0x2007c11c   Data           2  main.o(.data)
+    LI_IZMAX1                                0x2007c11e   Data           2  main.o(.data)
+    LI_IZMAX2                                0x2007c120   Data           2  main.o(.data)
+    LI_K1                                    0x2007c122   Data           2  main.o(.data)
+    LI_K2                                    0x2007c124   Data           2  main.o(.data)
+    LI_K3                                    0x2007c126   Data           2  main.o(.data)
+    LI_T4                                    0x2007c128   Data           2  main.o(.data)
+    Ib_ips_termokompensat                    0x2007c12a   Data           2  main.o(.data)
+    load_U                                   0x2007c12c   Data           2  main.o(.data)
+    load_I                                   0x2007c12e   Data           2  main.o(.data)
+    bps_U                                    0x2007c130   Data           2  main.o(.data)
+    out_U                                    0x2007c132   Data           2  main.o(.data)
+    av_j_si_max                              0x2007c134   Data           2  main.o(.data)
+    net_U                                    0x2007c136   Data           2  main.o(.data)
+    net_Ua                                   0x2007c138   Data           2  main.o(.data)
+    net_Ub                                   0x2007c13a   Data           2  main.o(.data)
+    net_Uc                                   0x2007c13c   Data           2  main.o(.data)
+    net_F                                    0x2007c13e   Data           2  main.o(.data)
+    hz_out                                   0x2007c140   Data           2  main.o(.data)
+    hz_out_cnt                               0x2007c142   Data           2  main.o(.data)
+    t_box                                    0x2007c144   Data           2  main.o(.data)
+    t_box_warm                               0x2007c146   Data           2  main.o(.data)
+    t_box_vent                               0x2007c148   Data           2  main.o(.data)
+    u_necc                                   0x2007c14a   Data           2  main.o(.data)
+    av_beep                                  0x2007c14c   Data           2  main.o(.data)
+    av_rele                                  0x2007c14e   Data           2  main.o(.data)
+    main_vent_pos                            0x2007c150   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_WARM_SIGNAL          0x2007c152   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_VENT_SIGNAL          0x2007c154   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_WARM_ON              0x2007c156   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_WARM_OFF             0x2007c158   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_CAP                  0x2007c15a   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_VENT_ON              0x2007c15c   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_VENT_OFF             0x2007c15e   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_VVENT_ON             0x2007c160   Data           2  main.o(.data)
+    TELECORE2015_KLIMAT_VVENT_OFF            0x2007c162   Data           2  main.o(.data)
+    speedChrgCurr                            0x2007c164   Data           2  main.o(.data)
+    speedChrgVolt                            0x2007c166   Data           2  main.o(.data)
+    speedChrgTimeInHour                      0x2007c168   Data           2  main.o(.data)
+    speedChrgAvtEn                           0x2007c16a   Data           2  main.o(.data)
+    speedChrgDU                              0x2007c16c   Data           2  main.o(.data)
+    speedChIsOn                              0x2007c16e   Data           2  main.o(.data)
+    speedChrgBlckSrc                         0x2007c170   Data           2  main.o(.data)
+    speedChrgBlckLog                         0x2007c172   Data           2  main.o(.data)
+    speedChrgBlckStat                        0x2007c174   Data           2  main.o(.data)
+    ipsBlckSrc                               0x2007c176   Data           2  main.o(.data)
+    ipsBlckLog                               0x2007c178   Data           2  main.o(.data)
+    outVoltContrHndlCnt                      0x2007c17a   Data           2  main.o(.data)
+    parol                                    0x2007c17c   Data           3  main.o(.data)
+    sk_stat                                  0x2007c17f   Data           4  main.o(.data)
+    sk_av_stat                               0x2007c183   Data           4  main.o(.data)
+    tick                                     0x2007c188   Data           4  main.o(.data)
+    BAT_DAY_OF_ON                            0x2007c18c   Data           4  main.o(.data)
+    BAT_MONTH_OF_ON                          0x2007c190   Data           4  main.o(.data)
+    BAT_YEAR_OF_ON                           0x2007c194   Data           4  main.o(.data)
+    BAT_C_NOM                                0x2007c198   Data           4  main.o(.data)
+    BAT_RESURS                               0x2007c19c   Data           4  main.o(.data)
+    BAT_C_REAL                               0x2007c1a0   Data           4  main.o(.data)
+    AUSW_MAIN_NUMBER                         0x2007c1a4   Data           4  main.o(.data)
+    bSILENT                                  0x2007c1a8   Data           4  main.o(.data)
+    but_n                                    0x2007c1ac   Data           4  main.o(.data)
+    but_s                                    0x2007c1b0   Data           4  main.o(.data)
+    speedChTimeCnt                           0x2007c1b4   Data           4  main.o(.data)
+    a_ind                                    0x2007c1b8   Data           5  main.o(.data)
+    c_ind                                    0x2007c1bd   Data           5  main.o(.data)
+    TMAX_EXT_EN                              0x2007c1c2   Data           6  main.o(.data)
+    TMAX_EXT                                 0x2007c1c8   Data           6  main.o(.data)
+    TMIN_EXT_EN                              0x2007c1ce   Data           6  main.o(.data)
+    TMIN_EXT                                 0x2007c1d4   Data           6  main.o(.data)
+    T_EXT_REL_EN                             0x2007c1da   Data           6  main.o(.data)
+    T_EXT_ZVUK_EN                            0x2007c1e0   Data           6  main.o(.data)
+    T_EXT_LCD_EN                             0x2007c1e6   Data           6  main.o(.data)
+    T_EXT_RS_EN                              0x2007c1ec   Data           6  main.o(.data)
+    t_ext                                    0x2007c1f2   Data           6  main.o(.data)
+    SK_SIGN                                  0x2007c1f8   Data           8  main.o(.data)
+    SK_REL_EN                                0x2007c200   Data           8  main.o(.data)
+    SK_ZVUK_EN                               0x2007c208   Data           8  main.o(.data)
+    SK_LCD_EN                                0x2007c210   Data           8  main.o(.data)
+    SK_RS_EN                                 0x2007c218   Data           8  main.o(.data)
+    lcd_buffer                               0x2007c220   Data         300  main.o(.data)
+    SystemFrequency                          0x2007c34c   Data           4  system_lpc17xx.o(.data)
+    beep_stat_cnt                            0x2007c351   Data           1  beep.o(.data)
+    beep_cnt                                 0x2007c352   Data           1  beep.o(.data)
+    bU_BAT2REL_AV_BAT                        0x2007c353   Data           1  beep.o(.data)
+    beep_stat_temp                           0x2007c354   Data           4  beep.o(.data)
+    beep_stat                                0x2007c358   Data           4  beep.o(.data)
+    iap_entry                                0x2007c360   Data           4  emac_lpc17xx.o(.data)
+    sys_tick                                 0x2007c368   Data           1  at_system.o(.data)
+    sec_tick                                 0x2007c369   Data           1  at_system.o(.data)
+    timer_cnt                                0x2007c36c   Data           2  at_system.o(.data)
+    arp_table                                0x2007c374   Data         140  net_config_http.o(.bss)
+    tcp_socket                               0x2007c400   Data         352  net_config_http.o(.bss)
+    mess                                     0x2007c560   Data          10  mess.o(.bss)
+    mess_old                                 0x2007c56a   Data          10  mess.o(.bss)
+    mess_cnt                                 0x2007c574   Data          10  mess.o(.bss)
+    mess_par0                                0x2007c580   Data          40  mess.o(.bss)
+    mess_par1                                0x2007c5a8   Data          40  mess.o(.bss)
+    bat                                      0x2007c5d0   Data         152  main.o(.bss)
+    makb                                     0x2007c668   Data         168  main.o(.bss)
+    lakb                                     0x2007c710   Data         198  main.o(.bss)
+    li_bat                                   0x2007c7d6   Data          24  main.o(.bss)
+    bps                                      0x2007c7f0   Data        2688  main.o(.bss)
+    inv                                      0x2007d270   Data        1920  main.o(.bss)
+    byps                                     0x2007d9f0   Data          14  main.o(.bss)
+    lcd_bitmap                               0x2007d9fe   Data        1024  main.o(.bss)
+    ND_EXT                                   0x2007de00   Data          12  main.o(.bss)
+    tst_state                                0x2007de0c   Data          15  main.o(.bss)
+    content                                  0x2007de1b   Data          63  main.o(.bss)
+    ibt                                      0x2007de5a   Data          30  main.o(.bss)
+    avt_stat                                 0x2007de78   Data          12  main.o(.bss)
+    localm                                   0x200808ec   Data          60  at_system.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000cd
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00017480, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00017130])
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000170d0, Max: 0x00080000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000cc   Data   RO            3    RESET               startup_lpc17xx.o
+    0x000000cc   0x00000000   Code   RO          746  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000cc   0x00000004   Code   RO          749    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000d0   0x00000004   Code   RO          752    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000d4   0x00000008   Code   RO          753    .ARM.Collect$$$$00000007  mc_w.l(entry7.o)
+    0x000000dc   0x00000004   Code   RO          750    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000e0   0x0000001c   Code   RO            5    .text               startup_lpc17xx.o
+    0x000000fc   0x0000003a   Code   RO           13    .text               net_config_http.o
+    0x00000136   0x00000002   PAD
+    0x00000138   0x000000e8   Code   RO          115    .text               mess.o
+    0x00000220   0x00000084   Code   RO          134    .text               ret.o
+    0x000002a4   0x00000024   Code   RO          754    .text               mc_w.l(init.o)
+    0x000002c8   0x00000016   Code   RO          698    i.CalcChksum        TCP_CM3.lib(at_lib.o)
+    0x000002de   0x0000000a   Code   RO          700    i.CalcChksumVal     TCP_CM3.lib(at_lib.o)
+    0x000002e8   0x0000000a   Code   RO          701    i.SwapB             TCP_CM3.lib(at_lib.o)
+    0x000002f2   0x00000002   Code   RO          759    i.__scatterload_null  mc_w.l(handlers.o)
+    0x000002f4   0x00000002   Code   RO          627    i.poll_ethernet     TCP_CM3.lib(at_ethernet.o)
+    0x000002f6   0x00000002   Code   RO          628    i.process_hl_igmp   TCP_CM3.lib(at_ethernet.o)
+    0x000002f8   0x00000001   Data   RO           19    .constdata          net_config_http.o
+    0x000002f9   0x00000001   PAD
+    0x000002fa   0x00000002   Data   RO           21    .constdata          net_config_http.o
+    0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
+    0x00000300   0x00000ff0   Code   RO           61    .text               common_func.o
+    0x000012f0   0x0000006a   Code   RO          152    .text               gran.o
+    0x0000135a   0x00000002   PAD
+    0x0000135c   0x00013140   Code   RO          165    .text               main.o
+    0x0001449c   0x00000154   Code   RO          412    .text               system_lpc17xx.o
+    0x000145f0   0x00000108   Code   RO          441    .text               timer.o
+    0x000146f8   0x0000015c   Code   RO          484    .text               beep.o
+    0x00014854   0x000005d8   Code   RO          505    .text               lcd_agm1232_uku207_3.o
+    0x00014e2c   0x00000454   Code   RO          522    .text               emac_lpc17xx.o
+    0x00015280   0x0000003a   Code   RO          764    .text               mc_w.l(__dczerorl.o)
+    0x000152ba   0x00000002   PAD
+    0x000152bc   0x00000028   Code   RO          699    i.CalcChksumBuf     TCP_CM3.lib(at_lib.o)
+    0x000152e4   0x0000000e   Code   RO          758    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x000152f2   0x0000000e   Code   RO          760    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00015300   0x000000a4   Code   RO          642    i.alloc_mem         TCP_CM3.lib(at_mem.o)
+    0x000153a4   0x000000c4   Code   RO          661    i.arp_cache_add     TCP_CM3.lib(at_arp.o)
+    0x00015468   0x0000006c   Code   RO          662    i.arp_cache_alloc   TCP_CM3.lib(at_arp.o)
+    0x000154d4   0x00000118   Code   RO          663    i.arp_cache_find    TCP_CM3.lib(at_arp.o)
+    0x000155ec   0x000000f8   Code   RO          665    i.arp_cache_update  TCP_CM3.lib(at_arp.o)
+    0x000156e4   0x00000068   Code   RO          667    i.arp_get_response  TCP_CM3.lib(at_arp.o)
+    0x0001574c   0x0000009c   Code   RO          668    i.arp_send_reply    TCP_CM3.lib(at_arp.o)
+    0x000157e8   0x000000ac   Code   RO          669    i.arp_send_req      TCP_CM3.lib(at_arp.o)
+    0x00015894   0x00000010   Code   RO          623    i.eth_chk_adr       TCP_CM3.lib(at_ethernet.o)
+    0x000158a4   0x00000098   Code   RO          625    i.eth_send_frame    TCP_CM3.lib(at_ethernet.o)
+    0x0001593c   0x00000068   Code   RO          643    i.free_mem          TCP_CM3.lib(at_mem.o)
+    0x000159a4   0x00000016   Code   RO          708    i.get_u32           TCP_CM3.lib(at_lib.o)
+    0x000159ba   0x00000002   PAD
+    0x000159bc   0x00000028   Code   RO          670    i.init_arp          TCP_CM3.lib(at_arp.o)
+    0x000159e4   0x00000024   Code   RO          626    i.init_eth_link     TCP_CM3.lib(at_ethernet.o)
+    0x00015a08   0x00000018   Code   RO          549    i.init_tcp          TCP_CM3.lib(at_tcp.o)
+    0x00015a20   0x0000001c   Code   RO          604    i.init_udp          TCP_CM3.lib(at_udp.o)
+    0x00015a3c   0x000000c4   Code   RO          686    i.ip_chk_frame      TCP_CM3.lib(at_ip.o)
+    0x00015b00   0x0000000a   Code   RO          687    i.ip_get_chksum     TCP_CM3.lib(at_ip.o)
+    0x00015b0a   0x00000002   PAD
+    0x00015b0c   0x00000098   Code   RO          688    i.ip_get_locadr     TCP_CM3.lib(at_ip.o)
+    0x00015ba4   0x00000090   Code   RO          689    i.ip_send_frame     TCP_CM3.lib(at_ip.o)
+    0x00015c34   0x00000022   Code   RO          709    i.is_subnet         TCP_CM3.lib(at_lib.o)
+    0x00015c56   0x00000002   PAD
+    0x00015c58   0x0000002c   Code   RO          671    i.is_subnet_bcast   TCP_CM3.lib(at_arp.o)
+    0x00015c84   0x0000003c   Code   RO          653    i.main_TcpNet       TCP_CM3.lib(at_system.o)
+    0x00015cc0   0x0000001e   Code   RO          710    i.mem_comp          TCP_CM3.lib(at_lib.o)
+    0x00015cde   0x00000002   PAD
+    0x00015ce0   0x0000001c   Code   RO          711    i.mem_copy          TCP_CM3.lib(at_lib.o)
+    0x00015cfc   0x00000010   Code   RO          713    i.mem_set           TCP_CM3.lib(at_lib.o)
+    0x00015d0c   0x00000016   Code   RO          714    i.mem_test          TCP_CM3.lib(at_lib.o)
+    0x00015d22   0x00000002   PAD
+    0x00015d24   0x00000098   Code   RO          672    i.process_arp       TCP_CM3.lib(at_arp.o)
+    0x00015dbc   0x00000074   Code   RO          696    i.process_icmp      TCP_CM3.lib(at_icmp.o)
+    0x00015e30   0x0000046c   Code   RO          550    i.process_tcp       TCP_CM3.lib(at_tcp.o)
+    0x0001629c   0x000000c4   Code   RO          605    i.process_udp       TCP_CM3.lib(at_udp.o)
+    0x00016360   0x0000002c   Code   RO          629    i.put_in_queue      TCP_CM3.lib(at_ethernet.o)
+    0x0001638c   0x00000034   Code   RO          645    i.resize_mem        TCP_CM3.lib(at_mem.o)
+    0x000163c0   0x000000b0   Code   RO          630    i.run_eth_link      TCP_CM3.lib(at_ethernet.o)
+    0x00016470   0x00000010   Code   RO          715    i.set_u32           TCP_CM3.lib(at_lib.o)
+    0x00016480   0x00000014   Code   RO          560    i.tcp_init_seq      TCP_CM3.lib(at_tcp.o)
+    0x00016494   0x000000a0   Code   RO          562    i.tcp_map_socket    TCP_CM3.lib(at_tcp.o)
+    0x00016534   0x000001f4   Code   RO          564    i.tcp_poll_sockets  TCP_CM3.lib(at_tcp.o)
+    0x00016728   0x00000070   Code   RO          565    i.tcp_process_opt   TCP_CM3.lib(at_tcp.o)
+    0x00016798   0x00000022   Code   RO          570    i.tcp_send_ctrl     TCP_CM3.lib(at_tcp.o)
+    0x000167ba   0x00000002   PAD
+    0x000167bc   0x000000f4   Code   RO          571    i.tcp_send_frame    TCP_CM3.lib(at_tcp.o)
+    0x000168b0   0x00000080   Code   RO          572    i.tcp_send_reset    TCP_CM3.lib(at_tcp.o)
+    0x00016930   0x00000012   Code   RO          574    i.tcp_set_retransmit  TCP_CM3.lib(at_tcp.o)
+    0x00016942   0x00000002   PAD
+    0x00016944   0x00000074   Code   RO          575    i.tcp_transit       TCP_CM3.lib(at_tcp.o)
+    0x000169b8   0x0000000c   Code   RO          654    i.timer_tick        TCP_CM3.lib(at_system.o)
+    0x000169c4   0x00000004   Data   RO           20    .constdata          net_config_http.o
+    0x000169c8   0x00000002   Data   RO           22    .constdata          net_config_http.o
+    0x000169ca   0x00000002   Data   RO           23    .constdata          net_config_http.o
+    0x000169cc   0x00000001   Data   RO           24    .constdata          net_config_http.o
+    0x000169cd   0x00000001   Data   RO           25    .constdata          net_config_http.o
+    0x000169ce   0x00000001   Data   RO           26    .constdata          net_config_http.o
+    0x000169cf   0x00000001   Data   RO           27    .constdata          net_config_http.o
+    0x000169d0   0x00000001   Data   RO           28    .constdata          net_config_http.o
+    0x000169d1   0x00000001   PAD
+    0x000169d2   0x00000002   Data   RO           29    .constdata          net_config_http.o
+    0x000169d4   0x00000002   Data   RO           30    .constdata          net_config_http.o
+    0x000169d6   0x00000002   Data   RO           31    .constdata          net_config_http.o
+    0x000169d8   0x00000002   Data   RO           32    .constdata          net_config_http.o
+    0x000169da   0x00000001   Data   RO           34    .constdata          net_config_http.o
+    0x000169db   0x00000001   PAD
+    0x000169dc   0x00000696   Data   RO          175    .constdata          main.o
+    0x00017072   0x00000011   Data   RO          176    .constdata          main.o
+    0x00017083   0x00000006   Data   RO          632    .constdata          TCP_CM3.lib(at_ethernet.o)
+    0x00017089   0x00000004   Data   RO          690    .constdata          TCP_CM3.lib(at_ip.o)
+    0x0001708d   0x00000003   PAD
+    0x00017090   0x00000040   Data   RO          756    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00004930, Max: 0x00008000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x00000006   Data   RW           36    .data               net_config_http.o
+    0x10000006   0x00000002   PAD
+    0x10000008   0x00000014   Data   RW          135    .data               ret.o
+    0x1000001c   0x00000005   Data   RW          256    .data               main.o
+    0x10000021   0x00000001   Data   RW          257    .data               main.o
+    0x10000022   0x00000002   PAD
+    0x10000024   0x00000008   Data   RW          442    .data               timer.o
+    0x1000002c   0x00000008   Data   RW          633    .data               TCP_CM3.lib(at_ethernet.o)
+    0x10000034   0x00000004   Data   RW          646    .data               TCP_CM3.lib(at_mem.o)
+    0x10000038   0x00000002   Data   RW          673    .data               TCP_CM3.lib(at_arp.o)
+    0x1000003a   0x00000002   PAD
+    0x1000003c   0x00004000   Zero   RW           14    .bss                net_config_http.o
+    0x1000403c   0x0000003c   Zero   RW           16    .bss                net_config_http.o
+    0x10004078   0x00000032   Zero   RW          171    .bss                main.o
+    0x100040aa   0x00000002   PAD
+    0x100040ac   0x00000080   Zero   RW          631    .bss                TCP_CM3.lib(at_ethernet.o)
+    0x1000412c   0x00000004   PAD
+    0x10004130   0x00000800   Zero   RW            1    STACK               startup_lpc17xx.o
+
+
+    Execution Region RW_IRAM2 (Base: 0x2007c000, Size: 0x00004928, Max: 0x00008000, ABSOLUTE, COMPRESSED[0x00000024])
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2007c000   0x00000008   Data   RW          117    .data               mess.o
+    0x2007c008   0x00000344   Data   RW          177    .data               main.o
+    0x2007c34c   0x00000004   Data   RW          413    .data               system_lpc17xx.o
+    0x2007c350   0x0000000c   Data   RW          485    .data               beep.o
+    0x2007c35c   0x00000008   Data   RW          524    .data               emac_lpc17xx.o
+    0x2007c364   0x00000004   Data   RW          576    .data               TCP_CM3.lib(at_tcp.o)
+    0x2007c368   0x00000008   Data   RW          656    .data               TCP_CM3.lib(at_system.o)
+    0x2007c370   0x00000004   Data   RW          691    .data               TCP_CM3.lib(at_ip.o)
+    0x2007c374   0x0000008c   Zero   RW           15    .bss                net_config_http.o
+    0x2007c400   0x00000160   Zero   RW           17    .bss                net_config_http.o
+    0x2007c560   0x00000070   Zero   RW          116    .bss                mess.o
+    0x2007c5d0   0x000018b4   Zero   RW          166    .bss                main.o
+    0x2007de84   0x00000004   PAD
+    0x2007de88   0x00002a64   Zero   RW          523    .bss                emac_lpc17xx.o
+    0x200808ec   0x0000003c   Zero   RW          655    .bss                TCP_CM3.lib(at_system.o)
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       348         32          0         12          0       1311   beep.o
+      4080         62          0          0          0      18881   common_func.o
+      1108         58          0          8      10852      26230   emac_lpc17xx.o
+       106          0          0          0          0       1240   gran.o
+      1496         20          0          0          0       4103   lcd_agm1232_uku207_3.o
+     78144      18284       1703        842       6374      89593   main.o
+       232         10          0          8        112       1903   mess.o
+        58          0         25          6      16936      12561   net_config_http.o
+       132          8          0         20          0       1623   ret.o
+        32          8        204          0       2048        888   startup_lpc17xx.o
+       340         26          0          4          0      17723   system_lpc17xx.o
+       264         14          0          8          0      35423   timer.o
+
+    ----------------------------------------------------------------------
+     86344      18522       1999        912      36328     211479   Object Totals
+         0          0         64          0          0          0   (incl. Generated)
+         4          0          3          4          6          1   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+      1500        156          0          2          0        892   at_arp.o
+       428         48          6          8        128        544   at_ethernet.o
+       116          0          0          0          0         88   at_icmp.o
+       502         26          4          4          0        332   at_ip.o
+       250          0          0          0          0        784   at_lib.o
+       320         26          0          4          0        280   at_mem.o
+        72         12          0          8         60        136   at_system.o
+      2488        134          0          4          0        992   at_tcp.o
+       224         20          0          0          0        156   at_udp.o
+        58          0          0          0          0          0   __dczerorl.o
+         0          0          0          0          0          0   entry.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         8          4          0          0          0          0   entry7.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+
+    ----------------------------------------------------------------------
+      6060        438         13         32        192       4272   Library Totals
+        16          0          3          2          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+      5900        422         10         30        188       4204   TCP_CM3.lib
+       144         16          0          0          0         68   mc_w.l
+
+    ----------------------------------------------------------------------
+      6060        438         13         32        192       4272   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     92404      18960       2012        944      36520     211748   Grand Totals
+     92404      18960       2012         96      36520     211748   ELF Image Totals (compressed)
+     92404      18960       2012         96          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                94416 (  92.20kB)
+    Total RW  Size (RW Data + ZI Data)             37464 (  36.59kB)
+    Total ROM Size (Code + RO Data + RW Data)      94512 (  92.30kB)
+
+==============================================================================
+

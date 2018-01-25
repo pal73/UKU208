@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab\Revelation Board - FT81X demo firmware source Rev.1.2\stm32_lib /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab\Revelation Board - FT81X demo firmware source Rev.1.2\cmsis_core /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab\Revelation Board - FT81X demo firmware source Rev.1.2\stm32_lib\inc /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab\Revelation Board - FT81X demo firmware source Rev.1.2\cmsis_boot /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab\Revelation Board - FT81X demo firmware source Rev.1.2\FT800 /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab\Revelation Board - FT81X demo firmware source Rev.1.2 /ID:\rzeczy_pawla\zawartocs_d\pokazowki\3,5 FT8xx\Revelation_Board_FT81X_demo_firmware_source_Rev.1.2ab\Revelation Board - FT81X demo firmware source Rev.1.2\FT800\Hdr">
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx.h" lastModified="15645f94d19">
+      </source>
+      <source file="..\..\..\FT800\Src\SampleApp.c" lastModified="15645f94f0e">
+         <include file="..\..\..\FT800\Hdr\FT_Platform.h"/>
+         <include file="..\..\..\FT800\Hdr\SampleApp.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_syscfg.h" lastModified="15645f952b3">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\FT800\Hdr\FT_CoPro_Cmds.h" lastModified="15645f94dc2">
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_tim.h" lastModified="15645f952d9">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\FT800\Src\SampleApp_RawData.c" lastModified="1570e8148e0">
+         <include file="..\..\..\FT800\Hdr\FT_Platform.h"/>
+         <include file="..\..\..\FT800\Hdr\SampleApp.h"/>
+      </source>
+      <source file="..\..\..\FT800\Hdr\FT_Gpu.h" lastModified="15645f94e00">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_exti.c" lastModified="15645f952e9">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_exti.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_gpio.c" lastModified="15645f95317">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\FT800\Hdr\FT_Gpu_Hal.h" lastModified="15645f94e26">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="15645f95327">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_spi.c" lastModified="15645f9537c">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h" lastModified="15645f95284">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_misc.h" lastModified="15645f95275">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\FT800\Src\FT_Gpu_Hal.c" lastModified="15645f94efe">
+         <include file="..\..\..\FT800\Hdr\FT_Platform.h"/>
+      </source>
+      <source file="..\..\..\I2C1_bus.h" lastModified="15645f94adf">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx_temp.c" lastModified="15645f94d38">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f0xx.h" lastModified="15645f950e1">
+         <include file="..\..\..\cmsis_core\core_cm0.h"/>
+         <include file="..\..\..\cmsis_boot\system_stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\syscalls\syscalls.c" lastModified="15645f96361">
+      </source>
+      <source file="..\..\..\I2C1_bus.c" lastModified="15645f94ac0">
+         <include file="..\..\..\I2C1_bus.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_exti.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_syscfg.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_core\core_cmFunc.h" lastModified="15645f9555c">
+      </source>
+      <source file="..\..\..\main.c" lastModified="15645f95077">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_exti.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_misc.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_tim.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_syscfg.h"/>
+         <include file="..\..\..\FT800\Hdr\FT_Platform.h"/>
+         <include file="..\..\..\FT800\Hdr\SampleApp.h"/>
+         <include file="..\..\..\FM_M25P80.h"/>
+      </source>
+      <source file="..\..\..\FT800\Hdr\SampleApp.h" lastModified="15645f94e74">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_tim.c" lastModified="15645f953a2">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_tim.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\FT800\Hdr\FT_DataTypes.h" lastModified="15645f94dd2">
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h" lastModified="15645f9524f">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_misc.c" lastModified="15645f9533d">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_misc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h" lastModified="15645f952a4">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\FM_M25P80.h" lastModified="15645f94ab0">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\FT800\Hdr\FT_Platform.h" lastModified="15645f994b5">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\FT800\Hdr\FT_DataTypes.h"/>
+         <include file="..\..\..\FT800\Hdr\FT_Gpu_Hal.h"/>
+         <include file="..\..\..\FT800\Hdr\FT_Gpu.h"/>
+         <include file="..\..\..\FT800\Hdr\FT_CoPro_Cmds.h"/>
+      </source>
+      <source file="..\..\..\FT800\Src\FT_CoPro_Cmds.c" lastModified="15645f94ed9">
+         <include file="..\..\..\FT800\Hdr\FT_Platform.h"/>
+      </source>
+      <source file="..\..\..\FM_M25P80.c" lastModified="15645f94a8b">
+         <include file="..\..\..\FM_M25P80.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="15645f94d58">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="15645f9535c">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_core\core_cmInstr.h" lastModified="15645f9556c">
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_exti.h" lastModified="15645f94f52">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_syscfg.c" lastModified="15645f9538b">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_syscfg.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h" lastModified="15645f94f72">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_core\core_cm0.h" lastModified="15645f95155">
+         <include file="..\..\..\cmsis_core\core_cmInstr.h"/>
+         <include file="..\..\..\cmsis_core\core_cmFunc.h"/>
+      </source>
+   </includePath>
+</dependencies>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -g -nostartfiles -Map=riverdi eval.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\riverdi eval -TC:\CooCox\CoIDE\configuration\ProgramData\riverdi eval/arm-gcc-link.ld -g">
+      <target file="riverdi eval.elf" lastModified="1570e8170df">
+         <source file="..\obj\stm32f0xx_rcc.o" lastModified="1570e815039"/>
+         <source file="..\obj\SampleApp.o" lastModified="1570e815b83"/>
+         <source file="..\obj\FM_M25P80.o" lastModified="1570e815bc8"/>
+         <source file="..\obj\main.o" lastModified="1570e81632c"/>
+         <source file="..\obj\startup_stm32f0xx.o" lastModified="1570e81633b"/>
+         <source file="..\obj\FT_Gpu_Hal.o" lastModified="1570e816744"/>
+         <source file="..\obj\stm32f0xx_spi.o" lastModified="1570e8167a8"/>
+         <source file="..\obj\stm32f0xx_i2c.o" lastModified="1570e8167fd"/>
+         <source file="..\obj\system_stm32f0xx_temp.o" lastModified="1570e81683e"/>
+         <source file="..\obj\SampleApp_RawData.o" lastModified="1570e81698d"/>
+         <source file="..\obj\stm32f0xx_gpio.o" lastModified="1570e8169d1"/>
+         <source file="..\obj\FT_CoPro_Cmds.o" lastModified="1570e816c8e"/>
+         <source file="..\obj\syscalls.o" lastModified="1570e816cdc"/>
+         <source file="..\obj\I2C1_bus.o" lastModified="1570e816d22"/>
+         <source file="..\obj\stm32f0xx_tim.o" lastModified="1570e816dba"/>
+         <source file="..\obj\stm32f0xx_exti.o" lastModified="1570e816de9"/>
+         <source file="..\obj\stm32f0xx_syscfg.o" lastModified="1570e816e2e"/>
+         <source file="..\obj\stm32f0xx_misc.o" lastModified="1570e816e5d"/>
+      </target>
+   </processor>
+</history>
