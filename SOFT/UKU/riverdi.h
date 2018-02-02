@@ -1,8 +1,8 @@
 
-#define PD_LOW 		LPC_GPIO2->FIODIR|=(1<<8);	LPC_GPIO2->FIOCLR|=(1<<8);
-#define PD_HIGH 	LPC_GPIO2->FIODIR|=(1<<8);	LPC_GPIO2->FIOSET|=(1<<8);
+#define PD_LOW 		LPC_GPIO0->FIODIR|=(1<<21);	LPC_GPIO0->FIOCLR|=(1<<21);
+#define PD_HIGH 	LPC_GPIO0->FIODIR|=(1<<21);	LPC_GPIO0->FIOSET|=(1<<21);
 
-#define RIV_CS 20
+#define RIV_CS 19
 #define RIV_CS_ON       LPC_GPIO0->FIODIR|=(1UL<<RIV_CS);LPC_GPIO0->FIOCLR|=(1UL<<RIV_CS);
 #define RIV_CS_OFF      LPC_GPIO0->FIODIR|=(1UL<<RIV_CS);LPC_GPIO0->FIOSET|=(1UL<<RIV_CS);
 
@@ -105,14 +105,15 @@ void host_command(char cmd);
 
 #define DispWidth 		800
 #define DispHeight 		480
-#define DispHCycle 		1056
+//#define DispHCycle 		1056
+#define DispHCycle 		850
 #define DispHOffset 	46
 #define DispHSync0 		0
-#define DispHSync1 		10
+#define DispHSync1 		7
 #define DispVCycle 		525
 #define DispVOffset 	23
 #define DispVSync0 		0
-#define DispVSync1 		10
+#define DispVSync1 		7
 #define DispPCLK 		2
 #define DispSwizzle 	0
 #define DispPCLKPol 	0

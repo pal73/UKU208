@@ -12,6 +12,7 @@
 .\EXE\main.o: uart0.h
 .\EXE\main.o: cmd.h
 .\EXE\main.o: ret.h
+.\EXE\main.o: eeprom_map.h
 .\EXE\main.o: common_func.h
 .\EXE\main.o: mess.h
 .\EXE\main.o: watchdog.h

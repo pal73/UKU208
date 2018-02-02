@@ -102,12 +102,7 @@ Section Cross References
     ret.o(.text) refers to ret.o(.data) for .data
     ret.o(.text) refers to common_func.o(.text) for tree_down
     ret.o(.text) refers to ret.o(.data) for .data
-    main.o(.text) refers to beep.o(.text) for beep_drv
-    main.o(.text) refers to system_lpc17xx.o(.text) for SystemInit
-    main.o(.text) refers to 25lc640ssp1.o(.text) for lc640_read
-    main.o(.text) refers to printf1.o(i.__0printf$1) for __2printf
-    main.o(.text) refers to main.o(.data) for .data
-    main.o(.text) refers to system_lpc17xx.o(.data) for SystemFrequency
+    main.o(.text) refers to main.o(.text) for uartWrite
     main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_Wr16
     main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Cmdfifo_Freespace
     main.o(.text) refers to main.o(.text) for Ft_Gpu_Hal_CheckCmdBuffer_
@@ -135,7 +130,37 @@ Section Cross References
     main.o(.text) refers to main.o(.data) for .data
     main.o(.text) refers to main.o(.bss) for .bss
     main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to beep.o(.text) for beep_drv
+    main.o(.text) refers to system_lpc17xx.o(.text) for SystemInit
+    main.o(.text) refers to riverdi.o(.text) for spi1_config
+    main.o(.text) refers to riverdi.o(.text) for command_active
+    main.o(.text) refers to riverdi.o(.text) for host_command
+    main.o(.text) refers to riverdi.o(.text) for rd8
+    main.o(.text) refers to riverdi.o(.text) for wr16
+    main.o(.text) refers to riverdi.o(.text) for wr8
+    main.o(.text) refers to riverdi.o(.text) for wr32
+    main.o(.text) refers to main.o(.text) for font_9564_init
+    main.o(.text) refers to 25lc640ssp1.o(.text) for lc640_read_int
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dlstart
+    main.o(.text) refers to ft_gpu_hal.o(.text) for Ft_Gpu_Hal_WrCmd32
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_FgColor
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_BgColor
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Text
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Calibrate
+    main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Swap
+    main.o(.text) refers to riverdi.o(.text) for rd32
+    main.o(.text) refers to 25lc640ssp1.o(.text) for lc640_write_long
     main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to system_lpc17xx.o(.data) for SystemFrequency
+    main.o(.text) refers to main.o(.bss) for .bss
+    main.o(.text) refers to 25lc640ssp1.o(.text) for lc640_write_int
+    main.o(.text) refers to main.o(.text) for ind_hndl
+    main.o(.text) refers to 25lc640ssp1.o(.text) for lc640_read_long
+    main.o(.text) refers to main.o(.text) for rus_text_adaptor
+    main.o(.text) refers to printf2.o(i.__0printf$2) for __2printf
+    main.o(.text) refers to main.o(.data) for .data
+    main.o(.text) refers to strlen.o(.text) for strlen
+    main.o(.text) refers to main.o(.bss) for .bss
     main.o(.text) refers to main.o(.bss) for .bss
     main.o(.text) refers to main.o(.data) for .data
     main.o(.text) refers to main.o(.constdata) for .constdata
@@ -160,6 +185,7 @@ Section Cross References
     main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Number
     main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Dial
     main.o(.text) refers to ft_copro_cmds.o(.text) for Ft_Gpu_CoCmd_Swap
+    main.o(.text) refers to main.o(.text) for rus_text_adaptor
     main.o(.text) refers to main.o(.data) for .data
     main.o(.text) refers to common_func.o(.text) for tree_down
     main.o(.text) refers to beep.o(.text) for beep_init
@@ -199,13 +225,52 @@ Section Cross References
     timer.o(.text) refers to timer.o(.text) for NVIC_EnableIRQ
     timer.o(.text) refers to timer.o(.data) for .data
     beep.o(.text) refers to beep.o(.data) for .data
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_wren
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_wren
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_wren
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_rdsr
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for lc640_wren
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_config
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1
+    25lc640ssp1.o(.text) refers to 25lc640ssp1.o(.text) for ssp1_unconfig
     uart0.o(.text) refers to uart0.o(.data) for .data
     uart0.o(.text) refers to uart0.o(.bss) for .bss
     uart0.o(.text) refers to uart0.o(.text) for putchar0
@@ -1019,23 +1084,15 @@ Removing Unused input sections from the image.
     Removing net_config_http.o(.data), (6 bytes).
     Removing common_func.o(.emb_text), (8 bytes).
     Removing common_func.o(.text), (10 bytes).
-    Removing common_func.o(.text), (24 bytes).
-    Removing common_func.o(.text), (28 bytes).
-    Removing common_func.o(.text), (36 bytes).
-    Removing common_func.o(.text), (72 bytes).
     Removing common_func.o(.text), (104 bytes).
     Removing common_func.o(.text), (120 bytes).
     Removing common_func.o(.text), (164 bytes).
     Removing common_func.o(.text), (160 bytes).
     Removing common_func.o(.text), (172 bytes).
-    Removing common_func.o(.text), (88 bytes).
-    Removing common_func.o(.text), (44 bytes).
-    Removing common_func.o(.text), (96 bytes).
     Removing common_func.o(.text), (18 bytes).
     Removing common_func.o(.text), (1884 bytes).
     Removing common_func.o(.text), (68 bytes).
     Removing common_func.o(.text), (316 bytes).
-    Removing common_func.o(.text), (136 bytes).
     Removing common_func.o(.text), (44 bytes).
     Removing common_func.o(.text), (48 bytes).
     Removing common_func.o(.text), (72 bytes).
@@ -1043,7 +1100,6 @@ Removing Unused input sections from the image.
     Removing common_func.o(.text), (132 bytes).
     Removing common_func.o(.text), (52 bytes).
     Removing common_func.o(.text), (52 bytes).
-    Removing common_func.o(.text), (100 bytes).
     Removing common_func.o(.text), (44 bytes).
     Removing common_func.o(.text), (232 bytes).
     Removing mess.o(.text), (60 bytes).
@@ -1068,7 +1124,6 @@ Removing Unused input sections from the image.
     Removing main.o(.text), (28 bytes).
     Removing main.o(.text), (20 bytes).
     Removing main.o(.text), (38 bytes).
-    Removing main.o(.text), (144 bytes).
     Removing main.o(.text), (208 bytes).
     Removing main.o(.text), (228 bytes).
     Removing main.o(.text), (12 bytes).
@@ -1080,13 +1135,11 @@ Removing Unused input sections from the image.
     Removing main.o(.text), (2 bytes).
     Removing main.o(.text), (20 bytes).
     Removing main.o(.text), (136 bytes).
-    Removing main.o(.text), (4752 bytes).
     Removing main.o(.text), (268 bytes).
     Removing main.o(.text), (832 bytes).
     Removing main.o(.text), (28 bytes).
     Removing main.o(.text), (12 bytes).
     Removing main.o(.text), (2 bytes).
-    Removing main.o(.bss), (15568 bytes).
     Removing main.o(.bss), (152 bytes).
     Removing main.o(.bss), (76 bytes).
     Removing main.o(.bss), (168 bytes).
@@ -1105,9 +1158,6 @@ Removing Unused input sections from the image.
     Removing main.o(.bss), (30 bytes).
     Removing main.o(.bss), (12 bytes).
     Removing main.o(.bss), (12 bytes).
-    Removing main.o(.bss), (12 bytes).
-    Removing main.o(.constdata), (1588 bytes).
-    Removing main.o(.constdata), (17 bytes).
     Removing main.o(.constdata), (21 bytes).
     Removing main.o(.constdata), (21 bytes).
     Removing main.o(.constdata), (21 bytes).
@@ -1153,8 +1203,6 @@ Removing Unused input sections from the image.
     Removing main.o(.data), (2 bytes).
     Removing main.o(.data), (2 bytes).
     Removing main.o(.data), (2 bytes).
-    Removing main.o(.data), (1 bytes).
-    Removing main.o(.data), (5 bytes).
     Removing main.o(.data), (1 bytes).
     Removing main.o(.data), (1 bytes).
     Removing main.o(.data), (2 bytes).
@@ -1270,17 +1318,8 @@ Removing Unused input sections from the image.
     Removing graphic.o(.text), (200 bytes).
     Removing riverdi.o(.emb_text), (8 bytes).
     Removing riverdi.o(.text), (20 bytes).
-    Removing riverdi.o(.text), (56 bytes).
     Removing riverdi.o(.text), (52 bytes).
-    Removing riverdi.o(.text), (20 bytes).
-    Removing riverdi.o(.text), (80 bytes).
     Removing riverdi.o(.text), (96 bytes).
-    Removing riverdi.o(.text), (116 bytes).
-    Removing riverdi.o(.text), (80 bytes).
-    Removing riverdi.o(.text), (88 bytes).
-    Removing riverdi.o(.text), (104 bytes).
-    Removing riverdi.o(.text), (60 bytes).
-    Removing riverdi.o(.text), (60 bytes).
     Removing system_lpc17xx.o(.emb_text), (8 bytes).
     Removing timer.o(.emb_text), (8 bytes).
     Removing timer.o(.text), (76 bytes).
@@ -1296,12 +1335,10 @@ Removing Unused input sections from the image.
     Removing beep.o(.data), (1 bytes).
     Removing beep.o(.data), (1 bytes).
     Removing 25lc640ssp1.o(.emb_text), (8 bytes).
-    Removing 25lc640ssp1.o(.text), (120 bytes).
-    Removing 25lc640ssp1.o(.text), (144 bytes).
+    Removing 25lc640ssp1.o(.text), (124 bytes).
     Removing 25lc640ssp1.o(.text), (132 bytes).
     Removing 25lc640ssp1.o(.text), (128 bytes).
-    Removing 25lc640ssp1.o(.text), (124 bytes).
-    Removing 25lc640ssp1.o(.text), (140 bytes).
+    Removing 25lc640ssp1.o(.text), (112 bytes).
     Removing 25lc640ssp1.o(.text), (132 bytes).
     Removing uart0.o(.emb_text), (8 bytes).
     Removing uart0.o(.text), (68 bytes).
@@ -1334,29 +1371,20 @@ Removing Unused input sections from the image.
     Removing emac_lpc17xx.o(.text), (36 bytes).
     Removing emac_lpc17xx.o(.data), (8 bytes).
     Removing ft_copro_cmds.o(.text), (4 bytes).
-    Removing ft_copro_cmds.o(.text), (28 bytes).
     Removing ft_copro_cmds.o(.text), (24 bytes).
     Removing ft_copro_cmds.o(.text), (22 bytes).
-    Removing ft_copro_cmds.o(.text), (60 bytes).
-    Removing ft_copro_cmds.o(.text), (60 bytes).
     Removing ft_copro_cmds.o(.text), (32 bytes).
-    Removing ft_copro_cmds.o(.text), (72 bytes).
     Removing ft_copro_cmds.o(.text), (92 bytes).
     Removing ft_copro_cmds.o(.text), (50 bytes).
     Removing ft_copro_cmds.o(.text), (64 bytes).
     Removing ft_copro_cmds.o(.text), (64 bytes).
     Removing ft_copro_cmds.o(.text), (48 bytes).
     Removing ft_copro_cmds.o(.text), (26 bytes).
-    Removing ft_copro_cmds.o(.text), (8 bytes).
-    Removing ft_copro_cmds.o(.text), (26 bytes).
     Removing ft_copro_cmds.o(.text), (52 bytes).
     Removing ft_copro_cmds.o(.text), (32 bytes).
-    Removing ft_copro_cmds.o(.text), (72 bytes).
     Removing ft_copro_cmds.o(.text), (150 bytes).
     Removing ft_copro_cmds.o(.text), (42 bytes).
-    Removing ft_copro_cmds.o(.text), (40 bytes).
     Removing ft_copro_cmds.o(.text), (42 bytes).
-    Removing ft_copro_cmds.o(.text), (74 bytes).
     Removing ft_copro_cmds.o(.text), (52 bytes).
     Removing ft_copro_cmds.o(.text), (92 bytes).
     Removing ft_copro_cmds.o(.text), (94 bytes).
@@ -1366,22 +1394,17 @@ Removing Unused input sections from the image.
     Removing ft_copro_cmds.o(.text), (42 bytes).
     Removing ft_copro_cmds.o(.text), (150 bytes).
     Removing ft_copro_cmds.o(.text), (32 bytes).
-    Removing ft_copro_cmds.o(.text), (36 bytes).
-    Removing ft_copro_cmds.o(.text), (32 bytes).
     Removing ft_copro_cmds.o(.text), (52 bytes).
     Removing ft_copro_cmds.o(.text), (52 bytes).
     Removing ft_copro_cmds.o(.text), (52 bytes).
     Removing ft_copro_cmds.o(.text), (92 bytes).
     Removing ft_copro_cmds.o(.text), (86 bytes).
     Removing ft_copro_cmds.o(.text), (32 bytes).
-    Removing ft_copro_cmds.o(.text), (60 bytes).
     Removing ft_copro_cmds.o(.text), (42 bytes).
     Removing ft_copro_cmds.o(.text), (88 bytes).
     Removing ft_copro_cmds.o(.text), (32 bytes).
     Removing ft_copro_cmds.o(.text), (114 bytes).
-    Removing ft_copro_cmds.o(.text), (60 bytes).
     Removing ft_copro_cmds.o(.text), (52 bytes).
-    Removing ft_copro_cmds.o(.text), (8 bytes).
     Removing ft_copro_cmds.o(.text), (42 bytes).
     Removing ft_copro_cmds.o(.text), (32 bytes).
     Removing ft_copro_cmds.o(.text), (64 bytes).
@@ -1391,27 +1414,13 @@ Removing Unused input sections from the image.
     Removing ft_gpu_hal.o(.text), (2 bytes).
     Removing ft_gpu_hal.o(.text), (6 bytes).
     Removing ft_gpu_hal.o(.text), (2 bytes).
-    Removing ft_gpu_hal.o(.text), (92 bytes).
-    Removing ft_gpu_hal.o(.text), (10 bytes).
     Removing ft_gpu_hal.o(.text), (6 bytes).
     Removing ft_gpu_hal.o(.text), (40 bytes).
-    Removing ft_gpu_hal.o(.text), (48 bytes).
-    Removing ft_gpu_hal.o(.text), (58 bytes).
-    Removing ft_gpu_hal.o(.text), (28 bytes).
-    Removing ft_gpu_hal.o(.text), (30 bytes).
-    Removing ft_gpu_hal.o(.text), (56 bytes).
-    Removing ft_gpu_hal.o(.text), (32 bytes).
     Removing ft_gpu_hal.o(.text), (30 bytes).
     Removing ft_gpu_hal.o(.text), (32 bytes).
-    Removing ft_gpu_hal.o(.text), (32 bytes).
-    Removing ft_gpu_hal.o(.text), (28 bytes).
-    Removing ft_gpu_hal.o(.text), (32 bytes).
-    Removing ft_gpu_hal.o(.text), (52 bytes).
-    Removing ft_gpu_hal.o(.text), (18 bytes).
-    Removing ft_gpu_hal.o(.text), (100 bytes).
+    Removing ft_gpu_hal.o(.text), (30 bytes).
     Removing ft_gpu_hal.o(.text), (52 bytes).
     Removing ft_gpu_hal.o(.text), (6 bytes).
-    Removing ft_gpu_hal.o(.text), (38 bytes).
     Removing ft_gpu_hal.o(.text), (6 bytes).
     Removing ft_gpu_hal.o(.text), (40 bytes).
     Removing ft_gpu_hal.o(.text), (22 bytes).
@@ -1523,7 +1532,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (40 bytes).
     Removing depilogue.o(.text), (198 bytes).
 
-533 unused section(s) (total 60629 bytes) removed from the image.
+477 unused section(s) (total 35702 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1534,7 +1543,7 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
-    ../../../cmprslib/lz77c.c                0x00000000   Number         0  __dclz77c.o ABSOLUTE
+    ../../../cmprslib/zerorunl2.c            0x00000000   Number         0  __dczerorl2.o ABSOLUTE
     ../../microlib/division.c                0x00000000   Number         0  uidiv.o ABSOLUTE
     ../../microlib/division.c                0x00000000   Number         0  uldiv.o ABSOLUTE
     ../../microlib/fpadd.c                   0x00000000   Number         0  dadd.o ABSOLUTE
@@ -1543,23 +1552,23 @@ Image Symbol Table
     ../../microlib/fpfix.c                   0x00000000   Number         0  dfixul.o ABSOLUTE
     ../../microlib/fpmul.c                   0x00000000   Number         0  dmul.o ABSOLUTE
     ../../microlib/init/entry.s              0x00000000   Number         0  entry5.o ABSOLUTE
-    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
     ../../microlib/init/entry.s              0x00000000   Number         0  entry.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
     ../../microlib/init/entry.s              0x00000000   Number         0  entry7.o ABSOLUTE
-    ../../microlib/longlong.c                0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../../microlib/longlong.c                0x00000000   Number         0  llushr.o ABSOLUTE
     ../../microlib/longlong.c                0x00000000   Number         0  llshl.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llushr.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llsshr.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printfa.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printf8.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printf6.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printf5.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printfb.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printf1.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printf2.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf3.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printf7.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf4.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf1.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf5.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf2.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf6.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf7.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf8.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf0.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printfb.o ABSOLUTE
     ../../microlib/printf/stubs.s            0x00000000   Number         0  stubs.o ABSOLUTE
     ../../microlib/string/memset.c           0x00000000   Number         0  memseta.o ABSOLUTE
     ../../microlib/string/strlen.c           0x00000000   Number         0  strlen.o ABSOLUTE
@@ -1616,57 +1625,122 @@ Image Symbol Table
     __lit__00000000                          0x000000dc   Data           4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x000000e0   Section       28  startup_lpc17xx.o(.text)
     .text                                    0x000000fc   Section        0  net_config_http.o(.text)
-    .text                                    0x00000100   Section        0  system_lpc17xx.o(.text)
-    .text                                    0x00000254   Section        0  timer.o(.text)
-    .text                                    0x00000298   Section        0  beep.o(.text)
-    .text                                    0x0000029a   Section        0  uidiv.o(.text)
-    .text                                    0x000002c8   Section       36  init.o(.text)
-    i.__scatterload_copy                     0x000002ec   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x000002fa   Section        2  handlers.o(i.__scatterload_null)
+    .text                                    0x00000100   Section        0  common_func.o(.text)
+    .text                                    0x00000118   Section        0  common_func.o(.text)
+    .text                                    0x00000134   Section        0  common_func.o(.text)
+    .text                                    0x00000158   Section        0  common_func.o(.text)
+    .text                                    0x000001a0   Section        0  common_func.o(.text)
+    .text                                    0x000001f8   Section        0  common_func.o(.text)
+    .text                                    0x00000224   Section        0  common_func.o(.text)
+    .text                                    0x00000284   Section        0  common_func.o(.text)
+    .text                                    0x000002e8   Section        0  main.o(.text)
+    .text                                    0x000002f6   Section        0  beep.o(.text)
+    i.__scatterload_null                     0x000002f8   Section        2  handlers.o(i.__scatterload_null)
     .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
-    .text                                    0x00000300   Section        0  main.o(.text)
-    .text                                    0x00000594   Section        0  25lc640ssp1.o(.text)
-    .text                                    0x000007b0   Section        0  uart0.o(.text)
-    .text                                    0x000008d4   Section        0  emac_lpc17xx.o(.text)
-    .text                                    0x00000974   Section        0  __dclz77c.o(.text)
-    i.__0printf$1                            0x000009d4   Section        0  printf1.o(i.__0printf$1)
-    i.__scatterload_zeroinit                 0x000009f4   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x00000a04   Section        0  printf1.o(i._printf_core)
-    _printf_core                             0x00000a05   Thumb Code   338  printf1.o(i._printf_core)
-    i.alloc_mem                              0x00000b5c   Section        0  at_mem.o(i.alloc_mem)
-    i.free_mem                               0x00000c00   Section        0  at_mem.o(i.free_mem)
-    i.put_in_queue                           0x00000c68   Section        0  at_ethernet.o(i.put_in_queue)
-    .constdata                               0x00000c94   Section        4  net_config_http.o(.constdata)
-    .data                                    0x10000000   Section        2  main.o(.data)
-    .data                                    0x10000002   Section        2  main.o(.data)
-    .data                                    0x10000004   Section        2  main.o(.data)
-    .data                                    0x10000008   Section        4  main.o(.data)
-    .data                                    0x1000000c   Section        4  system_lpc17xx.o(.data)
-    .data                                    0x10000010   Section        8  timer.o(.data)
-    .data                                    0x10000018   Section       20  uart0.o(.data)
-    .data                                    0x1000002c   Section        8  at_ethernet.o(.data)
-    q_head                                   0x1000002c   Data           4  at_ethernet.o(.data)
-    q_tail                                   0x10000030   Data           4  at_ethernet.o(.data)
-    .data                                    0x10000034   Section        4  at_mem.o(.data)
-    Mem_Load                                 0x10000034   Data           4  at_mem.o(.data)
-    .bss                                     0x10000038   Section    16384  net_config_http.o(.bss)
-    .bss                                     0x10004038   Section      128  at_ethernet.o(.bss)
-    rx_queue                                 0x10004038   Data         128  at_ethernet.o(.bss)
-    STACK                                    0x100040b8   Section     2048  startup_lpc17xx.o(STACK)
-    .data                                    0x2007c000   Section     5197  main.o(.data)
-    sub_cnt                                  0x2007c003   Data           1  main.o(.data)
-    sub_cnt1                                 0x2007c004   Data           1  main.o(.data)
-    touch                                    0x2007c02c   Data           2  main.o(.data)
-    plazma                                   0x2007c054   Data           4  main.o(.data)
-    .bss                                     0x2007d450   Section      512  main.o(.bss)
-    .bss                                     0x2007d650   Section     2148  uart0.o(.bss)
-    .bss                                     0x2007deb8   Section    10852  emac_lpc17xx.o(.bss)
-    Rx_Desc                                  0x2007deb8   Data          32  emac_lpc17xx.o(.bss)
-    Rx_Stat                                  0x2007ded8   Data          32  emac_lpc17xx.o(.bss)
-    Tx_Desc                                  0x2007def8   Data          24  emac_lpc17xx.o(.bss)
-    Tx_Stat                                  0x2007df10   Data          12  emac_lpc17xx.o(.bss)
-    rx_buf                                   0x2007df1c   Data        6144  emac_lpc17xx.o(.bss)
-    tx_buf                                   0x2007f71c   Data        4608  emac_lpc17xx.o(.bss)
+    .text                                    0x00000300   Section        0  common_func.o(.text)
+    .text                                    0x00000388   Section        0  main.o(.text)
+    .text                                    0x000003a8   Section        0  main.o(.text)
+    .text                                    0x00000438   Section        0  main.o(.text)
+    .text                                    0x00000a00   Section        0  main.o(.text)
+    .text                                    0x00000b60   Section        0  main.o(.text)
+    .text                                    0x00001f34   Section        0  riverdi.o(.text)
+    .text                                    0x00001f6c   Section        0  riverdi.o(.text)
+    .text                                    0x00001f80   Section        0  riverdi.o(.text)
+    .text                                    0x00001fd0   Section        0  riverdi.o(.text)
+    .text                                    0x00002044   Section        0  riverdi.o(.text)
+    .text                                    0x00002094   Section        0  riverdi.o(.text)
+    .text                                    0x000020ec   Section        0  riverdi.o(.text)
+    .text                                    0x00002154   Section        0  riverdi.o(.text)
+    .text                                    0x00002190   Section        0  riverdi.o(.text)
+    .text                                    0x000021cc   Section        0  system_lpc17xx.o(.text)
+    .text                                    0x00002320   Section        0  timer.o(.text)
+    .text                                    0x00002364   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x00002378   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x00002400   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x00002438   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x00002474   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x000024b8   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x00002530   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x000025c0   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x0000263c   Section        0  25lc640ssp1.o(.text)
+    .text                                    0x000026c8   Section        0  uart0.o(.text)
+    .text                                    0x000027ec   Section        0  emac_lpc17xx.o(.text)
+    .text                                    0x0000288c   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x000028a8   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x000028e4   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002920   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002968   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002982   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x0000298a   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x000029d4   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x000029fc   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002a46   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002a66   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002a8a   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002ac6   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002b02   Section        0  ft_copro_cmds.o(.text)
+    .text                                    0x00002b0c   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002b68   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002b72   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002ba2   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002bdc   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002bf8   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002c30   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002c50   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002c70   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002c8c   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002cac   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002ce0   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002cf2   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002d56   Section        0  ft_gpu_hal.o(.text)
+    .text                                    0x00002d7c   Section        0  strlen.o(.text)
+    .text                                    0x00002d8c   Section       36  init.o(.text)
+    .text                                    0x00002db0   Section        0  __dczerorl2.o(.text)
+    i.__0printf$2                            0x00002e0c   Section        0  printf2.o(i.__0printf$2)
+    i.__scatterload_copy                     0x00002e2c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_zeroinit                 0x00002e3a   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x00002e48   Section        0  printf2.o(i._printf_core)
+    _printf_core                             0x00002e49   Thumb Code   230  printf2.o(i._printf_core)
+    i.alloc_mem                              0x00002f30   Section        0  at_mem.o(i.alloc_mem)
+    i.free_mem                               0x00002fd4   Section        0  at_mem.o(i.free_mem)
+    i.put_in_queue                           0x0000303c   Section        0  at_ethernet.o(i.put_in_queue)
+    .constdata                               0x00003068   Section        4  net_config_http.o(.constdata)
+    .constdata                               0x0000306c   Section     1588  main.o(.constdata)
+    .constdata                               0x000036a0   Section       17  main.o(.constdata)
+    .data                                    0x10000000   Section     5197  main.o(.data)
+    sub_cnt                                  0x10000003   Data           1  main.o(.data)
+    sub_cnt1                                 0x10000004   Data           1  main.o(.data)
+    touch                                    0x1000002e   Data           2  main.o(.data)
+    plazma                                   0x10000054   Data           4  main.o(.data)
+    .data                                    0x1000144d   Section        5  main.o(.data)
+    .data                                    0x10001452   Section        1  main.o(.data)
+    .data                                    0x10001454   Section        2  main.o(.data)
+    .data                                    0x10001456   Section        2  main.o(.data)
+    .data                                    0x10001458   Section        2  main.o(.data)
+    .data                                    0x1000145c   Section        4  main.o(.data)
+    .data                                    0x10001460   Section        4  system_lpc17xx.o(.data)
+    .data                                    0x10001464   Section        8  timer.o(.data)
+    .data                                    0x1000146c   Section       20  uart0.o(.data)
+    .data                                    0x10001480   Section        8  at_ethernet.o(.data)
+    q_head                                   0x10001480   Data           4  at_ethernet.o(.data)
+    q_tail                                   0x10001484   Data           4  at_ethernet.o(.data)
+    .data                                    0x10001488   Section        4  at_mem.o(.data)
+    Mem_Load                                 0x10001488   Data           4  at_mem.o(.data)
+    .bss                                     0x1000148c   Section    16384  net_config_http.o(.bss)
+    .bss                                     0x1000548c   Section      512  main.o(.bss)
+    .bss                                     0x1000568c   Section     2148  uart0.o(.bss)
+    .bss                                     0x10005ef0   Section      128  at_ethernet.o(.bss)
+    rx_queue                                 0x10005ef0   Data         128  at_ethernet.o(.bss)
+    STACK                                    0x10005f70   Section     2048  startup_lpc17xx.o(STACK)
+    .bss                                     0x2007c000   Section    15680  main.o(.bss)
+    out                                      0x2007f8d0   Data         100  main.o(.bss)
+    .bss                                     0x2007fd40   Section    10852  emac_lpc17xx.o(.bss)
+    Rx_Desc                                  0x2007fd40   Data          32  emac_lpc17xx.o(.bss)
+    Rx_Stat                                  0x2007fd60   Data          32  emac_lpc17xx.o(.bss)
+    Tx_Desc                                  0x2007fd80   Data          24  emac_lpc17xx.o(.bss)
+    Tx_Stat                                  0x2007fd98   Data          12  emac_lpc17xx.o(.bss)
+    rx_buf                                   0x2007fda4   Data        6144  emac_lpc17xx.o(.bss)
+    tx_buf                                   0x200815a4   Data        4608  emac_lpc17xx.o(.bss)
 
     Global Symbols
 
@@ -1762,131 +1836,190 @@ Image Symbol Table
     USB_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
     WDT_IRQHandler                           0x000000f7   Thumb Code     0  startup_lpc17xx.o(.text)
     sys_error                                0x000000fd   Thumb Code     2  net_config_http.o(.text)
-    SystemInit                               0x00000101   Thumb Code   314  system_lpc17xx.o(.text)
-    TIMER0_IRQHandler                        0x00000255   Thumb Code    38  timer.o(.text)
-    TIMER1_IRQHandler                        0x0000027b   Thumb Code    16  timer.o(.text)
-    beep_drv                                 0x00000299   Thumb Code     2  beep.o(.text)
-    __aeabi_uidiv                            0x0000029b   Thumb Code     0  uidiv.o(.text)
-    __aeabi_uidivmod                         0x0000029b   Thumb Code    44  uidiv.o(.text)
-    __scatterload                            0x000002c9   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x000002c9   Thumb Code     0  init.o(.text)
-    __scatterload_copy                       0x000002ed   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x000002fb   Thumb Code     2  handlers.o(i.__scatterload_null)
-    uartWrite                                0x00000301   Thumb Code    28  main.o(.text)
-    fputc                                    0x0000031d   Thumb Code    14  main.o(.text)
-    ADC_IRQHandler                           0x0000032b   Thumb Code    12  main.o(.text)
-    InitUART0                                0x00000337   Thumb Code    48  main.o(.text)
-    SysTick_Handler                          0x00000367   Thumb Code   288  main.o(.text)
+    clr_scrn                                 0x00000101   Thumb Code    18  common_func.o(.text)
+    find                                     0x00000119   Thumb Code    22  common_func.o(.text)
+    bin2bcd_int                              0x00000135   Thumb Code    30  common_func.o(.text)
+    bcd2lcd_zero                             0x00000159   Thumb Code    62  common_func.o(.text)
+    int2lcdyx                                0x000001a1   Thumb Code    78  common_func.o(.text)
+    sub_bgnd                                 0x000001f9   Thumb Code    38  common_func.o(.text)
+    int2lcd                                  0x00000225   Thumb Code    88  common_func.o(.text)
+    bgnd_par                                 0x00000285   Thumb Code    94  common_func.o(.text)
+    fputc                                    0x000002e9   Thumb Code    14  main.o(.text)
+    beep_drv                                 0x000002f7   Thumb Code     2  beep.o(.text)
+    __scatterload_null                       0x000002f9   Thumb Code     2  handlers.o(i.__scatterload_null)
+    long2lcdhyx                              0x00000301   Thumb Code   126  common_func.o(.text)
+    uartWrite                                0x00000389   Thumb Code    28  main.o(.text)
+    font_9564_init                           0x000003a9   Thumb Code   122  main.o(.text)
     __TCP_ARM_VER                            0x00000413   Number         0  at_system.o ABSOLUTE
-    main                                     0x00000487   Thumb Code   198  main.o(.text)
-    ssp1                                     0x00000595   Thumb Code    16  25lc640ssp1.o(.text)
-    ssp1_config                              0x000005a5   Thumb Code   120  25lc640ssp1.o(.text)
-    ssp1_unconfig                            0x0000061d   Thumb Code    46  25lc640ssp1.o(.text)
-    lc640_wren                               0x0000064b   Thumb Code    52  25lc640ssp1.o(.text)
-    lc640_rdsr                               0x0000067f   Thumb Code    62  25lc640ssp1.o(.text)
-    lc640_read                               0x000006bd   Thumb Code   120  25lc640ssp1.o(.text)
-    lc640_write                              0x00000735   Thumb Code   108  25lc640ssp1.o(.text)
-    UART0_IRQHandler                         0x000007b1   Thumb Code   262  uart0.o(.text)
-    int_enable_eth                           0x000008d5   Thumb Code    10  emac_lpc17xx.o(.text)
-    int_disable_eth                          0x000008df   Thumb Code    10  emac_lpc17xx.o(.text)
-    ENET_IRQHandler                          0x000008e9   Thumb Code   124  emac_lpc17xx.o(.text)
-    __decompress                             0x00000975   Thumb Code     0  __dclz77c.o(.text)
-    __decompress2                            0x00000975   Thumb Code    96  __dclz77c.o(.text)
-    __0printf$1                              0x000009d5   Thumb Code    22  printf1.o(i.__0printf$1)
-    __1printf$1                              0x000009d5   Thumb Code     0  printf1.o(i.__0printf$1)
-    __2printf                                0x000009d5   Thumb Code     0  printf1.o(i.__0printf$1)
-    __scatterload_zeroinit                   0x000009f5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    alloc_mem                                0x00000b5d   Thumb Code   152  at_mem.o(i.alloc_mem)
-    free_mem                                 0x00000c01   Thumb Code    94  at_mem.o(i.free_mem)
-    put_in_queue                             0x00000c69   Thumb Code    36  at_ethernet.o(i.put_in_queue)
-    MPool_Size                               0x00000c94   Data           4  net_config_http.o(.constdata)
-    Region$$Table$$Base                      0x00000c98   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000cd8   Number         0  anon$$obj.o(Region$$Table)
-    bat_drv_rx_cnt                           0x10000000   Data           2  main.o(.data)
-    plazma_bat_drv0                          0x10000002   Data           2  main.o(.data)
-    plazma_bat_drv1                          0x10000004   Data           2  main.o(.data)
-    __stdout                                 0x10000008   Data           4  main.o(.data)
-    SystemFrequency                          0x1000000c   Data           4  system_lpc17xx.o(.data)
-    timer0_counter                           0x10000010   Data           4  timer.o(.data)
-    timer1_counter                           0x10000014   Data           4  timer.o(.data)
-    UART0TxEmpty                             0x10000018   Data           1  uart0.o(.data)
-    bRXIN0                                   0x10000019   Data           1  uart0.o(.data)
-    rx_buffer_overflow0                      0x1000001a   Data           1  uart0.o(.data)
-    plazma_uart0                             0x1000001b   Data           1  uart0.o(.data)
-    rx_wr_index0                             0x1000001c   Data           2  uart0.o(.data)
-    rx_rd_index0                             0x1000001e   Data           2  uart0.o(.data)
-    rx_counter0                              0x10000020   Data           2  uart0.o(.data)
-    tx_wr_index0                             0x10000022   Data           2  uart0.o(.data)
-    tx_rd_index0                             0x10000024   Data           2  uart0.o(.data)
-    tx_counter0                              0x10000026   Data           2  uart0.o(.data)
-    UART0Status                              0x10000028   Data           4  uart0.o(.data)
-    Mem_Pool                                 0x10000038   Data       16384  net_config_http.o(.bss)
-    __initial_sp                             0x100048b8   Data           0  startup_lpc17xx.o(STACK)
-    ind_reset_cnt                            0x2007c000   Data           1  main.o(.data)
-    first_inv_slot                           0x2007c001   Data           1  main.o(.data)
-    ips_bat_av_stat                          0x2007c002   Data           1  main.o(.data)
-    b10000Hz                                 0x2007c005   Data           1  main.o(.data)
-    b1000Hz                                  0x2007c006   Data           1  main.o(.data)
-    b2000Hz                                  0x2007c007   Data           1  main.o(.data)
-    b100Hz                                   0x2007c008   Data           1  main.o(.data)
-    b50Hz                                    0x2007c009   Data           1  main.o(.data)
-    b10Hz                                    0x2007c00a   Data           1  main.o(.data)
-    b5Hz                                     0x2007c00b   Data           1  main.o(.data)
-    b2Hz                                     0x2007c00c   Data           1  main.o(.data)
-    b1Hz                                     0x2007c00d   Data           1  main.o(.data)
-    b1min                                    0x2007c00e   Data           1  main.o(.data)
-    bFL5                                     0x2007c00f   Data           1  main.o(.data)
-    bFL2                                     0x2007c010   Data           1  main.o(.data)
-    bFL                                      0x2007c011   Data           1  main.o(.data)
-    bTPS                                     0x2007c012   Data           1  main.o(.data)
-    bFF                                      0x2007c013   Data           1  main.o(.data)
-    bFF_                                     0x2007c014   Data           1  main.o(.data)
-    but                                      0x2007c015   Data           1  main.o(.data)
-    but0_cnt                                 0x2007c016   Data           1  main.o(.data)
-    but1_cnt                                 0x2007c017   Data           1  main.o(.data)
-    but_onL_temp                             0x2007c018   Data           1  main.o(.data)
-    speed                                    0x2007c019   Data           1  main.o(.data)
-    l_but                                    0x2007c01a   Data           1  main.o(.data)
-    n_but                                    0x2007c01b   Data           1  main.o(.data)
-    bCAN_OFF                                 0x2007c01c   Data           1  main.o(.data)
-    main_10Hz_cnt                            0x2007c01e   Data           2  main.o(.data)
-    main_1Hz_cnt                             0x2007c020   Data           2  main.o(.data)
-    slider_pos                               0x2007c022   Data           2  main.o(.data)
-    toggle_pos                               0x2007c024   Data           2  main.o(.data)
-    toggle_del                               0x2007c026   Data           2  main.o(.data)
-    dial_pos                                 0x2007c028   Data           2  main.o(.data)
-    ind_pointer                              0x2007c02a   Data           2  main.o(.data)
-    t0cnt                                    0x2007c02e   Data           2  main.o(.data)
-    t0cnt0                                   0x2007c030   Data           2  main.o(.data)
-    t0cnt1                                   0x2007c032   Data           2  main.o(.data)
-    t0cnt2                                   0x2007c034   Data           2  main.o(.data)
-    t0cnt3                                   0x2007c036   Data           2  main.o(.data)
-    t0cnt4                                   0x2007c038   Data           2  main.o(.data)
-    t0cnt5                                   0x2007c03a   Data           2  main.o(.data)
-    t0cntMin                                 0x2007c03c   Data           2  main.o(.data)
-    load_U                                   0x2007c03e   Data           2  main.o(.data)
-    load_I                                   0x2007c040   Data           2  main.o(.data)
-    net_F                                    0x2007c042   Data           2  main.o(.data)
-    hz_out                                   0x2007c044   Data           2  main.o(.data)
-    hz_out_cnt                               0x2007c046   Data           2  main.o(.data)
-    av_beep                                  0x2007c048   Data           2  main.o(.data)
-    av_rele                                  0x2007c04a   Data           2  main.o(.data)
-    ft_plazma                                0x2007c04c   Data           2  main.o(.data)
-    parol                                    0x2007c04e   Data           3  main.o(.data)
-    bSILENT                                  0x2007c058   Data           4  main.o(.data)
-    but_n                                    0x2007c05c   Data           4  main.o(.data)
-    but_s                                    0x2007c060   Data           4  main.o(.data)
-    phost                                    0x2007c064   Data           4  main.o(.data)
-    a_ind                                    0x2007c068   Data           5  main.o(.data)
-    c_ind                                    0x2007c06d   Data           5  main.o(.data)
-    lcd_buffer                               0x2007c072   Data         300  main.o(.data)
-    SAMApp_Metric_L1                         0x2007c19e   Data         148  main.o(.data)
-    Font1_Metric                             0x2007c232   Data         148  main.o(.data)
-    fonts_9564                               0x2007c2c6   Data        4487  main.o(.data)
-    bat_drv_rx_buff                          0x2007d450   Data         512  main.o(.bss)
-    UIB0                                     0x2007d650   Data         100  uart0.o(.bss)
-    rx_buffer0                               0x2007d6b4   Data        1024  uart0.o(.bss)
-    tx_buffer0                               0x2007dab4   Data        1024  uart0.o(.bss)
+    ADC_IRQHandler                           0x00000439   Thumb Code    12  main.o(.text)
+    InitUART0                                0x00000445   Thumb Code    48  main.o(.text)
+    SysTick_Handler                          0x00000475   Thumb Code   288  main.o(.text)
+    main                                     0x00000595   Thumb Code  1104  main.o(.text)
+    rus_text_adaptor                         0x00000a01   Thumb Code   346  main.o(.text)
+    ind_hndl                                 0x00000b61   Thumb Code  5030  main.o(.text)
+    spi1_config                              0x00001f35   Thumb Code    46  riverdi.o(.text)
+    spi1                                     0x00001f6d   Thumb Code    16  riverdi.o(.text)
+    rd8                                      0x00001f81   Thumb Code    74  riverdi.o(.text)
+    rd32                                     0x00001fd1   Thumb Code   110  riverdi.o(.text)
+    wr8                                      0x00002045   Thumb Code    74  riverdi.o(.text)
+    wr16                                     0x00002095   Thumb Code    84  riverdi.o(.text)
+    wr32                                     0x000020ed   Thumb Code    98  riverdi.o(.text)
+    command_active                           0x00002155   Thumb Code    56  riverdi.o(.text)
+    host_command                             0x00002191   Thumb Code    54  riverdi.o(.text)
+    SystemInit                               0x000021cd   Thumb Code   314  system_lpc17xx.o(.text)
+    TIMER0_IRQHandler                        0x00002321   Thumb Code    38  timer.o(.text)
+    TIMER1_IRQHandler                        0x00002347   Thumb Code    16  timer.o(.text)
+    ssp1                                     0x00002365   Thumb Code    16  25lc640ssp1.o(.text)
+    ssp1_config                              0x00002379   Thumb Code   120  25lc640ssp1.o(.text)
+    ssp1_unconfig                            0x00002401   Thumb Code    46  25lc640ssp1.o(.text)
+    lc640_wren                               0x00002439   Thumb Code    54  25lc640ssp1.o(.text)
+    lc640_rdsr                               0x00002475   Thumb Code    62  25lc640ssp1.o(.text)
+    lc640_read_int                           0x000024b9   Thumb Code   114  25lc640ssp1.o(.text)
+    lc640_read_long                          0x00002531   Thumb Code   138  25lc640ssp1.o(.text)
+    lc640_write_int                          0x000025c1   Thumb Code   118  25lc640ssp1.o(.text)
+    lc640_write_long                         0x0000263d   Thumb Code   134  25lc640ssp1.o(.text)
+    UART0_IRQHandler                         0x000026c9   Thumb Code   262  uart0.o(.text)
+    int_enable_eth                           0x000027ed   Thumb Code    10  emac_lpc17xx.o(.text)
+    int_disable_eth                          0x000027f7   Thumb Code    10  emac_lpc17xx.o(.text)
+    ENET_IRQHandler                          0x00002801   Thumb Code   124  emac_lpc17xx.o(.text)
+    Ft_Gpu_CoCmd_SendStr                     0x0000288d   Thumb Code    28  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Text                        0x000028a9   Thumb Code    60  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Number                      0x000028e5   Thumb Code    60  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Toggle                      0x00002921   Thumb Code    72  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_BgColor                     0x00002969   Thumb Code    26  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Swap                        0x00002983   Thumb Code     8  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Slider                      0x0000298b   Thumb Code    72  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_FgColor                     0x000029d5   Thumb Code    34  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Button                      0x000029fd   Thumb Code    74  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Calibrate                   0x00002a47   Thumb Code    32  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_SetFont                     0x00002a67   Thumb Code    36  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Track                       0x00002a8b   Thumb Code    60  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Dial                        0x00002ac7   Thumb Code    60  ft_copro_cmds.o(.text)
+    Ft_Gpu_CoCmd_Dlstart                     0x00002b03   Thumb Code     8  ft_copro_cmds.o(.text)
+    Ft_Gpu_Hal_StartTransfer                 0x00002b0d   Thumb Code    88  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_StartCmdTransfer              0x00002b69   Thumb Code    10  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_Transfer16                    0x00002b73   Thumb Code    48  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_Transfer32                    0x00002ba3   Thumb Code    58  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_EndTransfer                   0x00002bdd   Thumb Code    24  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_Rd16                          0x00002bf9   Thumb Code    50  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_Wr16                          0x00002c31   Thumb Code    32  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_Wr32                          0x00002c51   Thumb Code    32  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_Updatecmdfifo                 0x00002c71   Thumb Code    24  ft_gpu_hal.o(.text)
+    Ft_Gpu_Cmdfifo_Freespace                 0x00002c8d   Thumb Code    28  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_WaitCmdfifo_empty             0x00002cad   Thumb Code    46  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_CheckCmdBuffer                0x00002ce1   Thumb Code    18  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_WrCmdBuf                      0x00002cf3   Thumb Code   100  ft_gpu_hal.o(.text)
+    Ft_Gpu_Hal_WrCmd32                       0x00002d57   Thumb Code    38  ft_gpu_hal.o(.text)
+    strlen                                   0x00002d7d   Thumb Code    16  strlen.o(.text)
+    __scatterload                            0x00002d8d   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00002d8d   Thumb Code     0  init.o(.text)
+    __decompress                             0x00002db1   Thumb Code     0  __dczerorl2.o(.text)
+    __decompress1                            0x00002db1   Thumb Code    92  __dczerorl2.o(.text)
+    __0printf$2                              0x00002e0d   Thumb Code    22  printf2.o(i.__0printf$2)
+    __1printf$2                              0x00002e0d   Thumb Code     0  printf2.o(i.__0printf$2)
+    __2printf                                0x00002e0d   Thumb Code     0  printf2.o(i.__0printf$2)
+    __scatterload_copy                       0x00002e2d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_zeroinit                   0x00002e3b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    alloc_mem                                0x00002f31   Thumb Code   152  at_mem.o(i.alloc_mem)
+    free_mem                                 0x00002fd5   Thumb Code    94  at_mem.o(i.free_mem)
+    put_in_queue                             0x0000303d   Thumb Code    36  at_ethernet.o(i.put_in_queue)
+    MPool_Size                               0x00003068   Data           4  net_config_http.o(.constdata)
+    caracter                                 0x0000306c   Data        1536  main.o(.constdata)
+    sm_mont                                  0x0000366c   Data          52  main.o(.constdata)
+    ABCDEF                                   0x000036a0   Data          17  main.o(.constdata)
+    Region$$Table$$Base                      0x000036b4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000036e4   Number         0  anon$$obj.o(Region$$Table)
+    ind_reset_cnt                            0x10000000   Data           1  main.o(.data)
+    first_inv_slot                           0x10000001   Data           1  main.o(.data)
+    ips_bat_av_stat                          0x10000002   Data           1  main.o(.data)
+    b10000Hz                                 0x10000005   Data           1  main.o(.data)
+    b1000Hz                                  0x10000006   Data           1  main.o(.data)
+    b2000Hz                                  0x10000007   Data           1  main.o(.data)
+    b100Hz                                   0x10000008   Data           1  main.o(.data)
+    b50Hz                                    0x10000009   Data           1  main.o(.data)
+    b10Hz                                    0x1000000a   Data           1  main.o(.data)
+    b5Hz                                     0x1000000b   Data           1  main.o(.data)
+    b2Hz                                     0x1000000c   Data           1  main.o(.data)
+    b1Hz                                     0x1000000d   Data           1  main.o(.data)
+    b1min                                    0x1000000e   Data           1  main.o(.data)
+    bFL5                                     0x1000000f   Data           1  main.o(.data)
+    bFL2                                     0x10000010   Data           1  main.o(.data)
+    bFL                                      0x10000011   Data           1  main.o(.data)
+    bTPS                                     0x10000012   Data           1  main.o(.data)
+    bFF                                      0x10000013   Data           1  main.o(.data)
+    bFF_                                     0x10000014   Data           1  main.o(.data)
+    but                                      0x10000015   Data           1  main.o(.data)
+    but0_cnt                                 0x10000016   Data           1  main.o(.data)
+    but1_cnt                                 0x10000017   Data           1  main.o(.data)
+    but_onL_temp                             0x10000018   Data           1  main.o(.data)
+    speed                                    0x10000019   Data           1  main.o(.data)
+    l_but                                    0x1000001a   Data           1  main.o(.data)
+    n_but                                    0x1000001b   Data           1  main.o(.data)
+    bCAN_OFF                                 0x1000001c   Data           1  main.o(.data)
+    main_10Hz_cnt                            0x1000001e   Data           2  main.o(.data)
+    main_1Hz_cnt                             0x10000020   Data           2  main.o(.data)
+    slider_pos                               0x10000022   Data           2  main.o(.data)
+    toggle_pos                               0x10000024   Data           2  main.o(.data)
+    toggle_del                               0x10000026   Data           2  main.o(.data)
+    dial_pos                                 0x10000028   Data           2  main.o(.data)
+    ind_pointer                              0x1000002a   Data           2  main.o(.data)
+    main_cnt_1Hz                             0x1000002c   Data           2  main.o(.data)
+    t0cnt                                    0x10000030   Data           2  main.o(.data)
+    t0cnt0                                   0x10000032   Data           2  main.o(.data)
+    t0cnt1                                   0x10000034   Data           2  main.o(.data)
+    t0cnt2                                   0x10000036   Data           2  main.o(.data)
+    t0cnt3                                   0x10000038   Data           2  main.o(.data)
+    t0cnt4                                   0x1000003a   Data           2  main.o(.data)
+    t0cnt5                                   0x1000003c   Data           2  main.o(.data)
+    t0cntMin                                 0x1000003e   Data           2  main.o(.data)
+    load_U                                   0x10000040   Data           2  main.o(.data)
+    load_I                                   0x10000042   Data           2  main.o(.data)
+    net_F                                    0x10000044   Data           2  main.o(.data)
+    hz_out                                   0x10000046   Data           2  main.o(.data)
+    hz_out_cnt                               0x10000048   Data           2  main.o(.data)
+    av_beep                                  0x1000004a   Data           2  main.o(.data)
+    av_rele                                  0x1000004c   Data           2  main.o(.data)
+    ft_plazma                                0x1000004e   Data           2  main.o(.data)
+    parol                                    0x10000050   Data           3  main.o(.data)
+    bSILENT                                  0x10000058   Data           4  main.o(.data)
+    but_n                                    0x1000005c   Data           4  main.o(.data)
+    but_s                                    0x10000060   Data           4  main.o(.data)
+    phost                                    0x10000064   Data           4  main.o(.data)
+    a_ind                                    0x10000068   Data           5  main.o(.data)
+    c_ind                                    0x1000006d   Data           5  main.o(.data)
+    lcd_buffer                               0x10000072   Data         300  main.o(.data)
+    SAMApp_Metric_L1                         0x1000019e   Data         148  main.o(.data)
+    Font1_Metric                             0x10000232   Data         148  main.o(.data)
+    fonts_9564                               0x100002c6   Data        4487  main.o(.data)
+    dig                                      0x1000144d   Data           5  main.o(.data)
+    zero_on                                  0x10001452   Data           1  main.o(.data)
+    bat_drv_rx_cnt                           0x10001454   Data           2  main.o(.data)
+    plazma_bat_drv0                          0x10001456   Data           2  main.o(.data)
+    plazma_bat_drv1                          0x10001458   Data           2  main.o(.data)
+    __stdout                                 0x1000145c   Data           4  main.o(.data)
+    SystemFrequency                          0x10001460   Data           4  system_lpc17xx.o(.data)
+    timer0_counter                           0x10001464   Data           4  timer.o(.data)
+    timer1_counter                           0x10001468   Data           4  timer.o(.data)
+    UART0TxEmpty                             0x1000146c   Data           1  uart0.o(.data)
+    bRXIN0                                   0x1000146d   Data           1  uart0.o(.data)
+    rx_buffer_overflow0                      0x1000146e   Data           1  uart0.o(.data)
+    plazma_uart0                             0x1000146f   Data           1  uart0.o(.data)
+    rx_wr_index0                             0x10001470   Data           2  uart0.o(.data)
+    rx_rd_index0                             0x10001472   Data           2  uart0.o(.data)
+    rx_counter0                              0x10001474   Data           2  uart0.o(.data)
+    tx_wr_index0                             0x10001476   Data           2  uart0.o(.data)
+    tx_rd_index0                             0x10001478   Data           2  uart0.o(.data)
+    tx_counter0                              0x1000147a   Data           2  uart0.o(.data)
+    UART0Status                              0x1000147c   Data           4  uart0.o(.data)
+    Mem_Pool                                 0x1000148c   Data       16384  net_config_http.o(.bss)
+    bat_drv_rx_buff                          0x1000548c   Data         512  main.o(.bss)
+    UIB0                                     0x1000568c   Data         100  uart0.o(.bss)
+    rx_buffer0                               0x100056f0   Data        1024  uart0.o(.bss)
+    tx_buffer0                               0x10005af0   Data        1024  uart0.o(.bss)
+    __initial_sp                             0x10006770   Data           0  startup_lpc17xx.o(STACK)
+    SAMApp_L1                                0x2007c000   Data       14544  main.o(.bss)
+    lcd_bitmap                               0x2007f934   Data        1024  main.o(.bss)
+    host                                     0x2007fd34   Data          12  main.o(.bss)
 
 
 
@@ -1896,75 +2029,141 @@ Memory Map of the image
 
   Image Entry point : 0x000000cd
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00002160, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00001f8c])
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00004b70, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00004954])
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00000cd8, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000036e4, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x000000cc   Data   RO            3    RESET               startup_lpc17xx.o
-    0x000000cc   0x00000000   Code   RO         2069  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000000cc   0x00000004   Code   RO         2337    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x000000d0   0x00000004   Code   RO         2340    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000000d4   0x00000008   Code   RO         2341    .ARM.Collect$$$$00000007  mc_w.l(entry7.o)
-    0x000000dc   0x00000004   Code   RO         2338    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000cc   0x00000000   Code   RO         2120  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000cc   0x00000004   Code   RO         2388    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000d0   0x00000004   Code   RO         2391    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000d4   0x00000008   Code   RO         2392    .ARM.Collect$$$$00000007  mc_w.l(entry7.o)
+    0x000000dc   0x00000004   Code   RO         2389    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x000000e0   0x0000001c   Code   RO            5    .text               startup_lpc17xx.o
     0x000000fc   0x00000002   Code   RO           13    .text               net_config_http.o
     0x000000fe   0x00000002   PAD
-    0x00000100   0x00000154   Code   RO          957    .text               system_lpc17xx.o
-    0x00000254   0x00000044   Code   RO          987    .text               timer.o
-    0x00000298   0x00000002   Code   RO         1064    .text               beep.o
-    0x0000029a   0x0000002c   Code   RO         2342    .text               mc_w.l(uidiv.o)
-    0x000002c6   0x00000002   PAD
-    0x000002c8   0x00000024   Code   RO         2357    .text               mc_w.l(init.o)
-    0x000002ec   0x0000000e   Code   RO         2369    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x000002fa   0x00000002   Code   RO         2370    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000100   0x00000018   Code   RO           98    .text               common_func.o
+    0x00000118   0x0000001c   Code   RO           99    .text               common_func.o
+    0x00000134   0x00000024   Code   RO          100    .text               common_func.o
+    0x00000158   0x00000048   Code   RO          101    .text               common_func.o
+    0x000001a0   0x00000058   Code   RO          107    .text               common_func.o
+    0x000001f8   0x0000002c   Code   RO          108    .text               common_func.o
+    0x00000224   0x00000060   Code   RO          109    .text               common_func.o
+    0x00000284   0x00000064   Code   RO          122    .text               common_func.o
+    0x000002e8   0x0000000e   Code   RO          430    .text               main.o
+    0x000002f6   0x00000002   Code   RO         1080    .text               beep.o
+    0x000002f8   0x00000002   Code   RO         2421    i.__scatterload_null  mc_w.l(handlers.o)
+    0x000002fa   0x00000002   PAD
     0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
-    0x00000300   0x00000294   Code   RO          430    .text               main.o
-    0x00000594   0x0000021c   Code   RO         1099    .text               25lc640ssp1.o
-    0x000007b0   0x00000124   Code   RO         1168    .text               uart0.o
-    0x000008d4   0x000000a0   Code   RO         1289    .text               emac_lpc17xx.o
-    0x00000974   0x00000060   Code   RO         2375    .text               mc_w.l(__dclz77c.o)
-    0x000009d4   0x00000020   Code   RO         2121    i.__0printf$1       mc_w.l(printf1.o)
-    0x000009f4   0x0000000e   Code   RO         2371    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000a02   0x00000002   PAD
-    0x00000a04   0x00000158   Code   RO         2128    i._printf_core      mc_w.l(printf1.o)
-    0x00000b5c   0x000000a4   Code   RO         1965    i.alloc_mem         TCP_CM3.lib(at_mem.o)
-    0x00000c00   0x00000068   Code   RO         1966    i.free_mem          TCP_CM3.lib(at_mem.o)
-    0x00000c68   0x0000002c   Code   RO         1952    i.put_in_queue      TCP_CM3.lib(at_ethernet.o)
-    0x00000c94   0x00000004   Data   RO           26    .constdata          net_config_http.o
-    0x00000c98   0x00000040   Data   RO         2367    Region$$Table       anon$$obj.o
+    0x00000300   0x00000088   Code   RO          114    .text               common_func.o
+    0x00000388   0x00000020   Code   RO          429    .text               main.o
+    0x000003a8   0x00000090   Code   RO          434    .text               main.o
+    0x00000438   0x000005c8   Code   RO          441    .text               main.o
+    0x00000a00   0x00000160   Code   RO          446    .text               main.o
+    0x00000b60   0x000013d4   Code   RO          448    .text               main.o
+    0x00001f34   0x00000038   Code   RO          892    .text               riverdi.o
+    0x00001f6c   0x00000014   Code   RO          894    .text               riverdi.o
+    0x00001f80   0x00000050   Code   RO          895    .text               riverdi.o
+    0x00001fd0   0x00000074   Code   RO          897    .text               riverdi.o
+    0x00002044   0x00000050   Code   RO          898    .text               riverdi.o
+    0x00002094   0x00000058   Code   RO          899    .text               riverdi.o
+    0x000020ec   0x00000068   Code   RO          900    .text               riverdi.o
+    0x00002154   0x0000003c   Code   RO          901    .text               riverdi.o
+    0x00002190   0x0000003c   Code   RO          902    .text               riverdi.o
+    0x000021cc   0x00000154   Code   RO          973    .text               system_lpc17xx.o
+    0x00002320   0x00000044   Code   RO         1003    .text               timer.o
+    0x00002364   0x00000014   Code   RO         1115    .text               25lc640ssp1.o
+    0x00002378   0x00000088   Code   RO         1116    .text               25lc640ssp1.o
+    0x00002400   0x00000038   Code   RO         1117    .text               25lc640ssp1.o
+    0x00002438   0x0000003c   Code   RO         1118    .text               25lc640ssp1.o
+    0x00002474   0x00000044   Code   RO         1119    .text               25lc640ssp1.o
+    0x000024b8   0x00000078   Code   RO         1121    .text               25lc640ssp1.o
+    0x00002530   0x00000090   Code   RO         1122    .text               25lc640ssp1.o
+    0x000025c0   0x0000007c   Code   RO         1126    .text               25lc640ssp1.o
+    0x0000263c   0x0000008c   Code   RO         1127    .text               25lc640ssp1.o
+    0x000026c8   0x00000124   Code   RO         1219    .text               uart0.o
+    0x000027ec   0x000000a0   Code   RO         1340    .text               emac_lpc17xx.o
+    0x0000288c   0x0000001c   Code   RO         1396    .text               ft_copro_cmds.o
+    0x000028a8   0x0000003c   Code   RO         1399    .text               ft_copro_cmds.o
+    0x000028e4   0x0000003c   Code   RO         1400    .text               ft_copro_cmds.o
+    0x00002920   0x00000048   Code   RO         1402    .text               ft_copro_cmds.o
+    0x00002968   0x0000001a   Code   RO         1408    .text               ft_copro_cmds.o
+    0x00002982   0x00000008   Code   RO         1409    .text               ft_copro_cmds.o
+    0x0000298a   0x00000048   Code   RO         1413    .text               ft_copro_cmds.o
+    0x000029d2   0x00000002   PAD
+    0x000029d4   0x00000028   Code   RO         1416    .text               ft_copro_cmds.o
+    0x000029fc   0x0000004a   Code   RO         1418    .text               ft_copro_cmds.o
+    0x00002a46   0x00000020   Code   RO         1427    .text               ft_copro_cmds.o
+    0x00002a66   0x00000024   Code   RO         1428    .text               ft_copro_cmds.o
+    0x00002a8a   0x0000003c   Code   RO         1436    .text               ft_copro_cmds.o
+    0x00002ac6   0x0000003c   Code   RO         1441    .text               ft_copro_cmds.o
+    0x00002b02   0x00000008   Code   RO         1443    .text               ft_copro_cmds.o
+    0x00002b0a   0x00000002   PAD
+    0x00002b0c   0x0000005c   Code   RO         1726    .text               ft_gpu_hal.o
+    0x00002b68   0x0000000a   Code   RO         1727    .text               ft_gpu_hal.o
+    0x00002b72   0x00000030   Code   RO         1730    .text               ft_gpu_hal.o
+    0x00002ba2   0x0000003a   Code   RO         1731    .text               ft_gpu_hal.o
+    0x00002bdc   0x0000001c   Code   RO         1732    .text               ft_gpu_hal.o
+    0x00002bf8   0x00000038   Code   RO         1734    .text               ft_gpu_hal.o
+    0x00002c30   0x00000020   Code   RO         1737    .text               ft_gpu_hal.o
+    0x00002c50   0x00000020   Code   RO         1738    .text               ft_gpu_hal.o
+    0x00002c70   0x0000001c   Code   RO         1739    .text               ft_gpu_hal.o
+    0x00002c8c   0x00000020   Code   RO         1740    .text               ft_gpu_hal.o
+    0x00002cac   0x00000034   Code   RO         1741    .text               ft_gpu_hal.o
+    0x00002ce0   0x00000012   Code   RO         1742    .text               ft_gpu_hal.o
+    0x00002cf2   0x00000064   Code   RO         1743    .text               ft_gpu_hal.o
+    0x00002d56   0x00000026   Code   RO         1746    .text               ft_gpu_hal.o
+    0x00002d7c   0x00000010   Code   RO         2125    .text               mc_w.l(strlen.o)
+    0x00002d8c   0x00000024   Code   RO         2408    .text               mc_w.l(init.o)
+    0x00002db0   0x0000005c   Code   RO         2426    .text               mc_w.l(__dczerorl2.o)
+    0x00002e0c   0x00000020   Code   RO         2194    i.__0printf$2       mc_w.l(printf2.o)
+    0x00002e2c   0x0000000e   Code   RO         2420    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00002e3a   0x0000000e   Code   RO         2422    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00002e48   0x000000e6   Code   RO         2201    i._printf_core      mc_w.l(printf2.o)
+    0x00002f2e   0x00000002   PAD
+    0x00002f30   0x000000a4   Code   RO         2016    i.alloc_mem         TCP_CM3.lib(at_mem.o)
+    0x00002fd4   0x00000068   Code   RO         2017    i.free_mem          TCP_CM3.lib(at_mem.o)
+    0x0000303c   0x0000002c   Code   RO         2003    i.put_in_queue      TCP_CM3.lib(at_ethernet.o)
+    0x00003068   0x00000004   Data   RO           26    .constdata          net_config_http.o
+    0x0000306c   0x00000634   Data   RO          474    .constdata          main.o
+    0x000036a0   0x00000011   Data   RO          475    .constdata          main.o
+    0x000036b1   0x00000003   PAD
+    0x000036b4   0x00000030   Data   RO         2418    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x000048b8, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00006770, Max: 0x00008000, ABSOLUTE, COMPRESSED[0x00001270])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x10000000   0x00000002   Data   RW          594    .data               main.o
-    0x10000002   0x00000002   Data   RW          596    .data               main.o
-    0x10000004   0x00000002   Data   RW          597    .data               main.o
-    0x10000006   0x00000002   PAD
-    0x10000008   0x00000004   Data   RW          623    .data               main.o
-    0x1000000c   0x00000004   Data   RW          958    .data               system_lpc17xx.o
-    0x10000010   0x00000008   Data   RW          993    .data               timer.o
-    0x10000018   0x00000014   Data   RW         1179    .data               uart0.o
-    0x1000002c   0x00000008   Data   RW         1956    .data               TCP_CM3.lib(at_ethernet.o)
-    0x10000034   0x00000004   Data   RW         1969    .data               TCP_CM3.lib(at_mem.o)
-    0x10000038   0x00004000   Zero   RW           20    .bss                net_config_http.o
-    0x10004038   0x00000080   Zero   RW         1954    .bss                TCP_CM3.lib(at_ethernet.o)
-    0x100040b8   0x00000800   Zero   RW            1    STACK               startup_lpc17xx.o
+    0x10000000   0x0000144d   Data   RW          479    .data               main.o
+    0x1000144d   0x00000005   Data   RW          523    .data               main.o
+    0x10001452   0x00000001   Data   RW          524    .data               main.o
+    0x10001453   0x00000001   PAD
+    0x10001454   0x00000002   Data   RW          595    .data               main.o
+    0x10001456   0x00000002   Data   RW          597    .data               main.o
+    0x10001458   0x00000002   Data   RW          598    .data               main.o
+    0x1000145a   0x00000002   PAD
+    0x1000145c   0x00000004   Data   RW          624    .data               main.o
+    0x10001460   0x00000004   Data   RW          974    .data               system_lpc17xx.o
+    0x10001464   0x00000008   Data   RW         1009    .data               timer.o
+    0x1000146c   0x00000014   Data   RW         1230    .data               uart0.o
+    0x10001480   0x00000008   Data   RW         2007    .data               TCP_CM3.lib(at_ethernet.o)
+    0x10001488   0x00000004   Data   RW         2020    .data               TCP_CM3.lib(at_mem.o)
+    0x1000148c   0x00004000   Zero   RW           20    .bss                net_config_http.o
+    0x1000548c   0x00000200   Zero   RW          473    .bss                main.o
+    0x1000568c   0x00000864   Zero   RW         1225    .bss                uart0.o
+    0x10005ef0   0x00000080   Zero   RW         2005    .bss                TCP_CM3.lib(at_ethernet.o)
+    0x10005f70   0x00000800   Zero   RW            1    STACK               startup_lpc17xx.o
 
 
-    Execution Region RW_IRAM2 (Base: 0x2007c000, Size: 0x0000491c, Max: 0x00008000, ABSOLUTE, COMPRESSED[0x0000127c])
+    Execution Region RW_IRAM2 (Base: 0x2007c000, Size: 0x000067a4, Max: 0x00008000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2007c000   0x0000144d   Data   RW          478    .data               main.o
-    0x2007d44d   0x00000003   PAD
-    0x2007d450   0x00000200   Zero   RW          471    .bss                main.o
-    0x2007d650   0x00000864   Zero   RW         1174    .bss                uart0.o
-    0x2007deb4   0x00000004   PAD
-    0x2007deb8   0x00002a64   Zero   RW         1292    .bss                emac_lpc17xx.o
+    0x2007c000   0x00003d40   Zero   RW          454    .bss                main.o
+    0x2007fd40   0x00002a64   Zero   RW         1343    .bss                emac_lpc17xx.o
 
 
 ==============================================================================
@@ -1974,21 +2173,24 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       540         16          0          0          0       1892   25lc640ssp1.o
+       868         66          0          0          0       4419   25lc640ssp1.o
          2          0          0          0          0        323   beep.o
-         0          0          0          0          0       7620   common_func.o
+       624         68          0          0          0      13013   common_func.o
        160         16          0          0      10852      23957   emac_lpc17xx.o
-       660         72          0       5207        512      38931   main.o
+       636          6          0          0          0      11062   ft_copro_cmds.o
+       624         28          0          0          0      11619   ft_gpu_hal.o
+      7098        734       1605       5213      16192      41172   main.o
          2          0          4          0      16384      11554   net_config_http.o
+       664         52          0          0          0       4362   riverdi.o
         32          8        204          0       2048        884   startup_lpc17xx.o
        340         26          0          4          0      17723   system_lpc17xx.o
         68         14          0          8          0        982   timer.o
        292         30          0         20       2148       2256   uart0.o
 
     ----------------------------------------------------------------------
-      2098        182        272       5244      31948     106122   Object Totals
-         0          0         64          0          0          0   (incl. Generated)
-         2          0          0          5          4          2   (incl. Padding)
+     11416       1048       1864       5248      47624     143326   Object Totals
+         0          0         48          0          0          0   (incl. Generated)
+         6          0          3          3          0          2   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1996,18 +2198,18 @@ Image component sizes
 
         44          8          0          8        128         88   at_ethernet.o
        268         22          0          4          0        188   at_mem.o
-        96          0          0          0          0          0   __dclz77c.o
+        92          0          0          0          0          0   __dczerorl2.o
          0          0          0          0          0          0   entry.o
          8          4          0          0          0          0   entry2.o
          4          0          0          0          0          0   entry5.o
          8          4          0          0          0          0   entry7.o
         30          0          0          0          0          0   handlers.o
         36          8          0          0          0         68   init.o
-       376         16          0          0          0        180   printf1.o
-        44          0          0          0          0         80   uidiv.o
+       262         10          0          0          0        176   printf2.o
+        16          0          0          0          0         68   strlen.o
 
     ----------------------------------------------------------------------
-       918         62          0         12        128        604   Library Totals
+       772         56          0         12        128        588   Library Totals
          4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
@@ -2015,10 +2217,10 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
        312         30          0         12        128        276   TCP_CM3.lib
-       602         32          0          0          0        328   mc_w.l
+       456         26          0          0          0        312   mc_w.l
 
     ----------------------------------------------------------------------
-       918         62          0         12        128        604   Library Totals
+       772         56          0         12        128        588   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -2027,15 +2229,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3016        244        272       5256      32076     105948   Grand Totals
-      3016        244        272       4788      32076     105948   ELF Image Totals (compressed)
-      3016        244        272       4788          0          0   ROM Totals
+     12188       1104       1864       5260      47752     140328   Grand Totals
+     12188       1104       1864       4720      47752     140328   ELF Image Totals (compressed)
+     12188       1104       1864       4720          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3288 (   3.21kB)
-    Total RW  Size (RW Data + ZI Data)             37332 (  36.46kB)
-    Total ROM Size (Code + RO Data + RW Data)       8076 (   7.89kB)
+    Total RO  Size (Code + RO Data)                14052 (  13.72kB)
+    Total RW  Size (RW Data + ZI Data)             53012 (  51.77kB)
+    Total ROM Size (Code + RO Data + RW Data)      18772 (  18.33kB)
 
 ==============================================================================
 

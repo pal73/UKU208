@@ -17,7 +17,7 @@
 //#include "uart2.h"
 #include "cmd.h"
 #include "ret.h"
-//#include "eeprom_map.h"
+#include "eeprom_map.h"
 #include "common_func.h"
 //#include "control.h"
 #include "mess.h"
@@ -193,6 +193,7 @@ signed short num_necc;
 signed short num_necc_Imax;
 signed short num_necc_Imin;
 signed short cnt_num_necc;
+signed short main_cnt_1Hz=0;
 //char bSAME_IST_ON;
 signed mat_temper;
 
@@ -2494,6 +2495,194 @@ sub_ind=0;
 }
 
 //-----------------------------------------------
+char* rus_text_adaptor(const char* in)
+{
+char i;
+static char out[100];
+
+for(i=0;i<strlen(in);i++)
+	{
+	//out[i]='1';
+	//if(in[i]=='À') out[i]='A';
+	//else out[i]=in[i];
+	switch (in[i])
+		{
+		case 'À':
+			out[i]='A';
+			break;
+		case 'à':
+			out[i]='a';
+			break;
+		case 'Á':
+			out[i]=1;
+			break;
+		case 'á':
+			out[i]=2;
+			break;
+		case 'Â':
+			out[i]='B';
+			break;
+		case 'â':
+			out[i]='B';
+			break;
+		case 'Ã':
+			out[i]=3;
+			break;
+		case 'ã':
+			out[i]=4;
+			break;
+		case 'Ä':
+			out[i]=5;
+			break;
+		case 'ä':
+			out[i]=6;
+			break;
+		case 'Å':
+			out[i]='E';
+			break;
+		case 'å':
+			out[i]='e';
+			break;
+		case 'Æ':
+			out[i]=7;
+			break;
+		case 'æ':
+			out[i]=8;
+			break;
+		case 'Ç':
+			out[i]=9;
+			break;
+		case 'ç':
+			out[i]=10;
+			break;
+		case 'È':
+			out[i]=11;
+			break;
+		case 'è':
+			out[i]=12;
+			break;
+		case 'Ê':
+			out[i]='K';
+			break;
+		case 'ê':
+			out[i]='k';
+			break;
+		case 'Ë':
+			out[i]=13;
+			break;
+		case 'ë':
+			out[i]=14;
+			break;
+		case 'Ì':
+			out[i]='M';
+			break;
+		case 'ì':
+			out[i]=15;
+			break;
+		case 'Í':
+			out[i]='H';
+			break;
+		case 'í':
+			out[i]='H';
+			break;
+		case 'Î':
+			out[i]='O';
+			break;
+		case 'î':
+			out[i]='o';
+			break;
+		case 'Ï':
+			out[i]=16;
+			break;
+		case 'ï':
+			out[i]=17;
+			break;
+		case 'Ð':
+			out[i]='P';
+			break;
+		case 'ð':
+			out[i]='p';
+			break;
+		case 'Ñ':
+			out[i]='C';
+			break;
+		case 'ñ':
+			out[i]='c';
+			break;
+		case 'Ò':
+			out[i]='T';
+			break;
+		case 'ò':
+			out[i]=18;
+			break;
+		case 'Ó':
+			out[i]=19;
+			break;
+		case 'ó':
+			out[i]='y';
+			break;
+		case 'Ô':
+			out[i]=20;
+			break;
+		case 'ô':
+			out[i]=21;
+			break;
+		case 'Õ':
+			out[i]='X';
+			break;
+		case 'õ':
+			out[i]='x';
+			break;
+		case 'Ö':
+			out[i]=22;
+			break;
+		case 'ö':
+			out[i]=23;
+			break;
+		case '×':
+			out[i]=24;
+			break;
+		case '÷':
+			out[i]=25;
+			break;
+		case 'Ø':
+			out[i]=26;
+			break;
+		case 'ø':
+			out[i]=27;
+			break;
+		case 'Ù':
+			out[i]=28;
+			break;
+		case 'ù':
+			out[i]=29;
+			break;
+		case 'Ý':
+			out[i]=30;
+			break;
+		case 'ý':
+			out[i]=31;
+			break;
+		case 'Þ':
+			out[i]=123;
+			break;
+		case 'þ':
+			out[i]=125;
+			break;
+		case 'ß':
+			out[i]=127;
+			break;
+		case 'ÿ':
+			out[i]=96;
+			break;
+		default:
+			out[i]=in[i];							
+		} 
+	} 
+out[i]=0;
+return out;
+}
+//-----------------------------------------------
 void bitmap_hndl(void)
 {
 short x,ii,i;
@@ -2809,8 +2998,8 @@ else if(ind==iMn)
 
 	x_offset=0;
 	y_offset=0;
-	input1_avar=bFL;
-	input2_avar=!input1_avar;
+	input1_avar=0;//bFL;
+	input2_avar=0;//!input1_avar;
 
 	Ft_Gpu_CoCmd_Dlstart(phost);
 	Ft_Gpu_Hal_WrCmd32(phost,CLEAR_COLOR_RGB(200, 200, 200));
@@ -2833,8 +3022,9 @@ else if(ind==iMn)
 	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((260+x_offset) * 16, (10+y_offset) * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((790+x_offset) * 16, (40+y_offset) * 16));
-
-
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+	Ft_Gpu_CoCmd_Text(phost,270+ x_offset, 25+y_offset, 1, OPT_CENTERY, rus_text_adaptor("Òåñòîâàÿ ñòðîêà ñîîáùåíèå #1")/*"Input1"*/);
+	
 
 	//êâàäðàòèê ïåðâîãî ââîäà
 	x_offset=70;
@@ -2865,7 +3055,7 @@ else if(ind==iMn)
 		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset+x_len) * 16, (y_offset+y_len) * 16));
 		}
 	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 100));
-	Ft_Gpu_CoCmd_Text(phost,x_offset+x_len/2, y_offset+y_len/2, 29, OPT_CENTER, "Input1");
+	Ft_Gpu_CoCmd_Text(phost,x_offset+x_len/2, y_offset+y_len/2, 1, OPT_CENTER, rus_text_adaptor("ÂÂÎÄ 1")/*"Input1"*/);
 
 	//êâàäðàòèê âòîðîãî ââîäà
 	x_offset=70;
@@ -2895,7 +3085,7 @@ else if(ind==iMn)
 		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset+x_len) * 16, (y_offset+y_len) * 16));
 		}
 	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 100));
-	Ft_Gpu_CoCmd_Text(phost,x_offset+x_len/2, y_offset+y_len/2, 29, OPT_CENTER, "Input1");
+	Ft_Gpu_CoCmd_Text(phost,x_offset+x_len/2, y_offset+y_len/2, 1, OPT_CENTER, rus_text_adaptor("ÂÂÎÄ 2"));
 
 	x_offset=340;
 	y_offset=80;
@@ -3006,6 +3196,20 @@ else if(ind==iMn)
 
 
     ////Ft_App_WrCoCmd_Buffer(phost, DISPLAY());
+	//Ft_Gpu_CoCmd_Number(phost,150, 20, 31, OPT_RIGHTX | 4, 134);
+
+	Ft_Gpu_CoCmd_Text(phost,20, 300, 1, 0, rus_text_adaptor("ÀàÁáÂâÃãÄäÅåÆæÇçÈèÊêËëÌìÍíÎîÏïÐðÑñÒòÓóÔôÕõÖö×÷ØøÙùÝýÞþßÿ"));
+
+	if((main_cnt_1Hz>=10)&&(main_cnt_1Hz<=12))
+		{
+		Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 0, 0));
+		Ft_Gpu_Hal_WrCmd32(phost,POINT_SIZE(10*16));
+		Ft_Gpu_Hal_WrCmd32(phost,BEGIN(POINTS));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(0 * 16, 0 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(800 * 16, 0 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(800 * 16, 480 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(0 * 16, 480 * 16));
+		}
 
 	Ft_Gpu_Hal_WrCmd32(phost, DISPLAY());
 	Ft_Gpu_CoCmd_Swap(phost);
@@ -3026,8 +3230,8 @@ else if(ind==iInputs)
 	Ft_Gpu_Hal_WrCmd32(phost, CLEAR(1, 1, 1));
 
 	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(10, 10, 10));
-	Ft_Gpu_CoCmd_Text(phost, 200,50, 29, OPT_CENTER, "INPUT1");
-	Ft_Gpu_CoCmd_Text(phost, 350,50, 29, OPT_CENTER, "INPUT2");
+	Ft_Gpu_CoCmd_Text(phost, 200,50, 1, OPT_CENTER, rus_text_adaptor("ÂÂÎÄ1"));
+	Ft_Gpu_CoCmd_Text(phost, 350,50, 1, OPT_CENTER, rus_text_adaptor("ÂÂÎÄ2"));
 
 	Ft_Gpu_Hal_WrCmd32(phost,BEGIN(RECTS));
 	Ft_Gpu_Hal_WrCmd32(phost,LINE_WIDTH(1 * 16));
@@ -3135,7 +3339,7 @@ else if(ind==iInputs)
 	Ft_Gpu_CoCmd_FgColor(phost,0x646464UL);
 	Ft_Gpu_Hal_WrCmd32(phost,TAG(3));
 	if(rd32(REG_TOUCH_TAG)==3)Ft_Gpu_CoCmd_FgColor(phost,0xffff00UL);
-	Ft_Gpu_CoCmd_Button(phost, 650, 400, 100, 50, 1, 0, "Press");
+	Ft_Gpu_CoCmd_Button(phost, 650, 400, 100, 50, 1, 0, rus_text_adaptor("Âîçâðàò"));
 
 	Ft_Gpu_Hal_WrCmd32(phost, DISPLAY());
 	Ft_Gpu_CoCmd_Swap(phost); 
@@ -3183,6 +3387,23 @@ int2lcdyx(retcnt,0,11,0);
 int2lcdyx(retcntsec,0,7,0);	*/
 //int2lcdyx(bps[0]._vol_i,0,15,0);
 //int2lcdyx(AUSW_MAIN,0,19,0); 
+
+if((main_cnt_1Hz>=10)&&(main_cnt_1Hz<=12))
+	{
+	Ft_Gpu_CoCmd_Dlstart(phost);
+	//Ft_Gpu_Hal_WrCmd32(phost,CLEAR_COLOR_RGB(0, 0, 200));
+	//Ft_Gpu_Hal_WrCmd32(phost, CLEAR(1, 1, 1));
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 0, 0));
+	Ft_Gpu_Hal_WrCmd32(phost,POINT_SIZE(10*16));
+	Ft_Gpu_Hal_WrCmd32(phost,BEGIN(POINTS));
+	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(500 * 16, 300 * 16));
+	//Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 0));
+	//Ft_Gpu_CoCmd_FgColor(phost,0x00ff00UL);
+	//Ft_Gpu_CoCmd_BgColor(phost,0xff00ffUL);
+	Ft_Gpu_Hal_WrCmd32(phost, DISPLAY());
+	//Ft_Gpu_CoCmd_Swap(phost); 
+	}
+
 touch=0;
 }							    
 
@@ -3919,11 +4140,11 @@ if(//lc640_read_int(EE_ETH_IS_ON)==1)
 	} */
 //sys_plazma1=sys_plazma;
 ///ind_reset_cnt=58;
-///spi1_config();
+spi1_config();
 
 //watchdog_enable();
 
-/*
+
 phost=&host;
 
 PD_LOW
@@ -3936,7 +4157,7 @@ delay_ms(20);
 host_command(INTERNAL_OSC);
 delay_ms(10);
 host_command(SLEEP);
-host_command(SYSCLK_48M);
+host_command(SYSCLK_60M);
 command_active();
 host_command(CORE_RESET);
 while (rd8(REG_ID)!=0x7c){};
@@ -3992,18 +4213,40 @@ wr8(REG_PCLK,5);
 //Font1_init();
 font_9564_init();
 
+if((lc640_read_int(EE_CALIBRATION_IS_COMPLETE)==0x5555)&&(lc640_read_int(EE_CALIBRATION_IS_ENOUG)==0x0000))
+	{
+	wr32(REG_TOUCH_TRANSFORM_A,lc640_read_long(EE_REG_TOUCH_TRANSFORM_A));
+	wr32(REG_TOUCH_TRANSFORM_B,lc640_read_long(EE_REG_TOUCH_TRANSFORM_B));
+	wr32(REG_TOUCH_TRANSFORM_C,lc640_read_long(EE_REG_TOUCH_TRANSFORM_C));
+	wr32(REG_TOUCH_TRANSFORM_D,lc640_read_long(EE_REG_TOUCH_TRANSFORM_D));
+	wr32(REG_TOUCH_TRANSFORM_E,lc640_read_long(EE_REG_TOUCH_TRANSFORM_E));
+	wr32(REG_TOUCH_TRANSFORM_F,lc640_read_long(EE_REG_TOUCH_TRANSFORM_F));
+	}
+else
+	{
+	//Êàëèáðîâêà òà÷ñêðèíà
+	Ft_Gpu_CoCmd_Dlstart(phost);
+	Ft_Gpu_Hal_WrCmd32(phost,CLEAR_COLOR_RGB(200,200,200));
+	Ft_Gpu_Hal_WrCmd32(phost,CLEAR(1,1,1));
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0xff,0xff,0xff));
+	Ft_Gpu_CoCmd_FgColor(phost,0xff0000UL);
+	Ft_Gpu_CoCmd_BgColor(phost,0x0000ffUL);
+	Ft_Gpu_CoCmd_Text(phost,100, 100, 27, OPT_CENTER, "Please Tap on the dot");
+	Ft_Gpu_CoCmd_Calibrate(phost,0);
+	Ft_Gpu_Hal_WrCmd32(phost, DISPLAY());
+	Ft_Gpu_CoCmd_Swap(phost);
+	
+	lc640_write_long(EE_REG_TOUCH_TRANSFORM_A,rd32(REG_TOUCH_TRANSFORM_A)); 
+	lc640_write_long(EE_REG_TOUCH_TRANSFORM_B,rd32(REG_TOUCH_TRANSFORM_B));
+	lc640_write_long(EE_REG_TOUCH_TRANSFORM_C,rd32(REG_TOUCH_TRANSFORM_C));
+	lc640_write_long(EE_REG_TOUCH_TRANSFORM_D,rd32(REG_TOUCH_TRANSFORM_D));
+	lc640_write_long(EE_REG_TOUCH_TRANSFORM_E,rd32(REG_TOUCH_TRANSFORM_E));
+	lc640_write_long(EE_REG_TOUCH_TRANSFORM_F,rd32(REG_TOUCH_TRANSFORM_F));
 
-//Êàëèáðîâêà òà÷ñêðèíà
-Ft_Gpu_CoCmd_Dlstart(phost);
-Ft_Gpu_Hal_WrCmd32(phost,CLEAR_COLOR_RGB(200,200,200));
-Ft_Gpu_Hal_WrCmd32(phost,CLEAR(1,1,1));
-Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0xff,0xff,0xff));
-Ft_Gpu_CoCmd_FgColor(phost,0xff0000UL);
-Ft_Gpu_CoCmd_BgColor(phost,0x0000ffUL);
-Ft_Gpu_CoCmd_Text(phost,100, 100, 27, OPT_CENTER, "Please Tap on the dot");
-Ft_Gpu_CoCmd_Calibrate(phost,0);
-Ft_Gpu_Hal_WrCmd32(phost, DISPLAY());
-Ft_Gpu_CoCmd_Swap(phost); */
+	lc640_write_int(EE_CALIBRATION_IS_COMPLETE,0x5555);
+	}
+
+
 
 ind=iMn_IP55;
 
@@ -4110,7 +4353,7 @@ while (1)
 
 		
 		
-		///ind_hndl(); 
+		ind_hndl(); 
 
 
 		///ret_hndl();  
@@ -4167,14 +4410,23 @@ while (1)
 	if(b1Hz)
 		{
 		static plazma;
+
+		if(main_cnt_1Hz<1000)main_cnt_1Hz++;
+		if(main_cnt_1Hz==10) lc640_write_int(EE_CALIBRATION_IS_ENOUG,0xaaaa);
+		if(main_cnt_1Hz==12) lc640_write_int(EE_CALIBRATION_IS_ENOUG,0x0000);
 //#define putchar	putchar0
 		b1Hz=0;
 		LPC_GPIO2->FIODIR  |= 1<<12;
 		LPC_GPIO2->FIOPIN  ^= 1<<12;
 		//printf("mama");
 		//putchar0(0x56);
-		plazma=lc640_read(10);
-		printf("Enter an Integer between 0 and %i:\r\n", plazma);
+		//plazma=lc640_read(10);
+		plazma++;
+		//printf("Enter an Integer between %i and %i and %i:\r\n",iMn, ind,bFL);
+		//printf("REG_TOUCH_TRANSFORM_A = %i \r\n",rd32(REG_TOUCH_TRANSFORM_A));
+		//printf("CALIBRATION_IS_COMPLETE = %i \r\n",lc640_read_int(EE_CALIBRATION_IS_COMPLETE));
+
+		printf("a %s \r\n",rus_text_adaptor("sss"));
 		//if(!bRESET_INT_WDT)
 			{
 			//watchdog_reset();
