@@ -2995,7 +2995,7 @@ if(ind==iMn_IP55)
 else if(ind==iMn)
 	{
 	short x_offset,y_offset,x_len, y_len, input1_avar, input2_avar;
-
+	char* month_str[13]={"янв","янв","фев","мар","апр","маи","июн","июл","авг","сен","окт","ноя","дек"};
 	x_offset=0;
 	y_offset=0;
 	input1_avar=0;//bFL;
@@ -3005,17 +3005,32 @@ else if(ind==iMn)
 	Ft_Gpu_Hal_WrCmd32(phost,CLEAR_COLOR_RGB(200, 200, 200));
 	Ft_Gpu_Hal_WrCmd32(phost, CLEAR(1, 1, 1));
 
+
+	//Поле даты и времени
 	Ft_Gpu_Hal_WrCmd32(phost,BEGIN(RECTS));
 	Ft_Gpu_Hal_WrCmd32(phost,LINE_WIDTH(1 * 16));
-
-	
 	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
    	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((19+x_offset) * 16 , (9+y_offset) * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((250+x_offset) * 16, (40+y_offset) * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((20+x_offset) * 16, (10+y_offset) * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((250+x_offset) * 16, (40+y_offset) * 16));
+	//Ft_Gpu_CoCmd_Number(phost,150, 20, 1, 2,LPC_RTC->SEC);
+	x_offset=5;
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+	Ft_Gpu_CoCmd_Number(phost,207+x_offset, 16, 1, 2, LPC_RTC->SEC);
+	if(bFL)Ft_Gpu_CoCmd_Text(phost,200+x_offset, 16, 1, 2, ":");
+	Ft_Gpu_CoCmd_Number(phost,181+x_offset, 16, 1, 2, LPC_RTC->MIN);
+	if(bFL)Ft_Gpu_CoCmd_Text(phost,174+x_offset, 16, 1, 2, ":");
+ 	Ft_Gpu_CoCmd_Number(phost,155+x_offset, 16, 1, 2, LPC_RTC->HOUR);
+	Ft_Gpu_CoCmd_Number(phost,101+x_offset, 16, 1, 4, /*2000+*/LPC_RTC->YEAR);
+	Ft_Gpu_CoCmd_Text(phost,93+x_offset, 16, 1, 2, "-");
+	Ft_Gpu_CoCmd_Text(phost,61+x_offset, 16, 1, 2, rus_text_adaptor(month_str[LPC_RTC->MONTH]));
+	Ft_Gpu_CoCmd_Text(phost,53+x_offset, 16, 1, 2, "-");
+	Ft_Gpu_CoCmd_Number(phost,34+x_offset, 16, 1, 2, LPC_RTC->DOM);
 
+	Ft_Gpu_Hal_WrCmd32(phost,BEGIN(RECTS));
+	Ft_Gpu_Hal_WrCmd32(phost,LINE_WIDTH(1 * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
    	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((259+x_offset) * 16 , (9+y_offset) * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((790+x_offset) * 16, (40+y_offset) * 16));
@@ -3102,6 +3117,31 @@ else if(ind==iMn)
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset) * 16, (y_offset) * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset+x_len) * 16, (y_offset+y_len) * 16));
 	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset+150) * 16, (y_offset+80) * 16));
+
+
+	//квадратик меню (вход в установки)
+	x_offset=70;
+	y_offset=360;
+	x_len=120;
+	y_len=70;
+	Ft_Gpu_Hal_WrCmd32(phost,BEGIN(RECTS));
+	Ft_Gpu_Hal_WrCmd32(phost,LINE_WIDTH(1 * 16));
+	Ft_Gpu_Hal_WrCmd32(phost,TAG(5));
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+   	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset) * 16 , (y_offset) * 16));
+	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset+x_len+1) * 16, (y_offset+y_len+1) * 16));
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(180, 180, 180));
+	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset) * 16, (y_offset) * 16));
+	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset+x_len) * 16, (y_offset+y_len) * 16));
+	if(touch==5)
+		{
+		Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 255, 255));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset) * 16, (y_offset) * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset+x_len) * 16, (y_offset+y_len) * 16));
+		}
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 100));
+	Ft_Gpu_CoCmd_Text(phost,x_offset+x_len/2, y_offset+y_len/2, 1, OPT_CENTER, rus_text_adaptor("МЕНЮ"));
+
 
 		//Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 0, 0));
 		//Ft_Gpu_Hal_WrCmd32(phost,POINT_SIZE(10*16));
@@ -3214,7 +3254,8 @@ else if(ind==iMn)
 	Ft_Gpu_Hal_WrCmd32(phost, DISPLAY());
 	Ft_Gpu_CoCmd_Swap(phost);
 	
-	if((touch==1)||(touch==2)) ind=iInputs; 
+	if((touch==1)||(touch==2)) tree_up(iInputs,0,0,0);
+	else if(touch==5) tree_up(iSet,0,0,0);
 	 
 	}
 
@@ -3345,6 +3386,460 @@ else if(ind==iInputs)
 	Ft_Gpu_CoCmd_Swap(phost); 
 
 	if(touch==3) ind=iMn;
+	 
+	}
+
+else if(ind==iSet)
+	{
+	short x_offset,y_offset;
+	static short temp_edit;
+	static short edit_phase;
+	static error_input;
+	char* month_str[13]={"янв","янв","фев","мар","апр","маи","июн","июл","авг","сен","окт","ноя","дек"};
+	x_offset=0;
+	y_offset=0;
+
+	Ft_Gpu_CoCmd_Dlstart(phost);
+	Ft_Gpu_Hal_WrCmd32(phost,CLEAR_COLOR_RGB(200, 200, 200));
+	Ft_Gpu_Hal_WrCmd32(phost, CLEAR(1, 1, 1));
+
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(10, 10, 10));
+	Ft_Gpu_CoCmd_Text(phost,300, 50, 1, OPT_CENTER, rus_text_adaptor("УСТАНОВКИ"));
+
+	//********
+	x_offset=50;
+	y_offset=100;
+	Ft_Gpu_Hal_WrCmd32(phost,TAG(1));
+	if(sub_ind==1)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+	else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(200, 200, 200));
+	Ft_Gpu_Hal_WrCmd32(phost,BEGIN(RECTS));
+	Ft_Gpu_Hal_WrCmd32(phost,LINE_WIDTH(1 * 16));
+   	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset-10)*16, (y_offset+0+slider_pos-15)*16));
+	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset-10+350)*16, (y_offset+50+slider_pos-15)*16));
+	if(sub_ind==1)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+	else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));								
+	Ft_Gpu_CoCmd_Text(phost,x_offset, y_offset+0+slider_pos, 1, 0, rus_text_adaptor("Время и дата"));
+
+	if(sub_ind==1)
+		{
+		Ft_Gpu_Hal_WrCmd32(phost,BEGIN(RECTS));
+		Ft_Gpu_Hal_WrCmd32(phost,LINE_WIDTH(1 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 153, 0));
+   		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(400 * 16, 80 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(780 * 16, 400 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(220, 220, 220));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(405 * 16, 85 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(775 * 16, 395 * 16));
+
+		Ft_Gpu_Hal_WrCmd32(phost,TAG(101));
+		if(sub_ind1==1)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(100, 100, 100));
+		else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(420 * 16, 100 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(460 * 16, 140 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,TAG(102));
+		if(sub_ind1==2)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(100, 100, 100));
+		else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(470 * 16, 100 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(510 * 16, 140 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,TAG(103));
+		if(sub_ind1==3)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(100, 100, 100));
+		else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(520 * 16, 100 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(560 * 16, 140 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,TAG(104));		
+		if(sub_ind1==4)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(100, 100, 100));
+		else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(600 * 16, 100 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(640 * 16, 140 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,TAG(105));
+		if(sub_ind1==5)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(100, 100, 100));
+		else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(650 * 16, 100 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(695 * 16, 140 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,TAG(106));
+		if(sub_ind1==6)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(100, 100, 100));
+		else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(705 * 16, 100 * 16));
+		Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F(760 * 16, 140 * 16));
+
+		if(sub_ind1==1)
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+			if(edit_phase==0)		Ft_Gpu_CoCmd_Number(phost,431, 110, 1, 2, LPC_RTC->HOUR);
+			else if (edit_phase==1)	Ft_Gpu_CoCmd_Number(phost,436, 110, 1, 1, temp_edit);
+			else 					Ft_Gpu_CoCmd_Number(phost,431, 110, 1, 2, temp_edit);
+			Ft_Gpu_CoCmd_Keys(phost,440, 200, 300, 40, 1, 0, "12345");
+			Ft_Gpu_CoCmd_Keys(phost,440, 265, 300, 40, 1, 0, "67890");
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(110));
+			Ft_Gpu_CoCmd_Button(phost, 440, 330, 300, 40, 1, OPT_CENTER, rus_text_adaptor("Ввод"));
+			}
+		else
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+			Ft_Gpu_CoCmd_Number(phost,431, 110, 1, 2, LPC_RTC->HOUR);
+			}
+
+		if(sub_ind1==2)
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+			if(edit_phase==0)		Ft_Gpu_CoCmd_Number(phost,481, 110, 1, 2, LPC_RTC->MIN);
+			else if (edit_phase==1)	Ft_Gpu_CoCmd_Number(phost,486, 110, 1, 1, temp_edit);
+			else 					Ft_Gpu_CoCmd_Number(phost,481, 110, 1, 2, temp_edit);
+			Ft_Gpu_CoCmd_Keys(phost,440, 200, 300, 40, 1, 0, "12345");
+			Ft_Gpu_CoCmd_Keys(phost,440, 265, 300, 40, 1, 0, "67890");
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(110));
+			Ft_Gpu_CoCmd_Button(phost, 440, 330, 300, 40, 1, OPT_CENTER, rus_text_adaptor("Ввод"));
+			}
+		else
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+			Ft_Gpu_CoCmd_Number(phost,481, 110, 1, 2, LPC_RTC->MIN);
+			}
+
+		if(sub_ind1==3)
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+			if(edit_phase==0)		Ft_Gpu_CoCmd_Number(phost,531, 110, 1, 2, LPC_RTC->SEC);
+			else if (edit_phase==1)	Ft_Gpu_CoCmd_Number(phost,536, 110, 1, 1, temp_edit);
+			else 					Ft_Gpu_CoCmd_Number(phost,531, 110, 1, 2, temp_edit);
+			Ft_Gpu_CoCmd_Keys(phost,440, 200, 300, 40, 1, 0, "12345");
+			Ft_Gpu_CoCmd_Keys(phost,440, 265, 300, 40, 1, 0, "67890");
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(110));
+			Ft_Gpu_CoCmd_Button(phost, 440, 330, 300, 40, 1, OPT_CENTER, rus_text_adaptor("Ввод"));
+			}
+		else
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+			Ft_Gpu_CoCmd_Number(phost,531, 110, 1, 2, LPC_RTC->SEC);
+			}
+
+		if(sub_ind1==4)
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+			if(edit_phase==0)		Ft_Gpu_CoCmd_Number(phost,611, 110, 1, 2, LPC_RTC->DOM);
+			else if (edit_phase==1)	Ft_Gpu_CoCmd_Number(phost,616, 110, 1, 1, temp_edit);
+			else 					Ft_Gpu_CoCmd_Number(phost,611, 110, 1, 2, temp_edit);
+			Ft_Gpu_CoCmd_Keys(phost,440, 200, 300, 40, 1, 0, "12345");
+			Ft_Gpu_CoCmd_Keys(phost,440, 265, 300, 40, 1, 0, "67890");
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(110));
+			Ft_Gpu_CoCmd_Button(phost, 440, 330, 300, 40, 1, OPT_CENTER, rus_text_adaptor("Ввод"));
+			}
+		else
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+			Ft_Gpu_CoCmd_Number(phost,611, 110, 1, 2, LPC_RTC->DOM);
+			}
+
+		if(sub_ind1==5)
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+			if(edit_phase==0)		Ft_Gpu_CoCmd_Text(phost,657, 110, 1, 0, rus_text_adaptor(month_str[LPC_RTC->MONTH]));
+			else if (edit_phase==1)	Ft_Gpu_CoCmd_Text(phost,657, 110, 1, 0, rus_text_adaptor(month_str[temp_edit]));
+			//else 					Ft_Gpu_CoCmd_Number(phost,611, 110, 1, 2, temp_edit);
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(111));
+			Ft_Gpu_CoCmd_Button(phost, 440, 200, 50, 40, 1, OPT_CENTER, rus_text_adaptor("янв"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(112));
+			Ft_Gpu_CoCmd_Button(phost, 490, 200, 50, 40, 1, OPT_CENTER, rus_text_adaptor("фев"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(113));
+			Ft_Gpu_CoCmd_Button(phost, 540, 200, 50, 40, 1, OPT_CENTER, rus_text_adaptor("мар"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(114));
+			Ft_Gpu_CoCmd_Button(phost, 590, 200, 50, 40, 1, OPT_CENTER, rus_text_adaptor("апр"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(115));
+			Ft_Gpu_CoCmd_Button(phost, 640, 200, 50, 40, 1, OPT_CENTER, rus_text_adaptor("маи"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(116));
+			Ft_Gpu_CoCmd_Button(phost, 690, 200, 50, 40, 1, OPT_CENTER, rus_text_adaptor("июн"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(117));
+			Ft_Gpu_CoCmd_Button(phost, 440, 265, 50, 40, 1, OPT_CENTER, rus_text_adaptor("июл"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(118));
+			Ft_Gpu_CoCmd_Button(phost, 490, 265, 50, 40, 1, OPT_CENTER, rus_text_adaptor("авг"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(119));
+			Ft_Gpu_CoCmd_Button(phost, 540, 265, 50, 40, 1, OPT_CENTER, rus_text_adaptor("сен"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(120));
+			Ft_Gpu_CoCmd_Button(phost, 590, 265, 50, 40, 1, OPT_CENTER, rus_text_adaptor("окт"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(121));
+			Ft_Gpu_CoCmd_Button(phost, 640, 265, 50, 40, 1, OPT_CENTER, rus_text_adaptor("ноя"));
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(122));
+			Ft_Gpu_CoCmd_Button(phost, 690, 265, 50, 40, 1, OPT_CENTER, rus_text_adaptor("дек"));
+
+			//Ft_Gpu_CoCmd_Keys(phost,440, 200, 300, 40, 1, 0, "12345");
+			//Ft_Gpu_CoCmd_Keys(phost,440, 265, 300, 40, 1, 0, "67890");
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(110));
+			Ft_Gpu_CoCmd_Button(phost, 440, 330, 300, 40, 1, OPT_CENTER, rus_text_adaptor("Ввод"));
+			}
+		else
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+			Ft_Gpu_CoCmd_Text(phost,657, 110, 1, 0, rus_text_adaptor(month_str[LPC_RTC->MONTH]));
+			}
+
+		if(sub_ind1==6)
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+			if(edit_phase==0)		Ft_Gpu_CoCmd_Number(phost,706, 110, 1, 2, LPC_RTC->YEAR+2000);
+			else if (edit_phase==1)	Ft_Gpu_CoCmd_Number(phost,706, 110, 1, 1, temp_edit);
+			else if (edit_phase==2)	Ft_Gpu_CoCmd_Number(phost,706, 110, 1, 1, temp_edit);
+			else if (edit_phase==3)	Ft_Gpu_CoCmd_Number(phost,706, 110, 1, 1, temp_edit);
+			else 					Ft_Gpu_CoCmd_Number(phost,706, 110, 1, 2, temp_edit);
+			Ft_Gpu_CoCmd_Keys(phost,440, 200, 300, 40, 1, 0, "12345");
+			Ft_Gpu_CoCmd_Keys(phost,440, 265, 300, 40, 1, 0, "67890");
+			Ft_Gpu_Hal_WrCmd32(phost,TAG(110));
+			Ft_Gpu_CoCmd_Button(phost, 440, 330, 300, 40, 1, OPT_CENTER, rus_text_adaptor("Ввод"));
+			}
+		else
+			{
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+			//Ft_Gpu_CoCmd_Text(phost,706, 110, 1, 0, rus_text_adaptor(month_str[LPC_RTC->YEAR+2000]));
+			}
+		}
+
+
+	//********
+	x_offset=50;
+	y_offset=100;
+	Ft_Gpu_Hal_WrCmd32(phost,TAG(2));
+	if(sub_ind==2)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+	else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(200, 200, 200));
+	Ft_Gpu_Hal_WrCmd32(phost,BEGIN(RECTS));
+	Ft_Gpu_Hal_WrCmd32(phost,LINE_WIDTH(1 * 16));
+   	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset-10)*16, (y_offset+50+slider_pos-15)*16));
+	Ft_Gpu_Hal_WrCmd32(phost,VERTEX2F((x_offset-10+350)*16, (y_offset+100+slider_pos-15)*16));
+	if(sub_ind==2)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+	else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));								
+	Ft_Gpu_CoCmd_Text(phost,x_offset, y_offset+50+slider_pos, 1, 0, rus_text_adaptor("Время и дата1"));
+	//
+
+
+	Ft_Gpu_Hal_WrCmd32(phost,TAG(3));
+	if(sub_ind==3)Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 0));
+	else Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));								
+	Ft_Gpu_CoCmd_Text(phost,x_offset, y_offset+100+slider_pos, 1, 0, rus_text_adaptor("Время и дата2"));
+
+	if(error_input)
+		{
+		Ft_Gpu_Hal_WrCmd32(phost,TAG(125));
+		Ft_Gpu_CoCmd_FgColor(phost,0xff0000UL);
+		Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(255, 255, 255));
+		Ft_Gpu_CoCmd_Button(phost, 440, 200, 300, 170, 1, OPT_CENTER, rus_text_adaptor("Некорректное значение!!!"));
+		}
+
+	Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+	Ft_Gpu_CoCmd_FgColor(phost,0x646464UL);
+	Ft_Gpu_Hal_WrCmd32(phost,TAG(100));
+	if(rd32(REG_TOUCH_TAG)==3)Ft_Gpu_CoCmd_FgColor(phost,0xffff00UL);
+	Ft_Gpu_CoCmd_Button(phost, 400, 415, 380, 50, 1, OPT_CENTER, rus_text_adaptor("Возврат"));
+
+			Ft_Gpu_Hal_WrCmd32(phost,COLOR_RGB(0, 0, 0));
+			Ft_Gpu_CoCmd_Number(phost,400, 10, 1, 2, LPC_RTC->HOUR);
+			Ft_Gpu_CoCmd_Number(phost,430, 10, 1, 3, temp_edit);
+			Ft_Gpu_CoCmd_Number(phost,470, 10, 1, 2, edit_phase);
+			Ft_Gpu_CoCmd_Number(phost,500, 10, 1, 2, error_input);
+			Ft_Gpu_CoCmd_Number(phost,550, 10, 1, 2, sub_ind);
+			Ft_Gpu_CoCmd_Number(phost,600, 10, 1, 2, sub_ind1);
+
+	Ft_Gpu_Hal_WrCmd32(phost, DISPLAY());
+	Ft_Gpu_CoCmd_Swap(phost);
+
+	if(touch==100) tree_down(0,0);
+	if(touch==1) sub_ind=1;
+	if(touch==2) sub_ind=2;
+	if(touch==3) sub_ind=3;
+	if(touch==125)error_input=0;
+	if(sub_ind==1)
+		{
+		if(touch==101)
+			{
+			sub_ind1=1;
+			temp_edit=0;
+			edit_phase=0;
+			error_input=0;
+			}
+		if(touch==102)
+			{
+			sub_ind1=2;
+			temp_edit=0;
+			edit_phase=0;
+			error_input=0;
+			}
+		if(touch==103)
+			{
+			sub_ind1=3;
+			temp_edit=0;
+			edit_phase=0;
+			error_input=0;
+			}
+		if(touch==104)
+			{
+			sub_ind1=4;
+			temp_edit=0;
+			edit_phase=0;
+			error_input=0;
+			}
+		if(touch==105)
+			{
+			sub_ind1=5;
+			temp_edit=0;
+			edit_phase=0;
+			error_input=0;
+			}
+		if(touch==106)
+			{
+			sub_ind1=6;
+			temp_edit=0;
+			edit_phase=0;
+			error_input=0;
+			}
+
+		
+		if(sub_ind1==1)
+			{
+			if((touch>='0')&&(touch<='9'))
+				{
+				short tempS;
+				tempS=(short)(touch&0x0f);
+				temp_edit=(temp_edit*10)+tempS;
+				temp_edit%=100;
+				if(edit_phase<2)edit_phase++;
+				}
+			if(touch==110)
+				{
+				if((temp_edit>=0)&&(temp_edit<=23))
+					{
+					LPC_RTC->HOUR=temp_edit;
+					sub_ind1=0;
+					}
+				else 
+					{
+					error_input=1;
+					temp_edit=0;
+					edit_phase=0;
+					}
+				}
+			}
+		if(sub_ind1==2)
+			{
+			if((touch>='0')&&(touch<='9'))
+				{
+				short tempS;
+				tempS=(short)(touch&0x0f);
+				temp_edit=(temp_edit*10)+tempS;
+				temp_edit%=100;
+				if(edit_phase<2)edit_phase++;
+				}
+			if(touch==110)
+				{
+				if((temp_edit>=0)&&(temp_edit<=59))
+					{
+					LPC_RTC->MIN=temp_edit;
+					sub_ind1=0;
+					}
+				else 
+					{
+					error_input=1;
+					temp_edit=0;
+					edit_phase=0;
+					}
+				}
+			}
+		if(sub_ind1==3)
+			{
+			if((touch>='0')&&(touch<='9'))
+				{
+				short tempS;
+				tempS=(short)(touch&0x0f);
+				temp_edit=(temp_edit*10)+tempS;
+				temp_edit%=100;
+				if(edit_phase<2)edit_phase++;
+				}
+			if(touch==110)
+				{
+				if((temp_edit>=0)&&(temp_edit<=59))
+					{
+					LPC_RTC->SEC=temp_edit;
+					sub_ind1=0;
+					}
+				else 
+					{
+					error_input=1;
+					temp_edit=0;
+					edit_phase=0;
+					}
+				}
+			}
+		if(sub_ind1==4)
+			{
+			if((touch>='0')&&(touch<='9'))
+				{
+				short tempS;
+				tempS=(short)(touch&0x0f);
+				temp_edit=(temp_edit*10)+tempS;
+				temp_edit%=100;
+				if(edit_phase<2)edit_phase++;
+				}
+			if(touch==110)
+				{
+				if((temp_edit>=1)&&(temp_edit<=31))
+					{
+					LPC_RTC->DOM=temp_edit;
+					sub_ind1=0;
+					}
+				else 
+					{
+					error_input=1;
+					temp_edit=0;
+					edit_phase=0;
+					}
+				}
+			}
+		if(sub_ind1==5)
+			{
+			if((touch>=111)&&(touch<=122))
+				{
+				short tempS;
+				tempS=(short)(touch-110);
+				temp_edit=tempS;
+				if(edit_phase<1)edit_phase++;
+				}
+			if(touch==110)
+				{
+				if((temp_edit>=1)&&(temp_edit<=12))
+					{
+					LPC_RTC->MONTH=temp_edit;
+					sub_ind1=0;
+					}
+				else 
+					{
+					error_input=1;
+					temp_edit=0;
+					edit_phase=0;
+					}
+				}
+			}
+		if(sub_ind1==6)
+			{
+			if((touch>='0')&&(touch<='9'))
+				{
+				short tempS;
+				tempS=(short)(touch&0x0f);
+				temp_edit=(temp_edit*10)+tempS;
+				temp_edit%=10000;
+				if(edit_phase<4)edit_phase++;
+				}
+			if(touch==110)
+				{
+				if((temp_edit>=2000)&&(temp_edit<=2099))
+					{
+					LPC_RTC->YEAR=temp_edit-2000;
+					sub_ind1=0;
+					}
+				else 
+					{
+					error_input=1;
+					temp_edit=0;
+					edit_phase=0;
+					}
+				}
+			}
+		}
 	 
 	}
 /*
@@ -4412,6 +4907,7 @@ while (1)
 		static plazma;
 
 		if(main_cnt_1Hz<1000)main_cnt_1Hz++;
+		if(main_cnt_1Hz==1) lc640_write_int(EE_CALIBRATION_IS_ENOUG,0x0000);
 		if(main_cnt_1Hz==10) lc640_write_int(EE_CALIBRATION_IS_ENOUG,0xaaaa);
 		if(main_cnt_1Hz==12) lc640_write_int(EE_CALIBRATION_IS_ENOUG,0x0000);
 //#define putchar	putchar0
@@ -4424,9 +4920,9 @@ while (1)
 		plazma++;
 		//printf("Enter an Integer between %i and %i and %i:\r\n",iMn, ind,bFL);
 		//printf("REG_TOUCH_TRANSFORM_A = %i \r\n",rd32(REG_TOUCH_TRANSFORM_A));
-		//printf("CALIBRATION_IS_COMPLETE = %i \r\n",lc640_read_int(EE_CALIBRATION_IS_COMPLETE));
+		printf("CALIBRATION_IS_COMPLETE = %i \r\n",lc640_read_int(EE_CALIBRATION_IS_COMPLETE));
 
-		printf("a %s \r\n",rus_text_adaptor("sss"));
+		//printf("a %s \r\n",rus_text_adaptor("sss"));
 		//if(!bRESET_INT_WDT)
 			{
 			//watchdog_reset();

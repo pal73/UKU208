@@ -601,13 +601,17 @@ ft_void_t Ft_Gpu_CoCmd_MediaFifo(Ft_Gpu_Hal_Context_t *phost,ft_uint32_t ptr, ft
 #endif
 ft_void_t Ft_Gpu_CoCmd_Keys(Ft_Gpu_Hal_Context_t *phost,ft_int16_t x, ft_int16_t y, ft_int16_t w, ft_int16_t h, ft_int16_t font, ft_uint16_t options, const ft_char8_t* s)
 {
-  Ft_Gpu_CoCmd_StartFunc(phost,FT_CMD_SIZE*4 + strlen(s) + 1);         
-  Ft_Gpu_Copro_SendCmd(phost, CMD_KEYS);
-  Ft_Gpu_Copro_SendCmd(phost, (((ft_uint32_t)y<<16)|(x & 0xffff)));
-  Ft_Gpu_Copro_SendCmd(phost, (((ft_uint32_t)h<<16)|(w&0xffff)));
-  Ft_Gpu_Copro_SendCmd(phost, (((ft_uint32_t)options<<16)|(font&0xffff)));
+  //Ft_Gpu_CoCmd_StartFunc(phost,FT_CMD_SIZE*4 + strlen(s) + 1);         
+  //Ft_Gpu_Copro_SendCmd(phost, CMD_KEYS);
+  Ft_Gpu_Hal_WrCmd32(phost, CMD_KEYS);
+  //Ft_Gpu_Copro_SendCmd(phost, (((ft_uint32_t)y<<16)|(x & 0xffff)));
+  Ft_Gpu_Hal_WrCmd32(phost, (((ft_uint32_t)y<<16)|(x & 0xffff)));
+  //Ft_Gpu_Copro_SendCmd(phost, (((ft_uint32_t)h<<16)|(w&0xffff)));
+  Ft_Gpu_Hal_WrCmd32(phost, (((ft_uint32_t)h<<16)|(w&0xffff)));
+  //Ft_Gpu_Copro_SendCmd(phost, (((ft_uint32_t)options<<16)|(font&0xffff)));
+  Ft_Gpu_Hal_WrCmd32(phost, (((ft_uint32_t)options<<16)|(font&0xffff)));
   Ft_Gpu_CoCmd_SendStr(phost, s);
-  Ft_Gpu_CoCmd_EndFunc(phost,(FT_CMD_SIZE*4 + strlen(s) + 1));           
+  //Ft_Gpu_CoCmd_EndFunc(phost,(FT_CMD_SIZE*4 + strlen(s) + 1));           
 }
 
 ft_void_t Ft_Gpu_CoCmd_Dial(Ft_Gpu_Hal_Context_t *phost,ft_int16_t x, ft_int16_t y, ft_int16_t r, ft_uint16_t options, ft_uint16_t val)

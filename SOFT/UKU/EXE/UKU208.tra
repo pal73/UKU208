@@ -29,7 +29,7 @@
 ### ADS-LD Output File: '.\EXE\UKU208.axf'
 ### ADS-LD Command File: '.\EXE\UKU208.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\EXE\UKU208.lnp', Handle=0x00000354
+### Creating CmdFile '.\EXE\UKU208.lnp', Handle=0x000003B4
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\EXE\UKU208.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

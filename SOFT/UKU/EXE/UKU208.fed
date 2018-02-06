@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 644]: Last Updated: Fri Feb 02 18:29:19 2018
+;#<FEEDBACK># ARM Linker, 4.1 [Build 644]: Last Updated: Mon Feb 05 15:50:46 2018
 ;VERSION 0.2
 ;FILE 25lc640ssp1.o
 __asm___13_25lc640SSP1_c_ssp1____REV16 <= USED 0
@@ -118,8 +118,6 @@ long2lcdyx_mmm <= USED 0
 pointer_set <= USED 0
 ptr_carry <= USED 0
 show_mess <= USED 0
-tree_down <= USED 0
-tree_up <= USED 0
 ;FILE emac_lpc17xx.o
 __asm___14_EMAC_LPC17xx_c_f63b8310____REV16 <= USED 0
 __asm___14_EMAC_LPC17xx_c_f63b8310____REVSH <= USED 0
@@ -140,7 +138,6 @@ Ft_Gpu_CoCmd_GradColor <= USED 0
 Ft_Gpu_CoCmd_Gradient <= USED 0
 Ft_Gpu_CoCmd_Inflate <= USED 0
 Ft_Gpu_CoCmd_Interrupt <= USED 0
-Ft_Gpu_CoCmd_Keys <= USED 0
 Ft_Gpu_CoCmd_LoadIdentity <= USED 0
 Ft_Gpu_CoCmd_LoadImage <= USED 0
 Ft_Gpu_CoCmd_Logo <= USED 0
