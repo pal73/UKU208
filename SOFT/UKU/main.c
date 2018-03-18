@@ -14,7 +14,7 @@
 #include "gran.h"
 #include "uart0.h"
 //#include "uart1.h"
-//#include "uart2.h"
+#include "uart2.h"
 #include "cmd.h"
 #include "ret.h"
 #include "eeprom_map.h"
@@ -38,6 +38,7 @@
 #include "FT_GPU_Hal.h"
 #include "FT_CoPro_Cmds.h"
 #include "riverdi.h"
+#include "modbus.h"
 
 extern U8 own_hw_adr[];
 extern U8  snmp_Community[];
@@ -4505,6 +4506,8 @@ SET_REG(LPC_GPIO2->FIODIR, 1, 8, 1);
 
 //UARTInit( 0, 9600 );
 InitUART0();
+UART_2_Init(9600);
+
 /*
 
 ad7705_reset();
@@ -4922,6 +4925,25 @@ while (1)
 		//printf("REG_TOUCH_TRANSFORM_A = %i \r\n",rd32(REG_TOUCH_TRANSFORM_A));
 		printf("CALIBRATION_IS_COMPLETE = %i \r\n",lc640_read_int(EE_CALIBRATION_IS_COMPLETE));
 
+		{
+		char mdb[15],i;
+		unsigned short crc_temp;
+		mdb[0]=1;
+		mdb[1]=4;
+		mdb[2]=0;
+		mdb[3]=1;
+		mdb[4]=0;
+		mdb[5]=1;
+		crc_temp=CRC16_2(mdb,6);
+		mdb[6]=(char)(crc_temp>>8);
+		mdb[7]=(char)crc_temp;
+		
+		for (i=0;i<8;i++)
+			{
+			putchar2(mdb[i]);
+			}
+		}
+		//uart_out2 (6,1,2,3,4,5,6);
 		//printf("a %s \r\n",rus_text_adaptor("sss"));
 		//if(!bRESET_INT_WDT)
 			{

@@ -122,7 +122,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
-          <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(350=-1,-1,-1,-1,0)(250=-1,-1,-1,-1,0)(270=-1,-1,-1,-1,0)(313=-1,-1,-1,-1,0)(291=-1,-1,-1,-1,0)(302=-1,-1,-1,-1,0)(110=-1,-1,-1,-1,0)(113=-1,-1,-1,-1,0)(320=-1,-1,-1,-1,0)(210=-1,-1,-1,-1,0)(330=-1,-1,-1,-1,0)(332=-1,-1,-1,-1,0)(333=-1,-1,-1,-1,0)(334=730,304,1318,502,1)(335=-1,-1,-1,-1,0)(336=-1,-1,-1,-1,0)(345=-1,-1,-1,-1,0)(346=-1,-1,-1,-1,0)(381=-1,-1,-1,-1,0)(382=-1,-1,-1,-1,0)(383=-1,-1,-1,-1,0)(384=-1,-1,-1,-1,0)(197=-1,-1,-1,-1,0)(198=-1,-1,-1,-1,0)(191=-1,-1,-1,-1,0)(192=-1,-1,-1,-1,0)(199=-1,-1,-1,-1,0)(180=-1,-1,-1,-1,0)(261=-1,-1,-1,-1,0)(262=-1,-1,-1,-1,0)(231=-1,-1,-1,-1,0)(232=-1,-1,-1,-1,0)(233=-1,-1,-1,-1,0)(121=-1,-1,-1,-1,0)(122=-1,-1,-1,-1,0)(123=-1,-1,-1,-1,0)(124=-1,-1,-1,-1,0)(170=-1,-1,-1,-1,0)(142=-1,-1,-1,-1,0)(150=-1,-1,-1,-1,0)(400=-1,-1,-1,-1,0)(370=-1,-1,-1,-1,0)(160=-1,-1,-1,-1,0)(280=-1,-1,-1,-1,0)(240=-1,-1,-1,-1,0)</Name>
+          <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(350=-1,-1,-1,-1,0)(250=-1,-1,-1,-1,0)(270=-1,-1,-1,-1,0)(313=-1,-1,-1,-1,0)(291=-1,-1,-1,-1,0)(302=-1,-1,-1,-1,0)(110=-1,-1,-1,-1,0)(113=-1,-1,-1,-1,0)(320=-1,-1,-1,-1,0)(210=-1,-1,-1,-1,0)(330=644,180,1015,800,1)(332=780,87,1368,285,1)(333=-1,-1,-1,-1,0)(334=730,304,1318,502,0)(335=-1,-1,-1,-1,0)(336=-1,-1,-1,-1,0)(345=-1,-1,-1,-1,0)(346=-1,-1,-1,-1,0)(381=-1,-1,-1,-1,0)(382=-1,-1,-1,-1,0)(383=1059,196,1434,796,1)(384=-1,-1,-1,-1,0)(197=-1,-1,-1,-1,0)(198=-1,-1,-1,-1,0)(191=-1,-1,-1,-1,0)(192=-1,-1,-1,-1,0)(199=-1,-1,-1,-1,0)(180=-1,-1,-1,-1,0)(261=-1,-1,-1,-1,0)(262=-1,-1,-1,-1,0)(231=-1,-1,-1,-1,0)(232=-1,-1,-1,-1,0)(233=-1,-1,-1,-1,0)(121=-1,-1,-1,-1,0)(122=-1,-1,-1,-1,0)(123=-1,-1,-1,-1,0)(124=-1,-1,-1,-1,0)(170=-1,-1,-1,-1,0)(142=-1,-1,-1,-1,0)(150=-1,-1,-1,-1,0)(400=-1,-1,-1,-1,0)(370=-1,-1,-1,-1,0)(160=-1,-1,-1,-1,0)(280=-1,-1,-1,-1,0)(240=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -134,9 +134,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>4162</LineNumber>
+          <LineNumber>4508</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>7230</Address>
+          <Address>11790</Address>
           <ByteObject>0</ByteObject>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
@@ -144,37 +144,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename></Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\UKU208\main\4162</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>3864</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>6800</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename></Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\UKU208\main\3864</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>4000</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>7110</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename></Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\UKU208\main\4000</Expression>
+          <Expression>\\UKU208\main\4508</Expression>
         </Bp>
       </Breakpoint>
       <DebugFlag>
@@ -242,8 +212,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>115</TopLine>
+      <CurrentLine>125</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup_LPC17xx.s</PathWithFileName>
       <FilenameWithoutPath>startup_LPC17xx.s</FilenameWithoutPath>
@@ -277,8 +247,8 @@
       <Focus>0</Focus>
       <ColumnNumber>5</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1190</TopLine>
-      <CurrentLine>1190</CurrentLine>
+      <TopLine>967</TopLine>
+      <CurrentLine>967</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\common_func.c</PathWithFileName>
       <FilenameWithoutPath>common_func.c</FilenameWithoutPath>
@@ -345,10 +315,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>31</ColumnNumber>
+      <ColumnNumber>16</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>3614</TopLine>
-      <CurrentLine>3637</CurrentLine>
+      <TopLine>4916</TopLine>
+      <CurrentLine>4929</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -389,7 +359,7 @@
       <Focus>0</Focus>
       <ColumnNumber>4</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>86</TopLine>
+      <TopLine>70</TopLine>
       <CurrentLine>86</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\riverdi.c</PathWithFileName>
@@ -410,8 +380,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>400</TopLine>
-      <CurrentLine>412</CurrentLine>
+      <TopLine>147</TopLine>
+      <CurrentLine>164</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\system_LPC17xx.c</PathWithFileName>
       <FilenameWithoutPath>system_LPC17xx.c</FilenameWithoutPath>
@@ -459,7 +429,7 @@
       <Focus>0</Focus>
       <ColumnNumber>20</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>211</TopLine>
+      <TopLine>187</TopLine>
       <CurrentLine>211</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\25lc640SSP1.c</PathWithFileName>
@@ -478,13 +448,41 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>7</CurrentLine>
+      <TopLine>428</TopLine>
+      <CurrentLine>428</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\uart0.c</PathWithFileName>
       <FilenameWithoutPath>uart0.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>6</GroupNumber>
+      <FileNumber>18</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>193</TopLine>
+      <CurrentLine>206</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\uart2.c</PathWithFileName>
+      <FilenameWithoutPath>uart2.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>6</GroupNumber>
+      <FileNumber>19</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>427</TopLine>
+      <CurrentLine>440</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\modbus.c</PathWithFileName>
+      <FilenameWithoutPath>modbus.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -502,7 +500,7 @@
     <cbSel>0</cbSel>
     <File>
       <GroupNumber>8</GroupNumber>
-      <FileNumber>18</FileNumber>
+      <FileNumber>20</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -516,7 +514,7 @@
     </File>
     <File>
       <GroupNumber>8</GroupNumber>
-      <FileNumber>19</FileNumber>
+      <FileNumber>21</FileNumber>
       <FileType>4</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -530,111 +528,33 @@
     </File>
     <File>
       <GroupNumber>8</GroupNumber>
-      <FileNumber>20</FileNumber>
+      <FileNumber>22</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>103</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>599</TopLine>
-      <CurrentLine>620</CurrentLine>
+      <TopLine>486</TopLine>
+      <CurrentLine>486</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\FT_CoPro_Cmds.c</PathWithFileName>
       <FilenameWithoutPath>FT_CoPro_Cmds.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>8</GroupNumber>
-      <FileNumber>21</FileNumber>
+      <FileNumber>23</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>10</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>551</TopLine>
-      <CurrentLine>551</CurrentLine>
+      <TopLine>447</TopLine>
+      <CurrentLine>447</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\FT_Gpu_Hal.c</PathWithFileName>
       <FilenameWithoutPath>FT_Gpu_Hal.c</FilenameWithoutPath>
     </File>
   </Group>
-
-  <AlienFiles>
-    <PathWithFilename>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\25lc640.h</PathWithFilename>
-    <TopLine>1</TopLine>
-    <CurrentLine>2</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\ad7705.c</PathWithFilename>
-    <TopLine>7</TopLine>
-    <CurrentLine>7</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\FT_GPU.h</PathWithFilename>
-    <TopLine>283</TopLine>
-    <CurrentLine>307</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
 
   <AlienFiles>
     <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\riverdi.h</PathWithFilename>
@@ -716,8 +636,8 @@
 
   <AlienFiles>
     <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\FT_DataTypes.h</PathWithFilename>
-    <TopLine>169</TopLine>
-    <CurrentLine>193</CurrentLine>
+    <TopLine>137</TopLine>
+    <CurrentLine>137</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -872,8 +792,8 @@
 
   <AlienFiles>
     <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\main.h</PathWithFilename>
-    <TopLine>968</TopLine>
-    <CurrentLine>987</CurrentLine>
+    <TopLine>786</TopLine>
+    <CurrentLine>786</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -898,8 +818,8 @@
 
   <AlienFiles>
     <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\lcd_AGM1232_uku207_3.c</PathWithFilename>
-    <TopLine>412</TopLine>
-    <CurrentLine>412</CurrentLine>
+    <TopLine>334</TopLine>
+    <CurrentLine>334</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -950,7 +870,7 @@
 
   <AlienFiles>
     <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\FT_GPU_Hal.h</PathWithFilename>
-    <TopLine>18</TopLine>
+    <TopLine>14</TopLine>
     <CurrentLine>30</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
@@ -976,8 +896,8 @@
 
   <AlienFiles>
     <PathWithFilename>C:\Keil\ARM\INC\NXP\LPC17xx\LPC17xx.H</PathWithFilename>
-    <TopLine>521</TopLine>
-    <CurrentLine>527</CurrentLine>
+    <TopLine>117</TopLine>
+    <CurrentLine>141</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -1002,8 +922,112 @@
 
   <AlienFiles>
     <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\FT_Platform.h</PathWithFilename>
-    <TopLine>70</TopLine>
+    <TopLine>57</TopLine>
     <CurrentLine>70</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\25lc640.h</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>2</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\ad7705.c</PathWithFilename>
+    <TopLine>5</TopLine>
+    <CurrentLine>7</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>C:\Keil\ARM\CMSIS\Include\core_cm3.h</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>1</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\FT_GPU.h</PathWithFilename>
+    <TopLine>230</TopLine>
+    <CurrentLine>230</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -1031,42 +1055,84 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>4</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
+        <Doc>
+          <Name>.\main.c</Name>
+          <ColumnNumber>16</ColumnNumber>
+          <TopLine>4916</TopLine>
+          <CurrentLine>4929</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\modbus.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>427</TopLine>
+          <CurrentLine>440</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\startup_LPC17xx.s</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>115</TopLine>
+          <CurrentLine>125</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>FT_GPU.h</Name>
+          <ColumnNumber>19</ColumnNumber>
+          <TopLine>230</TopLine>
+          <CurrentLine>230</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>C:\Keil\ARM\CMSIS\Include\core_cm3.h</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\ad7705.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>5</TopLine>
+          <CurrentLine>7</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\25lc640.h</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>2</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\uart2.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>193</TopLine>
+          <CurrentLine>206</CurrentLine>
+        </Doc>
         <Doc>
           <Name>.\FT_CoPro_Cmds.c</Name>
           <ColumnNumber>103</ColumnNumber>
-          <TopLine>599</TopLine>
-          <CurrentLine>620</CurrentLine>
+          <TopLine>486</TopLine>
+          <CurrentLine>486</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\system_LPC17xx.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>400</TopLine>
-          <CurrentLine>412</CurrentLine>
+          <TopLine>147</TopLine>
+          <CurrentLine>164</CurrentLine>
         </Doc>
         <Doc>
           <Name>FT_Platform.h</Name>
           <ColumnNumber>63</ColumnNumber>
-          <TopLine>70</TopLine>
+          <TopLine>57</TopLine>
           <CurrentLine>70</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\main.c</Name>
-          <ColumnNumber>31</ColumnNumber>
-          <TopLine>3578</TopLine>
-          <CurrentLine>3578</CurrentLine>
         </Doc>
         <Doc>
           <Name>C:\Keil\ARM\INC\NXP\LPC17xx\LPC17xx.H</Name>
           <ColumnNumber>16</ColumnNumber>
-          <TopLine>521</TopLine>
-          <CurrentLine>527</CurrentLine>
+          <TopLine>117</TopLine>
+          <CurrentLine>141</CurrentLine>
         </Doc>
         <Doc>
           <Name>FT_GPU_Hal.h</Name>
           <ColumnNumber>8</ColumnNumber>
-          <TopLine>18</TopLine>
+          <TopLine>14</TopLine>
           <CurrentLine>30</CurrentLine>
         </Doc>
         <Doc>
@@ -1078,38 +1144,38 @@
         <Doc>
           <Name>.\25lc640SSP1.c</Name>
           <ColumnNumber>20</ColumnNumber>
-          <TopLine>211</TopLine>
+          <TopLine>187</TopLine>
           <CurrentLine>211</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\uart0.c</Name>
-          <ColumnNumber>2</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>7</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>428</TopLine>
+          <CurrentLine>428</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\common_func.c</Name>
           <ColumnNumber>5</ColumnNumber>
-          <TopLine>1190</TopLine>
-          <CurrentLine>1190</CurrentLine>
+          <TopLine>967</TopLine>
+          <CurrentLine>967</CurrentLine>
         </Doc>
         <Doc>
           <Name>E:\Users\Pal\DEVICES\UKU208_dev\SOFT\UKU\lcd_AGM1232_uku207_3.c</Name>
           <ColumnNumber>5</ColumnNumber>
-          <TopLine>412</TopLine>
-          <CurrentLine>412</CurrentLine>
+          <TopLine>334</TopLine>
+          <CurrentLine>334</CurrentLine>
         </Doc>
         <Doc>
           <Name>main.h</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>968</TopLine>
-          <CurrentLine>987</CurrentLine>
+          <TopLine>786</TopLine>
+          <CurrentLine>786</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\FT_Gpu_Hal.c</Name>
           <ColumnNumber>10</ColumnNumber>
-          <TopLine>551</TopLine>
-          <CurrentLine>551</CurrentLine>
+          <TopLine>447</TopLine>
+          <CurrentLine>447</CurrentLine>
         </Doc>
         <Doc>
           <Name>E:\Users\Pal\DEVICES\FT-RIV\SOFT\FONT\Font_Convert_Tool_V0.4\tuffy_MyFont1.txt30\L1\tuffy.TTF_30_L1.rawh</Name>
@@ -1150,8 +1216,8 @@
         <Doc>
           <Name>FT_DataTypes.h</Name>
           <ColumnNumber>41</ColumnNumber>
-          <TopLine>169</TopLine>
-          <CurrentLine>193</CurrentLine>
+          <TopLine>137</TopLine>
+          <CurrentLine>137</CurrentLine>
         </Doc>
         <Doc>
           <Name>E:\Users\Pal\DEVICES\FT-RIV\SOFT\FONT\Font_Convert_Tool_V0.4\tuffy_MyFont.txt30\L1\tuffy.TTF_30_L1.raw</Name>
@@ -1168,7 +1234,7 @@
         <Doc>
           <Name>.\riverdi.c</Name>
           <ColumnNumber>4</ColumnNumber>
-          <TopLine>86</TopLine>
+          <TopLine>70</TopLine>
           <CurrentLine>86</CurrentLine>
         </Doc>
         <Doc>
@@ -1182,24 +1248,6 @@
           <ColumnNumber>0</ColumnNumber>
           <TopLine>26</TopLine>
           <CurrentLine>50</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>FT_GPU.h</Name>
-          <ColumnNumber>19</ColumnNumber>
-          <TopLine>283</TopLine>
-          <CurrentLine>307</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\ad7705.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>7</TopLine>
-          <CurrentLine>7</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>E:\Users\Pal\DEVICES\FT-RIV\SOFT\UKU\IP55\25lc640.h</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>2</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

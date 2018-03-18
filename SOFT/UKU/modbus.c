@@ -66,8 +66,8 @@ unsigned char modbus_func;			//встроенный в посылку код функции
 
 
 
-mem_copy(modbus_an_buffer,starkBatteryInBuff,starkBatteryInBuffPtr);
-
+//mem_copy(modbus_an_buffer,starkBatteryInBuff,starkBatteryInBuffPtr);
+/*
 modbus_rx_counter=starkBatteryInBuffPtr;
 starkBatteryInBuffPtr=0;
 
@@ -312,7 +312,7 @@ char modbus_registers[150];
 char modbus_tx_buff[50];
 unsigned short crc_temp;
 char i;
-
+/*
 
 modbus_registers[0]=(char)(load_U/256);					//Рег1
 modbus_registers[1]=(char)(load_U%256);
@@ -413,7 +413,7 @@ modbus_registers[95]=(char)(load_I%256);
 modbus_registers[96]=(char)(load_I/256);		//Рег49
 modbus_registers[97]=(char)(load_I%256);
 modbus_registers[98]=(char)(load_I/256);		//Рег50
-modbus_registers[99]=(char)(load_I%256);
+modbus_registers[99]=(char)(load_I%256);   */
 
 modbus_tx_buff[0]=adr;
 modbus_tx_buff[1]=func;
@@ -429,7 +429,7 @@ modbus_registers[3]=0x13;
 modbus_registers[4]=0x14;
 modbus_registers[5]=0x15;
 */
-
+/*
 mem_copy((char*)&modbus_tx_buff[4],(char*)&modbus_registers[(reg_adr-1)*2],2);
 
 crc_temp=CRC16_2(modbus_tx_buff,6);
@@ -444,7 +444,7 @@ for (i=0;i<8;i++)
 for (i=0;i<8;i++)
 	{
 	putchar_sc16is700(modbus_tx_buff[i]);
-	}
+	}	*/
 }
 
 //-----------------------------------------------
@@ -455,7 +455,7 @@ char modbus_tx_buff[100];
 unsigned short crc_temp;
 char i;
 
-
+/*
 modbus_registers[0]=(char)(load_U/256);					//Рег1
 modbus_registers[1]=(char)(load_U%256);
 modbus_registers[2]=(char)(load_I/256);					//Рег2
@@ -555,7 +555,7 @@ modbus_registers[95]=(char)(load_I%256);
 modbus_registers[96]=(char)(load_I/256);		//Рег49
 modbus_registers[97]=(char)(load_I%256);
 modbus_registers[98]=(char)(load_I/256);		//Рег50
-modbus_registers[99]=(char)(load_I%256);
+modbus_registers[99]=(char)(load_I%256);  */
 
 
 
@@ -574,7 +574,7 @@ modbus_registers[3]=0x13;
 modbus_registers[4]=0x14;
 modbus_registers[5]=0x15;
 */
-
+/*
 mem_copy((char*)&modbus_tx_buff[3],(char*)&modbus_registers[(reg_adr-1)*2],reg_quantity*2);
 
 crc_temp=CRC16_2(modbus_tx_buff,(reg_quantity*2)+3);
@@ -584,14 +584,14 @@ modbus_tx_buff[4+(reg_quantity*2)]=crc_temp/256;
 
 //int2lcdyx(reg_quantity,0,10,0);
 
-for (i=0;i<15/*(5+(reg_quantity*2))*/;i++)
+for (i=0;i<15;i++)
 	{
 	putchar0(modbus_tx_buff[i]);
 	} 
 for (i=0;i<15;i++)
 	{
 	putchar_sc16is700(modbus_tx_buff[i]);
-	}
+	}  */
 }
 
 //-----------------------------------------------
@@ -601,7 +601,7 @@ char modbus_registers[100];
 char modbus_tx_buff[100];
 unsigned short crc_temp;
 char i;
-
+/*
 modbus_registers[20]=(char)((LPC_RTC->YEAR)/256);			//Рег11  Время, год
 modbus_registers[21]=(char)((LPC_RTC->YEAR)%256);
 modbus_registers[22]=(char)((LPC_RTC->MONTH)/256);		//Рег12  Время, месяц
@@ -657,13 +657,13 @@ modbus_registers[89]=(char)(TSIGN%256);
 modbus_registers[90]=(char)(TBATMAX/256);				//Рег46  Температура батареи аварийная, 1гЦ
 modbus_registers[91]=(char)(TBATMAX%256);
 modbus_registers[92]=(char)(TBATSIGN/256);				//Рег47  Температура батареи сигнальная, 1гЦ
-modbus_registers[93]=(char)(TBATSIGN%256);
+modbus_registers[93]=(char)(TBATSIGN%256);																  */
 
 modbus_tx_buff[0]=adr;
 modbus_tx_buff[1]=func;
 modbus_tx_buff[2]=(char)(reg_adr/256);
 modbus_tx_buff[3]=(char)(reg_adr%256);
-
+/*
 mem_copy((char*)&modbus_tx_buff[4],(char*)&modbus_registers[(reg_adr-1)*2],2);
 
 crc_temp=CRC16_2(modbus_tx_buff,6);
@@ -678,7 +678,7 @@ for (i=0;i<8;i++)
 for (i=0;i<8;i++)
 	{
 	putchar_sc16is700(modbus_tx_buff[i]);
-	}
+	}  */
 }
 
 //-----------------------------------------------
@@ -688,7 +688,7 @@ char modbus_registers[100];
 char modbus_tx_buff[100];
 unsigned short crc_temp;
 char i;
-
+/*
 modbus_registers[20]=(char)((LPC_RTC->YEAR)/256);			//Рег11  Время, год
 modbus_registers[21]=(char)((LPC_RTC->YEAR)%256);
 modbus_registers[22]=(char)((LPC_RTC->MONTH)/256);		//Рег12  Время, месяц
@@ -745,7 +745,7 @@ modbus_registers[90]=(char)(TBATMAX/256);				//Рег46  Температура батареи аварий
 modbus_registers[91]=(char)(TBATMAX%256);
 modbus_registers[92]=(char)(TBATSIGN/256);				//Рег47  Температура батареи сигнальная, 1гЦ
 modbus_registers[93]=(char)(TBATSIGN%256);
-
+*/
 
 modbus_tx_buff[0]=adr;
 modbus_tx_buff[1]=func;
@@ -762,7 +762,7 @@ modbus_registers[3]=0x13;
 modbus_registers[4]=0x14;
 modbus_registers[5]=0x15;
 */
-
+/*
 //if((reg_adr<17)&&(reg_quantity<10))
 	{
 	mem_copy((char*)&modbus_tx_buff[3],(char*)&modbus_registers[(reg_adr-1)*2],reg_quantity*2);
@@ -780,7 +780,7 @@ for (i=0;i<(5+(reg_quantity*2));i++)
 for (i=0;i<(5+(reg_quantity*2));i++)
 	{
 	putchar_sc16is700(modbus_tx_buff[i]);
-	}
+	} */
 
 /*	putchar2(modbus_tx_buff[0]);
 	putchar2(modbus_tx_buff[1]);
@@ -806,7 +806,7 @@ char modbus_tx_buff[120];
 unsigned short crc_temp;
 char i;
 short tempS;
-
+/*
 modbus_registers[0]=(char)(out_U/256);					//Рег1   	напряжение выходной шины, 0.1В
 modbus_registers[1]=(char)(out_U%256);
 modbus_registers[2]=(char)(bps_I/256);					//Рег2   	ток выпрямителей, 0.1А
@@ -960,7 +960,7 @@ modbus_tx_buff[1]=func;
 //modbus_tx_buff[3]=(char)(reg_adr%256);
 //modbus_tx_buff[4]=(char)(reg_quantity/256);
 //modbus_tx_buff[5]=(char)(reg_quantity%256);
-modbus_tx_buff[2]=(char)(reg_quantity*2);
+modbus_tx_buff[2]=(char)(reg_quantity*2);*/
 /*
 modbus_registers[0]=0x10;
 modbus_registers[1]=0x11;
@@ -971,7 +971,7 @@ modbus_registers[5]=0x15;
 */
 
 //if((reg_adr<17)&&(reg_quantity<10))
-	{
+/*	{
 	mem_copy((char*)&modbus_tx_buff[3],(char*)&modbus_registers[(reg_adr-1)*2],reg_quantity*2);
 	}
 crc_temp=CRC16_2(modbus_tx_buff,(reg_quantity*2)+3);
@@ -986,6 +986,6 @@ for (i=0;i<(5+(reg_quantity*2));i++)
 for (i=0;i<(5+(reg_quantity*2));i++)
 	{
 	putchar_sc16is700(modbus_tx_buff[i]);
-	}
+	}  */
 }
 

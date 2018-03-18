@@ -5,4 +5,4 @@
 .\EXE\ft_copro_cmds.o: FT_Gpu.h
 .\EXE\ft_copro_cmds.o: FT_CoPro_Cmds.h
 .\EXE\ft_copro_cmds.o: main.h
-.\EXE\ft_copro_cmds.o: C:\Keil\ARM\RV31\INC\rtl.h
+.\EXE\ft_copro_cmds.o: C:\Keil\\ARM\RV31\INC\rtl.h

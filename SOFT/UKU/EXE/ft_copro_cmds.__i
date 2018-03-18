@@ -1,1 +1,1 @@
---feedback ".\EXE\UKU208.fed" -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I "C:\Keil\ARM\CMSIS\Include" -I "C:\Keil\ARM\INC\NXP\LPC17xx" -o ".\EXE\ft_copro_cmds.o" --omf_browse ".\EXE\ft_copro_cmds.crf" --depend ".\EXE\ft_copro_cmds.d" "FT_CoPro_Cmds.c"
+--feedback ".\EXE\UKU208.fed" -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork -I "C:\Keil\\ARM\INC" -I "C:\Keil\\ARM\INC\NXP\LPC17xx" -o ".\EXE\ft_copro_cmds.o" --omf_browse ".\EXE\ft_copro_cmds.crf" --depend ".\EXE\ft_copro_cmds.d" "FT_CoPro_Cmds.c"
